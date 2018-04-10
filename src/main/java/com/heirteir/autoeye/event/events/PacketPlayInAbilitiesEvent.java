@@ -5,10 +5,10 @@ import com.heirteir.autoeye.player.AutoEyePlayer;
 import lombok.Getter;
 
 @Getter public class PacketPlayInAbilitiesEvent extends Event {
-    private final PacketPlayInAbilities packetPlayOutAbilities;
+    private final PacketPlayInAbilities packet;
 
-    public PacketPlayInAbilitiesEvent(AutoEyePlayer player, PacketPlayInAbilities packetPlayOutAbilities) {
+    public PacketPlayInAbilitiesEvent(AutoEyePlayer player, PacketPlayInAbilities packet) {
         super(player);
-        this.packetPlayOutAbilities = packetPlayOutAbilities;
+        this.packet = packet;
     }
 }

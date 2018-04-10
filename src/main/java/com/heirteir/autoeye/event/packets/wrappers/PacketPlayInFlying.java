@@ -21,5 +21,6 @@ import lombok.Getter;
         this.onGround = (boolean) packetPlayInFlying.getFieldByName("f").get(packet);
         this.hasPos = (boolean) packetPlayInFlying.getFieldByName("hasPos").get(packet);
         this.hasLook = (boolean) packetPlayInFlying.getFieldByName("hasLook").get(packet);
+
     }
 }
