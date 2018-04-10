@@ -5,6 +5,7 @@ import com.heirteir.autoeye.event.events.*;
 import com.heirteir.autoeye.event.packets.PacketType;
 import com.heirteir.autoeye.event.packets.wrappers.PacketPlayInAbilities;
 import com.heirteir.autoeye.event.packets.wrappers.PacketPlayInFlying;
+import com.heirteir.autoeye.event.packets.wrappers.PacketPlayInUseEntity;
 import com.heirteir.autoeye.event.packets.wrappers.PacketPlayOutEntityVelocity;
 import com.heirteir.autoeye.player.AutoEyePlayer;
 import com.heirteir.autoeye.util.reflections.types.WrappedField;
@@ -44,6 +45,9 @@ public abstract class ChannelHandlerAbstract {
                 event = new PacketPlayInFlyingEvent(player, new PacketPlayInFlying(this.autoeye, packet, !packet.getClass().getSimpleName().equals("PacketPlayInFlying")));
                 break;
             case PacketPlayInAbilities:
+                event = new PacketPlayInAbilitiesEvent(player, new PacketPlayInAbilities(this.autoeye, packet));
+                break;
+            case PacketPlayInUseEntity:
                 event = new PacketPlayInAbilitiesEvent(player, new PacketPlayInAbilities(this.autoeye, packet));
                 break;
         }
