@@ -48,7 +48,7 @@ public abstract class ChannelHandlerAbstract {
                 event = new PacketPlayInAbilitiesEvent(player, new PacketPlayInAbilities(this.autoeye, packet));
                 break;
             case PacketPlayInUseEntity:
-                event = new PacketPlayInAbilitiesEvent(player, new PacketPlayInAbilities(this.autoeye, packet));
+                event = new PacketPlayInUseEntityEvent(player, new PacketPlayInUseEntity(this.autoeye, packet));
                 break;
         }
         if (event != null) {

@@ -11,7 +11,6 @@ public class InvalidMotion extends Check<PacketPlayInFlyingEvent> {
     }
 
     @Override public boolean check(Autoeye autoeye, PacketPlayInFlyingEvent event) {
-        System.out.println("hey");
         if (event.getPlayer().getLocationData().isOnSlime()) {
             return event.getPlayer().getPhysics().getClientVelocity().getY() > event.getPlayer().getPhysics().getJumpVelocity() && Math.abs(event.getPlayer().getPhysics().getClientVelocity().getY() - event.getPlayer().getPlayer().getVelocity().getY()) > 0.08D;
         } else if (event.getPlayer().getPhysics().getClientVelocity().getY() > event.getPlayer().getPhysics().getCalculatedYVelocity() + 0.001 && Math.abs(event.getPlayer().getPhysics().getClientAcceleration().getY() - event.getPlayer().getPhysics().getCalculatedYAcceleration()) > 0.001) {

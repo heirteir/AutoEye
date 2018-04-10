@@ -39,7 +39,6 @@ import org.bukkit.entity.Player;
             this.groundBlocks = this.blocks;
             this.onSlime = this.groundBlocks.containsString("SLIME");
         }
-        System.out.println(this.blocks.containsString("WEB"));
         boolean tempInWeb = (boolean) autoeye.getReflections().getNMSClass("Entity").getFieldAfterOtherByName("velocityChanged").get(autoeye.getReflections().getEntityPlayer(player.getPlayer()));
         boolean tempInWater = (boolean) autoeye.getReflections().getNMSClass("Entity").getFieldByName("inWater").get(autoeye.getReflections().getEntityPlayer(player.getPlayer()));
         if (tempInWeb) {
