@@ -10,6 +10,6 @@ public class PacketPlayInAbilitiesEventExecutor extends EventExecutor<PacketPlay
     }
 
     @Override public void run(PacketPlayInAbilitiesEvent event) {
-        event.getPlayer().getPhysics().setFlying(event.getPacketPlayOutAbilities().isFlying());
+        event.getPlayer().getPhysics().setFlying(event.getPacket().isFlying());
     }
 }

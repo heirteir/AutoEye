@@ -7,6 +7,15 @@
           <entry name="$USER_HOME$/Desktop/Server/lombok.jar" />
         </processorPath>
       </profile>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="main" />
+      </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="main" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
