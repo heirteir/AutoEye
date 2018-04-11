@@ -16,11 +16,10 @@ import lombok.Getter;
         this.x = ((Double) packetPlayInFlying.getFieldByName("x").get(packet)).floatValue();
         this.y = ((Double) packetPlayInFlying.getFieldByName("y").get(packet)).floatValue();
         this.z = ((Double) packetPlayInFlying.getFieldByName("z").get(packet)).floatValue();
-        this.yaw = (float) packetPlayInFlying.getFieldByName("yaw").get(packet);
-        this.pitch = (float) packetPlayInFlying.getFieldByName("pitch").get(packet);
-        this.onGround = (boolean) packetPlayInFlying.getFieldByName("f").get(packet);
-        this.hasPos = (boolean) packetPlayInFlying.getFieldByName("hasPos").get(packet);
-        this.hasLook = (boolean) packetPlayInFlying.getFieldByName("hasLook").get(packet);
-
+        this.yaw = packetPlayInFlying.getFieldByName("yaw").get(packet);
+        this.pitch = packetPlayInFlying.getFieldByName("pitch").get(packet);
+        this.onGround = packetPlayInFlying.getFieldByName("f").get(packet);
+        this.hasPos = packetPlayInFlying.getFieldByName("hasPos").get(packet);
+        this.hasLook = packetPlayInFlying.getFieldByName("hasLook").get(packet);
     }
 }

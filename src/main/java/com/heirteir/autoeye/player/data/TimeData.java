@@ -6,7 +6,9 @@ import lombok.Getter;
     private final TimeStore lastTeleport = new TimeStore();
     private final TimeStore lastInWater = new TimeStore();
     private final TimeStore lastFlying = new TimeStore();
-    private final TimeStore inWeb = new TimeStore();
+    private final TimeStore lastInWeb = new TimeStore();
+    private final TimeStore lastOnLadder = new TimeStore();
+    private final TimeStore lastOnGround = new TimeStore();
 
     public static class TimeStore {
         long time;

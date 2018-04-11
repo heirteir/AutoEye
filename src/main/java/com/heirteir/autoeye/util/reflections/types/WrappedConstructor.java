@@ -10,9 +10,9 @@ import java.lang.reflect.InvocationTargetException;
     private final WrappedClass parent;
     private final Constructor constructor;
 
-    public Object newInstance(Object... args) {
+    public <T> T newInstance(Object... args) {
         try {
-            return constructor.newInstance(args);
+            return (T) constructor.newInstance(args);
         } catch (InstantiationException | IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();
             return null;

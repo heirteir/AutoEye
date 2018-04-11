@@ -17,9 +17,9 @@ import java.lang.reflect.Modifier;
         this.field.setAccessible(true);
     }
 
-    public Object get(Object parent) {
+    public <T> T get(Object parent) {
         try {
-            return this.field.get(parent);
+            return (T) this.field.get(parent);
         } catch (IllegalAccessException e) {
             e.printStackTrace();
             return null;

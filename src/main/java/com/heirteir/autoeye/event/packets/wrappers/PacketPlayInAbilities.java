@@ -10,6 +10,6 @@ import lombok.Getter;
     public PacketPlayInAbilities(Autoeye autoeye, Object packet) {
         super(packet);
         WrappedClass packetPlayOutAbilities = autoeye.getReflections().getPacketData().getWrappedPacketClass(autoeye.getReflections().getNetMinecraftServerString() + "PacketPlayInAbilities");
-        this.flying = (boolean) packetPlayOutAbilities.getFieldByName("b").get(packet);
+        this.flying = packetPlayOutAbilities.getFieldByName("b").get(packet);
     }
 }

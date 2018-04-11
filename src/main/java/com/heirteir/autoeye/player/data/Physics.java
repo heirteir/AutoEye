@@ -47,7 +47,7 @@ import lombok.Getter;
             this.clientAcceleration = new Vector(this.clientVelocity.getX() - this.clientAcceleration.getX(), this.clientVelocity.getY() - this.clientAcceleration.getY(), this.clientVelocity.getZ() - this.clientAcceleration.getZ());
             this.calculatedYAcceleration = this.calculatedYVelocity;
             if (!this.hasVelocity) {
-                if (this.flying || player.getTimeData().getLastFlying().getDifference() < 1000 || player.getLocationData().isTeleported() || player.getLocationData().isInWater()) {
+                if (this.flying || player.getLocationData().isTeleported() || player.getLocationData().isInWater() || player.getLocationData().isOnLadder() || player.getLocationData().isInWeb() || player.getTimeData().getLastFlying().getDifference() < 1000) {
                     this.calculatedYVelocity = this.clientVelocity.getY();
                 } else if (flying.isOnGround()) {
                     this.calculatedYVelocity = 0;

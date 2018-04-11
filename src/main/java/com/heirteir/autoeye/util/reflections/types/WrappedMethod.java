@@ -18,9 +18,9 @@ import java.util.Set;
         this.parameters = Sets.newHashSet(method.getParameterTypes());
     }
 
-    public Object invoke(Object object, Object... args) {
+    public <T> T invoke(Object object, Object... args) {
         try {
-            return this.method.invoke(object, args);
+            return (T) this.method.invoke(object, args);
         } catch (IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();
         }
