@@ -48,6 +48,6 @@ import java.util.Set;
     }
 
     public boolean containsMaterial(String materialName) {
-        return (boolean) this.autoeye.getReflections().getNMSClass("World").getMethod("a", this.axisAlignedBB.getClass(), this.autoeye.getReflections().getNMSClass("Material").getParent()).invoke(this.world, this.axisAlignedBB, this.autoeye.getReflections().getNMSClass("Material").getFieldByName(materialName).get(null));
+        return (boolean) this.autoeye.getReflections().getNMSClass("World").getMethodByTypes(this.axisAlignedBB.getClass(), this.autoeye.getReflections().getNMSClass("Material").getParent()).invoke(this.world, this.axisAlignedBB, this.autoeye.getReflections().getNMSClass("Material").getFieldByName(materialName).get(null));
     }
 }

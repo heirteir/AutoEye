@@ -34,7 +34,7 @@ import org.bukkit.util.NumberConversions;
 
     public void reset(Player player) {
         teleportLocation = new Vector((float) player.getLocation().getX(), (float) player.getLocation().getY(), (float) player.getLocation().getZ());
-        this.solidBlocks = new BlockSet(this.axisAlignedBB.offset(0, -0.2D, 0, 0, 0, 0).getSolidBlocks());
+        this.solidBlocks = new BlockSet(this.axisAlignedBB.offset(0, -0.08D, 0, 0, 0, 0).getSolidBlocks());
     }
 
     public void update(Autoeye autoeye, AutoEyePlayer player, PacketPlayInFlying flying) {

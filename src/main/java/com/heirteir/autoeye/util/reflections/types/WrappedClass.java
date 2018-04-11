@@ -92,6 +92,21 @@ import java.util.Set;
         return this.getFieldByType(type, false);
     }
 
+    public WrappedMethod getMethodByTypes(Class... parameters) {
+        Set<Class> tempParameters = Sets.newHashSet(parameters);
+        for (Method method : this.parent.getDeclaredMethods()) {
+            if (parameters.length == 0 || Sets.newHashSet(method.getParameterTypes()).containsAll(tempParameters)) {
+                return new WrappedMethod(this, method);
+            }
+        }
+        for (Method method : this.parent.getMethods()) {
+            if (parameters.length == 0 || Sets.newHashSet(method.getParameterTypes()).containsAll(tempParameters)) {
+                return new WrappedMethod(this, method);
+            }
+        }
+        return null;
+    }
+
     public WrappedMethod getMethod(String name, Class... parameters) {
         Set<WrappedMethod> methods = this.cachedMethods.get(name);
         Set<Class> tempParameters = Sets.newHashSet(parameters);
