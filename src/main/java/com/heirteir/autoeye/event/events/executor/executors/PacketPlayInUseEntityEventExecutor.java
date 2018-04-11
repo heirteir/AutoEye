@@ -13,6 +13,7 @@ import lombok.Getter;
     }
 
     @Override public void run(PacketPlayInUseEntityEvent event) {
+        event.getPlayer().getTimeData().getLastUseEntity().update();
         this.bulkRunChecks(event);
     }
 }
