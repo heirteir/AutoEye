@@ -14,7 +14,7 @@ public class Step extends Check<PacketPlayInFlyingEvent> {
     }
 
     @Override public boolean canRun(PacketPlayInFlyingEvent event) {
-        return event.getPacket().isChild() && event.getPacket().isHasPos() && event.getPacket().isOnGround();
+        return event.getPacket().isOnGround();
     }
 
     @Override public void revert(Autoeye autoeye, PacketPlayInFlyingEvent event) {

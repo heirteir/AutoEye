@@ -16,7 +16,7 @@ import java.util.Set;
     private final Object axisAlignedBB;
     private final Object world;
 
-    public WrappedAxisAlignedBB(Autoeye autoeye, World world, Object axisAlignedBB) {
+    private WrappedAxisAlignedBB(Autoeye autoeye, World world, Object axisAlignedBB) {
         this.autoeye = autoeye;
         this.axisAlignedBB = axisAlignedBB;
         this.bukkitWorld = world;
@@ -31,7 +31,7 @@ import java.util.Set;
         return new WrappedAxisAlignedBB(this.autoeye, this.bukkitWorld, autoeye.getReflections().getNMSClass("AxisAlignedBB").getConstructor(double.class, double.class, double.class, double.class, double.class, double.class).newInstance(this.get("a") + minX, this.get("b") + minY, this.get("c") + minZ, this.get("d") + maxX, this.get("e") + maxY, this.get("f") + maxZ));
     }
 
-    private double get(String value) {
+    public double get(String value) {
         return this.get(this.axisAlignedBB, value);
     }
 
@@ -45,5 +45,9 @@ import java.util.Set;
             blocks.add(this.bukkitWorld.getBlockAt((int) this.get(object, "a"), (int) this.get(object, "b"), (int) this.get(object, "c")));
         }
         return blocks;
+    }
+
+    public boolean containsMaterial(String materialName) {
+        return (boolean) this.autoeye.getReflections().getNMSClass("World").getMethod("a", this.axisAlignedBB.getClass(), this.autoeye.getReflections().getNMSClass("Material").getParent()).invoke(this.world, this.axisAlignedBB, this.autoeye.getReflections().getNMSClass("Material").getFieldByName(materialName).get(null));
     }
 }
