@@ -1,7 +1,6 @@
 package com.heirteir.autoeye.event.events.executor.executors;
 
 import com.heirteir.autoeye.Autoeye;
-import com.heirteir.autoeye.check.checks.combat.KillAuraRotation;
 import com.heirteir.autoeye.check.checks.movement.*;
 import com.heirteir.autoeye.event.events.PacketPlayInFlyingEvent;
 import com.heirteir.autoeye.event.events.executor.CheckEventExecutor;
@@ -16,9 +15,6 @@ public class PacketPlayInFlyingEventExecutor extends CheckEventExecutor<PacketPl
         this.checks.add(new SpoofedOnGroundPacket());
         this.checks.add(new Step());
         this.checks.add(new Timer());
-
-        //combat
-        this.checks.add(new KillAuraRotation());
     }
 
     @Override public void run(PacketPlayInFlyingEvent event) {

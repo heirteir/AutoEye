@@ -11,7 +11,7 @@ public class Timer extends Check<PacketPlayInFlyingEvent> {
 
     @Override public boolean check(Autoeye autoeye, PacketPlayInFlyingEvent event) {
         long difference = event.getPlayer().getTimeData().getDifference(event.getPlayer().getPhysics().getPreviousPacketPlayInFlying().getTime(), event.getPacket().getTime());
-        return difference > 0 && difference < 45 && (difference < 10L || this.checkThreshold(event.getPlayer(), 2, 45L));
+        return difference > 0 && difference < 45 && this.checkThreshold(event.getPlayer(), 2, 45L);
     }
 
     @Override public boolean canRun(PacketPlayInFlyingEvent event) {

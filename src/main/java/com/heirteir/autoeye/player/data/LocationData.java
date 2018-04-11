@@ -26,6 +26,7 @@ import org.bukkit.util.NumberConversions;
     private boolean onLadder;
     private boolean serverOnGround;
     private boolean onPiston;
+    private float yawDiff;
 
     public LocationData(Autoeye autoeye, AutoEyePlayer player) {
         this.axisAlignedBB = new WrappedAxisAlignedBB(autoeye, player.getPlayer());
@@ -38,6 +39,9 @@ import org.bukkit.util.NumberConversions;
     }
 
     public void update(Autoeye autoeye, AutoEyePlayer player, PacketPlayInFlying flying) {
+        if (flying.isHasLook()) {
+            this.yawDiff = (clampYaw((float) (((flying.getYaw() + 90F) * Math.PI) / 180F)) - clampYaw((float) (((player.getPlayer().getEyeLocation().getYaw() + 90F) * Math.PI) / 180F)));
+        }
         this.axisAlignedBB = new WrappedAxisAlignedBB(autoeye, player.getPlayer());
         WrappedAxisAlignedBB offset = this.axisAlignedBB.offset(0, -0.08D, 0, 0, 0, 0);
         this.solidBlocks = new BlockSet(offset.getSolidBlocks());
@@ -73,5 +77,16 @@ import org.bukkit.util.NumberConversions;
             this.teleportLocation = new Vector((float) player.getPlayer().getLocation().getX(), (float) player.getPlayer().getLocation().getY(), (float) player.getPlayer().getLocation().getZ());
             this.move = 0;
         }
+    }
+
+    private float clampYaw(float dub) {
+        dub %= 2 * Math.PI;
+        if (dub >= Math.PI) {
+            dub -= 2 * Math.PI;
+        }
+        if (dub < -Math.PI) {
+            dub += 2 * Math.PI;
+        }
+        return dub;
     }
 }

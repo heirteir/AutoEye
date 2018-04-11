@@ -5,7 +5,7 @@ import com.heirteir.autoeye.Autoeye;
 import lombok.Getter;
 import org.bukkit.World;
 import org.bukkit.block.Block;
-import org.bukkit.entity.Player;
+import org.bukkit.entity.Entity;
 
 import java.util.Collection;
 import java.util.Set;
@@ -23,8 +23,8 @@ import java.util.Set;
         this.world = autoeye.getReflections().getCBClass("CraftWorld").getMethod("getHandle").invoke(world);
     }
 
-    public WrappedAxisAlignedBB(Autoeye autoeye, Player player) {
-        this(autoeye, player.getWorld(), autoeye.getReflections().getNMSClass("EntityPlayer").getMethod("getBoundingBox").invoke(autoeye.getReflections().getEntityPlayer(player)));
+    public WrappedAxisAlignedBB(Autoeye autoeye, Entity entity) {
+        this(autoeye, entity.getWorld(), autoeye.getReflections().getNMSClass("Entity").getMethod("getBoundingBox").invoke(autoeye.getReflections().getCBClass("entity.CraftEntity").getMethod("getHandle").invoke(entity)));
     }
 
     public WrappedAxisAlignedBB offset(double minX, double minY, double minZ, double maxX, double maxY, double maxZ) {

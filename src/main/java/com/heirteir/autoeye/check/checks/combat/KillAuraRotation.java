@@ -2,22 +2,48 @@ package com.heirteir.autoeye.check.checks.combat;
 
 import com.heirteir.autoeye.Autoeye;
 import com.heirteir.autoeye.check.Check;
-import com.heirteir.autoeye.event.events.PacketPlayInFlyingEvent;
+import com.heirteir.autoeye.event.events.PacketPlayInUseEntityEvent;
+import com.heirteir.autoeye.util.reflections.wrappers.WrappedAxisAlignedBB;
+import org.bukkit.entity.Entity;
+import org.bukkit.entity.Player;
 
-public class KillAuraRotation extends Check<PacketPlayInFlyingEvent> {
+public class KillAuraRotation extends Check<PacketPlayInUseEntityEvent> {
     public KillAuraRotation() {
-        super("KillAura (Rotation)");
+        super("Kill Aura (Rotation)");
     }
 
-    @Override public boolean check(Autoeye autoeye, PacketPlayInFlyingEvent event) {
-        System.out.println(Math.abs(event.getPacket().getYaw() - event.getPlayer().getPhysics().getPreviousPacketPlayInFlying().getYaw()));
-        return Math.abs(event.getPacket().getYaw() - event.getPlayer().getPhysics().getPreviousPacketPlayInFlying().getYaw()) > 45.0F && Math.abs(event.getPacket().getPitch() - event.getPlayer().getPhysics().getPreviousPacketPlayInFlying().getPitch()) < 2.0F && this.checkThreshold(event.getPlayer(), 5, 5000L);
+    @Override public boolean check(Autoeye autoeye, PacketPlayInUseEntityEvent event) {
+        if (Math.abs(Math.abs(yawToLocation(autoeye, event.getPlayer().getPlayer(), event.getPacket().getEntity())) - Math.abs(clampYaw(degreesToRadians(event.getPlayer().getPlayer().getEyeLocation().getYaw())))) <= Math.abs(event.getPlayer().getLocationData().getYawDiff())) {
+            return this.checkThreshold(event.getPlayer(), 3);
+        } else {
+            return this.resetThreshold(event.getPlayer());
+        }
     }
 
-    @Override public boolean canRun(PacketPlayInFlyingEvent event) {
-        return event.getPlayer().getPhysics().getPreviousPacketPlayInFlying() != null && event.getPlayer().getTimeData().getLastUseEntity().getDifference() < 300L;
+    @Override public boolean canRun(PacketPlayInUseEntityEvent event) {
+        return true;
     }
 
-    @Override public void revert(Autoeye autoeye, PacketPlayInFlyingEvent event) {
+    @Override public void revert(Autoeye autoeye, PacketPlayInUseEntityEvent event) {
+    }
+
+    private float yawToLocation(Autoeye autoeye, Player player, Entity entity) {
+        WrappedAxisAlignedBB bb = new WrappedAxisAlignedBB(autoeye, entity);
+        return (float) Math.atan2(((bb.get("c") + bb.get("f")) / 2F) - player.getEyeLocation().getZ(), ((bb.get("a") + bb.get("d")) / 2F) - player.getEyeLocation().getX());
+    }
+
+    private float degreesToRadians(float yaw) {
+        return (float) (((yaw + 90F) * Math.PI) / 180F);
+    }
+
+    private float clampYaw(float dub) {
+        dub %= 2 * Math.PI;
+        if (dub >= Math.PI) {
+            dub -= 2 * Math.PI;
+        }
+        if (dub < -Math.PI) {
+            dub += 2 * Math.PI;
+        }
+        return dub;
     }
 }
