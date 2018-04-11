@@ -5,10 +5,7 @@ import com.google.common.collect.Sets;
 import com.heirteir.autoeye.Autoeye;
 import com.heirteir.autoeye.event.events.*;
 import com.heirteir.autoeye.event.events.executor.EventExecutor;
-import com.heirteir.autoeye.event.events.executor.executors.PacketPlayInAbilitiesEventExecutor;
-import com.heirteir.autoeye.event.events.executor.executors.PacketPlayInFlyingEventExecutor;
-import com.heirteir.autoeye.event.events.executor.executors.PlayerTeleportEventExecutor;
-import com.heirteir.autoeye.event.events.executor.executors.PlayerVelocityEventExecutor;
+import com.heirteir.autoeye.event.events.executor.executors.*;
 
 import java.util.Map;
 import java.util.Set;
@@ -24,6 +21,7 @@ public class EventHandler {
         //check events
         this.register(PacketPlayInFlyingEvent.class, new PacketPlayInFlyingEventExecutor(autoeye));
         //updaters
+        this.register(PacketPlayInUseEntityEvent.class, new PacketPlayInUseEntityEventExecutor(autoeye));
         this.register(PlayerTeleportEvent.class, new PlayerTeleportEventExecutor(autoeye));
         this.register(PlayerVelocityEvent.class, new PlayerVelocityEventExecutor(autoeye));
         this.register(PacketPlayInAbilitiesEvent.class, new PacketPlayInAbilitiesEventExecutor(autoeye));

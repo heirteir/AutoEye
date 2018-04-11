@@ -4,6 +4,7 @@ import com.heirteir.autoeye.event.packets.wrappers.PacketPlayInFlying;
 import com.heirteir.autoeye.player.AutoEyePlayer;
 import com.heirteir.autoeye.util.Vector;
 import lombok.Getter;
+import lombok.Setter;
 
 @Getter public class Physics {
     public static final float GRAVITY = -0.07839966F;
