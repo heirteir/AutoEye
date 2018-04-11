@@ -14,12 +14,16 @@ public class PacketPlayInFlyingEventExecutor extends CheckEventExecutor<PacketPl
         this.checks.add(new SlimeJump());
         this.checks.add(new SpoofedOnGroundPacket());
         this.checks.add(new Step());
+        this.checks.add(new Timer());
     }
 
     @Override public void run(PacketPlayInFlyingEvent event) {
         event.getPlayer().update(this.autoeye, event);
         if (event.getPacket().isChild() && event.getPacket().isHasPos() && !event.getPlayer().getPhysics().isFlying() && !event.getPlayer().getLocationData().isTeleported()) {
             this.bulkRunChecks(event);
+        }
+        if (event.getPacket().isChild() && event.getPacket().isHasPos()) {
+            event.getPlayer().getPhysics().setPreviousPacketPlayInFlying(event.getPacket());
         }
     }
 }

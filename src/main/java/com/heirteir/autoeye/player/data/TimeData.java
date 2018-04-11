@@ -8,7 +8,11 @@ import lombok.Getter;
     private final TimeStore lastFlying = new TimeStore();
     private final TimeStore lastInWeb = new TimeStore();
     private final TimeStore lastOnLadder = new TimeStore();
-    private final TimeStore lastOnGround = new TimeStore();
+    private final TimeStore lastOnPiston = new TimeStore();
+
+    public long getDifference(long a, long b) {
+        return b - a;
+    }
 
     public static class TimeStore {
         long time;

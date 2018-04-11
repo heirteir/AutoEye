@@ -5,12 +5,14 @@ import com.heirteir.autoeye.util.reflections.types.WrappedClass;
 import lombok.Getter;
 
 @Getter public class PacketPlayInFlying extends PacketAbstract {
+    private final long time;
+    private final boolean child;
     private final float x, y, z, yaw, pitch;
     private final boolean onGround, hasPos, hasLook;
-    private boolean child;
 
     public PacketPlayInFlying(Autoeye autoeye, Object packet, boolean child) {
         super(packet);
+        this.time = System.currentTimeMillis();
         this.child = child;
         WrappedClass packetPlayInFlying = autoeye.getReflections().getPacketData().getWrappedPacketClass(autoeye.getReflections().getNetMinecraftServerString() + "PacketPlayInFlying");
         this.x = ((Double) packetPlayInFlying.getFieldByName("x").get(packet)).floatValue();

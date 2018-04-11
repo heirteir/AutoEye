@@ -10,6 +10,8 @@ import lombok.Getter;
     private PacketPlayInFlying previousPacketPlayInFlying;
     private Vector clientVelocity;
     private Vector clientAcceleration;
+    private Vector serverVelocity;
+    private Vector serverAcceleration;
     private float jumpVelocity;
     private float calculatedYVelocity;
     private float calculatedYAcceleration;
@@ -17,6 +19,10 @@ import lombok.Getter;
     private int offGroundTicks;
     private boolean flying;
     private boolean hasVelocity;
+
+    public void setPreviousPacketPlayInFlying(PacketPlayInFlying previousPacketPlayInFlying) {
+        this.previousPacketPlayInFlying = previousPacketPlayInFlying;
+    }
 
     public Physics(AutoEyePlayer player) {
         this.reset(player);
@@ -26,6 +32,8 @@ import lombok.Getter;
         this.previousPacketPlayInFlying = null;
         this.clientVelocity = new Vector(0, 0, 0);
         this.clientAcceleration = new Vector(0, 0, 0);
+        this.serverVelocity = new Vector(0, 0, 0);
+        this.serverAcceleration = new Vector(0, 0, 0);
         this.jumpVelocity = 0.42F;
         this.moving = false;
         this.calculatedYVelocity = 0;
@@ -47,13 +55,13 @@ import lombok.Getter;
             this.clientAcceleration = new Vector(this.clientVelocity.getX() - this.clientAcceleration.getX(), this.clientVelocity.getY() - this.clientAcceleration.getY(), this.clientVelocity.getZ() - this.clientAcceleration.getZ());
             this.calculatedYAcceleration = this.calculatedYVelocity;
             if (!this.hasVelocity) {
+                this.offGroundTicks++;
                 if (this.flying || player.getLocationData().isTeleported() || player.getLocationData().isInWater() || player.getLocationData().isOnLadder() || player.getLocationData().isInWeb() || player.getTimeData().getLastFlying().getDifference() < 1000) {
                     this.calculatedYVelocity = this.clientVelocity.getY();
                 } else if (flying.isOnGround()) {
                     this.calculatedYVelocity = 0;
                     this.offGroundTicks = 0;
                 } else {
-                    this.offGroundTicks++;
                     if ((previousPacketPlayInFlying.isOnGround() && this.clientVelocity.getY() > 0)) {
                         this.calculatedYVelocity = jumpVelocity;
                     } else {
@@ -65,8 +73,10 @@ import lombok.Getter;
                     }
                 }
             }
+            this.serverAcceleration = this.serverVelocity;
+            this.serverVelocity = new Vector((float) player.getPlayer().getVelocity().getX(), (float) player.getPlayer().getVelocity().getY(), (float) player.getPlayer().getVelocity().getZ());
+            this.serverAcceleration = new Vector(this.serverVelocity.getX() - this.serverAcceleration.getX(), this.serverVelocity.getY() - this.serverAcceleration.getY(), this.serverVelocity.getZ() - this.serverAcceleration.getZ());
             this.calculatedYAcceleration = this.calculatedYVelocity - this.calculatedYAcceleration;
-            this.previousPacketPlayInFlying = flying;
             this.hasVelocity = false;
         }
     }
