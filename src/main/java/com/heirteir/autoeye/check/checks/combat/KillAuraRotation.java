@@ -19,7 +19,7 @@ public class KillAuraRotation extends Check<PacketPlayInUseEntityEvent> {
         dist = Math.abs(dist);
         yawDiff = Math.abs(yawDiff);
         System.out.println(dist + " " + diff + " " + yawDiff);
-        return ((yawDiff > 5 && diff < 3) || (yawDiff > 2 && diff < 1)) ? this.checkThreshold(event.getPlayer(), 2) : this.resetThreshold(event.getPlayer());
+        return ((yawDiff > 5 && diff < 3) || (yawDiff > 2 && diff < 1) || (Math.abs(diff - dist) > 20)) ? this.checkThreshold(event.getPlayer(), 3) : this.resetThreshold(event.getPlayer());
     }
 
     @Override public boolean canRun(PacketPlayInUseEntityEvent event) {
