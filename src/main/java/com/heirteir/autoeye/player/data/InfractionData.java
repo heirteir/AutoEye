@@ -3,7 +3,7 @@ package com.heirteir.autoeye.player.data;
 import com.google.common.collect.Maps;
 import com.heirteir.autoeye.Autoeye;
 import com.heirteir.autoeye.check.Check;
-import com.heirteir.autoeye.util.TimeUtil;
+import com.heirteir.autoeye.player.AutoEyePlayer;
 
 import java.util.Map;
 
@@ -20,9 +20,9 @@ public class InfractionData {
         return infractions.computeIfAbsent(check, k -> new Infraction());
     }
 
-    public void addVL(Check check) {
+    public void addVL(AutoEyePlayer player, Check check) {
         Infraction infraction = this.getInfraction(check.getClass());
-        infraction.add();
+        infraction.add(player);
         this.autoeye.getPluginLogger().broadcastSyncMessage(check.getName() + " " + infraction.getAmount());
     }
 
@@ -39,8 +39,8 @@ public class InfractionData {
             this.lastCountTime = 0;
         }
 
-        void add() {
-            if (TimeUtil.getTimeDifference(System.currentTimeMillis(), this.lastInfractionTime) >= 20000) {
+        void add(AutoEyePlayer player) {
+            if (player.getTimeData().getDifference(this.lastInfractionTime, System.currentTimeMillis()) >= 20000) {
                 this.amount = 0;
             }
             this.lastInfractionTime = System.currentTimeMillis();
@@ -51,8 +51,8 @@ public class InfractionData {
             return this.amount;
         }
 
-        public int addThreshold(long difference) {
-            if (TimeUtil.getTimeDifference(System.currentTimeMillis(), this.lastCountTime) >= difference) {
+        public int addThreshold(AutoEyePlayer player, long difference) {
+            if (player.getTimeData().getDifference(this.lastCountTime, System.currentTimeMillis()) >= difference) {
                 this.resetThreshold();
             }
             this.lastCountTime = System.currentTimeMillis();

@@ -4,6 +4,7 @@ import com.google.common.collect.Sets;
 import com.heirteir.autoeye.event.EventHandler;
 import com.heirteir.autoeye.event.packets.ChannelInjector;
 import com.heirteir.autoeye.player.AutoEyePlayerList;
+import com.heirteir.autoeye.util.MathUtil;
 import com.heirteir.autoeye.util.logger.Logger;
 import com.heirteir.autoeye.util.reflections.Reflections;
 import com.heirteir.autoeye.util.server.Version;
@@ -19,6 +20,7 @@ import org.bukkit.plugin.java.JavaPlugin;
     private final ChannelInjector channelInjector;
     private final EventHandler eventHandler;
     private final AutoEyePlayerList autoEyePlayerList;
+    private final MathUtil mathUtil;
 
     public Autoeye() {
         this.pluginLogger = new Logger(this);
@@ -28,11 +30,13 @@ import org.bukkit.plugin.java.JavaPlugin;
             this.eventHandler = new EventHandler();
             this.autoEyePlayerList = new AutoEyePlayerList(this);
             this.channelInjector = new ChannelInjector();
+            this.mathUtil = new MathUtil();
         } else {
             this.reflections = null;
             this.channelInjector = null;
             this.eventHandler = null;
             this.autoEyePlayerList = null;
+            this.mathUtil = null;
         }
     }
 

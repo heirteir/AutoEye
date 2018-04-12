@@ -2,17 +2,15 @@ package com.heirteir.autoeye.player.data;
 
 import com.heirteir.autoeye.event.packets.wrappers.PacketPlayInFlying;
 import com.heirteir.autoeye.player.AutoEyePlayer;
-import com.heirteir.autoeye.util.Vector;
+import com.heirteir.autoeye.util.Vector3D;
 import lombok.Getter;
-import lombok.Setter;
 
 @Getter public class Physics {
     public static final float GRAVITY = -0.07839966F;
-    private PacketPlayInFlying previousPacketPlayInFlying;
-    private Vector clientVelocity;
-    private Vector clientAcceleration;
-    private Vector serverVelocity;
-    private Vector serverAcceleration;
+    private Vector3D clientVelocity;
+    private Vector3D clientAcceleration;
+    private Vector3D serverVelocity;
+    private Vector3D serverAcceleration;
     private float jumpVelocity;
     private float calculatedYVelocity;
     private float calculatedYAcceleration;
@@ -21,20 +19,15 @@ import lombok.Setter;
     private boolean flying;
     private boolean hasVelocity;
 
-    public void setPreviousPacketPlayInFlying(PacketPlayInFlying previousPacketPlayInFlying) {
-        this.previousPacketPlayInFlying = previousPacketPlayInFlying;
-    }
-
     public Physics(AutoEyePlayer player) {
         this.reset(player);
     }
 
     public void reset(AutoEyePlayer player) {
-        this.previousPacketPlayInFlying = null;
-        this.clientVelocity = new Vector(0, 0, 0);
-        this.clientAcceleration = new Vector(0, 0, 0);
-        this.serverVelocity = new Vector(0, 0, 0);
-        this.serverAcceleration = new Vector(0, 0, 0);
+        this.clientVelocity = new Vector3D(0, 0, 0);
+        this.clientAcceleration = new Vector3D(0, 0, 0);
+        this.serverVelocity = new Vector3D(0, 0, 0);
+        this.serverAcceleration = new Vector3D(0, 0, 0);
         this.jumpVelocity = 0.42F;
         this.moving = false;
         this.calculatedYVelocity = 0;
@@ -44,16 +37,15 @@ import lombok.Setter;
     }
 
     public void update(AutoEyePlayer player, PacketPlayInFlying flying) {
-        if (flying.isChild() && flying.isHasPos()) {
+        if (player.getLocationData().isChangedPos()) {
             if (this.flying) {
                 player.getTimeData().getLastFlying().update();
             }
             this.jumpVelocity = 0.42F;
-            this.previousPacketPlayInFlying = this.previousPacketPlayInFlying == null ? flying : this.previousPacketPlayInFlying;
             this.moving = this.clientVelocity.getX() != 0 || this.clientVelocity.getY() != 0 || this.clientVelocity.getZ() != 0;
             this.clientAcceleration = this.clientVelocity;
-            this.clientVelocity = new Vector(flying.getX() - previousPacketPlayInFlying.getX(), flying.getY() - previousPacketPlayInFlying.getY(), flying.getZ() - previousPacketPlayInFlying.getZ());
-            this.clientAcceleration = new Vector(this.clientVelocity.getX() - this.clientAcceleration.getX(), this.clientVelocity.getY() - this.clientAcceleration.getY(), this.clientVelocity.getZ() - this.clientAcceleration.getZ());
+            this.clientVelocity = new Vector3D(player.getLocationData().getLocation().getX() - player.getLocationData().getPreviousLocation().getX(), player.getLocationData().getLocation().getY() - player.getLocationData().getPreviousLocation().getY(), player.getLocationData().getLocation().getZ() - player.getLocationData().getPreviousLocation().getZ());
+            this.clientAcceleration = new Vector3D(this.clientVelocity.getX() - this.clientAcceleration.getX(), this.clientVelocity.getY() - this.clientAcceleration.getY(), this.clientVelocity.getZ() - this.clientAcceleration.getZ());
             this.calculatedYAcceleration = this.calculatedYVelocity;
             if (!this.hasVelocity) {
                 this.offGroundTicks++;
@@ -63,7 +55,7 @@ import lombok.Setter;
                     this.calculatedYVelocity = 0;
                     this.offGroundTicks = 0;
                 } else {
-                    if ((previousPacketPlayInFlying.isOnGround() && this.clientVelocity.getY() > 0)) {
+                    if ((player.getLocationData().isPreviousOnGround() && this.clientVelocity.getY() > 0)) {
                         this.calculatedYVelocity = jumpVelocity;
                     } else {
                         this.calculatedYVelocity -= 0.08F;
@@ -75,8 +67,8 @@ import lombok.Setter;
                 }
             }
             this.serverAcceleration = this.serverVelocity;
-            this.serverVelocity = new Vector((float) player.getPlayer().getVelocity().getX(), (float) player.getPlayer().getVelocity().getY(), (float) player.getPlayer().getVelocity().getZ());
-            this.serverAcceleration = new Vector(this.serverVelocity.getX() - this.serverAcceleration.getX(), this.serverVelocity.getY() - this.serverAcceleration.getY(), this.serverVelocity.getZ() - this.serverAcceleration.getZ());
+            this.serverVelocity = new Vector3D((float) player.getPlayer().getVelocity().getX(), (float) player.getPlayer().getVelocity().getY(), (float) player.getPlayer().getVelocity().getZ());
+            this.serverAcceleration = new Vector3D(this.serverVelocity.getX() - this.serverAcceleration.getX(), this.serverVelocity.getY() - this.serverAcceleration.getY(), this.serverVelocity.getZ() - this.serverAcceleration.getZ());
             this.calculatedYAcceleration = this.calculatedYVelocity - this.calculatedYAcceleration;
             this.hasVelocity = false;
         }

@@ -25,7 +25,7 @@ import org.bukkit.entity.Entity;
         this.entity = tempEntity;
     }
 
-    private enum ActionType {
-        ATTACK, INTERACT, INTERACT_ALL, UNKNOWN
+    public enum ActionType {
+        ATTACK, INTERACT, INTERACT_ALL, INTERACT_AT, UNKNOWN
     }
 }

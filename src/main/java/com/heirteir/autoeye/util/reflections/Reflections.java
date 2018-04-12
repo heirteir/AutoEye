@@ -13,7 +13,6 @@ import java.util.Map;
     private final String craftBukkitString;
     private final String netMinecraftServerString;
     private final PacketData packetData;
-    private final WrappedMethod getHandle;
 
     public Reflections(String bukkitVersion) {
         String version = bukkitVersion.split("\\.")[3];
@@ -21,11 +20,6 @@ import java.util.Map;
         this.craftBukkitString = "org.bukkit.craftbukkit." + version + ".";
         this.netMinecraftServerString = "net.minecraft.server." + version + ".";
         this.packetData = new PacketData();
-        this.getHandle = this.getCBClass("entity.CraftPlayer").getMethod("getHandle");
-    }
-
-    public Object getEntityPlayer(Player player) {
-        return this.getHandle.invoke(player);
     }
 
     public boolean classExists(String name) {

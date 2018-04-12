@@ -11,7 +11,7 @@ public class PlayerTeleportEventExecutor extends EventExecutor<PlayerTeleportEve
 
     @Override public void run(PlayerTeleportEvent event) {
         event.getPlayer().getTimeData().getLastTeleport().update();
-        event.getPlayer().getLocationData().reset(event.getPlayer().getPlayer());
+        event.getPlayer().getLocationData().reset(this.autoeye, event.getPlayer());
         event.getPlayer().getPhysics().reset(event.getPlayer());
     }
 }

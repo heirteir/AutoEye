@@ -19,11 +19,8 @@ public class PacketPlayInFlyingEventExecutor extends CheckEventExecutor<PacketPl
 
     @Override public void run(PacketPlayInFlyingEvent event) {
         event.getPlayer().update(this.autoeye, event);
-        if (event.getPacket().isChild() && event.getPacket().isHasPos() && !event.getPlayer().getPhysics().isFlying() && !event.getPlayer().getLocationData().isTeleported()) {
+        if (event.getPlayer().getLocationData().isChangedPos() && !event.getPlayer().getPhysics().isFlying() && !event.getPlayer().getLocationData().isTeleported()) {
             this.bulkRunChecks(event);
-        }
-        if (event.getPacket().isChild() && event.getPacket().isHasPos()) {
-            event.getPlayer().getPhysics().setPreviousPacketPlayInFlying(event.getPacket());
         }
     }
 }

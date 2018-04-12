@@ -2,6 +2,7 @@ package com.heirteir.autoeye.event.packets.channelhandler;
 
 import com.heirteir.autoeye.Autoeye;
 import com.heirteir.autoeye.player.AutoEyePlayer;
+import com.heirteir.autoeye.util.reflections.wrappers.WrappedEntity;
 import org.bukkit.entity.Player;
 
 public class ChannelHandler1_7 extends ChannelHandlerAbstract {
@@ -28,7 +29,7 @@ public class ChannelHandler1_7 extends ChannelHandlerAbstract {
     }
 
     private net.minecraft.util.io.netty.channel.Channel getChannel(Player player) {
-        return (net.minecraft.util.io.netty.channel.Channel) this.autoeye.getReflections().getNMSClass("NetworkManager").getFirstFieldByType(net.minecraft.util.io.netty.channel.Channel.class).get(networkManagerField.get(playerConnectionField.get(autoeye.getReflections().getEntityPlayer(player))));
+        return (net.minecraft.util.io.netty.channel.Channel) this.autoeye.getReflections().getNMSClass("NetworkManager").getFirstFieldByType(net.minecraft.util.io.netty.channel.Channel.class).get(networkManagerField.get(playerConnectionField.get(new WrappedEntity(autoeye, player).getRawEntity())));
     }
 
     private static class ChannelHandler extends net.minecraft.util.io.netty.channel.ChannelDuplexHandler {
