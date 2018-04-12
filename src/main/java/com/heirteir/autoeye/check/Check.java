@@ -23,7 +23,7 @@ import lombok.Getter;
     }
 
     protected boolean checkThreshold(AutoEyePlayer player, int amount, long time) {
-        return player.getInfractionData().getInfraction(this.getClass()).addThreshold(time) >= amount;
+        return player.getInfractionData().getInfraction(this.getClass()).addThreshold(player, time) >= amount;
     }
 
     protected boolean resetThreshold(AutoEyePlayer player) {

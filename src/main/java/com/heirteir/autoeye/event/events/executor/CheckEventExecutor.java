@@ -20,8 +20,8 @@ public abstract class CheckEventExecutor<T extends Event> extends EventExecutor<
     protected void bulkRunChecks(T event) {
         for (Check<T> check : this.checks) {
             if (check.canRun(event) && check.check(this.autoeye, event)) {
-                event.getPlayer().getInfractionData().addVL(check);
-                check.revert(this.autoeye,  event);
+                event.getPlayer().getInfractionData().addVL(event.getPlayer(), check);
+                check.revert(this.autoeye, event);
             }
         }
     }
