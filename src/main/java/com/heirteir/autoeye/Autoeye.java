@@ -1,10 +1,11 @@
 package com.heirteir.autoeye;
 
 import com.google.common.collect.Sets;
-import com.heirteir.autoeye.event.EventHandler;
+import com.heirteir.autoeye.event.events.EventHandler;
 import com.heirteir.autoeye.event.packets.ChannelInjector;
 import com.heirteir.autoeye.player.AutoEyePlayerList;
 import com.heirteir.autoeye.util.MathUtil;
+import com.heirteir.autoeye.util.TPS;
 import com.heirteir.autoeye.util.logger.Logger;
 import com.heirteir.autoeye.util.reflections.Reflections;
 import com.heirteir.autoeye.util.server.Version;
@@ -21,6 +22,7 @@ import org.bukkit.plugin.java.JavaPlugin;
     private final EventHandler eventHandler;
     private final AutoEyePlayerList autoEyePlayerList;
     private final MathUtil mathUtil;
+    private final TPS tps;
 
     public Autoeye() {
         this.pluginLogger = new Logger(this);
@@ -31,12 +33,14 @@ import org.bukkit.plugin.java.JavaPlugin;
             this.autoEyePlayerList = new AutoEyePlayerList(this);
             this.channelInjector = new ChannelInjector();
             this.mathUtil = new MathUtil();
+            this.tps = new TPS(this);
         } else {
             this.reflections = null;
             this.channelInjector = null;
             this.eventHandler = null;
             this.autoEyePlayerList = null;
             this.mathUtil = null;
+            this.tps = null;
         }
     }
 
@@ -46,6 +50,7 @@ import org.bukkit.plugin.java.JavaPlugin;
             Bukkit.getPluginManager().disablePlugin(this);
             return;
         }
+        this.tps.runTaskTimerAsynchronously(this, 100L, 1L);
         this.channelInjector.inject(this);
         this.autoEyePlayerList.createListener();
         this.eventHandler.createCheckEventExecutors(this);

@@ -10,6 +10,8 @@ import lombok.Getter;
     private final TimeStore lastOnLadder = new TimeStore();
     private final TimeStore lastOnPiston = new TimeStore();
     private final TimeStore lastUseEntity = new TimeStore();
+    private final TimeStore lastPacketPlayInFlying = new TimeStore();
+    private final TimeStore secondTick = new TimeStore();
 
     public long getDifference(long a, long b) {
         return b - a;

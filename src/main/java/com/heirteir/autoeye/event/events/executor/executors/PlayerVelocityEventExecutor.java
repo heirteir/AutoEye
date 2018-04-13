@@ -1,7 +1,7 @@
 package com.heirteir.autoeye.event.events.executor.executors;
 
 import com.heirteir.autoeye.Autoeye;
-import com.heirteir.autoeye.event.events.PlayerVelocityEvent;
+import com.heirteir.autoeye.event.events.event.PlayerVelocityEvent;
 import com.heirteir.autoeye.event.events.executor.EventExecutor;
 
 public class PlayerVelocityEventExecutor extends EventExecutor<PlayerVelocityEvent> {

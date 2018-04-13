@@ -2,7 +2,7 @@ package com.heirteir.autoeye.check.checks.movement;
 
 import com.heirteir.autoeye.Autoeye;
 import com.heirteir.autoeye.check.Check;
-import com.heirteir.autoeye.event.events.PacketPlayInFlyingEvent;
+import com.heirteir.autoeye.event.events.event.PacketPlayInFlyingEvent;
 
 public class FastLadder extends Check<PacketPlayInFlyingEvent> {
     public FastLadder() {

@@ -1,7 +1,7 @@
 package com.heirteir.autoeye.event.packets.channelhandler;
 
 import com.heirteir.autoeye.Autoeye;
-import com.heirteir.autoeye.event.events.*;
+import com.heirteir.autoeye.event.events.event.*;
 import com.heirteir.autoeye.event.packets.PacketType;
 import com.heirteir.autoeye.event.packets.wrappers.PacketPlayInAbilities;
 import com.heirteir.autoeye.event.packets.wrappers.PacketPlayInFlying;

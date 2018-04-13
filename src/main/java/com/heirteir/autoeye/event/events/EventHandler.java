@@ -1,9 +1,9 @@
-package com.heirteir.autoeye.event;
+package com.heirteir.autoeye.event.events;
 
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 import com.heirteir.autoeye.Autoeye;
-import com.heirteir.autoeye.event.events.*;
+import com.heirteir.autoeye.event.events.event.*;
 import com.heirteir.autoeye.event.events.executor.EventExecutor;
 import com.heirteir.autoeye.event.events.executor.executors.*;
 
@@ -19,7 +19,7 @@ public class EventHandler {
 
     public void createCheckEventExecutors(Autoeye autoeye) {
         //check events
-        this.register(PacketPlayInFlyingEvent.class, new PacketPlayInFlyingEventExecutor(autoeye));
+        this.register(PacketPlayInFlyingEvent.class, new PacketPlayInFlyingPosEventExecutor(autoeye));
         //updaters
         this.register(PacketPlayInUseEntityEvent.class, new PacketPlayInUseEntityEventExecutor(autoeye));
         this.register(PlayerTeleportEvent.class, new PlayerTeleportEventExecutor(autoeye));

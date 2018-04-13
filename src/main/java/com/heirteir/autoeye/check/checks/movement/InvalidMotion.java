@@ -2,7 +2,7 @@ package com.heirteir.autoeye.check.checks.movement;
 
 import com.heirteir.autoeye.Autoeye;
 import com.heirteir.autoeye.check.Check;
-import com.heirteir.autoeye.event.events.PacketPlayInFlyingEvent;
+import com.heirteir.autoeye.event.events.event.PacketPlayInFlyingEvent;
 import com.heirteir.autoeye.player.data.Physics;
 
 public class InvalidMotion extends Check<PacketPlayInFlyingEvent> {

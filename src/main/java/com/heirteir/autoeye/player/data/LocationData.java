@@ -15,7 +15,6 @@ import org.bukkit.util.NumberConversions;
 @Getter public class LocationData {
     private boolean teleported;
     private boolean inWater;
-    private int move;
     private Vector3D teleportLocation;
     private WrappedAxisAlignedBB axisAlignedBB;
     private BlockSet solidBlocks;
@@ -84,9 +83,8 @@ import org.bukkit.util.NumberConversions;
                 this.inWater = player.getTimeData().getLastInWater().getDifference() < 150;
             }
             this.teleported = player.getTimeData().getLastTeleport().getDifference() < 100;
-            if (++this.move >= 30 && this.axisAlignedBB.getSolidBlocks().size() == 0) {
+            if (player.getTimeData().getSecondTick().getDifference() >= 1000 && this.axisAlignedBB.getSolidBlocks().size() == 0) {
                 teleportLocation = new Vector3D(this.location.getX(), this.location.getY(), this.getLocation().getZ());
-                this.move = 0;
             }
         }
         if (this.changedLook = flying.isHasLook()) {

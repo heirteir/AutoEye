@@ -19,6 +19,8 @@ import org.bukkit.entity.Entity;
     }
 
     public float distance(float alpha, float beta) {
-        return (alpha - beta + 180F) % 360F - 180F;
+        float output = (alpha - beta + 180F) % 360F - 180F;
+        output += output < -180F ? 360F : (output > 180) ? -360 : 0;
+        return output;
     }
 }

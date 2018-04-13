@@ -18,6 +18,7 @@ import lombok.Getter;
     private int offGroundTicks;
     private boolean flying;
     private boolean hasVelocity;
+    private int movesPerSecond;
 
     public Physics(AutoEyePlayer player) {
         this.reset(player);
@@ -34,6 +35,7 @@ import lombok.Getter;
         this.calculatedYAcceleration = 0;
         this.offGroundTicks = 0;
         this.flying = player.getPlayer().isFlying();
+        this.movesPerSecond = 0;
     }
 
     public void update(AutoEyePlayer player, PacketPlayInFlying flying) {
@@ -72,6 +74,11 @@ import lombok.Getter;
             this.calculatedYAcceleration = this.calculatedYVelocity - this.calculatedYAcceleration;
             this.hasVelocity = false;
         }
+        if (player.getTimeData().getSecondTick().getDifference() >= 1000L) {
+            player.getTimeData().getSecondTick().update();
+            this.movesPerSecond = 0;
+        }
+        this.movesPerSecond++;
     }
 
     public void setFlying(boolean flying) {

@@ -2,11 +2,11 @@ package com.heirteir.autoeye.event.events.executor.executors;
 
 import com.heirteir.autoeye.Autoeye;
 import com.heirteir.autoeye.check.checks.movement.*;
-import com.heirteir.autoeye.event.events.PacketPlayInFlyingEvent;
+import com.heirteir.autoeye.event.events.event.PacketPlayInFlyingEvent;
 import com.heirteir.autoeye.event.events.executor.CheckEventExecutor;
 
-public class PacketPlayInFlyingEventExecutor extends CheckEventExecutor<PacketPlayInFlyingEvent> {
-    public PacketPlayInFlyingEventExecutor(Autoeye autoeye) {
+public class PacketPlayInFlyingPosEventExecutor extends CheckEventExecutor<PacketPlayInFlyingEvent> {
+    public PacketPlayInFlyingPosEventExecutor(Autoeye autoeye) {
         super(autoeye);
         this.checks.add(new FastLadder());
         this.checks.add(new InvalidMotion());
@@ -22,5 +22,6 @@ public class PacketPlayInFlyingEventExecutor extends CheckEventExecutor<PacketPl
         if (event.getPlayer().getLocationData().isChangedPos() && !event.getPlayer().getPhysics().isFlying() && !event.getPlayer().getLocationData().isTeleported()) {
             this.bulkRunChecks(event);
         }
+        event.getPlayer().getTimeData().getLastPacketPlayInFlying().update();
     }
 }

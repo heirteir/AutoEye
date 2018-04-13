@@ -2,7 +2,7 @@ package com.heirteir.autoeye.check.checks.combat;
 
 import com.heirteir.autoeye.Autoeye;
 import com.heirteir.autoeye.check.Check;
-import com.heirteir.autoeye.event.events.PacketPlayInUseEntityEvent;
+import com.heirteir.autoeye.event.events.event.PacketPlayInUseEntityEvent;
 
 public class Reach extends Check<PacketPlayInUseEntityEvent> {
     public Reach() {
@@ -14,7 +14,7 @@ public class Reach extends Check<PacketPlayInUseEntityEvent> {
     }
 
     @Override public boolean canRun(PacketPlayInUseEntityEvent event) {
-        return true;
+        return event.getPacket().getEntity() != null;
     }
 
     @Override public void revert(Autoeye autoeye, PacketPlayInUseEntityEvent event) {

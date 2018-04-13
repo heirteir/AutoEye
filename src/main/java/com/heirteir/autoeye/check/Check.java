@@ -1,7 +1,7 @@
 package com.heirteir.autoeye.check;
 
 import com.heirteir.autoeye.Autoeye;
-import com.heirteir.autoeye.event.events.Event;
+import com.heirteir.autoeye.event.events.event.Event;
 import com.heirteir.autoeye.player.AutoEyePlayer;
 import lombok.Getter;
 

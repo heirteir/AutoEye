@@ -13,7 +13,7 @@ import org.bukkit.entity.Entity;
     public PacketPlayInUseEntity(Autoeye autoeye, World world, Object packet) {
         super(packet);
         WrappedClass packetPlayInUseEntity = autoeye.getReflections().getPacketData().getWrappedPacketClass(autoeye.getReflections().getNetMinecraftServerString() + "PacketPlayInUseEntity");
-        this.actionType = ActionType.valueOf(((Enum) packetPlayInUseEntity.getFieldByName("action").get(packet)).name());
+        this.actionType = ActionType.fromString(((Enum) packetPlayInUseEntity.getFieldByName("action").get(packet)).name());
         int id = packetPlayInUseEntity.getFirstFieldByType(int.class).get(packet);
         Entity tempEntity = null;
         for (Entity entity : world.getEntities()) {
@@ -26,6 +26,15 @@ import org.bukkit.entity.Entity;
     }
 
     public enum ActionType {
-        ATTACK, INTERACT, INTERACT_ALL, INTERACT_AT, UNKNOWN
+        ATTACK, UNKNOWN;
+
+        public static ActionType fromString(String name) {
+            for (ActionType actionType : ActionType.values()) {
+                if (actionType.name().equals(name)) {
+                    return actionType;
+                }
+            }
+            return UNKNOWN;
+        }
     }
 }

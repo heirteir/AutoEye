@@ -1,7 +1,7 @@
 package com.heirteir.autoeye.event.events.executor.executors;
 
 import com.heirteir.autoeye.Autoeye;
-import com.heirteir.autoeye.event.events.PacketPlayInAbilitiesEvent;
+import com.heirteir.autoeye.event.events.event.PacketPlayInAbilitiesEvent;
 import com.heirteir.autoeye.event.events.executor.EventExecutor;
 
 public class PacketPlayInAbilitiesEventExecutor extends EventExecutor<PacketPlayInAbilitiesEvent> {

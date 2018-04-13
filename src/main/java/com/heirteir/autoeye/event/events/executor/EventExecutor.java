@@ -1,7 +1,7 @@
 package com.heirteir.autoeye.event.events.executor;
 
 import com.heirteir.autoeye.Autoeye;
-import com.heirteir.autoeye.event.events.Event;
+import com.heirteir.autoeye.event.events.event.Event;
 
 public abstract class EventExecutor<T extends Event> {
     protected final Autoeye autoeye;

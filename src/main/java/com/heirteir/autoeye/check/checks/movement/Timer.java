@@ -2,7 +2,7 @@ package com.heirteir.autoeye.check.checks.movement;
 
 import com.heirteir.autoeye.Autoeye;
 import com.heirteir.autoeye.check.Check;
-import com.heirteir.autoeye.event.events.PacketPlayInFlyingEvent;
+import com.heirteir.autoeye.event.events.event.PacketPlayInFlyingEvent;
 
 public class Timer extends Check<PacketPlayInFlyingEvent> {
     public Timer() {
@@ -10,13 +10,11 @@ public class Timer extends Check<PacketPlayInFlyingEvent> {
     }
 
     @Override public boolean check(Autoeye autoeye, PacketPlayInFlyingEvent event) {
-//        long difference = event.getPlayer().getTimeData().getDifference(event.getPlayer().getPhysics().getPreviousPacketPlayInFlying().getTime(), event.getPacket().getTime());
-        //return difference > 0 && difference < 45 && this.checkThreshold(event.getPlayer(), 2, 45L);
-        return false;
+        return event.getPlayer().getPhysics().getMovesPerSecond() > (21 + (20F - autoeye.getTps().get()));
     }
 
     @Override public boolean canRun(PacketPlayInFlyingEvent event) {
-        return event.getPlayer().getPhysics().isMoving();
+        return true;
     }
 
     @Override public void revert(Autoeye autoeye, PacketPlayInFlyingEvent event) {

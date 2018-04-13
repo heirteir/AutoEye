@@ -1,4 +1,4 @@
-package com.heirteir.autoeye.event.events;
+package com.heirteir.autoeye.event.events.event;
 
 import com.heirteir.autoeye.event.packets.wrappers.PacketPlayInAbilities;
 import com.heirteir.autoeye.player.AutoEyePlayer;

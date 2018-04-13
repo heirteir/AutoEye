@@ -3,7 +3,7 @@ package com.heirteir.autoeye.event.events.executor;
 import com.google.common.collect.Sets;
 import com.heirteir.autoeye.Autoeye;
 import com.heirteir.autoeye.check.Check;
-import com.heirteir.autoeye.event.events.Event;
+import com.heirteir.autoeye.event.events.event.Event;
 
 import java.util.Set;
 

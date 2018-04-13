@@ -1,11 +1,8 @@
 package com.heirteir.autoeye.player;
 
 import com.heirteir.autoeye.Autoeye;
-import com.heirteir.autoeye.event.events.PacketPlayInFlyingEvent;
-import com.heirteir.autoeye.player.data.InfractionData;
-import com.heirteir.autoeye.player.data.LocationData;
-import com.heirteir.autoeye.player.data.Physics;
-import com.heirteir.autoeye.player.data.TimeData;
+import com.heirteir.autoeye.event.events.event.PacketPlayInFlyingEvent;
+import com.heirteir.autoeye.player.data.*;
 import com.heirteir.autoeye.util.Vector3D;
 import com.heirteir.autoeye.util.reflections.wrappers.WrappedEntity;
 import lombok.Getter;
@@ -19,6 +16,7 @@ import org.bukkit.entity.Player;
     private final LocationData locationData;
     private final InfractionData infractionData;
     private final TimeData timeData;
+    private final AttackData attackData;
 
     public AutoEyePlayer(Autoeye autoeye, Player player) {
         this.wrappedEntity = new WrappedEntity(autoeye, player);
@@ -27,6 +25,7 @@ import org.bukkit.entity.Player;
         this.locationData = new LocationData(autoeye, this);
         this.infractionData = new InfractionData(autoeye);
         this.timeData = new TimeData();
+        this.attackData = new AttackData();
     }
 
     public void update(Autoeye autoeye, PacketPlayInFlyingEvent event) {
