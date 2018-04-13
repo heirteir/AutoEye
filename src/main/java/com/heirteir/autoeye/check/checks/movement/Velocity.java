@@ -14,7 +14,7 @@ public class Velocity extends Check<PacketPlayInFlyingEvent> {
     }
 
     @Override public boolean canRun(PacketPlayInFlyingEvent event) {
-        return event.getPlayer().getPhysics().getCalculatedYVelocity() > 0 && !event.getPlayer().getLocationData().isOnPiston() && !event.getPlayer().getLocationData().isOnSlime() && !event.getPlayer().getLocationData().isInWater() && !event.getPlayer().getLocationData().isOnStairs() && !event.getPlayer().getLocationData().isOnLadder() && event.getPlayer().getTimeData().getLastInWeb().getDifference() > 150L;
+        return event.getPlayer().getPhysics().getCalculatedYVelocity() > 0 && event.getPlayer().getPhysics().isHasVelocity();
     }
 
     @Override public void revert(Autoeye autoeye, PacketPlayInFlyingEvent event) {

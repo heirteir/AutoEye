@@ -22,8 +22,8 @@ public class PacketPlayInFlyingPosEventExecutor extends CheckEventExecutor<Packe
         event.getPlayer().update(this.autoeye, event);
         if (event.getPlayer().isConnected() && event.getPlayer().getLocationData().isChangedPos() && !event.getPlayer().getPhysics().isFlying() && !event.getPlayer().getLocationData().isTeleported()) {
             this.bulkRunChecks(event);
+            event.getPlayer().getPhysics().setHasVelocity(false);
         }
-
         event.getPlayer().getTimeData().getLastPacketPlayInFlying().update();
     }
 }

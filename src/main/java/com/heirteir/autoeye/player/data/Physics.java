@@ -1,12 +1,10 @@
 package com.heirteir.autoeye.player.data;
 
-import com.heirteir.autoeye.event.packets.wrappers.PacketPlayInFlying;
 import com.heirteir.autoeye.player.AutoEyePlayer;
 import com.heirteir.autoeye.util.Vector3D;
 import lombok.Getter;
 
 @Getter public class Physics {
-    public static final float GRAVITY = -0.07839966F;
     private Vector3D clientVelocity;
     private Vector3D clientAcceleration;
     private Vector3D serverVelocity;
@@ -53,6 +51,10 @@ import lombok.Getter;
                 this.offGroundTicks++;
                 if (this.flying || player.getLocationData().isTeleported() || player.getLocationData().isInWater() || player.getLocationData().isOnLadder() || player.getLocationData().isInWeb() || player.getTimeData().getLastFlying().getDifference() < 1000) {
                     this.calculatedYVelocity = this.clientVelocity.getY();
+                    if (player.getLocationData().isOnGround()) {
+                        this.calculatedYVelocity = 0;
+                        this.offGroundTicks = 0;
+                    }
                 } else if (player.getLocationData().isOnGround()) {
                     this.calculatedYVelocity = 0;
                     this.offGroundTicks = 0;
@@ -72,13 +74,12 @@ import lombok.Getter;
             this.serverVelocity = new Vector3D((float) player.getPlayer().getVelocity().getX(), (float) player.getPlayer().getVelocity().getY(), (float) player.getPlayer().getVelocity().getZ());
             this.serverAcceleration = new Vector3D(this.serverVelocity.getX() - this.serverAcceleration.getX(), this.serverVelocity.getY() - this.serverAcceleration.getY(), this.serverVelocity.getZ() - this.serverAcceleration.getZ());
             this.calculatedYAcceleration = this.calculatedYVelocity - this.calculatedYAcceleration;
-            this.hasVelocity = false;
+            if (player.getTimeData().getLastTeleport().getDifference() < 800 || player.getTimeData().getSecondTick().getDifference() >= 1000L) {
+                player.getTimeData().getSecondTick().update();
+                this.movesPerSecond = 0;
+            }
+            this.movesPerSecond++;
         }
-        if (player.getTimeData().getSecondTick().getDifference() >= 1000L) {
-            player.getTimeData().getSecondTick().update();
-            this.movesPerSecond = 0;
-        }
-        this.movesPerSecond++;
     }
 
     public void setFlying(boolean flying) {

@@ -10,11 +10,12 @@ public class FastLadder extends Check<PacketPlayInFlyingEvent> {
     }
 
     @Override public boolean check(Autoeye autoeye, PacketPlayInFlyingEvent event) {
-        if (event.getPacket().isOnGround() || event.getPlayer().getLocationData().isServerOnGround() || event.getPlayer().getPhysics().getOffGroundTicks() <= 4) {
+        if (event.getPacket().isOnGround() || event.getPlayer().getPhysics().getOffGroundTicks() <= 4) {
             return event.getPlayer().getPhysics().getClientVelocity().getY() > event.getPlayer().getPhysics().getJumpVelocity() && (!(event.getPlayer().getPhysics().isHasVelocity() && event.getPlayer().getPlayer().getVelocity().getY() <= event.getPlayer().getPhysics().getClientVelocity().getY()) || this.checkThreshold(event.getPlayer(), 3, 100L));
         } else {
+            System.out.println("hey 2");
             float absVelocity = Math.abs(event.getPlayer().getPhysics().getClientVelocity().getY());
-            return absVelocity > 0.16F && (absVelocity > 0.32F || this.checkThreshold(event.getPlayer(), 3, 100L));
+            return absVelocity > 0.16F && (this.checkThreshold(event.getPlayer(), (int) Math.ceil(event.getPlayer().getPhysics().getJumpVelocity() / 0.16F), 100L));
         }
     }
 

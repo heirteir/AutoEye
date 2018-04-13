@@ -3,3 +3,5 @@ version: ${project.version}
 main: com.heirteir.autoeye.Autoeye
 authors: [Heirteir]
 description: An Anticheat that beats all others.
+commands:
+  autoeye:

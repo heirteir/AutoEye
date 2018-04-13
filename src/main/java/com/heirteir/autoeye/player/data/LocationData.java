@@ -38,6 +38,10 @@ import org.bukkit.util.NumberConversions;
         this.reset(autoeye, player);
     }
 
+    public void setTeleported(boolean teleported) {
+        this.teleported = teleported;
+    }
+
     public void reset(Autoeye autoeye, AutoEyePlayer player) {
         this.location = this.previousLocation = new Vector3D((float) player.getPlayer().getLocation().getX(), (float) player.getPlayer().getLocation().getY(), (float) player.getPlayer().getLocation().getZ());
         this.direction = this.previousDirection = new Vector2D(player.getPlayer().getLocation().getYaw(), player.getPlayer().getLocation().getPitch());
