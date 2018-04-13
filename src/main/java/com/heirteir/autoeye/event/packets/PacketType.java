@@ -3,7 +3,7 @@ package com.heirteir.autoeye.event.packets;
 import lombok.Getter;
 
 @Getter public enum PacketType {
-    NULL(), PacketPlayInFlying("PacketPlayInPositionLook", "PacketPlayInPosition", "PacketPlayInLook"), PacketPlayOutPosition, PacketPlayInAbilities,PacketPlayInUseEntity,  PacketPlayOutEntityVelocity;
+    NULL(), PacketPlayInFlying("PacketPlayInPositionLook", "PacketPlayInPosition", "PacketPlayInLook"), PacketPlayOutPosition, PacketPlayInAbilities, PacketPlayInUseEntity, PacketPlayOutEntityVelocity;
     private final String[] children;
 
     PacketType(String... types) {

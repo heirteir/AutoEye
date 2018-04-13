@@ -15,9 +15,10 @@ public class InvalidMotion extends Check<PacketPlayInFlyingEvent> {
             if (event.getPlayer().getPhysics().getClientVelocity().getY() == 0 && event.getPlayer().getTimeData().getLastTeleport().getDifference() < 1000) {
                 return this.checkThreshold(event.getPlayer(), 5, 500L);
             }
-            return !(event.getPlayer().getPhysics().getClientVelocity().getY() == 0 || (event.getPlayer().getPhysics().getCalculatedYVelocity() > 0 && event.getPlayer().getPhysics().getCalculatedYVelocity() < 0.04)) || this.checkThreshold(event.getPlayer(), 2, 100L);
+            return !((event.getPlayer().getPhysics().getClientVelocity().getY() == 0) || (event.getPlayer().getPhysics().getCalculatedYVelocity() > 0 && event.getPlayer().getPhysics().getCalculatedYVelocity() < 0.04)) || this.checkThreshold(event.getPlayer(), 2, 100L);
         } else {
-            return Math.abs(event.getPlayer().getPhysics().getCalculatedYVelocity() - event.getPlayer().getPlayer().getVelocity().getY()) < 0.1 && Math.abs(event.getPlayer().getPhysics().getClientVelocity().getY() - event.getPlayer().getPhysics().getCalculatedYVelocity()) > 0.001 && ((event.getPlayer().getPhysics().getCalculatedYVelocity() < 0 && Math.abs(event.getPlayer().getPhysics().getClientAcceleration().getY() - event.getPlayer().getPhysics().getCalculatedYAcceleration()) > 0.001) || event.getPlayer().getPhysics().getCalculatedYVelocity() > 0) && (!(event.getPlayer().getPhysics().getClientVelocity().getY() == Physics.GRAVITY) || this.checkThreshold(event.getPlayer(), 2, 100L));
+            System.out.println("2: " + event.getPlayer().getPhysics().getCalculatedYVelocity() + " " + event.getPlayer().getPhysics().getClientVelocity().getY() + " " + Math.abs(event.getPlayer().getPhysics().getClientVelocity().getY() - event.getPlayer().getPhysics().getCalculatedYVelocity()));
+            return Math.abs(event.getPlayer().getPhysics().getCalculatedYVelocity() - event.getPlayer().getPlayer().getVelocity().getY()) < 0.1 && Math.abs(event.getPlayer().getPhysics().getClientVelocity().getY() - event.getPlayer().getPhysics().getCalculatedYVelocity()) > 0.001 && ((event.getPlayer().getPhysics().getCalculatedYVelocity() < 0 && (Math.abs(event.getPlayer().getPhysics().getClientAcceleration().getY() - event.getPlayer().getPhysics().getCalculatedYAcceleration()) > 0.001) || event.getPlayer().getPhysics().getCalculatedYVelocity() > 0)) && (!(event.getPlayer().getPhysics().getClientVelocity().getY() == Physics.GRAVITY) || this.checkThreshold(event.getPlayer(), 2, 100L));
         }
     }
 

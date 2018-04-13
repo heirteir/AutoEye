@@ -12,6 +12,7 @@ import lombok.Getter;
     private final TimeStore lastUseEntity = new TimeStore();
     private final TimeStore lastPacketPlayInFlying = new TimeStore();
     private final TimeStore secondTick = new TimeStore();
+    private final TimeStore connected = new TimeStore();
 
     public long getDifference(long a, long b) {
         return b - a;

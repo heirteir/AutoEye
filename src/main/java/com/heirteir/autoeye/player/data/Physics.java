@@ -38,7 +38,7 @@ import lombok.Getter;
         this.movesPerSecond = 0;
     }
 
-    public void update(AutoEyePlayer player, PacketPlayInFlying flying) {
+    public void update(AutoEyePlayer player) {
         if (player.getLocationData().isChangedPos()) {
             if (this.flying) {
                 player.getTimeData().getLastFlying().update();
@@ -49,11 +49,11 @@ import lombok.Getter;
             this.clientVelocity = new Vector3D(player.getLocationData().getLocation().getX() - player.getLocationData().getPreviousLocation().getX(), player.getLocationData().getLocation().getY() - player.getLocationData().getPreviousLocation().getY(), player.getLocationData().getLocation().getZ() - player.getLocationData().getPreviousLocation().getZ());
             this.clientAcceleration = new Vector3D(this.clientVelocity.getX() - this.clientAcceleration.getX(), this.clientVelocity.getY() - this.clientAcceleration.getY(), this.clientVelocity.getZ() - this.clientAcceleration.getZ());
             this.calculatedYAcceleration = this.calculatedYVelocity;
-            if (!this.hasVelocity) {
+            if (!this.hasVelocity || player.getPhysics().getCalculatedYVelocity() == 0) {
                 this.offGroundTicks++;
                 if (this.flying || player.getLocationData().isTeleported() || player.getLocationData().isInWater() || player.getLocationData().isOnLadder() || player.getLocationData().isInWeb() || player.getTimeData().getLastFlying().getDifference() < 1000) {
                     this.calculatedYVelocity = this.clientVelocity.getY();
-                } else if (flying.isOnGround()) {
+                } else if (player.getLocationData().isOnGround()) {
                     this.calculatedYVelocity = 0;
                     this.offGroundTicks = 0;
                 } else {

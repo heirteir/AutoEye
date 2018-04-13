@@ -11,8 +11,10 @@ public class PlayerVelocityEventExecutor extends EventExecutor<PlayerVelocityEve
 
     @Override public void run(PlayerVelocityEvent event) {
         if (event.getPacket().isPlayer()) {
-            event.getPlayer().getPhysics().setHasVelocity(true);
-            event.getPlayer().getPhysics().setCalculatedYVelocity(event.getPacket().getY());
+            if (event.getPacket().getY() > 0) {
+                event.getPlayer().getPhysics().setCalculatedYVelocity(event.getPacket().getY());
+                event.getPlayer().getPhysics().setHasVelocity(true);
+            }
         }
     }
 }

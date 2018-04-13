@@ -14,7 +14,6 @@ public class TPS extends BukkitRunnable {
         this.autoeye = autoeye;
         this.avg = new float[20];
         this.tps = 20;
-        this.previousTick = System.currentTimeMillis();
     }
 
     @Override public void run() {
@@ -22,15 +21,17 @@ public class TPS extends BukkitRunnable {
             this.cancel();
             return;
         }
-        float diff = System.currentTimeMillis() - this.previousTick;
-        this.avg[this.index++] = diff < 50 ? 50 : diff;
-        if (this.index == this.avg.length) {
-            float avg = 0;
-            for (float value : this.avg) {
-                avg += value;
+        if (this.previousTick != 0) {
+            float diff = System.currentTimeMillis() - this.previousTick;
+            this.avg[this.index++] = diff < 50 ? 50 : diff;
+            if (this.index == this.avg.length) {
+                float avg = 0;
+                for (float value : this.avg) {
+                    avg += value;
+                }
+                this.tps = 1000F / (avg / this.avg.length);
+                this.index = 0;
             }
-            this.tps = 1000F / (avg / this.avg.length);
-            this.index = 0;
         }
         this.previousTick = System.currentTimeMillis();
     }

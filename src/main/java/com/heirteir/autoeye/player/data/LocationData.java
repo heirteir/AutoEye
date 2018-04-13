@@ -47,9 +47,9 @@ import org.bukkit.util.NumberConversions;
     }
 
     public void update(Autoeye autoeye, AutoEyePlayer player, PacketPlayInFlying flying) {
+        this.previousOnGround = this.onGround;
+        this.onGround = flying.isOnGround();
         if (this.changedPos = flying.isHasPos()) {
-            this.previousOnGround = this.onGround;
-            this.onGround = flying.isOnGround();
             this.previousLocation = this.location;
             this.location = new Vector3D(flying.getX(), flying.getY(), flying.getZ());
             this.axisAlignedBB = new WrappedAxisAlignedBB(autoeye, player.getPlayer().getWorld(), this.location.getX(), this.location.getY(), this.location.getZ(), player.getWrappedEntity().getWidth(), player.getWrappedEntity().getLength());

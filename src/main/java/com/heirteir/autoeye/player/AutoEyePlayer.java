@@ -17,6 +17,7 @@ import org.bukkit.entity.Player;
     private final InfractionData infractionData;
     private final TimeData timeData;
     private final AttackData attackData;
+    private boolean connected;
 
     public AutoEyePlayer(Autoeye autoeye, Player player) {
         this.wrappedEntity = new WrappedEntity(autoeye, player);
@@ -26,11 +27,14 @@ import org.bukkit.entity.Player;
         this.infractionData = new InfractionData(autoeye);
         this.timeData = new TimeData();
         this.attackData = new AttackData();
+        this.timeData.getConnected().update();
+        this.connected = false;
     }
 
     public void update(Autoeye autoeye, PacketPlayInFlyingEvent event) {
         this.locationData.update(autoeye, this, event.getPacket());
-        this.physics.update(this, event.getPacket());
+        this.physics.update(this);
+        this.connected = this.connected || this.timeData.getConnected().getDifference() > 2000;
     }
 
     public synchronized void teleport(Vector3D location) {
