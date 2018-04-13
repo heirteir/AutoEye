@@ -7,8 +7,6 @@ import lombok.Getter;
 @Getter public class Physics {
     private Vector3D clientVelocity;
     private Vector3D clientAcceleration;
-    private Vector3D serverVelocity;
-    private Vector3D serverAcceleration;
     private float jumpVelocity;
     private float calculatedYVelocity;
     private float calculatedYAcceleration;
@@ -25,8 +23,6 @@ import lombok.Getter;
     public void reset(AutoEyePlayer player) {
         this.clientVelocity = new Vector3D(0, 0, 0);
         this.clientAcceleration = new Vector3D(0, 0, 0);
-        this.serverVelocity = new Vector3D(0, 0, 0);
-        this.serverAcceleration = new Vector3D(0, 0, 0);
         this.jumpVelocity = 0.42F;
         this.moving = false;
         this.calculatedYVelocity = 0;
@@ -70,9 +66,6 @@ import lombok.Getter;
                     }
                 }
             }
-            this.serverAcceleration = this.serverVelocity;
-            this.serverVelocity = new Vector3D((float) player.getPlayer().getVelocity().getX(), (float) player.getPlayer().getVelocity().getY(), (float) player.getPlayer().getVelocity().getZ());
-            this.serverAcceleration = new Vector3D(this.serverVelocity.getX() - this.serverAcceleration.getX(), this.serverVelocity.getY() - this.serverAcceleration.getY(), this.serverVelocity.getZ() - this.serverAcceleration.getZ());
             this.calculatedYAcceleration = this.calculatedYVelocity - this.calculatedYAcceleration;
             if (player.getTimeData().getLastTeleport().getDifference() < 800 || player.getTimeData().getSecondTick().getDifference() >= 1000L) {
                 player.getTimeData().getSecondTick().update();

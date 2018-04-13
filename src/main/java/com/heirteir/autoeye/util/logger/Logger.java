@@ -21,13 +21,11 @@ import org.bukkit.ChatColor;
         Bukkit.getConsoleSender().sendMessage(this.translateColorCodes(message + ""));
     }
 
-    public String translateColorCodes(String message) {
+    private String translateColorCodes(String message) {
         return ChatColor.translateAlternateColorCodes('&', message);
     }
 
-    public void broadcastSyncMessage(Object message) {
-        if (this.autoeye.isEnabled()) {
-            Bukkit.getScheduler().runTask(this.autoeye, () -> Bukkit.broadcastMessage(this.translateColorCodes(message + "")));
-        }
+    public synchronized void broadcastSyncMessage(Object message) {
+        Bukkit.broadcastMessage(this.translateColorCodes(message + ""));
     }
 }

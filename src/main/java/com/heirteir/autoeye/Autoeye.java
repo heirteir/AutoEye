@@ -46,7 +46,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
     @Override public void onEnable() {
         if (this.version.equals(Version.NONE)) {
-            this.pluginLogger.sendConsoleMessageWithPrefix(this.pluginLogger.getPluginName() + " &cdoes not support the version of your Minecraft Server. " + this.pluginLogger.getPluginName() + " &conly supports &7[&e1.7-1.12&7]&c.");
+            this.pluginLogger.sendConsoleMessageWithPrefix(this.pluginLogger.getPluginName() + "&c does not support the version of your Minecraft Server. " + this.pluginLogger.getPluginName() + " &conly supports &7[&e1.7-1.12&7]&c.");
             Bukkit.getPluginManager().disablePlugin(this);
             return;
         }

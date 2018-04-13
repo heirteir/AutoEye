@@ -15,7 +15,7 @@ public class SlimeJump extends Check<PacketPlayInFlyingEvent> {
     }
 
     @Override public boolean canRun(PacketPlayInFlyingEvent event) {
-        return event.getPlayer().getLocationData().isOnSlime() && event.getPlayer().getPhysics().getServerVelocity().getY() > 0;
+        return event.getPlayer().getLocationData().isOnSlime() && event.getPlayer().getPlayer().getVelocity().getY() > 0;
     }
 
     @Override public void revert(Autoeye autoeye, PacketPlayInFlyingEvent event) {

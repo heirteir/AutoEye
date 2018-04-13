@@ -10,6 +10,7 @@ public class PacketPlayInFlyingPosEventExecutor extends CheckEventExecutor<Packe
         super(autoeye);
         this.checks.add(new FastLadder());
         this.checks.add(new InvalidMotion());
+        this.checks.add(new LiquidWalk());
         this.checks.add(new NoWeb());
         this.checks.add(new SlimeJump());
         this.checks.add(new SpoofedOnGroundPacket());

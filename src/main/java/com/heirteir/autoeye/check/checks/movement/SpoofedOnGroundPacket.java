@@ -10,15 +10,11 @@ public class SpoofedOnGroundPacket extends Check<PacketPlayInFlyingEvent> {
     }
 
     @Override public boolean check(Autoeye autoeye, PacketPlayInFlyingEvent event) {
-        if (event.getPacket().isOnGround() && !event.getPlayer().getLocationData().isServerOnGround()) {
-            return this.checkThreshold(event.getPlayer(), 5);
-        } else {
-            return this.resetThreshold(event.getPlayer());
-        }
+        return event.getPacket().isOnGround() != event.getPlayer().getLocationData().isServerOnGround() ? this.checkThreshold(event.getPlayer(), 5) : this.resetThreshold(event.getPlayer());
     }
 
     @Override public boolean canRun(PacketPlayInFlyingEvent event) {
-        return !event.getPlayer().getLocationData().isInWater();
+        return true;
     }
 
     @Override public void revert(Autoeye autoeye, PacketPlayInFlyingEvent event) {
