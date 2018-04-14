@@ -4,9 +4,9 @@ import com.heirteir.autoeye.Autoeye;
 import com.heirteir.autoeye.event.packets.wrappers.PacketPlayInFlying;
 import com.heirteir.autoeye.player.AutoEyePlayer;
 import com.heirteir.autoeye.util.BlockSet;
-import com.heirteir.autoeye.util.Vector2D;
-import com.heirteir.autoeye.util.Vector3D;
 import com.heirteir.autoeye.util.reflections.wrappers.WrappedAxisAlignedBB;
+import com.heirteir.autoeye.util.vector.Vector2D;
+import com.heirteir.autoeye.util.vector.Vector3D;
 import lombok.Getter;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
@@ -33,6 +33,7 @@ import org.bukkit.util.NumberConversions;
     private boolean changedLook;
     private boolean onGround;
     private boolean previousOnGround;
+    private boolean hasSolidAbove;
 
     public LocationData(Autoeye autoeye, AutoEyePlayer player) {
         this.reset(autoeye, player);
@@ -59,6 +60,7 @@ import org.bukkit.util.NumberConversions;
             this.axisAlignedBB = new WrappedAxisAlignedBB(autoeye, player.getPlayer().getWorld(), this.location.getX(), this.location.getY(), this.location.getZ(), player.getWrappedEntity().getWidth(), player.getWrappedEntity().getLength());
             WrappedAxisAlignedBB offset = this.axisAlignedBB.offset(0, -0.08F, 0, 0, 0, 0);
             this.solidBlocks = new BlockSet(offset.getSolidBlocks());
+            ;
             this.onStairs = this.solidBlocks.containsString("STEP", "STAIR");
             this.serverOnGround = this.solidBlocks.getBlocks().size() > 0;
             if (this.solidBlocks.getBlocks().size() != 0) {
@@ -80,6 +82,11 @@ import org.bukkit.util.NumberConversions;
                 } else {
                     this.onLadder = player.getTimeData().getLastOnLadder().getDifference() < 150;
                 }
+            }
+            if (this.hasSolidAbove = this.axisAlignedBB.offset(0, player.getWrappedEntity().getLength(), 0, 0, 0.08F, 0).getSolidBlocks().size() > 0) {
+                player.getTimeData().getLastSolidAbove().update();
+            } else {
+                this.hasSolidAbove = player.getTimeData().getLastSolidAbove().getDifference() < 250;
             }
             if (this.inWater = this.axisAlignedBB.containsLiquid()) {
                 player.getTimeData().getLastInWater().update();

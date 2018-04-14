@@ -10,7 +10,7 @@ public class Timer extends Check<PacketPlayInFlyingEvent> {
     }
 
     @Override public boolean check(Autoeye autoeye, PacketPlayInFlyingEvent event) {
-        return event.getPlayer().getPhysics().getMovesPerSecond() > (21 + (20F - autoeye.getTps().get()));
+        return event.getPlayer().getPhysics().getMovesPerSecond() > (21F + (20F - autoeye.getTps().get()));
     }
 
     @Override public boolean canRun(PacketPlayInFlyingEvent event) {

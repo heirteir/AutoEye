@@ -13,6 +13,7 @@ public class PacketPlayInFlyingPosEventExecutor extends CheckEventExecutor<Packe
         this.checks.add(new LiquidWalk());
         this.checks.add(new NoWeb());
         this.checks.add(new SlimeJump());
+        this.checks.add(new Speed());
         this.checks.add(new SpoofedOnGroundPacket());
         this.checks.add(new Step());
         this.checks.add(new Timer());
@@ -25,6 +26,5 @@ public class PacketPlayInFlyingPosEventExecutor extends CheckEventExecutor<Packe
             this.bulkRunChecks(event);
             event.getPlayer().getPhysics().setHasVelocity(false);
         }
-        event.getPlayer().getTimeData().getLastPacketPlayInFlying().update();
     }
 }
