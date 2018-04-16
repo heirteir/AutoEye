@@ -9,18 +9,13 @@ import org.bukkit.entity.Entity;
         return (float) java.lang.Math.atan2(entity.getLocation().getZ() - player.getLocationData().getLocation().getZ(), entity.getLocation().getX() - player.getLocationData().getLocation().getX());
     }
 
-    public float radiansToDegrees(float radian) {
-        return radian * 57.2958F;
-    }
-
     public float angleTo180(float angle) {
         angle = (angle % 360F + 360F) % 360F;
         return angle > 180 ? angle - 360F : angle;
     }
 
-    public float distance(float alpha, float beta) {
-        float output = (alpha - beta + 180F) % 360F - 180F;
-        output += output < -180F ? 360F : (output > 180) ? -360 : 0;
-        return output;
+    public float angleDistance(float alpha, float beta) {
+        float phi = Math.abs(beta - alpha) % 360;
+        return phi > 180 ? 360 - phi : phi;
     }
 }

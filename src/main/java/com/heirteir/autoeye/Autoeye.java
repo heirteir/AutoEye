@@ -11,8 +11,11 @@ import com.heirteir.autoeye.util.reflections.Reflections;
 import com.heirteir.autoeye.util.server.Version;
 import lombok.Getter;
 import org.bukkit.Bukkit;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.util.Vector;
 
 @Getter public final class Autoeye extends JavaPlugin {
     private final Logger pluginLogger;
@@ -42,6 +45,11 @@ import org.bukkit.plugin.java.JavaPlugin;
             this.mathUtil = null;
             this.tps = null;
         }
+    }
+
+    @Override public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        ((Player) sender).setVelocity(new Vector(5, 5, 0));
+        return super.onCommand(sender, command, label, args);
     }
 
     @Override public void onEnable() {

@@ -3,10 +3,7 @@ package com.heirteir.autoeye.event.packets.channelhandler;
 import com.heirteir.autoeye.Autoeye;
 import com.heirteir.autoeye.event.events.event.*;
 import com.heirteir.autoeye.event.packets.PacketType;
-import com.heirteir.autoeye.event.packets.wrappers.PacketPlayInAbilities;
-import com.heirteir.autoeye.event.packets.wrappers.PacketPlayInFlying;
-import com.heirteir.autoeye.event.packets.wrappers.PacketPlayInUseEntity;
-import com.heirteir.autoeye.event.packets.wrappers.PacketPlayOutEntityVelocity;
+import com.heirteir.autoeye.event.packets.wrappers.*;
 import com.heirteir.autoeye.player.AutoEyePlayer;
 import com.heirteir.autoeye.util.reflections.types.WrappedField;
 import org.bukkit.entity.Player;
@@ -42,13 +39,16 @@ public abstract class ChannelHandlerAbstract {
             case NULL:
                 break;
             case PacketPlayInFlying:
-                event = new PacketPlayInFlyingEvent(player, new PacketPlayInFlying(this.autoeye, packet, !packet.getClass().getSimpleName().equals("PacketPlayInFlying")));
+                event = new PlayerMoveEvent(player, new PacketPlayInFlying(this.autoeye, packet, !packet.getClass().getSimpleName().equals("PacketPlayInFlying")));
                 break;
             case PacketPlayInAbilities:
                 event = new PacketPlayInAbilitiesEvent(player, new PacketPlayInAbilities(this.autoeye, packet));
                 break;
             case PacketPlayInUseEntity:
                 event = new PacketPlayInUseEntityEvent(player, new PacketPlayInUseEntity(this.autoeye, player.getPlayer().getWorld(), packet));
+                break;
+            case PacketPlayInBlockPlace:
+                event = new BlockPlaceEvent(player, new PacketPlayInBlockPlace(this.autoeye, player.getPlayer().getWorld(), packet));
                 break;
         }
         if (event != null) {
@@ -68,7 +68,10 @@ public abstract class ChannelHandlerAbstract {
                 event = new PlayerTeleportEvent(player);
                 break;
             case PacketPlayOutEntityVelocity:
-                event = new PlayerVelocityEvent(player, new PacketPlayOutEntityVelocity(this.autoeye, player, packet));
+                PacketPlayOutEntityVelocity packetPlayOutEntityVelocity = new PacketPlayOutEntityVelocity(this.autoeye, player, packet);
+                if (packetPlayOutEntityVelocity.isPlayer()) {
+                    event = new PlayerVelocityEvent(player, packetPlayOutEntityVelocity);
+                }
                 break;
         }
         if (event != null) {

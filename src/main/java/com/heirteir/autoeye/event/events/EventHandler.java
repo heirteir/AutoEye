@@ -1,43 +1,70 @@
 package com.heirteir.autoeye.event.events;
 
+import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import com.google.common.collect.Sets;
 import com.heirteir.autoeye.Autoeye;
-import com.heirteir.autoeye.event.events.event.*;
-import com.heirteir.autoeye.event.events.executor.EventExecutor;
-import com.heirteir.autoeye.event.events.executor.executors.*;
+import com.heirteir.autoeye.check.Check;
+import com.heirteir.autoeye.check.checks.combat.KillAuraRotation;
+import com.heirteir.autoeye.check.checks.interaction.ImpossibleInteraction;
+import com.heirteir.autoeye.check.checks.movement.*;
+import com.heirteir.autoeye.event.events.event.Event;
+import com.heirteir.autoeye.player.updaters.DataUpdater;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.Comparator;
+import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 public class EventHandler {
-    private final Map<Class<? extends Event>, Set<EventExecutor>> executors;
-
-    public EventHandler() {
-        this.executors = Maps.newHashMap();
-    }
+    private final Map<Class<? extends Event>, List<Listener>> listeners = Maps.newHashMap();
 
     public void createCheckEventExecutors(Autoeye autoeye) {
-        //check events
-        this.register(PacketPlayInFlyingEvent.class, new PacketPlayInFlyingPosEventExecutor(autoeye));
-        //updaters
-        this.register(PacketPlayInUseEntityEvent.class, new PacketPlayInUseEntityEventExecutor(autoeye));
-        this.register(PlayerTeleportEvent.class, new PlayerTeleportEventExecutor(autoeye));
-        this.register(PlayerVelocityEvent.class, new PlayerVelocityEventExecutor(autoeye));
-        this.register(PacketPlayInAbilitiesEvent.class, new PacketPlayInAbilitiesEventExecutor(autoeye));
+        //combat
+        this.register(new KillAuraRotation(autoeye));
+        //interactions
+        this.register(new ImpossibleInteraction(autoeye));
+        //movement
+        this.register(new FastLadder(autoeye));
+        this.register(new InvalidMotion(autoeye));
+        this.register(new NoWeb(autoeye));
+        this.register(new SlimeJump(autoeye));
+        this.register(new Speed(autoeye));
+        this.register(new SpoofedOnGroundPacket(autoeye));
+        this.register(new Step(autoeye));
+        this.register(new Timer(autoeye));
+        this.register(new Velocity(autoeye));
+        //updater
+        this.register(new DataUpdater(autoeye));
     }
 
     public void run(Event event) {
-        for (EventExecutor executor : this.getExecutors(event.getClass())) {
-            executor.run(event);
+        for (Listener listener : this.getListeners(event.getClass())) {
+            for (Method method : listener.getEventExecutors(event.getClass())) {
+                try {
+                    Object invoke = method.invoke(listener, event);
+                    if (method.getReturnType().equals(boolean.class)) {
+                        if ((boolean) invoke) {
+                            event.getPlayer().getInfractionData().addVL(event.getPlayer(), (Check) listener);
+                            ((Check) listener).revert(event);
+                        }
+                    }
+                } catch (IllegalAccessException | InvocationTargetException e) {
+                    e.printStackTrace();
+                }
+            }
         }
     }
 
-    public void register(Class<? extends Event> event, EventExecutor executor) {
-        this.getExecutors(event).add(executor);
+    private void register(Listener listener) {
+        for (Class<? extends Event> event : listener.getEventTypes()) {
+            List<Listener> listeners = this.getListeners(event);
+            listeners.add(listener);
+            listeners.sort(Comparator.comparingInt(a -> a.getPriority().getLevel()));
+        }
     }
 
-    private Set<EventExecutor> getExecutors(Class<? extends Event> event) {
-        return this.executors.computeIfAbsent(event, k -> Sets.newHashSet());
+    private List<Listener> getListeners(Class<? extends Event> event) {
+        return this.listeners.computeIfAbsent(event, k -> Lists.newArrayList());
     }
 }

@@ -34,6 +34,7 @@ import org.bukkit.util.NumberConversions;
     private boolean onGround;
     private boolean previousOnGround;
     private boolean hasSolidAbove;
+    private boolean onIce;
 
     public LocationData(Autoeye autoeye, AutoEyePlayer player) {
         this.reset(autoeye, player);
@@ -60,12 +61,12 @@ import org.bukkit.util.NumberConversions;
             this.axisAlignedBB = new WrappedAxisAlignedBB(autoeye, player.getPlayer().getWorld(), this.location.getX(), this.location.getY(), this.location.getZ(), player.getWrappedEntity().getWidth(), player.getWrappedEntity().getLength());
             WrappedAxisAlignedBB offset = this.axisAlignedBB.offset(0, -0.08F, 0, 0, 0, 0);
             this.solidBlocks = new BlockSet(offset.getSolidBlocks());
-            ;
             this.onStairs = this.solidBlocks.containsString("STEP", "STAIR");
             this.serverOnGround = this.solidBlocks.getBlocks().size() > 0;
             if (this.solidBlocks.getBlocks().size() != 0) {
                 this.groundBlocks = this.solidBlocks;
                 this.onSlime = this.groundBlocks.containsString("SLIME");
+                this.onIce = this.groundBlocks.containsString("ICE");
             }
             if (this.inWeb = offset.containsMaterial("WEB")) {
                 player.getTimeData().getLastInWeb().update();
@@ -76,14 +77,14 @@ import org.bukkit.util.NumberConversions;
                 this.onPiston = player.getTimeData().getLastOnPiston().getDifference() < 150L;
             }
             if (flying.getX() != 0 && flying.getZ() != 0) {
-                Block block = player.getPlayer().getWorld().getBlockAt(NumberConversions.floor(flying.getX()), NumberConversions.floor(this.axisAlignedBB.get("b")), NumberConversions.floor(flying.getZ()));
+                Block block = player.getPlayer().getWorld().getBlockAt(NumberConversions.floor(flying.getX()), NumberConversions.floor(this.axisAlignedBB.getMin().getY()), NumberConversions.floor(flying.getZ()));
                 if (this.onLadder = (block.getType().equals(Material.LADDER) || block.getType().equals(Material.VINE)) && !player.getPlayer().getGameMode().name().equals("SPECTATOR")) {
                     player.getTimeData().getLastOnLadder().update();
                 } else {
                     this.onLadder = player.getTimeData().getLastOnLadder().getDifference() < 150;
                 }
             }
-            if (this.hasSolidAbove = this.axisAlignedBB.offset(0, player.getWrappedEntity().getLength(), 0, 0, 0.08F, 0).getSolidBlocks().size() > 0) {
+            if (this.hasSolidAbove = this.axisAlignedBB.offset(0, player.getWrappedEntity().getLength(), 0, 0, 0.2F, 0).getSolidBlocks().size() > 0) {
                 player.getTimeData().getLastSolidAbove().update();
             } else {
                 this.hasSolidAbove = player.getTimeData().getLastSolidAbove().getDifference() < 250;

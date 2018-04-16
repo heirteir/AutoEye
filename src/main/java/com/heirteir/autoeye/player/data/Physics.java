@@ -7,7 +7,6 @@ import lombok.Getter;
 @Getter public class Physics {
     private Vector3D serverVelocity;
     private Vector3D clientVelocity;
-    private Vector3D previousClientVelocity;
     private Vector3D clientAcceleration;
     private float jumpVelocity;
     private float calculatedYVelocity;
@@ -24,7 +23,6 @@ import lombok.Getter;
 
     public void reset(AutoEyePlayer player) {
         this.serverVelocity = new Vector3D(0, 0, 0);
-        this.previousClientVelocity = new Vector3D(0, 0, 0);
         this.clientVelocity = new Vector3D(0, 0, 0);
         this.clientAcceleration = new Vector3D(0, 0, 0);
         this.jumpVelocity = 0.42F;
@@ -36,17 +34,20 @@ import lombok.Getter;
         this.movesPerSecond = 0;
     }
 
+    public void setServerVelocity(Vector3D serverVelocity) {
+        this.serverVelocity = serverVelocity;
+    }
+
     public void update(AutoEyePlayer player) {
         if (player.getLocationData().isChangedPos()) {
-            this.serverVelocity = player.getWrappedEntity().getVelocity();
             if (this.flying) {
                 player.getTimeData().getLastFlying().update();
             }
             this.jumpVelocity = 0.42F + (player.getPotionEffectAmplifier("SPEED") * 0.1F);
             this.moving = this.clientVelocity.getX() != 0 || this.clientVelocity.getY() != 0 || this.clientVelocity.getZ() != 0;
-            this.previousClientVelocity = this.clientVelocity;
+            this.clientAcceleration = this.clientVelocity;
             this.clientVelocity = new Vector3D(player.getLocationData().getLocation().getX() - player.getLocationData().getPreviousLocation().getX(), player.getLocationData().getLocation().getY() - player.getLocationData().getPreviousLocation().getY(), player.getLocationData().getLocation().getZ() - player.getLocationData().getPreviousLocation().getZ());
-            this.clientAcceleration = new Vector3D(this.clientVelocity.getX() - this.previousClientVelocity.getX(), this.clientVelocity.getY() - this.previousClientVelocity.getY(), this.clientVelocity.getZ() - this.previousClientVelocity.getZ());
+            this.clientAcceleration = new Vector3D(this.clientVelocity.getX() - this.clientAcceleration.getX(), this.clientVelocity.getY() - this.clientAcceleration.getY(), this.clientVelocity.getZ() - this.clientAcceleration.getZ());
             this.calculatedYAcceleration = this.calculatedYVelocity;
             if (!this.hasVelocity || player.getPhysics().getCalculatedYVelocity() == 0) {
                 this.offGroundTicks++;

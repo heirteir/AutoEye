@@ -2,22 +2,20 @@ package com.heirteir.autoeye.check.checks.movement;
 
 import com.heirteir.autoeye.Autoeye;
 import com.heirteir.autoeye.check.Check;
-import com.heirteir.autoeye.event.events.event.PacketPlayInFlyingEvent;
+import com.heirteir.autoeye.event.events.event.Event;
+import com.heirteir.autoeye.event.events.event.PlayerMoveEvent;
+import com.heirteir.autoeye.event.events.EventExecutor;
 
-public class SpoofedOnGroundPacket extends Check<PacketPlayInFlyingEvent> {
-    public SpoofedOnGroundPacket() {
-        super("Spoofed on Ground");
+public class SpoofedOnGroundPacket extends Check {
+    public SpoofedOnGroundPacket(Autoeye autoeye) {
+        super(autoeye, "Spoofed on Ground");
     }
 
-    @Override public boolean check(Autoeye autoeye, PacketPlayInFlyingEvent event) {
-        return event.getPacket().isOnGround() != event.getPlayer().getLocationData().isServerOnGround() ? this.checkThreshold(event.getPlayer(), 5) : this.resetThreshold(event.getPlayer());
+    @EventExecutor(event = PlayerMoveEvent.class) public boolean check(PlayerMoveEvent event) {
+        return (event.getPlayer().isConnected() && event.getPlayer().getLocationData().isChangedPos() && !event.getPlayer().getPhysics().isFlying() && !event.getPlayer().getLocationData().isTeleported() && event.getPacket().isOnGround() != event.getPlayer().getLocationData().isServerOnGround()) ? this.checkThreshold(event.getPlayer(), 5) : this.resetThreshold(event.getPlayer());
     }
 
-    @Override public boolean canRun(PacketPlayInFlyingEvent event) {
-        return true;
-    }
-
-    @Override public void revert(Autoeye autoeye, PacketPlayInFlyingEvent event) {
+    @Override public <T extends Event> void revert(T event) {
         event.getPlayer().teleport(event.getPlayer().getLocationData().getTeleportLocation());
     }
 }
