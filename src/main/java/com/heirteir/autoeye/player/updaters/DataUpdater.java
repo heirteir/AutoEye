@@ -45,4 +45,9 @@ public class DataUpdater extends Listener {
         event.getPlayer().getTimeData().getLastTeleport().update();
         event.getPlayer().getLocationData().setTeleported(true);
     }
+
+    @EventExecutor(event = PacketPlayInKeepAliveEvent.class)
+    public void run(PacketPlayInKeepAliveEvent event) {
+        event.getPlayer().getTimeData().getLastKeepAlive().update();
+    }
 }

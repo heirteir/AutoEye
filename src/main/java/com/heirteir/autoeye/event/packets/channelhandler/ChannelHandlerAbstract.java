@@ -50,6 +50,8 @@ public abstract class ChannelHandlerAbstract {
             case PacketPlayInBlockPlace:
                 event = new BlockPlaceEvent(player, new PacketPlayInBlockPlace(this.autoeye, player.getPlayer().getWorld(), packet));
                 break;
+            case PacketPlayInKeepAlive:
+                event = new PacketPlayInKeepAliveEvent(player, new PacketPlayInKeepAlive(player, packet));
         }
         if (event != null) {
             this.autoeye.getEventHandler().run(event);
