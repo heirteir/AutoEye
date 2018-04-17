@@ -14,6 +14,7 @@ import lombok.Getter;
     private final TimeStore secondTick = new TimeStore();
     private final TimeStore connected = new TimeStore();
     private final TimeStore lastKeepAlive = new TimeStore();
+    private final TimeStore lastVelocity = new TimeStore();
 
     public long getDifference(long a, long b) {
         return b - a;

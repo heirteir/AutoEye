@@ -11,8 +11,8 @@ public class Timer extends Check {
         super(autoeye, "Timer");
     }
 
-    @EventExecutor(event = PlayerMoveEvent.class) public boolean check(PlayerMoveEvent event) {
-        return event.getPlayer().isConnected() && event.getPlayer().getLocationData().isChangedPos() && !event.getPlayer().getPhysics().isFlying() && !event.getPlayer().getLocationData().isTeleported() && event.getPlayer().getPhysics().getMovesPerSecond() > (21F + (20F - this.autoeye.getTps().get()));
+    @EventExecutor public boolean check(PlayerMoveEvent event) {
+        return event.getPlayer().isConnected() && event.getPlayer().getLocationData().isChangedPos() && !event.getPlayer().getPhysics().isFlying() && !event.getPlayer().getLocationData().isTeleported() && event.getPlayer().getPhysics().getMovesPerSecond() > (22F + (20F - this.autoeye.getTps().get()));
     }
 
     @Override public <T extends Event> void revert(T event) {

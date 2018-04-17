@@ -12,7 +12,7 @@ public class KillAuraRotation extends Check {
         super(autoeye, "Kill Aura (Rotation)");
     }
 
-    @EventExecutor(event = PacketPlayInUseEntityEvent.class) public boolean check(PacketPlayInUseEntityEvent event) {
+    @EventExecutor public boolean check(PacketPlayInUseEntityEvent event) {
         if (event.getPacket().getActionType().equals(PacketPlayInUseEntity.ActionType.ATTACK) && event.getPacket().getEntity() != null) {
             float previousYaw = autoeye.getMathUtil().angleTo180(event.getPlayer().getLocationData().getPreviousDirection().getX() + 90F);
             float yaw = autoeye.getMathUtil().angleTo180(event.getPlayer().getLocationData().getDirection().getX() + 90F);

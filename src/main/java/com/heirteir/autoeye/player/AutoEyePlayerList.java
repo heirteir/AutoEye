@@ -12,10 +12,11 @@ import org.bukkit.event.player.PlayerKickEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 
 import java.util.Map;
+import java.util.UUID;
 
 @Getter public class AutoEyePlayerList implements Listener {
     private final Autoeye autoeye;
-    private final Map<String, AutoEyePlayer> players;
+    private final Map<UUID, AutoEyePlayer> players;
 
     public AutoEyePlayerList(Autoeye autoeye) {
         players = Maps.newHashMap();
@@ -27,7 +28,7 @@ import java.util.Map;
     }
 
     public AutoEyePlayer getPlayer(Player player) {
-        return this.players.computeIfAbsent(player.getUniqueId().toString(), k -> new AutoEyePlayer(autoeye, player));
+        return this.players.computeIfAbsent(player.getUniqueId(), k -> new AutoEyePlayer(autoeye, player));
     }
 
     @EventHandler public void onPlayerJoin(PlayerJoinEvent e) {

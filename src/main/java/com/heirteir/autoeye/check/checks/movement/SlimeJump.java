@@ -11,7 +11,7 @@ public class SlimeJump extends Check {
         super(autoeye, "Slime Jump");
     }
 
-    @EventExecutor(event = PlayerMoveEvent.class) public boolean check(PlayerMoveEvent event) {
+    @EventExecutor public boolean check(PlayerMoveEvent event) {
         if (event.getPlayer().isConnected() && event.getPlayer().getLocationData().isChangedPos() && !event.getPlayer().getPhysics().isFlying() && !event.getPlayer().getLocationData().isTeleported() && event.getPlayer().getLocationData().isOnSlime() && event.getPlayer().getPlayer().getVelocity().getY() > 0) {
             float difference = (float) Math.abs(event.getPlayer().getPhysics().getClientVelocity().getY() - event.getPlayer().getPlayer().getVelocity().getY());
             return (event.getPlayer().getPhysics().getOffGroundTicks() > 12 || event.getPlayer().getPhysics().getClientVelocity().getY() > event.getPlayer().getPhysics().getJumpVelocity()) && difference > 0.08F && (difference > 0.16F || this.checkThreshold(event.getPlayer(), 2, 100L));

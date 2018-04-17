@@ -3,19 +3,22 @@ package com.heirteir.autoeye.player.data;
 import com.heirteir.autoeye.player.AutoEyePlayer;
 import com.heirteir.autoeye.util.vector.Vector3D;
 import lombok.Getter;
+import lombok.Setter;
 
 @Getter public class Physics {
-    private Vector3D serverVelocity;
+    @Setter private Vector3D serverVelocity;
     private Vector3D clientVelocity;
     private Vector3D clientAcceleration;
     private float jumpVelocity;
-    private float calculatedYVelocity;
+    @Setter private float calculatedYVelocity;
     private float calculatedYAcceleration;
     private boolean moving;
     private int offGroundTicks;
-    private boolean flying;
-    private boolean hasVelocity;
+    @Setter private boolean flying;
+    @Setter private boolean hasVelocity;
     private int movesPerSecond;
+    @Setter private boolean running;
+    @Setter private boolean postVelocity;
 
     public Physics(AutoEyePlayer player) {
         this.reset(player);
@@ -32,10 +35,6 @@ import lombok.Getter;
         this.offGroundTicks = 0;
         this.flying = player.getPlayer().isFlying();
         this.movesPerSecond = 0;
-    }
-
-    public void setServerVelocity(Vector3D serverVelocity) {
-        this.serverVelocity = serverVelocity;
     }
 
     public void update(AutoEyePlayer player) {
@@ -79,17 +78,5 @@ import lombok.Getter;
             }
             this.movesPerSecond++;
         }
-    }
-
-    public void setFlying(boolean flying) {
-        this.flying = flying;
-    }
-
-    public void setHasVelocity(boolean hasVelocity) {
-        this.hasVelocity = hasVelocity;
-    }
-
-    public void setCalculatedYVelocity(float calculatedYVelocity) {
-        this.calculatedYVelocity = calculatedYVelocity;
     }
 }

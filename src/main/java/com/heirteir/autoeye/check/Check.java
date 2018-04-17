@@ -1,9 +1,8 @@
 package com.heirteir.autoeye.check;
 
 import com.heirteir.autoeye.Autoeye;
-import com.heirteir.autoeye.event.events.event.Event;
-import com.heirteir.autoeye.event.events.EventExecutor;
 import com.heirteir.autoeye.event.events.Listener;
+import com.heirteir.autoeye.event.events.event.Event;
 import com.heirteir.autoeye.player.AutoEyePlayer;
 import lombok.Getter;
 
@@ -12,7 +11,6 @@ public abstract class Check extends Listener {
     @Getter private final String name;
 
     public Check(Autoeye autoeye, String name) {
-        super(EventExecutor.Priority.NORMAL);
         this.autoeye = autoeye;
         this.name = name;
     }

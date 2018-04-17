@@ -11,7 +11,7 @@ public class NoWeb extends Check {
         super(autoeye, "No Web (Y)");
     }
 
-    @EventExecutor(event = PlayerMoveEvent.class) public boolean check(PlayerMoveEvent event) {
+    @EventExecutor public boolean check(PlayerMoveEvent event) {
         if (event.getPlayer().isConnected() && event.getPlayer().getLocationData().isChangedPos() && !event.getPlayer().getPhysics().isFlying() && !event.getPlayer().getLocationData().isTeleported() && event.getPlayer().getLocationData().isInWeb()) {
             float absClientVelocity = Math.abs(event.getPlayer().getPhysics().getClientVelocity().getY());
             float absServerVelocity = (float) Math.abs(event.getPlayer().getPlayer().getVelocity().getY());

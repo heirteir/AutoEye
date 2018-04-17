@@ -35,11 +35,6 @@ import org.bukkit.util.Vector;
         return new Vector3D(this.x * amount, this.y * amount, this.z * amount);
     }
 
-    public Vector3D normalize() {
-        float mag = this.length();
-        return mag > 0 ? this.multiply(1F / mag) : this;
-    }
-
     @Override public String toString() {
         return "x: " + x + ", y: " + y + ", z: " + z;
     }
