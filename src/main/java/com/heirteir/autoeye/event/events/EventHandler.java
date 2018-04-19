@@ -1,14 +1,25 @@
+/*
+ * Created by Justin Heflin on 4/19/18 6:57 PM
+ * Copyright (c) 2018.
+ *
+ * Code can not be redistributed under a non-commercial license, unless the owner of the copyright gives specific access to have commercial rights to the product.
+ *
+ * last modified: 4/19/18 6:46 PM
+ */
 package com.heirteir.autoeye.event.events;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.heirteir.autoeye.Autoeye;
+import com.heirteir.autoeye.api.AutoEyeInfractionEvent;
 import com.heirteir.autoeye.check.Check;
 import com.heirteir.autoeye.check.checks.combat.KillAuraRotation;
 import com.heirteir.autoeye.check.checks.combat.Reach;
 import com.heirteir.autoeye.check.checks.movement.*;
 import com.heirteir.autoeye.event.events.event.Event;
+import com.heirteir.autoeye.player.AutoEyePlayer;
 import com.heirteir.autoeye.player.updaters.DataUpdater;
+import org.bukkit.Bukkit;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -17,7 +28,12 @@ import java.util.List;
 import java.util.Map;
 
 public class EventHandler {
+    private final Autoeye autoeye;
     private final Map<Class<? extends Event>, List<MethodListenerPair>> executors = Maps.newHashMap();
+
+    public EventHandler(Autoeye autoeye) {
+        this.autoeye = autoeye;
+    }
 
     public void createCheckEventExecutors(Autoeye autoeye) {
         //combat
@@ -41,8 +57,15 @@ public class EventHandler {
             try {
                 Object invoke = entry.getMethod().invoke(entry.getListener(), event);
                 if (invoke != null && (boolean) invoke) {
-                    event.getPlayer().getInfractionData().addVL(event.getPlayer(), (Check) entry.getListener());
-                    ((Check) entry.getListener()).revert(event);
+                    AutoEyeInfractionEvent e = new AutoEyeInfractionEvent(event.getPlayer().getPlayer(), event.getPlayer().getInfractionData().getInfraction((Check) entry.getListener()));
+                    Bukkit.getPluginManager().callEvent(e);
+                    if (!e.isCancelled()) {
+                        event.getPlayer().getInfractionData().addVL(event.getPlayer(), (Check) entry.getListener());
+                        ((Check) entry.getListener()).revert(event);
+                        for (AutoEyePlayer player : this.autoeye.getAutoEyePlayerList().getPlayers().values()) {
+                            player.sendMessage(this.autoeye, this.autoeye.getPluginLogger().translateColorCodes(e.getMessage()));
+                        }
+                    }
                 }
             } catch (IllegalAccessException | InvocationTargetException e) {
                 e.printStackTrace();

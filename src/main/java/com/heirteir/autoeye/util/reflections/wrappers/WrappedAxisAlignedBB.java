@@ -1,3 +1,11 @@
+/*
+ * Created by Justin Heflin on 4/19/18 6:57 PM
+ * Copyright (c) 2018.
+ *
+ * Code can not be redistributed under a non-commercial license, unless the owner of the copyright gives specific access to have commercial rights to the product.
+ *
+ * last modified: 4/19/18 6:51 PM
+ */
 package com.heirteir.autoeye.util.reflections.wrappers;
 
 import com.google.common.collect.Lists;
@@ -36,7 +44,7 @@ import java.util.Set;
     public WrappedAxisAlignedBB offset(float x, float y, float z, float x2, float y2, float z2) {
         return new WrappedAxisAlignedBB(this.autoeye, this.bukkitWorld, this.min.offset(x, y, z), this.max.offset(x2, y2, z2));
     }
-    
+
     private double get(Object axisAlignedBB, String value) {
         return (double) this.autoeye.getReflections().getNMSClass("AxisAlignedBB").getFieldByName(value).get(axisAlignedBB);
     }

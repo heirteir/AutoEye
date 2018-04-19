@@ -1,3 +1,11 @@
+/*
+ * Created by Justin Heflin on 4/19/18 6:57 PM
+ * Copyright (c) 2018.
+ *
+ * Code can not be redistributed under a non-commercial license, unless the owner of the copyright gives specific access to have commercial rights to the product.
+ *
+ * last modified: 4/19/18 6:51 PM
+ */
 package com.heirteir.autoeye.check.checks.combat;
 
 import com.heirteir.autoeye.Autoeye;
@@ -11,7 +19,7 @@ import org.bukkit.entity.Player;
 
 public class Reach extends Check {
     public Reach(Autoeye autoeye) {
-        super(autoeye, "Reach (Impossible Distance)");
+        super(autoeye, "Reach");
     }
 
     @EventExecutor public boolean check(PacketPlayInUseEntityEvent event) {
