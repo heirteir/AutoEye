@@ -42,13 +42,13 @@ public class ChannelHandler1_8 extends ChannelHandlerAbstract {
         }
 
         @Override public void write(io.netty.channel.ChannelHandlerContext ctx, Object msg, io.netty.channel.ChannelPromise promise) throws Exception {
-            channelHandlerAbstract.packetSent(this.player, msg);
             super.write(ctx, msg, promise);
+            channelHandlerAbstract.run(this.player, msg);
         }
 
         @Override public void channelRead(io.netty.channel.ChannelHandlerContext ctx, Object msg) throws Exception {
-            channelHandlerAbstract.packetReceived(this.player, msg);
             super.channelRead(ctx, msg);
+            channelHandlerAbstract.run(this.player, msg);
         }
     }
 }

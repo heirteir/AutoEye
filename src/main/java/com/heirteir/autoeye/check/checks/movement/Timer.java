@@ -12,7 +12,7 @@ public class Timer extends Check {
     }
 
     @EventExecutor public boolean check(PlayerMoveEvent event) {
-        return event.getPlayer().isConnected() && event.getPlayer().getLocationData().isChangedPos() && !event.getPlayer().getPhysics().isFlying() && !event.getPlayer().getLocationData().isTeleported() && event.getPlayer().getPhysics().getMovesPerSecond() > (22F + (20F - this.autoeye.getTps().get()));
+        return event.getPlayer().isConnected() && (event.getPlayer().getPhysics().isHasVelocity() && !event.getPlayer().getPhysics().isPreviousVelocity()) && event.getPlayer().getLocationData().isChangedPos() && !event.getPlayer().getPhysics().isFlying() && !event.getPlayer().getLocationData().isTeleported() && event.getPlayer().getPhysics().getMovesPerSecond() > (22F + (20F - this.autoeye.getTps().get()));
     }
 
     @Override public <T extends Event> void revert(T event) {

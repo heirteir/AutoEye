@@ -12,7 +12,7 @@ public class Speed extends Check {
     }
 
     @EventExecutor public boolean check(PlayerMoveEvent event) {
-        if (event.getPlayer().isConnected() && event.getPlayer().getLocationData().isChangedPos() && !event.getPlayer().getPhysics().isFlying() && !event.getPlayer().getLocationData().isTeleported() && !event.getPlayer().getPhysics().isHasVelocity()) {
+        if (event.getPlayer().isConnected() && (event.getPlayer().getPhysics().isHasVelocity() && !event.getPlayer().getPhysics().isPreviousVelocity()) && event.getPlayer().getTimeData().getLastVelocity().getDifference() > 500&& event.getPlayer().getLocationData().isChangedPos() && !event.getPlayer().getPhysics().isFlying() && !event.getPlayer().getLocationData().isTeleported() && !event.getPlayer().getPhysics().isHasVelocity()) {
             float speed = (float) Math.sqrt(Math.pow(event.getPlayer().getPhysics().getClientVelocity().getX() - event.getPlayer().getPlayer().getVelocity().getX(), 2) + Math.pow(event.getPlayer().getPhysics().getClientVelocity().getZ() - event.getPlayer().getPlayer().getVelocity().getZ(), 2));
             float serverVelocity = (float) Math.sqrt(Math.pow(event.getPlayer().getPlayer().getVelocity().getX(), 2) + Math.pow(event.getPlayer().getPlayer().getVelocity().getZ(), 2));
             float walkSpeed;

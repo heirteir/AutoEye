@@ -13,7 +13,8 @@ import lombok.Getter;
     private final TimeStore lastSolidAbove = new TimeStore();
     private final TimeStore secondTick = new TimeStore();
     private final TimeStore connected = new TimeStore();
-    private final TimeStore lastKeepAlive = new TimeStore();
+    private final TimeStore lastInKeepAlive = new TimeStore();
+    private final TimeStore lastOutKeepAlive = new TimeStore();
     private final TimeStore lastVelocity = new TimeStore();
 
     public long getDifference(long a, long b) {
@@ -21,7 +22,7 @@ import lombok.Getter;
     }
 
     public static class TimeStore {
-        long time;
+        @Getter long time;
 
         public void update() {
             this.time = System.currentTimeMillis();

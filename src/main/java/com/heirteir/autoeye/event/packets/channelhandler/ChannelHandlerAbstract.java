@@ -30,54 +30,44 @@ public abstract class ChannelHandlerAbstract {
         this.playerKey = "autoeye_player_handler";
     }
 
-    protected void packetReceived(AutoEyePlayer player, Object packet) {
-        if (player == null || packet == null) {
-            return;
-        }
-        Event event = null;
-        switch (PacketType.fromString(packet.getClass().getSimpleName())) {
-            case NULL:
-                break;
-            case PacketPlayInFlying:
-                event = new PlayerMoveEvent(player, new PacketPlayInFlying(this.autoeye, packet, !packet.getClass().getSimpleName().equals("PacketPlayInFlying")));
-                break;
-            case PacketPlayInAbilities:
-                event = new PacketPlayInAbilitiesEvent(player, new PacketPlayInAbilities(this.autoeye, packet));
-                break;
-            case PacketPlayInUseEntity:
-                event = new PacketPlayInUseEntityEvent(player, new PacketPlayInUseEntity(this.autoeye, player.getPlayer().getWorld(), packet));
-                break;
-            case PacketPlayInBlockPlace:
-                event = new BlockPlaceEvent(player, new PacketPlayInBlockPlace(this.autoeye, player.getPlayer().getWorld(), packet));
-                break;
-            case PacketPlayInKeepAlive:
-                event = new PacketPlayInKeepAliveEvent(player, new PacketPlayInKeepAlive(player, packet));
-        }
-        if (event != null) {
-            this.autoeye.getEventHandler().run(event);
-        }
-    }
-
-    protected void packetSent(AutoEyePlayer player, Object packet) {
-        if (player == null || packet == null) {
-            return;
-        }
-        Event event = null;
-        switch (PacketType.fromString(packet.getClass().getSimpleName())) {
-            case NULL:
-                break;
-            case PacketPlayOutPosition:
-                event = new PlayerTeleportEvent(player);
-                break;
-            case PacketPlayOutEntityVelocity:
-                PacketPlayOutEntityVelocity packetPlayOutEntityVelocity = new PacketPlayOutEntityVelocity(this.autoeye, player, packet);
-                if (packetPlayOutEntityVelocity.isPlayer()) {
-                    event = new PlayerVelocityEvent(player, packetPlayOutEntityVelocity);
-                }
-                break;
-        }
-        if (event != null) {
-            this.autoeye.getEventHandler().run(event);
+    public void run(AutoEyePlayer player, Object packet) {
+        if (this.autoeye.isEnabled() && packet != null && player != null && player.getPlayer() != null && player.getPlayer().isOnline()) {
+            Event event = null;
+            switch (PacketType.fromString(packet.getClass().getSimpleName())) {
+                case NULL:
+                    break;
+                case PacketPlayInFlying:
+                    event = new PlayerMoveEvent(player, new PacketPlayInFlying(this.autoeye, packet, !packet.getClass().getSimpleName().equals("PacketPlayInFlying")));
+                    break;
+                case PacketPlayInAbilities:
+                    event = new PacketPlayInAbilitiesEvent(player, new PacketPlayInAbilities(this.autoeye, packet));
+                    break;
+                case PacketPlayInUseEntity:
+                    event = new PacketPlayInUseEntityEvent(player, new PacketPlayInUseEntity(this.autoeye, player.getPlayer().getWorld(), packet));
+                    break;
+                case PacketPlayInBlockPlace:
+                    event = new BlockPlaceEvent(player, new PacketPlayInBlockPlace(this.autoeye, player.getPlayer().getWorld(), packet));
+                    break;
+                case PacketPlayInKeepAlive:
+                    player.getTimeData().getLastInKeepAlive().update();
+                    player.setPing(player.getTimeData().getDifference(player.getTimeData().getLastOutKeepAlive().getTime(), player.getTimeData().getLastInKeepAlive().getTime()));
+                    break;
+                case PacketPlayOutKeepAlive:
+                    player.getTimeData().getLastOutKeepAlive().update();
+                    break;
+                case PacketPlayOutPosition:
+                    event = new PlayerTeleportEvent(player);
+                    break;
+                case PacketPlayOutEntityVelocity:
+                    PacketPlayOutEntityVelocity packetPlayOutEntityVelocity = new PacketPlayOutEntityVelocity(this.autoeye, player, packet);
+                    if (packetPlayOutEntityVelocity.isPlayer()) {
+                        event = new PlayerVelocityEvent(player, packetPlayOutEntityVelocity);
+                    }
+                    break;
+            }
+            if (event != null) {
+                this.autoeye.getEventHandler().run(event);
+            }
         }
     }
 

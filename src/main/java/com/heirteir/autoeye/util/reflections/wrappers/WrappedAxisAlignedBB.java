@@ -53,9 +53,9 @@ import java.util.Set;
         return blocks;
     }
 
-    public boolean containsMaterial(String materialName) {
-        return (boolean) this.autoeye.getReflections().getNMSClass("World").getMethodByTypes(this.axisAlignedBB.getClass(), this.autoeye.getReflections().getNMSClass("Material").getParent()).invoke(this.world, this.axisAlignedBB, this.autoeye.getReflections().getNMSClass("Material").getFieldByName(materialName).get(null));
-    }
+//    public boolean containsMaterial(String materialName) {
+//        return (boolean) this.autoeye.getReflections().getNMSClass("World").getMethodByTypes(this.axisAlignedBB.getClass(), this.autoeye.getReflections().getNMSClass("Material").getParent()).invoke(this.world, this.axisAlignedBB, this.autoeye.getReflections().getNMSClass("Material").getFieldByName(materialName).get(null));
+//    }
 
     public boolean containsLiquid() {
         return this.autoeye.getReflections().getNMSClass("World").getMethod("containsLiquid", autoeye.getReflections().getNMSClass("AxisAlignedBB").getParent()).invoke(this.world, this.axisAlignedBB);

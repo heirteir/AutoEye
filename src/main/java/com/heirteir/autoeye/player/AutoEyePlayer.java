@@ -6,6 +6,7 @@ import com.heirteir.autoeye.player.data.*;
 import com.heirteir.autoeye.util.vector.Vector3D;
 import com.heirteir.autoeye.util.reflections.wrappers.WrappedEntity;
 import lombok.Getter;
+import lombok.Setter;
 import org.bukkit.Location;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
@@ -23,6 +24,7 @@ import java.util.Map;
     private final TimeData timeData;
     private final AttackData attackData;
     private boolean connected;
+    @Setter public long ping = 0;
 
     public AutoEyePlayer(Autoeye autoeye, Player player) {
         this.wrappedEntity = new WrappedEntity(autoeye, player);

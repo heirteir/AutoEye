@@ -68,14 +68,14 @@ import org.bukkit.util.NumberConversions;
                 this.onSlime = this.groundBlocks.containsString("SLIME");
                 this.onIce = this.groundBlocks.containsString("ICE");
             }
-            if (this.inWeb = offset.containsMaterial("WEB")) {
-                player.getTimeData().getLastInWeb().update();
-            }
-            if (this.onPiston = offset.containsMaterial("PISTON")) {
-                player.getTimeData().getLastOnPiston().update();
-            } else {
-                this.onPiston = player.getTimeData().getLastOnPiston().getDifference() < 150L;
-            }
+            //            if (this.inWeb = offset.containsMaterial("WEB")) {
+            //                player.getTimeData().getLastInWeb().update();
+            //            }
+            //            if (this.onPiston = offset.containsMaterial("PISTON")) {
+            //                player.getTimeData().getLastOnPiston().update();
+            //            } else {
+            //                this.onPiston = player.getTimeData().getLastOnPiston().getDifference() < 150L;
+            //            }
             if (flying.getX() != 0 && flying.getZ() != 0) {
                 Block block = player.getPlayer().getWorld().getBlockAt(NumberConversions.floor(flying.getX()), NumberConversions.floor(this.axisAlignedBB.getMin().getY()), NumberConversions.floor(flying.getZ()));
                 if (this.onLadder = (block.getType().equals(Material.LADDER) || block.getType().equals(Material.VINE)) && !player.getPlayer().getGameMode().name().equals("SPECTATOR")) {

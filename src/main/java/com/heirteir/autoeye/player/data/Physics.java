@@ -16,9 +16,9 @@ import lombok.Setter;
     private int offGroundTicks;
     @Setter private boolean flying;
     @Setter private boolean hasVelocity;
+    private boolean previousVelocity;
+    @Setter private boolean startVelocity;
     private int movesPerSecond;
-    @Setter private boolean running;
-    @Setter private boolean postVelocity;
 
     public Physics(AutoEyePlayer player) {
         this.reset(player);
@@ -48,7 +48,10 @@ import lombok.Setter;
             this.clientVelocity = new Vector3D(player.getLocationData().getLocation().getX() - player.getLocationData().getPreviousLocation().getX(), player.getLocationData().getLocation().getY() - player.getLocationData().getPreviousLocation().getY(), player.getLocationData().getLocation().getZ() - player.getLocationData().getPreviousLocation().getZ());
             this.clientAcceleration = new Vector3D(this.clientVelocity.getX() - this.clientAcceleration.getX(), this.clientVelocity.getY() - this.clientAcceleration.getY(), this.clientVelocity.getZ() - this.clientAcceleration.getZ());
             this.calculatedYAcceleration = this.calculatedYVelocity;
-            if (!this.hasVelocity || player.getPhysics().getCalculatedYVelocity() == 0) {
+            this.startVelocity = this.hasVelocity;
+            if (this.hasVelocity) {
+                this.calculatedYVelocity = this.serverVelocity.getY();
+            } else {
                 this.offGroundTicks++;
                 if (this.flying || player.getLocationData().isTeleported() || player.getLocationData().isInWater() || player.getLocationData().isOnLadder() || player.getLocationData().isInWeb() || player.getTimeData().getLastFlying().getDifference() < 1000) {
                     this.calculatedYVelocity = this.clientVelocity.getY();
@@ -60,7 +63,7 @@ import lombok.Setter;
                     this.calculatedYVelocity = 0;
                     this.offGroundTicks = 0;
                 } else {
-                    if ((player.getLocationData().isPreviousOnGround() && this.clientVelocity.getY() > 0)) {
+                    if (!this.previousVelocity && player.getLocationData().isPreviousOnGround() && this.clientVelocity.getY() > 0) {
                         this.calculatedYVelocity = jumpVelocity;
                     } else {
                         this.calculatedYVelocity -= 0.08F;
@@ -77,6 +80,7 @@ import lombok.Setter;
                 this.movesPerSecond = 0;
             }
             this.movesPerSecond++;
+            this.previousVelocity = this.hasVelocity;
         }
     }
 }
