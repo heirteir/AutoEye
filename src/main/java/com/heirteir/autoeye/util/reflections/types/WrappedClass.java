@@ -21,6 +21,10 @@ import java.util.Set;
         this.cachedMethods = Maps.newHashMap();
     }
 
+    private Set<WrappedMethod> getWrappedMethods(String name) {
+        return this.cachedMethods.computeIfAbsent(name, k -> Sets.newHashSet());
+    }
+
     public WrappedField getFieldByName(String name) {
         return this.cachedFields.computeIfAbsent(name, k -> {
             Field tempField = null;
@@ -38,20 +42,6 @@ import java.util.Set;
         });
     }
 
-    public WrappedField getFieldAfterOtherByName(String name) {
-        boolean next = false;
-        for (Field field : this.parent.getDeclaredFields()) {
-            if (next) {
-                return this.getFieldByName(field.getName());
-            } else {
-                if (field.getName().equals(name)) {
-                    next = true;
-                }
-            }
-        }
-        return null;
-    }
-
     public WrappedConstructor getConstructor(Class... types) {
         for (Constructor constructor : this.parent.getConstructors()) {
             if (Sets.newHashSet(constructor.getParameterTypes()).containsAll(Sets.newHashSet(types))) {
@@ -61,23 +51,19 @@ import java.util.Set;
         return null;
     }
 
-    private WrappedField getFieldByType(Class<?> type, boolean first) {
+    private WrappedField getFieldByType(Class<?> type) {
         WrappedField tempField = null;
         for (WrappedField wrappedField : this.cachedFields.values()) {
             if (wrappedField.getType().equals(type)) {
                 tempField = wrappedField;
-                if (first) {
-                    break;
-                }
+                break;
             }
         }
         if (tempField == null) {
             for (Field field : this.parent.getDeclaredFields()) {
                 if (field.getType().equals(type)) {
                     this.cachedFields.put(field.getName(), tempField = new WrappedField(this, field));
-                    if (first) {
-                        break;
-                    }
+                    break;
                 }
             }
         }
@@ -85,60 +71,43 @@ import java.util.Set;
     }
 
     public WrappedField getFirstFieldByType(Class<?> type) {
-        return this.getFieldByType(type, true);
-    }
-
-    public WrappedField getLastFieldByType(Class<?> type) {
-        return this.getFieldByType(type, false);
-    }
-
-    public WrappedMethod getMethodByTypes(Class... parameters) {
-        Set<Class> tempParameters = Sets.newHashSet(parameters);
-        for (Method method : this.parent.getDeclaredMethods()) {
-            if (parameters.length == 0 || Sets.newHashSet(method.getParameterTypes()).containsAll(tempParameters)) {
-                return new WrappedMethod(this, method);
-            }
-        }
-        for (Method method : this.parent.getMethods()) {
-            if (parameters.length == 0 || Sets.newHashSet(method.getParameterTypes()).containsAll(tempParameters)) {
-                return new WrappedMethod(this, method);
-            }
-        }
-        return null;
+        return this.getFieldByType(type);
     }
 
     public WrappedMethod getMethod(String name, Class... parameters) {
-        Set<WrappedMethod> methods = this.cachedMethods.get(name);
-        Set<Class> tempParameters = Sets.newHashSet(parameters);
-        WrappedMethod tempMethod = null;
-        if (methods != null) {
-            for (WrappedMethod method : methods) {
-                if (parameters.length == 0 || method.getParameters().containsAll(tempParameters)) {
-                    tempMethod = method;
+        Set<WrappedMethod> methods = this.getWrappedMethods(name);
+        for (WrappedMethod method : methods) {
+            if (method.getMethod().getParameterTypes().length != parameters.length) {
+                continue;
+            }
+            boolean same = true;
+            for (int x = 0; x < method.getMethod().getParameterTypes().length; x++) {
+                if (method.getMethod().getParameterTypes()[x] != parameters[x]) {
+                    same = false;
                     break;
                 }
             }
-        }
-        if (tempMethod == null) {
-            for (Method method : this.parent.getDeclaredMethods()) {
-                if (method.getName().equals(name)) {
-                    if (parameters.length == 0 || tempParameters.containsAll(Sets.newHashSet(method.getParameterTypes()))) {
-                        tempMethod = new WrappedMethod(this, method);
-                        break;
-                    }
-                }
-            }
-            if (tempMethod == null) {
-                for (Method method : this.parent.getMethods()) {
-                    if (method.getName().equals(name)) {
-                        if (parameters.length == 0 || tempParameters.containsAll(Sets.newHashSet(method.getParameterTypes()))) {
-                            tempMethod = new WrappedMethod(this, method);
-                            break;
-                        }
-                    }
-                }
+            if (same) {
+                return method;
             }
         }
-        return tempMethod;
+        for (Method method : this.parent.getDeclaredMethods()) {
+            if (!method.getName().equals(name) || parameters.length != method.getParameterTypes().length) {
+                continue;
+            }
+            boolean same = true;
+            for (int x = 0; x < method.getParameterTypes().length; x++) {
+                if (method.getParameterTypes()[x] != parameters[x]) {
+                    same = false;
+                    break;
+                }
+            }
+            if (same) {
+                WrappedMethod output = new WrappedMethod(this, method);
+                methods.add(output);
+                return output;
+            }
+        }
+        return null;
     }
 }

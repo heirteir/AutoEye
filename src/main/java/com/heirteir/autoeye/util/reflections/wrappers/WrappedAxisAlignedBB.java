@@ -36,7 +36,7 @@ import java.util.Set;
     public WrappedAxisAlignedBB offset(float x, float y, float z, float x2, float y2, float z2) {
         return new WrappedAxisAlignedBB(this.autoeye, this.bukkitWorld, this.min.offset(x, y, z), this.max.offset(x2, y2, z2));
     }
-
+    
     private double get(Object axisAlignedBB, String value) {
         return (double) this.autoeye.getReflections().getNMSClass("AxisAlignedBB").getFieldByName(value).get(axisAlignedBB);
     }
@@ -53,9 +53,9 @@ import java.util.Set;
         return blocks;
     }
 
-//    public boolean containsMaterial(String materialName) {
-//        return (boolean) this.autoeye.getReflections().getNMSClass("World").getMethodByTypes(this.axisAlignedBB.getClass(), this.autoeye.getReflections().getNMSClass("Material").getParent()).invoke(this.world, this.axisAlignedBB, this.autoeye.getReflections().getNMSClass("Material").getFieldByName(materialName).get(null));
-//    }
+    public boolean containsMaterial(String materialName) {
+        return (boolean) this.autoeye.getReflections().getNMSClass("World").getMethod("a", this.axisAlignedBB.getClass(), this.autoeye.getReflections().getNMSClass("Material").getParent()).invoke(this.world, this.axisAlignedBB, this.autoeye.getReflections().getNMSClass("Material").getFieldByName(materialName).get(null));
+    }
 
     public boolean containsLiquid() {
         return this.autoeye.getReflections().getNMSClass("World").getMethod("containsLiquid", autoeye.getReflections().getNMSClass("AxisAlignedBB").getParent()).invoke(this.world, this.axisAlignedBB);

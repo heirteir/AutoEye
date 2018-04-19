@@ -32,7 +32,6 @@ public class EventHandler {
         this.register(new SpoofedOnGroundPacket(autoeye));
         this.register(new Step(autoeye));
         this.register(new Timer(autoeye));
-        this.register(new Velocity(autoeye));
         //updater
         this.register(new DataUpdater(autoeye));
     }
