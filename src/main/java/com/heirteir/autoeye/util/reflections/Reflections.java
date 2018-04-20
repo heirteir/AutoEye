@@ -1,10 +1,16 @@
+/*
+ * Created by Justin Heflin on 4/19/18 8:21 PM
+ * Copyright (c) 2018.
+ *
+ * Can be redistributed non commercially as long as credit is given to original copyright owner.
+ *
+ * last modified: 4/19/18 7:22 PM
+ */
 package com.heirteir.autoeye.util.reflections;
 
 import com.google.common.collect.Maps;
 import com.heirteir.autoeye.util.reflections.types.WrappedClass;
-import com.heirteir.autoeye.util.reflections.types.WrappedMethod;
 import lombok.Getter;
-import org.bukkit.entity.Player;
 
 import java.util.Map;
 
@@ -39,7 +45,7 @@ import java.util.Map;
         return this.getClass(netMinecraftServerString + name);
     }
 
-    public WrappedClass getClass(String name) {
+    private WrappedClass getClass(String name) {
         return this.classes.computeIfAbsent(name, k -> {
             try {
                 return new WrappedClass(Class.forName(name));

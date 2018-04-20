@@ -1,10 +1,10 @@
 /*
- * Created by Justin Heflin on 4/19/18 6:57 PM
+ * Created by Justin Heflin on 4/19/18 8:21 PM
  * Copyright (c) 2018.
  *
- * Code can not be redistributed under a non-commercial license, unless the owner of the copyright gives specific access to have commercial rights to the product.
+ * Can be redistributed non commercially as long as credit is given to original copyright owner.
  *
- * last modified: 4/19/18 6:51 PM
+ * last modified: 4/19/18 7:22 PM
  */
 package com.heirteir.autoeye.event.packets.channelhandler;
 

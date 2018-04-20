@@ -1,3 +1,11 @@
+/*
+ * Created by Justin Heflin on 4/19/18 8:21 PM
+ * Copyright (c) 2018.
+ *
+ * Can be redistributed non commercially as long as credit is given to original copyright owner.
+ *
+ * last modified: 4/19/18 8:20 PM
+ */
 package com.heirteir.autoeye.check.checks.movement;
 
 import com.heirteir.autoeye.Autoeye;
@@ -12,7 +20,7 @@ public class Speed extends Check {
     }
 
     @EventExecutor public boolean check(PlayerMoveEvent event) {
-        if (event.getPlayer().isConnected() && (event.getPlayer().getPhysics().isHasVelocity() && !event.getPlayer().getPhysics().isPreviousVelocity()) && event.getPlayer().getTimeData().getLastVelocity().getDifference() > 500&& event.getPlayer().getLocationData().isChangedPos() && !event.getPlayer().getPhysics().isFlying() && !event.getPlayer().getLocationData().isTeleported() && !event.getPlayer().getPhysics().isHasVelocity()) {
+        if (event.getPlayer().isConnected() && event.getPlayer().getTimeData().getLastVelocity().getDifference() > 500 && event.getPlayer().getTimeData().getLastVelocity().getDifference() > 500 && event.getPlayer().getLocationData().isChangedPos() && !event.getPlayer().getPhysics().isFlying() && !event.getPlayer().getLocationData().isTeleported()) {
             float speed = (float) Math.sqrt(Math.pow(event.getPlayer().getPhysics().getClientVelocity().getX() - event.getPlayer().getPlayer().getVelocity().getX(), 2) + Math.pow(event.getPlayer().getPhysics().getClientVelocity().getZ() - event.getPlayer().getPlayer().getVelocity().getZ(), 2));
             float serverVelocity = (float) Math.sqrt(Math.pow(event.getPlayer().getPlayer().getVelocity().getX(), 2) + Math.pow(event.getPlayer().getPlayer().getVelocity().getZ(), 2));
             float walkSpeed;

@@ -1,10 +1,10 @@
 /*
- * Created by Justin Heflin on 4/19/18 6:57 PM
+ * Created by Justin Heflin on 4/19/18 8:21 PM
  * Copyright (c) 2018.
  *
- * Code can not be redistributed under a non-commercial license, unless the owner of the copyright gives specific access to have commercial rights to the product.
+ * Can be redistributed non commercially as long as credit is given to original copyright owner.
  *
- * last modified: 4/19/18 6:51 PM
+ * last modified: 4/19/18 8:20 PM
  */
 package com.heirteir.autoeye.check.checks.movement;
 
@@ -20,7 +20,7 @@ public class Step extends Check {
     }
 
     @EventExecutor public boolean check(PlayerMoveEvent event) {
-        return event.getPlayer().isConnected() && (!event.getPlayer().getPhysics().isHasVelocity() && !event.getPlayer().getPhysics().isPreviousVelocity()) && event.getPlayer().getLocationData().isChangedPos() && !event.getPlayer().getPhysics().isFlying() && !event.getPlayer().getLocationData().isTeleported() && !event.getPlayer().getLocationData().isOnPiston() && event.getPacket().isOnGround() && Math.abs(event.getPlayer().getPhysics().getCalculatedYVelocity()) < (event.getPlayer().getPhysics().getJumpVelocity() < 0.5F ? 0.5F : event.getPlayer().getPhysics().getJumpVelocity()) && (event.getPlayer().getPhysics().getJumpVelocity() < 0.5F ? 0.5F : event.getPlayer().getPhysics().getJumpVelocity()) < event.getPlayer().getPhysics().getClientVelocity().getY();
+        return event.getPlayer().isConnected() && event.getPlayer().getTimeData().getLastVelocity().getDifference() > 500 && event.getPlayer().getLocationData().isChangedPos() && !event.getPlayer().getPhysics().isFlying() && !event.getPlayer().getLocationData().isTeleported() && !event.getPlayer().getLocationData().isOnPiston() && event.getPacket().isOnGround() && Math.abs(event.getPlayer().getPhysics().getCalculatedYVelocity()) < (event.getPlayer().getPhysics().getJumpVelocity() < 0.5F ? 0.5F : event.getPlayer().getPhysics().getJumpVelocity()) && (event.getPlayer().getPhysics().getJumpVelocity() < 0.5F ? 0.5F : event.getPlayer().getPhysics().getJumpVelocity()) < event.getPlayer().getPhysics().getClientVelocity().getY();
     }
 
     @Override public <T extends Event> void revert(T event) {

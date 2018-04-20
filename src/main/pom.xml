@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Created by Justin Heflin on 4/19/18 8:21 PM
+  ~ Copyright (c) 2018.
+  ~
+  ~ Can be redistributed non commercially as long as credit is given to original copyright owner.
+  ~
+  ~ last modified: 4/19/18 7:22 PM
+  -->
+
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -6,12 +15,12 @@
 
     <groupId>com.heirteir</groupId>
     <artifactId>autoeye</artifactId>
-    <version>0.65</version>
+    <version>0.65A</version>
     <packaging>jar</packaging>
 
     <name>AutoEye</name>
 
-    <description>An anticheat like no other.</description>
+    <description>An Anticheat like no other.</description>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
