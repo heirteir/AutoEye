@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  ~ Created by Justin Heflin on 4/19/18 8:31 PM
+  ~ Created by Justin Heflin on 4/20/18 12:38 AM
   ~ Copyright (c) 2018.
   ~
   ~ Can be redistributed non commercially as long as credit is given to original copyright owner.
   ~
-  ~ last modified: 4/19/18 8:30 PM
+  ~ last modified: 4/19/18 10:59 PM
   -->
 
 <project xmlns="http://maven.apache.org/POM/4.0.0"
@@ -63,10 +63,6 @@
     </build>
 
     <repositories>
-        <repository>
-            <id>spigotmc-repo</id>
-            <url>https://hub.spigotmc.org/nexus/content/groups/public/</url>
-        </repository>
         <repository>
             <id>sonatype</id>
             <url>https://oss.sonatype.org/content/groups/public/</url>

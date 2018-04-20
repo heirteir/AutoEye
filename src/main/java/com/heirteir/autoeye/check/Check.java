@@ -1,10 +1,10 @@
 /*
- * Created by Justin Heflin on 4/19/18 8:21 PM
+ * Created by Justin Heflin on 4/20/18 12:38 AM
  * Copyright (c) 2018.
  *
  * Can be redistributed non commercially as long as credit is given to original copyright owner.
  *
- * last modified: 4/19/18 7:22 PM
+ * last modified: 4/19/18 10:55 PM
  */
 package com.heirteir.autoeye.check;
 
@@ -13,7 +13,7 @@ import com.heirteir.autoeye.event.events.Listener;
 import com.heirteir.autoeye.event.events.event.Event;
 import com.heirteir.autoeye.player.AutoEyePlayer;
 import lombok.Getter;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 import org.bukkit.permissions.Permission;
 
 public abstract class Check extends Listener {
