@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  ~ Created by Justin Heflin on 4/19/18 8:21 PM
+  ~ Created by Justin Heflin on 4/19/18 8:31 PM
   ~ Copyright (c) 2018.
   ~
   ~ Can be redistributed non commercially as long as credit is given to original copyright owner.
   ~
-  ~ last modified: 4/19/18 7:22 PM
+  ~ last modified: 4/19/18 8:30 PM
   -->
 
 <project xmlns="http://maven.apache.org/POM/4.0.0"
@@ -15,7 +15,7 @@
 
     <groupId>com.heirteir</groupId>
     <artifactId>autoeye</artifactId>
-    <version>0.65A</version>
+    <version>0.65C</version>
     <packaging>jar</packaging>
 
     <name>AutoEye</name>
