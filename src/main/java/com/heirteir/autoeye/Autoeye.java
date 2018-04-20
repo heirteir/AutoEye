@@ -8,7 +8,6 @@
  */
 package com.heirteir.autoeye;
 
-import com.google.common.collect.Sets;
 import com.heirteir.autoeye.event.events.EventHandler;
 import com.heirteir.autoeye.event.packets.ChannelInjector;
 import com.heirteir.autoeye.permissions.PermissionsManager;
@@ -74,13 +73,5 @@ import org.bukkit.util.Vector;
         this.channelInjector.inject(this);
         this.autoEyePlayerList.createListener();
         this.eventHandler.createCheckEventExecutors(this);
-    }
-
-    @Override public void onDisable() {
-        if (this.channelInjector != null) {
-            for (Player player : Sets.newHashSet(Bukkit.getOnlinePlayers())) {
-                this.channelInjector.removeChannel(player);
-            }
-        }
     }
 }
