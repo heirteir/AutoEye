@@ -27,7 +27,7 @@ public abstract class Check extends Listener {
         this.permission = this.autoeye.getPermissionsManager().addParent(this.autoeye.getPermissionsManager().getBypass(), this.autoeye.getPermissionsManager().createPermission("autoeye.bypass." + StringUtils.replace(StringUtils.replace(StringUtils.replace(this.name, " ", "_"), "(", ""), ")", "").toLowerCase()));
     }
 
-    public abstract <T extends Event> void revert(T event);
+    public abstract <T extends Event> boolean revert(T event);
 
     protected boolean checkThreshold(AutoEyePlayer player, int amount) {
         return player.getInfractionData().getInfraction(this).addThreshold() >= amount;

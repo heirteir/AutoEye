@@ -6,7 +6,57 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c5d9ea3b-dcde-488a-8c32-f40ea05eb9d0" name="Default" comment="" />
+    <list default="true" id="c5d9ea3b-dcde-488a-8c32-f40ea05eb9d0" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InvalidLocation.java" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/Autoeye.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/Autoeye.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/api/AutoEyeInfractionEvent.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/api/AutoEyeInfractionEvent.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/Check.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/Check.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/combat/KillAuraRotation.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/combat/KillAuraRotation.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/combat/Reach.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/combat/Reach.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/FastLadder.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/FastLadder.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InvalidMotion.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InvalidMotion.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/NoWeb.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/NoWeb.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/SlimeJump.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/SlimeJump.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/Speed.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/Speed.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/SpoofedOnGroundPacket.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/SpoofedOnGroundPacket.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/Step.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/Step.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/Timer.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/Timer.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/events/EventExecutor.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/events/EventExecutor.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/events/EventHandler.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/events/EventHandler.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/ChannelInjector.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/ChannelInjector.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/channelhandler/ChannelHandler1_7.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/channelhandler/ChannelHandler1_7.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/channelhandler/ChannelHandler1_8.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/channelhandler/ChannelHandler1_8.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/channelhandler/ChannelHandlerAbstract.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/channelhandler/ChannelHandlerAbstract.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/AutoEyePlayerList.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/AutoEyePlayerList.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/reflections/Reflections.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/reflections/Reflections.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/reflections/wrappers/WrappedEntity.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/reflections/wrappers/WrappedEntity.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/pom.xml" afterPath="$PROJECT_DIR$/src/main/pom.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/Autoeye.class" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/Autoeye.class" />
+      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/api/AutoEyeInfractionEvent.class" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/api/AutoEyeInfractionEvent.class" />
+      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/check/Check.class" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/check/Check.class" />
+      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/check/checks/combat/KillAuraRotation.class" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/check/checks/combat/KillAuraRotation.class" />
+      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/check/checks/combat/Reach.class" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/check/checks/combat/Reach.class" />
+      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/check/checks/movement/FastLadder.class" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/check/checks/movement/FastLadder.class" />
+      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/check/checks/movement/InvalidMotion.class" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/check/checks/movement/InvalidMotion.class" />
+      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/check/checks/movement/NoWeb.class" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/check/checks/movement/NoWeb.class" />
+      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/check/checks/movement/SlimeJump.class" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/check/checks/movement/SlimeJump.class" />
+      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/check/checks/movement/Speed.class" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/check/checks/movement/Speed.class" />
+      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/check/checks/movement/SpoofedOnGroundPacket.class" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/check/checks/movement/SpoofedOnGroundPacket.class" />
+      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/check/checks/movement/Step.class" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/check/checks/movement/Step.class" />
+      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/check/checks/movement/Timer.class" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/check/checks/movement/Timer.class" />
+      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/event/events/EventExecutor$Priority.class" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/event/events/EventExecutor$Priority.class" />
+      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/event/events/EventHandler.class" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/event/events/EventHandler.class" />
+      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/event/packets/ChannelInjector.class" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/event/packets/ChannelInjector.class" />
+      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/event/packets/channelhandler/ChannelHandler1_7$ChannelHandler.class" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/event/packets/channelhandler/ChannelHandler1_7$ChannelHandler.class" />
+      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/event/packets/channelhandler/ChannelHandler1_8$ChannelHandler.class" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/event/packets/channelhandler/ChannelHandler1_8$ChannelHandler.class" />
+      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/event/packets/channelhandler/ChannelHandler1_8.class" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/event/packets/channelhandler/ChannelHandler1_8.class" />
+      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/event/packets/channelhandler/ChannelHandlerAbstract$1.class" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/event/packets/channelhandler/ChannelHandlerAbstract$1.class" />
+      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/event/packets/channelhandler/ChannelHandlerAbstract.class" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/event/packets/channelhandler/ChannelHandlerAbstract.class" />
+      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/player/AutoEyePlayerList.class" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/player/AutoEyePlayerList.class" />
+      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/util/reflections/wrappers/WrappedEntity.class" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/util/reflections/wrappers/WrappedEntity.class" />
+      <change beforePath="$PROJECT_DIR$/src/main/target/classes/plugin.yml" afterPath="$PROJECT_DIR$/src/main/target/classes/plugin.yml" />
+    </list>
     <ignored path="$PROJECT_DIR$/src/main/target/" />
     <ignored path=".idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,68 +68,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="InvalidMotion.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InvalidMotion.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="33" column="21" lean-forward="false" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
-              <folding>
-                <element signature="e#2952#2953#0" expanded="true" />
-                <element signature="e#3053#3054#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Autoeye.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/Autoeye.java">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="646">
+              <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EventHandler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/events/EventHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="259">
+              <caret line="43" column="31" lean-forward="false" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AutoEyeInfractionEvent.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/api/AutoEyeInfractionEvent.java">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
-              <caret line="36" column="26" lean-forward="false" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Logger.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/logger/Logger.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="15" column="21" lean-forward="false" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BlockSet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/BlockSet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="16" column="46" lean-forward="false" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MathUtil.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/MathUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="14" column="38" lean-forward="false" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TPS.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/TPS.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+              <caret line="30" column="26" lean-forward="false" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1326#1327#0" expanded="true" />
-                <element signature="e#1352#1353#0" expanded="true" />
+                <element signature="e#1534#1535#0" expanded="true" />
+                <element signature="e#1568#1569#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -88,34 +104,61 @@
       <file leaf-file-name="ChannelInjector.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/ChannelInjector.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="33" column="9" lean-forward="false" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
+            <state relative-caret-position="255">
+              <caret line="31" column="1" lean-forward="true" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
               <folding>
-                <element signature="e#1374#1375#0" expanded="true" />
-                <element signature="e#1421#1422#0" expanded="true" />
-                <element signature="e#1469#1470#0" expanded="true" />
-                <element signature="e#1519#1520#0" expanded="true" />
+                <element signature="e#709#710#0" expanded="true" />
+                <element signature="e#870#871#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/pom.xml">
+      <file leaf-file-name="AutoEyePlayerList.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/AutoEyePlayerList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="12" lean-forward="false" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
+            <state relative-caret-position="544">
+              <caret line="58" column="5" lean-forward="false" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
+              <folding>
+                <element signature="e#1123#1124#0" expanded="true" />
+                <element signature="e#1170#1171#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ChannelHandlerAbstract.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/channelhandler/ChannelHandlerAbstract.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="48" column="13" lean-forward="true" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="vcs.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
+      <file leaf-file-name="Reflections.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/reflections/Reflections.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="10" lean-forward="false" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
-              <folding />
+            <state relative-caret-position="440">
+              <caret line="47" column="47" lean-forward="false" selection-start-line="47" selection-start-column="47" selection-end-line="47" selection-end-column="47" />
+              <folding>
+                <element signature="e#1809#1810#0" expanded="true" />
+                <element signature="e#1907#1908#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ChannelHandler1_8.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/channelhandler/ChannelHandler1_8.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="26" column="17" lean-forward="false" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
+              <folding>
+                <element signature="e#1538#1539#0" expanded="true" />
+                <element signature="e#1806#1807#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -123,8 +166,18 @@
       <file leaf-file-name="KillAuraRotation.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/combat/KillAuraRotation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+            <state relative-caret-position="374">
+              <caret line="38" column="1" lean-forward="true" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FastLadder.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/FastLadder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="32" column="5" lean-forward="false" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -132,13 +185,23 @@
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>Bukkit.getOnlinePla</find>
       <find>);</find>
+      <find>a</find>
+      <find>hey</find>
     </findStrings>
     <replaceStrings>
       <replace>;</replace>
+      <replace>output</replace>
     </replaceStrings>
     <dirStrings>
       <dir>C:\Users\Justin\Google Drive\Coding\workspace\AutoEyeGit2\src\main</dir>
@@ -155,13 +218,37 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InvalidMotion.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/data/LocationData.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/AutoEyePlayer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/ChannelInjector.java" />
-        <option value="$PROJECT_DIR$/src/main/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/TPS.java" />
+        <option value="$PROJECT_DIR$/src/main/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/reflections/wrappers/WrappedEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/MathUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/events/EventExecutor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/updaters/DataVerifier.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/Check.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/FastLadder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InvalidLocation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InvalidMotion.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/NoWeb.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/SlimeJump.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/Speed.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/SpoofedOnGroundPacket.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/Step.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/Timer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/combat/Reach.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/combat/KillAura2.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/ChannelInjector.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/channelhandler/ChannelHandler1_7.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/channelhandler/ChannelHandler1_8.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/Autoeye.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/api/ChannelRecreateEvent.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/api/AutoEyeInfractionEvent.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/combat/KillAuraRotation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/AutoEyePlayerList.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/events/EventHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/reflections/Reflections.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/channelhandler/ChannelHandlerAbstract.java" />
       </list>
     </option>
   </component>
@@ -173,7 +260,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-7" />
+    <option name="x" value="953" />
     <option name="width" value="974" />
     <option name="height" value="1057" />
   </component>
@@ -268,6 +355,23 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="autoeye" type="462c0819:PsiDirectoryNode" />
               <item name="event" type="462c0819:PsiDirectoryNode" />
+              <item name="events" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AutoEyeGit2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="autoeye" type="462c0819:PsiDirectoryNode" />
+              <item name="event" type="462c0819:PsiDirectoryNode" />
+              <item name="events" type="462c0819:PsiDirectoryNode" />
+              <item name="event" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AutoEyeGit2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="autoeye" type="462c0819:PsiDirectoryNode" />
+              <item name="event" type="462c0819:PsiDirectoryNode" />
               <item name="packets" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -278,6 +382,15 @@
               <item name="event" type="462c0819:PsiDirectoryNode" />
               <item name="packets" type="462c0819:PsiDirectoryNode" />
               <item name="channelhandler" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AutoEyeGit2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="autoeye" type="462c0819:PsiDirectoryNode" />
+              <item name="event" type="462c0819:PsiDirectoryNode" />
+              <item name="packets" type="462c0819:PsiDirectoryNode" />
+              <item name="wrappers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AutoEyeGit2" type="b2602c69:ProjectViewProjectNode" />
@@ -299,6 +412,14 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="autoeye" type="462c0819:PsiDirectoryNode" />
+              <item name="player" type="462c0819:PsiDirectoryNode" />
+              <item name="updaters" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AutoEyeGit2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="autoeye" type="462c0819:PsiDirectoryNode" />
               <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -308,6 +429,14 @@
               <item name="autoeye" type="462c0819:PsiDirectoryNode" />
               <item name="util" type="462c0819:PsiDirectoryNode" />
               <item name="logger" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AutoEyeGit2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="autoeye" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+              <item name="reflections" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -473,11 +602,12 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="974" height="1057" extended-state="0" />
+    <frame x="953" y="0" width="974" height="1057" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3257329" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -486,10 +616,11 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32580644" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="IntelliGuard" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3344191" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3311828" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4595186" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.392779" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -501,7 +632,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="UpdateCopyrightCheckinHandler">
@@ -559,10 +689,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="33" column="21" lean-forward="false" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
-          <folding>
-            <element signature="e#2952#2953#0" expanded="true" />
-            <element signature="e#3053#3054#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -595,9 +722,9 @@
         <state relative-caret-position="204">
           <caret line="19" column="4" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1326#1327#0" expanded="true" />
-            <element signature="e#1352#1353#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1326#1327#0" expanded="false" />
+            <element signature="e#1352#1353#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -606,7 +733,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="19" column="46" lean-forward="false" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
-          <folding />
+          <folding>
+            <element signature="e#1534#1535#0" expanded="true" />
+            <element signature="e#1568#1569#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -615,10 +745,8 @@
         <state relative-caret-position="306">
           <caret line="33" column="9" lean-forward="false" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
           <folding>
-            <element signature="e#1374#1375#0" expanded="true" />
-            <element signature="e#1421#1422#0" expanded="true" />
-            <element signature="e#1469#1470#0" expanded="true" />
-            <element signature="e#1519#1520#0" expanded="true" />
+            <element signature="e#709#710#0" expanded="true" />
+            <element signature="e#870#871#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -655,14 +783,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/data/LocationData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="596">
-          <caret line="105" column="140" lean-forward="false" selection-start-line="105" selection-start-column="140" selection-end-line="105" selection-end-column="140" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/AutoEyePlayer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="749">
@@ -670,62 +790,6 @@
           <folding>
             <element signature="e#2951#2952#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/channelhandler/ChannelHandlerAbstract.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-68">
-          <caret line="21" column="22" lean-forward="false" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/channelhandler/ChannelHandler1_8.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/api/AutoEyeInfractionEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="19" column="46" lean-forward="false" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InvalidMotion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="33" column="21" lean-forward="false" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
-          <folding>
-            <element signature="e#2952#2953#0" expanded="true" />
-            <element signature="e#3053#3054#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/ChannelInjector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="33" column="9" lean-forward="false" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
-          <folding>
-            <element signature="e#1374#1375#0" expanded="true" />
-            <element signature="e#1421#1422#0" expanded="true" />
-            <element signature="e#1469#1470#0" expanded="true" />
-            <element signature="e#1519#1520#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/combat/KillAuraRotation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -745,39 +809,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/MathUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="14" column="38" lean-forward="false" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/TPS.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1326#1327#0" expanded="true" />
-            <element signature="e#1352#1353#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1326#1327#0" expanded="false" />
+            <element signature="e#1352#1353#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/Autoeye.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="36" column="26" lean-forward="false" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="12" lean-forward="false" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -785,6 +825,263 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="10" lean-forward="false" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/reflections/wrappers/WrappedEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="31" column="34" lean-forward="false" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
+          <folding>
+            <element signature="e#1164#1165#0" expanded="false" />
+            <element signature="e#1343#1344#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/data/LocationData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="87" column="47" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/MathUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="26" column="5" lean-forward="false" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/updaters/DataVerifier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="23" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/events/EventExecutor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="18" column="82" lean-forward="false" selection-start-line="18" selection-start-column="82" selection-end-line="18" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/Check.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="29" column="45" lean-forward="false" selection-start-line="29" selection-start-column="45" selection-end-line="29" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InvalidLocation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="61" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#437#438#0" expanded="false" />
+            <element signature="e#487#488#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InvalidMotion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="38" column="21" lean-forward="false" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/NoWeb.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="33" column="21" lean-forward="false" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/SlimeJump.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="30" column="64" lean-forward="false" selection-start-line="30" selection-start-column="64" selection-end-line="30" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/Speed.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="766">
+          <caret line="92" column="21" lean-forward="false" selection-start-line="92" selection-start-column="21" selection-end-line="92" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/SpoofedOnGroundPacket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="27" column="21" lean-forward="false" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/Step.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="27" column="21" lean-forward="false" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/Timer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="27" column="20" lean-forward="false" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/combat/Reach.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="35" column="20" lean-forward="false" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
+          <folding>
+            <element signature="e#1675#1676#0" expanded="false" />
+            <element signature="e#1702#1703#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/combat/KillAura2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="732">
+          <caret line="55" column="20" lean-forward="false" selection-start-line="55" selection-start-column="20" selection-end-line="55" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/channelhandler/ChannelHandler1_7.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="56" column="0" lean-forward="true" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/api/ChannelRecreateEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="17" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/api/AutoEyeInfractionEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="30" column="26" lean-forward="false" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
+          <folding>
+            <element signature="e#1534#1535#0" expanded="true" />
+            <element signature="e#1568#1569#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/channelhandler/ChannelHandler1_8.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="26" column="17" lean-forward="false" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
+          <folding>
+            <element signature="e#1538#1539#0" expanded="true" />
+            <element signature="e#1806#1807#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/combat/KillAuraRotation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="38" column="1" lean-forward="true" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/FastLadder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="32" column="5" lean-forward="false" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/Autoeye.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/ChannelInjector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="31" column="1" lean-forward="true" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
+          <folding>
+            <element signature="e#709#710#0" expanded="true" />
+            <element signature="e#870#871#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/AutoEyePlayerList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="58" column="5" lean-forward="false" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
+          <folding>
+            <element signature="e#1123#1124#0" expanded="true" />
+            <element signature="e#1170#1171#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/events/EventHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="43" column="31" lean-forward="false" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/reflections/Reflections.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="47" column="47" lean-forward="false" selection-start-line="47" selection-start-column="47" selection-end-line="47" selection-end-column="47" />
+          <folding>
+            <element signature="e#1809#1810#0" expanded="true" />
+            <element signature="e#1907#1908#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/channelhandler/ChannelHandlerAbstract.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="48" column="13" lean-forward="true" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="13" />
           <folding />
         </state>
       </provider>

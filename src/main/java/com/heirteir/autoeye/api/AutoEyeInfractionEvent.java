@@ -18,7 +18,7 @@ import org.bukkit.event.Cancellable;
 import org.bukkit.event.HandlerList;
 
 @RequiredArgsConstructor @Getter public class AutoEyeInfractionEvent extends org.bukkit.event.Event implements Cancellable {
-    private static final HandlerList handlers = new HandlerList();
+    private static final HandlerList handlerList = new HandlerList();
     private final Player player;
     private final InfractionData.Infraction infraction;
     @Setter private String message = "&e%player%&7 was caught using &e%check%&7. (VL=&e%vl%&7)";
@@ -36,7 +36,11 @@ import org.bukkit.event.HandlerList;
         this.cancelled = cancelled;
     }
 
+    public static HandlerList getHandlerList() {
+        return handlerList;
+    }
+
     @Override public HandlerList getHandlers() {
-        return handlers;
+        return handlerList;
     }
 }

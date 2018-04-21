@@ -33,6 +33,7 @@ public class KillAuraRotation extends Check {
         }
     }
 
-    @Override public <T extends Event> void revert(T event) {
+    @Override public <T extends Event> boolean revert(T event) {
+        return true;
     }
 }

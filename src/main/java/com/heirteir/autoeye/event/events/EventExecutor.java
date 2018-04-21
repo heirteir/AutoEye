@@ -20,7 +20,7 @@ import java.lang.annotation.Target;
     Priority priority() default Priority.NORMAL;
 
     @RequiredArgsConstructor @Getter enum Priority {
-        HIGH(0), NORMAL(1), LOW(2), LOWEST(3);
+        HIGHEST(0), HIGH(1), NORMAL(2), LOW(3), LOWEST(4);
         private final int level;
     }
 }

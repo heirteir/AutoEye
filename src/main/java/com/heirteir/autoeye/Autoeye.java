@@ -19,11 +19,7 @@ import com.heirteir.autoeye.util.reflections.Reflections;
 import com.heirteir.autoeye.util.server.Version;
 import lombok.Getter;
 import org.bukkit.Bukkit;
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.bukkit.util.Vector;
 
 @Getter public final class Autoeye extends JavaPlugin {
     private final Logger pluginLogger;
@@ -35,6 +31,7 @@ import org.bukkit.util.Vector;
     private final MathUtil mathUtil;
     private final PermissionsManager permissionsManager;
     private final TPS tps;
+    private boolean running = false;
 
     public Autoeye() {
         this.pluginLogger = new Logger(this);
@@ -58,20 +55,21 @@ import org.bukkit.util.Vector;
         }
     }
 
-    @Override public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        ((Player) sender).setVelocity(new Vector(5, 5, 0));
-        return super.onCommand(sender, command, label, args);
-    }
-
     @Override public void onEnable() {
         if (this.version.equals(Version.NONE)) {
             this.pluginLogger.sendConsoleMessageWithPrefix(this.pluginLogger.getPluginName() + "&c does not support the version of your Minecraft Server. " + this.pluginLogger.getPluginName() + " &conly supports &7[&e1.7-1.12&7]&c.");
             Bukkit.getPluginManager().disablePlugin(this);
             return;
         }
+        this.running = true;
         this.tps.runTaskTimerAsynchronously(this, 100L, 1L);
         this.channelInjector.inject(this);
         this.autoEyePlayerList.createListener();
         this.eventHandler.createCheckEventExecutors(this);
+    }
+
+    @Override public void onDisable() {
+        this.autoEyePlayerList.unregister();
+        this.running = false;
     }
 }

@@ -21,7 +21,10 @@ public class ChannelHandler1_8 extends ChannelHandlerAbstract {
     @Override public void addChannel(Player player) {
         io.netty.channel.Channel channel = getChannel(player);
         this.addChannelHandlerExecutor.execute(() -> {
-            if (channel != null && channel.pipeline().get(this.playerKey) == null) {
+            if (channel != null) {
+                if (channel.pipeline().get(this.playerKey) != null) {
+                    channel.pipeline().remove(this.playerKey);
+                }
                 channel.pipeline().addBefore(this.handlerKey, this.playerKey, new ChannelHandler(autoeye, player, this));
             }
         });
@@ -50,13 +53,15 @@ public class ChannelHandler1_8 extends ChannelHandlerAbstract {
         }
 
         @Override public void write(io.netty.channel.ChannelHandlerContext ctx, Object msg, io.netty.channel.ChannelPromise promise) throws Exception {
-            super.write(ctx, msg, promise);
-            channelHandlerAbstract.run(this.player, msg);
+            if (channelHandlerAbstract.run(this.player, msg)) {
+                super.write(ctx, msg, promise);
+            }
         }
 
         @Override public void channelRead(io.netty.channel.ChannelHandlerContext ctx, Object msg) throws Exception {
-            super.channelRead(ctx, msg);
-            channelHandlerAbstract.run(this.player, msg);
+            if (channelHandlerAbstract.run(this.player, msg)) {
+                super.channelRead(ctx, msg);
+            }
         }
     }
 }

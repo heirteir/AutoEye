@@ -23,7 +23,8 @@ public class SpoofedOnGroundPacket extends Check {
         return (event.getPlayer().isConnected() && event.getPlayer().getTimeData().getLastVelocity().getDifference() > 500 && event.getPlayer().getLocationData().isChangedPos() && !event.getPlayer().getPhysics().isFlying() && !event.getPlayer().getLocationData().isTeleported() && event.getPacket().isOnGround() != event.getPlayer().getLocationData().isServerOnGround()) ? this.checkThreshold(event.getPlayer(), 5) : this.resetThreshold(event.getPlayer());
     }
 
-    @Override public <T extends Event> void revert(T event) {
+    @Override public <T extends Event> boolean revert(T event) {
         event.getPlayer().teleport(event.getPlayer().getLocationData().getTeleportLocation());
+        return false;
     }
 }

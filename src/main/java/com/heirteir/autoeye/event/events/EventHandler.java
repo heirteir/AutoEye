@@ -41,6 +41,7 @@ public class EventHandler {
         this.register(new Reach(autoeye));
         //movement
         this.register(new FastLadder(autoeye));
+        this.register(new InvalidLocation(autoeye));
         this.register(new InvalidMotion(autoeye));
         this.register(new NoWeb(autoeye));
         this.register(new SlimeJump(autoeye));
@@ -50,9 +51,10 @@ public class EventHandler {
         this.register(new Timer(autoeye));
         //updater
         this.register(new DataUpdater(autoeye));
+        //verifier
     }
 
-    public void run(Event event) {
+    public boolean run(Event event) {
         for (MethodListenerPair entry : this.getExecutors(event.getClass())) {
             try {
                 Object invoke = entry.getMethod().invoke(entry.getListener(), event);
@@ -61,16 +63,17 @@ public class EventHandler {
                     Bukkit.getPluginManager().callEvent(e);
                     if (!e.isCancelled()) {
                         event.getPlayer().getInfractionData().addVL(event.getPlayer(), (Check) entry.getListener());
-                        ((Check) entry.getListener()).revert(event);
                         for (AutoEyePlayer player : this.autoeye.getAutoEyePlayerList().getPlayers().values()) {
                             player.sendMessage(this.autoeye, this.autoeye.getPluginLogger().translateColorCodes(e.getMessage()));
                         }
+                        return ((Check) entry.getListener()).revert(event);
                     }
                 }
             } catch (IllegalAccessException | InvocationTargetException e) {
                 e.printStackTrace();
             }
         }
+        return true;
     }
 
     private void register(Listener listener) {

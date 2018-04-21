@@ -45,7 +45,7 @@ import java.util.Map;
         return this.getClass(netMinecraftServerString + name);
     }
 
-    private WrappedClass getClass(String name) {
+    public WrappedClass getClass(String name) {
         return this.classes.computeIfAbsent(name, k -> {
             try {
                 return new WrappedClass(Class.forName(name));
@@ -54,6 +54,10 @@ import java.util.Map;
                 return null;
             }
         });
+    }
+
+    public WrappedClass getClass(Class clazz) {
+        return this.classes.computeIfAbsent(clazz.getName(), k -> new WrappedClass(clazz));
     }
 
     public class PacketData {

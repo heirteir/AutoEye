@@ -13,9 +13,6 @@ import com.heirteir.autoeye.event.packets.channelhandler.ChannelHandler1_7;
 import com.heirteir.autoeye.event.packets.channelhandler.ChannelHandler1_8;
 import com.heirteir.autoeye.event.packets.channelhandler.ChannelHandlerAbstract;
 import lombok.Getter;
-import org.bukkit.Bukkit;
-import org.bukkit.World;
-import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 
 @Getter public class ChannelInjector {
@@ -23,15 +20,6 @@ import org.bukkit.entity.Player;
 
     public void inject(Autoeye autoeye) {
         this.channel = autoeye.getReflections().classExists("io.netty.channel.Channel") ? new ChannelHandler1_8(autoeye) : new ChannelHandler1_7(autoeye);
-        //alternative to Bukkit.getOnlinePlayers() for compatibility
-        for (World world : Bukkit.getWorlds()) {
-            for (Entity entity : world.getEntities()) {
-                if (entity instanceof Player) {
-                    this.removeChannel((Player) entity);
-                    this.addChannel((Player) entity);
-                }
-            }
-        }
     }
 
     public void addChannel(Player player) {

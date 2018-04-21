@@ -14,7 +14,9 @@ import com.heirteir.autoeye.event.packets.PacketType;
 import com.heirteir.autoeye.event.packets.wrappers.*;
 import com.heirteir.autoeye.player.AutoEyePlayer;
 import com.heirteir.autoeye.util.reflections.types.WrappedField;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
+import org.bukkit.plugin.Plugin;
 
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
@@ -38,7 +40,15 @@ public abstract class ChannelHandlerAbstract {
         this.playerKey = "autoeye_player_handler";
     }
 
-    public void run(AutoEyePlayer player, Object packet) {
+    public boolean run(AutoEyePlayer player, Object packet) {
+        if (!this.autoeye.isRunning()) {
+            Plugin plugin = Bukkit.getPluginManager().getPlugin("Autoeye");
+            if (plugin != null && plugin.isEnabled()) {
+                Object channelInjector = this.autoeye.getReflections().getClass(plugin.getClass()).getMethod("getChannelInjector").invoke(plugin);
+                this.autoeye.getReflections().getClass(channelInjector.getClass()).getMethod("addChannel", Player.class).invoke(channelInjector, player.getPlayer());
+            }
+            return true;
+        }
         if (this.autoeye.isEnabled() && packet != null && player != null && player.getPlayer() != null && player.getPlayer().isOnline()) {
             Event event = null;
             switch (PacketType.fromString(packet.getClass().getSimpleName())) {
@@ -74,9 +84,10 @@ public abstract class ChannelHandlerAbstract {
                     break;
             }
             if (event != null) {
-                this.autoeye.getEventHandler().run(event);
+                return this.autoeye.getEventHandler().run(event);
             }
         }
+        return true;
     }
 
     public abstract void addChannel(Player player);

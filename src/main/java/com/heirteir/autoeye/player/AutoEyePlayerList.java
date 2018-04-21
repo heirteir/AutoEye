@@ -14,6 +14,7 @@ import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.HandlerList;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerKickEvent;
@@ -33,6 +34,10 @@ import java.util.UUID;
 
     public void createListener() {
         Bukkit.getPluginManager().registerEvents(this, this.autoeye);
+    }
+
+    public void unregister() {
+        HandlerList.unregisterAll(this);
     }
 
     public AutoEyePlayer getPlayer(Player player) {

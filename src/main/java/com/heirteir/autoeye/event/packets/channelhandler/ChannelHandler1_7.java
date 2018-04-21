@@ -50,13 +50,15 @@ public class ChannelHandler1_7 extends ChannelHandlerAbstract {
         }
 
         @Override public void write(net.minecraft.util.io.netty.channel.ChannelHandlerContext ctx, Object msg, net.minecraft.util.io.netty.channel.ChannelPromise promise) throws Exception {
-            super.write(ctx, msg, promise);
-            channelHandlerAbstract.run(this.player, msg);
+            if (channelHandlerAbstract.run(this.player, msg)) {
+                super.write(ctx, msg, promise);
+            }
         }
 
         @Override public void channelRead(net.minecraft.util.io.netty.channel.ChannelHandlerContext ctx, Object msg) throws Exception {
-            super.channelRead(ctx, msg);
-            channelHandlerAbstract.run(this.player, msg);
+            if (channelHandlerAbstract.run(this.player, msg)) {
+                super.channelRead(ctx, msg);
+            }
         }
     }
 }

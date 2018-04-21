@@ -23,7 +23,8 @@ public class Timer extends Check {
         return event.getPlayer().isConnected() && event.getPlayer().getTimeData().getLastVelocity().getDifference() > 500 && event.getPlayer().getLocationData().isChangedPos() && !event.getPlayer().getPhysics().isFlying() && !event.getPlayer().getLocationData().isTeleported() && event.getPlayer().getPhysics().getMovesPerSecond() > (22F + (20F - this.autoeye.getTps().get()));
     }
 
-    @Override public <T extends Event> void revert(T event) {
+    @Override public <T extends Event> boolean revert(T event) {
         event.getPlayer().teleport(event.getPlayer().getLocationData().getTeleportLocation());
+        return true;
     }
 }

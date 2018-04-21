@@ -88,7 +88,8 @@ public class Speed extends Check {
         }
     }
 
-    @Override public <T extends Event> void revert(T event) {
+    @Override public <T extends Event> boolean revert(T event) {
         event.getPlayer().teleport(event.getPlayer().getLocationData().getTeleportLocation());
+        return false;
     }
 }

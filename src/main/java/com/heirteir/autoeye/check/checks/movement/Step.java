@@ -23,7 +23,8 @@ public class Step extends Check {
         return event.getPlayer().isConnected() && event.getPlayer().getTimeData().getLastVelocity().getDifference() > 500 && event.getPlayer().getLocationData().isChangedPos() && !event.getPlayer().getPhysics().isFlying() && !event.getPlayer().getLocationData().isTeleported() && !event.getPlayer().getLocationData().isOnPiston() && event.getPacket().isOnGround() && Math.abs(event.getPlayer().getPhysics().getCalculatedYVelocity()) < (event.getPlayer().getPhysics().getJumpVelocity() < 0.5F ? 0.5F : event.getPlayer().getPhysics().getJumpVelocity()) && (event.getPlayer().getPhysics().getJumpVelocity() < 0.5F ? 0.5F : event.getPlayer().getPhysics().getJumpVelocity()) < event.getPlayer().getPhysics().getClientVelocity().getY();
     }
 
-    @Override public <T extends Event> void revert(T event) {
+    @Override public <T extends Event> boolean revert(T event) {
         event.getPlayer().teleport(event.getPlayer().getLocationData().getTeleportLocation());
+        return false;
     }
 }
