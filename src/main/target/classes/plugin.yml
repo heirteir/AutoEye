@@ -1,0 +1,7 @@
+name: Autoeye
+version: 0.65D
+main: com.heirteir.autoeye.Autoeye
+authors: [Heirteir]
+description: An Anticheat that beats all others.
+commands:
+  autoeye:
