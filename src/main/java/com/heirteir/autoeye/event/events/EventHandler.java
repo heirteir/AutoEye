@@ -49,6 +49,8 @@ public class EventHandler {
         this.register(new SpoofedOnGroundPacket(autoeye));
         this.register(new Step(autoeye));
         this.register(new Timer(autoeye));
+        this.register(new NoSlowDown(autoeye));
+        this.register(new Derp(autoeye));
         //updater
         this.register(new DataUpdater(autoeye));
         //verifier
