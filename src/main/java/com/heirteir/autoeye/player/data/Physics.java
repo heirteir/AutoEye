@@ -68,7 +68,6 @@ import lombok.Setter;
                 } else if (player.getLocationData().isOnGround()) {
                     this.calculatedYVelocity = 0;
                     this.offGroundTicks = 0;
-                    System.out.println("hey");
                 } else {
                     if (!this.previousVelocity && player.getLocationData().isPreviousOnGround() && this.clientVelocity.getY() > 0) {
                         this.calculatedYVelocity = jumpVelocity;
