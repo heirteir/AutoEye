@@ -15,7 +15,6 @@ import com.heirteir.autoeye.player.AutoEyePlayerList;
 import com.heirteir.autoeye.util.MathUtil;
 import com.heirteir.autoeye.util.TPS;
 import com.heirteir.autoeye.util.logger.Logger;
-import com.heirteir.autoeye.util.reflections.Reflections;
 import com.heirteir.autoeye.util.server.Version;
 import lombok.Getter;
 import org.bukkit.Bukkit;
@@ -24,7 +23,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 @Getter public final class Autoeye extends JavaPlugin {
     private final Logger pluginLogger;
     private final Version version;
-    private final Reflections reflections;
     private final ChannelInjector channelInjector;
     private final EventHandler eventHandler;
     private final AutoEyePlayerList autoEyePlayerList;
@@ -37,7 +35,6 @@ import org.bukkit.plugin.java.JavaPlugin;
         this.pluginLogger = new Logger(this);
         this.version = Version.getVersion(Bukkit.getBukkitVersion());
         if (!this.version.equals(Version.NONE)) {
-            this.reflections = new Reflections(Bukkit.getServer().getClass().getPackage().getName());
             this.eventHandler = new EventHandler(this);
             this.autoEyePlayerList = new AutoEyePlayerList(this);
             this.channelInjector = new ChannelInjector();
@@ -45,7 +42,6 @@ import org.bukkit.plugin.java.JavaPlugin;
             this.permissionsManager = new PermissionsManager();
             this.tps = new TPS(this);
         } else {
-            this.reflections = null;
             this.channelInjector = null;
             this.eventHandler = null;
             this.autoEyePlayerList = null;
@@ -69,7 +65,9 @@ import org.bukkit.plugin.java.JavaPlugin;
     }
 
     @Override public void onDisable() {
-        this.autoEyePlayerList.unregister();
+        if (this.autoEyePlayerList != null) {
+            this.autoEyePlayerList.unregister();
+        }
         this.running = false;
     }
 }

@@ -10,6 +10,7 @@ package com.heirteir.autoeye.event.packets.channelhandler;
 
 import com.heirteir.autoeye.Autoeye;
 import com.heirteir.autoeye.player.AutoEyePlayer;
+import com.heirteir.autoeye.util.reflections.Reflections;
 import com.heirteir.autoeye.util.reflections.wrappers.WrappedEntity;
 import org.bukkit.entity.Player;
 
@@ -40,7 +41,7 @@ public class ChannelHandler1_8 extends ChannelHandlerAbstract {
     }
 
     private io.netty.channel.Channel getChannel(Player player) {
-        return (io.netty.channel.Channel) this.autoeye.getReflections().getNMSClass("NetworkManager").getFirstFieldByType(io.netty.channel.Channel.class).get(networkManagerField.get(playerConnectionField.get(new WrappedEntity(autoeye, player).getRawEntity())));
+        return (io.netty.channel.Channel) Reflections.getNMSClass("NetworkManager").getFirstFieldByType(io.netty.channel.Channel.class).get(ChannelHandlerAbstract.networkManagerField.get(ChannelHandlerAbstract.playerConnectionField.get(new WrappedEntity(autoeye, player).getRawEntity())));
     }
 
     private static class ChannelHandler extends io.netty.channel.ChannelDuplexHandler {

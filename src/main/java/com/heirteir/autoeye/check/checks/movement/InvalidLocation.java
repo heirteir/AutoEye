@@ -14,7 +14,7 @@ public class InvalidLocation extends Check {
 
     @EventExecutor(priority = EventExecutor.Priority.HIGHEST) public boolean check(PlayerMoveEvent event) {
         try {
-            if (event.getPacket().isHasPos()) {
+            if (event.getPlayer().isConnected() && event.getPacket().isHasPos()) {
                 event.getPlayer().getPlayer().getWorld().getBlockAt(NumberConversions.floor(event.getPacket().getX()), NumberConversions.floor(event.getPacket().getY()), NumberConversions.floor(event.getPacket().getZ()));
             }
             return false;

@@ -8,27 +8,21 @@
  */
 package com.heirteir.autoeye.util.reflections;
 
-import com.google.common.collect.Maps;
 import com.heirteir.autoeye.util.reflections.types.WrappedClass;
 import lombok.Getter;
-
-import java.util.Map;
+import org.bukkit.Bukkit;
 
 @Getter public class Reflections {
-    private final Map<String, WrappedClass> classes;
-    private final String craftBukkitString;
-    private final String netMinecraftServerString;
-    private final PacketData packetData;
+    private static final String craftBukkitString;
+    private static final String netMinecraftServerString;
 
-    public Reflections(String bukkitVersion) {
-        String version = bukkitVersion.split("\\.")[3];
-        this.classes = Maps.newHashMap();
-        this.craftBukkitString = "org.bukkit.craftbukkit." + version + ".";
-        this.netMinecraftServerString = "net.minecraft.server." + version + ".";
-        this.packetData = new PacketData();
+    static {
+        String version = Bukkit.getBukkitVersion().split("\\.")[3];
+        craftBukkitString = "org.bukkit.craftbukkit." + version + ".";
+        netMinecraftServerString = "net.minecraft.server." + version + ".";
     }
 
-    public boolean classExists(String name) {
+    public static boolean classExists(String name) {
         try {
             Class.forName(name);
             return true;
@@ -37,38 +31,24 @@ import java.util.Map;
         }
     }
 
-    public WrappedClass getCBClass(String name) {
-        return this.getClass(craftBukkitString + name);
+    public static WrappedClass getCBClass(String name) {
+        return getClass(craftBukkitString + name);
     }
 
-    public WrappedClass getNMSClass(String name) {
-        return this.getClass(netMinecraftServerString + name);
+    public static WrappedClass getNMSClass(String name) {
+        return getClass(netMinecraftServerString + name);
     }
 
-    public WrappedClass getClass(String name) {
-        return this.classes.computeIfAbsent(name, k -> {
-            try {
-                return new WrappedClass(Class.forName(name));
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
-                return null;
-            }
-        });
-    }
-
-    public WrappedClass getClass(Class clazz) {
-        return this.classes.computeIfAbsent(clazz.getName(), k -> new WrappedClass(clazz));
-    }
-
-    public class PacketData {
-        private final Map<String, WrappedClass> data;
-
-        PacketData() {
-            this.data = Maps.newHashMap();
+    public static WrappedClass getClass(String name) {
+        try {
+            return new WrappedClass(Class.forName(name));
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+            return null;
         }
+    }
 
-        public WrappedClass getWrappedPacketClass(String name) {
-            return this.data.computeIfAbsent(name, k -> Reflections.this.getClass(name));
-        }
+    public static WrappedClass getClass(Class clazz) {
+        return new WrappedClass(clazz);
     }
 }

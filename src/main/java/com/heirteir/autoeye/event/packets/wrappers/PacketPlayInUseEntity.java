@@ -8,21 +8,28 @@
  */
 package com.heirteir.autoeye.event.packets.wrappers;
 
-import com.heirteir.autoeye.Autoeye;
+import com.heirteir.autoeye.util.reflections.Reflections;
 import com.heirteir.autoeye.util.reflections.types.WrappedClass;
+import com.heirteir.autoeye.util.reflections.types.WrappedField;
 import lombok.Getter;
 import org.bukkit.World;
 import org.bukkit.entity.Entity;
 
 @Getter public class PacketPlayInUseEntity extends PacketAbstract {
+    private static final WrappedField actionTypeField, idField;
     private final ActionType actionType;
     private final Entity entity;
 
-    public PacketPlayInUseEntity(Autoeye autoeye, World world, Object packet) {
+    static {
+        WrappedClass packetPlayInUseEntity = Reflections.getNMSClass("PacketPlayInUseEntity");
+        actionTypeField = packetPlayInUseEntity.getFieldByName("action");
+        idField = packetPlayInUseEntity.getFirstFieldByType(int.class);
+    }
+
+    public PacketPlayInUseEntity(World world, Object packet) {
         super(packet);
-        WrappedClass packetPlayInUseEntity = autoeye.getReflections().getPacketData().getWrappedPacketClass(autoeye.getReflections().getNetMinecraftServerString() + "PacketPlayInUseEntity");
-        this.actionType = ActionType.fromString(((Enum) packetPlayInUseEntity.getFieldByName("action").get(packet)).name());
-        int id = packetPlayInUseEntity.getFirstFieldByType(int.class).get(packet);
+        this.actionType = ActionType.fromString(((Enum) actionTypeField.get(packet)).name());
+        int id = idField.get(packet);
         Entity tempEntity = null;
         for (Entity entity : world.getEntities()) {
             if (entity.getEntityId() == id) {

@@ -12,6 +12,7 @@ import com.heirteir.autoeye.Autoeye;
 import com.heirteir.autoeye.event.packets.channelhandler.ChannelHandler1_7;
 import com.heirteir.autoeye.event.packets.channelhandler.ChannelHandler1_8;
 import com.heirteir.autoeye.event.packets.channelhandler.ChannelHandlerAbstract;
+import com.heirteir.autoeye.util.reflections.Reflections;
 import lombok.Getter;
 import org.bukkit.entity.Player;
 
@@ -19,7 +20,7 @@ import org.bukkit.entity.Player;
     private ChannelHandlerAbstract channel;
 
     public void inject(Autoeye autoeye) {
-        this.channel = autoeye.getReflections().classExists("io.netty.channel.Channel") ? new ChannelHandler1_8(autoeye) : new ChannelHandler1_7(autoeye);
+        this.channel = Reflections.classExists("io.netty.channel.Channel") ? new ChannelHandler1_8(autoeye) : new ChannelHandler1_7(autoeye);
     }
 
     public void addChannel(Player player) {

@@ -20,7 +20,7 @@ public class NoWeb extends Check {
     }
 
     @EventExecutor public boolean check(PlayerMoveEvent event) {
-        if (event.getPlayer().isConnected() && event.getPlayer().getTimeData().getLastVelocity().getDifference() > 500 && event.getPlayer().getLocationData().isChangedPos() && !event.getPlayer().getPhysics().isFlying() && !event.getPlayer().getLocationData().isTeleported() && event.getPlayer().getLocationData().isInWeb()) {
+        if (event.getPlayer().isConnected() && event.getPlayer().getTimeData().getLastVelocity().getDifference() > 500 && event.getPlayer().getLocationData().isChangedPos() && !event.getPlayer().getPhysics().isFlying() && !event.getPlayer().getLocationData().isOnGround() && !event.getPlayer().getLocationData().isTeleported() && event.getPlayer().getLocationData().isInWeb()) {
             float absClientVelocity = Math.abs(event.getPlayer().getPhysics().getClientVelocity().getY());
             float absServerVelocity = (float) Math.abs(event.getPlayer().getPlayer().getVelocity().getY());
             return (absClientVelocity > 0.1 || absClientVelocity == 0) && ((absServerVelocity > 0.1 && absClientVelocity > absServerVelocity * 2) || this.checkThreshold(event.getPlayer(), 3, 100L));

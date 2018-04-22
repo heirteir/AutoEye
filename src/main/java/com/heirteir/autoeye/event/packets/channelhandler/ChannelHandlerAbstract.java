@@ -13,6 +13,7 @@ import com.heirteir.autoeye.event.events.event.*;
 import com.heirteir.autoeye.event.packets.PacketType;
 import com.heirteir.autoeye.event.packets.wrappers.*;
 import com.heirteir.autoeye.player.AutoEyePlayer;
+import com.heirteir.autoeye.util.reflections.Reflections;
 import com.heirteir.autoeye.util.reflections.types.WrappedField;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -22,11 +23,11 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
 public abstract class ChannelHandlerAbstract {
+    protected static final WrappedField networkManagerField = Reflections.getNMSClass("PlayerConnection").getFieldByName("networkManager");
+    protected static final WrappedField playerConnectionField = Reflections.getNMSClass("EntityPlayer").getFieldByName("playerConnection");
     protected final Autoeye autoeye;
     final Executor addChannelHandlerExecutor;
     final Executor removeChannelHandlerExecutor;
-    final WrappedField networkManagerField;
-    final WrappedField playerConnectionField;
     final String handlerKey;
     final String playerKey;
 
@@ -34,8 +35,6 @@ public abstract class ChannelHandlerAbstract {
         this.autoeye = autoeye;
         this.addChannelHandlerExecutor = Executors.newSingleThreadExecutor();
         this.removeChannelHandlerExecutor = Executors.newSingleThreadExecutor();
-        this.networkManagerField = autoeye.getReflections().getNMSClass("PlayerConnection").getFieldByName("networkManager");
-        this.playerConnectionField = autoeye.getReflections().getNMSClass("EntityPlayer").getFieldByName("playerConnection");
         this.handlerKey = "packet_handler";
         this.playerKey = "autoeye_player_handler";
     }
@@ -44,8 +43,8 @@ public abstract class ChannelHandlerAbstract {
         if (!this.autoeye.isRunning()) {
             Plugin plugin = Bukkit.getPluginManager().getPlugin("Autoeye");
             if (plugin != null && plugin.isEnabled()) {
-                Object channelInjector = this.autoeye.getReflections().getClass(plugin.getClass()).getMethod("getChannelInjector").invoke(plugin);
-                this.autoeye.getReflections().getClass(channelInjector.getClass()).getMethod("addChannel", Player.class).invoke(channelInjector, player.getPlayer());
+                Object channelInjector = Reflections.getClass(plugin.getClass()).getMethod("getChannelInjector").invoke(plugin);
+                Reflections.getClass(channelInjector.getClass()).getMethod("addChannel", Player.class).invoke(channelInjector, player.getPlayer());
             }
             return true;
         }
@@ -55,16 +54,16 @@ public abstract class ChannelHandlerAbstract {
                 case NULL:
                     break;
                 case PacketPlayInFlying:
-                    event = new PlayerMoveEvent(player, new PacketPlayInFlying(this.autoeye, packet, !packet.getClass().getSimpleName().equals("PacketPlayInFlying")));
+                    event = new PlayerMoveEvent(player, new PacketPlayInFlying(packet));
                     break;
                 case PacketPlayInAbilities:
-                    event = new PacketPlayInAbilitiesEvent(player, new PacketPlayInAbilities(this.autoeye, packet));
+                    event = new PacketPlayInAbilitiesEvent(player, new PacketPlayInAbilities(packet));
                     break;
                 case PacketPlayInUseEntity:
-                    event = new PacketPlayInUseEntityEvent(player, new PacketPlayInUseEntity(this.autoeye, player.getPlayer().getWorld(), packet));
+                    event = new PacketPlayInUseEntityEvent(player, new PacketPlayInUseEntity(player.getPlayer().getWorld(), packet));
                     break;
                 case PacketPlayInBlockPlace:
-                    event = new BlockPlaceEvent(player, new PacketPlayInBlockPlace(this.autoeye, player.getPlayer().getWorld(), packet));
+                    event = new BlockPlaceEvent(player, new PacketPlayInBlockPlace(player.getPlayer().getWorld(), packet));
                     break;
                 case PacketPlayInKeepAlive:
                     player.getTimeData().getLastInKeepAlive().update();
@@ -77,7 +76,7 @@ public abstract class ChannelHandlerAbstract {
                     event = new PlayerTeleportEvent(player);
                     break;
                 case PacketPlayOutEntityVelocity:
-                    PacketPlayOutEntityVelocity packetPlayOutEntityVelocity = new PacketPlayOutEntityVelocity(this.autoeye, player, packet);
+                    PacketPlayOutEntityVelocity packetPlayOutEntityVelocity = new PacketPlayOutEntityVelocity(player, packet);
                     if (packetPlayOutEntityVelocity.isPlayer()) {
                         event = new PlayerVelocityEvent(player, packetPlayOutEntityVelocity);
                     }

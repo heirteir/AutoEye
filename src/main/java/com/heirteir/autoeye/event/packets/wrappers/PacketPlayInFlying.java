@@ -8,28 +8,37 @@
  */
 package com.heirteir.autoeye.event.packets.wrappers;
 
-import com.heirteir.autoeye.Autoeye;
+import com.heirteir.autoeye.util.reflections.Reflections;
 import com.heirteir.autoeye.util.reflections.types.WrappedClass;
+import com.heirteir.autoeye.util.reflections.types.WrappedField;
 import lombok.Getter;
 
 @Getter public class PacketPlayInFlying extends PacketAbstract {
-    private final long time;
-    private final boolean child;
+    private static final WrappedField xField, yField, zField, yawField, pitchField, onGroundField, hasLookField, hasPosField;
     private final float x, y, z, yaw, pitch;
     private final boolean onGround, hasPos, hasLook;
 
-    public PacketPlayInFlying(Autoeye autoeye, Object packet, boolean child) {
+    static {
+        WrappedClass packetPlayInFlying = Reflections.getNMSClass("PacketPlayInFlying");
+        xField = packetPlayInFlying.getFieldByName("x");
+        yField = packetPlayInFlying.getFieldByName("y");
+        zField = packetPlayInFlying.getFieldByName("z");
+        yawField = packetPlayInFlying.getFieldByName("yaw");
+        pitchField = packetPlayInFlying.getFieldByName("pitch");
+        onGroundField = packetPlayInFlying.getFieldByName("f");
+        hasPosField = packetPlayInFlying.getFieldByName("hasPos");
+        hasLookField = packetPlayInFlying.getFieldByName("hasLook");
+    }
+
+    public PacketPlayInFlying(Object packet) {
         super(packet);
-        this.time = System.currentTimeMillis();
-        this.child = child;
-        WrappedClass packetPlayInFlying = autoeye.getReflections().getPacketData().getWrappedPacketClass(autoeye.getReflections().getNetMinecraftServerString() + "PacketPlayInFlying");
-        this.x = ((Double) packetPlayInFlying.getFieldByName("x").get(packet)).floatValue();
-        this.y = ((Double) packetPlayInFlying.getFieldByName("y").get(packet)).floatValue();
-        this.z = ((Double) packetPlayInFlying.getFieldByName("z").get(packet)).floatValue();
-        this.yaw = packetPlayInFlying.getFieldByName("yaw").get(packet);
-        this.pitch = packetPlayInFlying.getFieldByName("pitch").get(packet);
-        this.onGround = packetPlayInFlying.getFieldByName("f").get(packet);
-        this.hasPos = packetPlayInFlying.getFieldByName("hasPos").get(packet);
-        this.hasLook = packetPlayInFlying.getFieldByName("hasLook").get(packet);
+        this.x = ((Double) xField.get(packet)).floatValue();
+        this.y = ((Double) yField.get(packet)).floatValue();
+        this.z = ((Double) zField.get(packet)).floatValue();
+        this.yaw = yawField.get(packet);
+        this.pitch = pitchField.get(packet);
+        this.onGround = onGroundField.get(packet);
+        this.hasPos = hasPosField.get(packet);
+        this.hasLook = hasLookField.get(packet);
     }
 }

@@ -9,12 +9,18 @@
 package com.heirteir.autoeye.util.reflections.wrappers;
 
 import com.heirteir.autoeye.Autoeye;
+import com.heirteir.autoeye.util.reflections.Reflections;
+import com.heirteir.autoeye.util.reflections.types.WrappedField;
+import com.heirteir.autoeye.util.reflections.types.WrappedMethod;
 import com.heirteir.autoeye.util.vector.Vector3D;
 import lombok.Getter;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
 
 @Getter public class WrappedEntity {
+    private static final WrappedMethod getHandleMethod = Reflections.getCBClass("entity.CraftEntity").getMethod("getHandle");
+    private static final WrappedField widthField = Reflections.getNMSClass("Entity").getFieldByName("width");
+    private static final WrappedField lengthField = Reflections.getNMSClass("Entity").getFieldByName("length");
     private final Autoeye autoeye;
     private final float width, length;
     private final Object rawEntity;
@@ -23,9 +29,9 @@ import org.bukkit.entity.LivingEntity;
     public WrappedEntity(Autoeye autoeye, LivingEntity entity) {
         this.autoeye = autoeye;
         this.bukkitEntity = entity;
-        this.rawEntity = autoeye.getReflections().getCBClass("entity.CraftEntity").getMethod("getHandle").invoke(entity);
-        this.width = autoeye.getReflections().getNMSClass("Entity").getFieldByName("width").get(this.rawEntity);
-        this.length = autoeye.getReflections().getNMSClass("Entity").getFieldByName("length").get(this.rawEntity);
+        this.rawEntity = getHandleMethod.invoke(entity);
+        this.width = widthField.get(this.rawEntity);
+        this.length = lengthField.get(this.rawEntity);
     }
 
     public Vector3D getLocation() {

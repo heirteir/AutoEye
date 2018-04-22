@@ -17,23 +17,15 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.Cancellable;
 import org.bukkit.event.HandlerList;
 
-@RequiredArgsConstructor @Getter public class AutoEyeInfractionEvent extends org.bukkit.event.Event implements Cancellable {
+@RequiredArgsConstructor @Getter @Setter public class AutoEyeInfractionEvent extends org.bukkit.event.Event implements Cancellable {
     private static final HandlerList handlerList = new HandlerList();
     private final Player player;
     private final InfractionData.Infraction infraction;
-    @Setter private String message = "&e%player%&7 was caught using &e%check%&7. (VL=&e%vl%&7)";
+    private String message = "&e%player%&7 was caught using &e%check%&7. (VL=&e%vl%&7)";
     private boolean cancelled = false;
 
     public String getMessage() {
         return StringUtils.replace(StringUtils.replace(StringUtils.replace(this.message, "%vl%", String.valueOf(infraction.getVL() + 1)), "%check%", infraction.getParent().getName()), "%player%", player.getName());
-    }
-
-    @Override public boolean isCancelled() {
-        return this.cancelled;
-    }
-
-    @Override public void setCancelled(boolean cancelled) {
-        this.cancelled = cancelled;
     }
 
     public static HandlerList getHandlerList() {

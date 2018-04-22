@@ -8,22 +8,31 @@
  */
 package com.heirteir.autoeye.event.packets.wrappers;
 
-import com.heirteir.autoeye.Autoeye;
 import com.heirteir.autoeye.player.AutoEyePlayer;
+import com.heirteir.autoeye.util.reflections.Reflections;
 import com.heirteir.autoeye.util.reflections.types.WrappedClass;
+import com.heirteir.autoeye.util.reflections.types.WrappedField;
 import lombok.Getter;
 
 @Getter public class PacketPlayOutEntityVelocity extends PacketAbstract {
+    private static final WrappedField idField, xField, yField, zField;
     private final float x, y, z;
     private final boolean isPlayer;
 
-    public PacketPlayOutEntityVelocity(Autoeye autoeye, AutoEyePlayer player, Object packet) {
+    static {
+        WrappedClass packetPlayOutEntityVelocity = Reflections.getNMSClass("PacketPlayOutEntityVelocity");
+        idField = packetPlayOutEntityVelocity.getFieldByName("a");
+        xField = packetPlayOutEntityVelocity.getFieldByName("b");
+        yField = packetPlayOutEntityVelocity.getFieldByName("c");
+        zField = packetPlayOutEntityVelocity.getFieldByName("d");
+    }
+
+    public PacketPlayOutEntityVelocity(AutoEyePlayer player, Object packet) {
         super(packet);
-        WrappedClass packetPlayOutEntityVelocity = autoeye.getReflections().getPacketData().getWrappedPacketClass(autoeye.getReflections().getNetMinecraftServerString() + "PacketPlayOutEntityVelocity");
-        if (this.isPlayer = ((int) packetPlayOutEntityVelocity.getFieldByName("a").get(packet)) == player.getPlayer().getEntityId()) {
-            this.x = ((int) packetPlayOutEntityVelocity.getFieldByName("b").get(packet)) / 8000F;
-            this.y = ((int) packetPlayOutEntityVelocity.getFieldByName("c").get(packet)) / 8000F;
-            this.z = ((int) packetPlayOutEntityVelocity.getFieldByName("d").get(packet)) / 8000F;
+        if (this.isPlayer = ((int) idField.get(packet)) == player.getPlayer().getEntityId()) {
+            this.x = ((int) xField.get(packet)) / 8000F;
+            this.y = ((int) yField.get(packet)) / 8000F;
+            this.z = ((int) zField.get(packet)) / 8000F;
         } else {
             this.x = this.y = this.z = 0;
         }

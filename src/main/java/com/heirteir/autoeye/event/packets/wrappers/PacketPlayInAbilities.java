@@ -8,16 +8,16 @@
  */
 package com.heirteir.autoeye.event.packets.wrappers;
 
-import com.heirteir.autoeye.Autoeye;
-import com.heirteir.autoeye.util.reflections.types.WrappedClass;
+import com.heirteir.autoeye.util.reflections.Reflections;
+import com.heirteir.autoeye.util.reflections.types.WrappedField;
 import lombok.Getter;
 
 @Getter public class PacketPlayInAbilities extends PacketAbstract {
+    private static final WrappedField flyingField = Reflections.getNMSClass("PacketPlayInAbilities").getFieldByName("b");
     private final boolean flying;
 
-    public PacketPlayInAbilities(Autoeye autoeye, Object packet) {
+    public PacketPlayInAbilities(Object packet) {
         super(packet);
-        WrappedClass packetPlayOutAbilities = autoeye.getReflections().getPacketData().getWrappedPacketClass(autoeye.getReflections().getNetMinecraftServerString() + "PacketPlayInAbilities");
-        this.flying = packetPlayOutAbilities.getFieldByName("b").get(packet);
+        this.flying = flyingField.get(packet);
     }
 }
