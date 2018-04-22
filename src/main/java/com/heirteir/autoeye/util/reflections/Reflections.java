@@ -17,7 +17,7 @@ import org.bukkit.Bukkit;
     private static final String netMinecraftServerString;
 
     static {
-        String version = Bukkit.getBukkitVersion().split("\\.")[3];
+        String version = Bukkit.getServer().getClass().getPackage().getName().split("\\.")[3];
         craftBukkitString = "org.bukkit.craftbukkit." + version + ".";
         netMinecraftServerString = "net.minecraft.server." + version + ".";
     }

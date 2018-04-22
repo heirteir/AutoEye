@@ -18,6 +18,10 @@ import lombok.RequiredArgsConstructor;
         return new Vector3D(this.x + x, this.y + y, this.z + z);
     }
 
+    public float distance(Vector3D to) {
+        return (float) Math.sqrt(Math.pow(to.getX() - this.x, 2) + Math.pow(to.getY() - this.y, 2) + Math.pow(to.getZ() - this.z, 2));
+    }
+
     @Override public String toString() {
         return "x: " + x + ", y: " + y + ", z: " + z;
     }

@@ -14,6 +14,7 @@ import com.heirteir.autoeye.event.events.EventExecutor;
 import com.heirteir.autoeye.event.events.event.Event;
 import com.heirteir.autoeye.event.events.event.PacketPlayInUseEntityEvent;
 import com.heirteir.autoeye.event.packets.wrappers.PacketPlayInUseEntity;
+import com.heirteir.autoeye.util.vector.Vector3D;
 
 public class KillAuraRotation extends Check {
     public KillAuraRotation(Autoeye autoeye) {
@@ -21,7 +22,7 @@ public class KillAuraRotation extends Check {
     }
 
     @EventExecutor public boolean check(PacketPlayInUseEntityEvent event) {
-        if (event.getPacket().getActionType().equals(PacketPlayInUseEntity.ActionType.ATTACK) && event.getPacket().getEntity() != null) {
+        if (event.getPacket().getActionType().equals(PacketPlayInUseEntity.ActionType.ATTACK) && event.getPacket().getEntity() != null && event.getPlayer().getLocationData().getLocation().distance(new Vector3D((float) event.getPacket().getEntity().getLocation().getX(), (float) event.getPacket().getEntity().getLocation().getY(), (float) event.getPacket().getEntity().getLocation().getZ())) > 1.25) {
             float previousYaw = autoeye.getMathUtil().angleTo180(event.getPlayer().getLocationData().getPreviousDirection().getX() + 90F);
             float yaw = autoeye.getMathUtil().angleTo180(event.getPlayer().getLocationData().getDirection().getX() + 90F);
             float dist = autoeye.getMathUtil().angleDistance((float) Math.toDegrees(autoeye.getMathUtil().yawToLocation(event.getPlayer(), event.getPacket().getEntity())), previousYaw);

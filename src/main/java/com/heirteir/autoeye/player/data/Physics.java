@@ -49,6 +49,8 @@ import lombok.Setter;
         if (player.getLocationData().isChangedPos()) {
             if (this.flying) {
                 player.getTimeData().getLastFlying().update();
+            } else {
+                this.flying = player.getTimeData().getLastFlying().getDifference() < 1000;
             }
             this.jumpVelocity = 0.42F + (player.getPotionEffectAmplifier("SPEED") * 0.1F);
             this.moving = this.clientVelocity.getX() != 0 || this.clientVelocity.getY() != 0 || this.clientVelocity.getZ() != 0;
@@ -63,13 +65,10 @@ import lombok.Setter;
                 this.offGroundTicks++;
                 if (this.flying || player.getLocationData().isTeleported() || player.getLocationData().isInWater() || player.getLocationData().isOnLadder() || player.getLocationData().isInWeb() || player.getTimeData().getLastFlying().getDifference() < 1000) {
                     this.calculatedYVelocity = this.clientVelocity.getY();
-                    if (player.getLocationData().isOnGround()) {
-                        this.calculatedYVelocity = 0;
-                        this.offGroundTicks = 0;
-                    }
                 } else if (player.getLocationData().isOnGround()) {
                     this.calculatedYVelocity = 0;
                     this.offGroundTicks = 0;
+                    System.out.println("hey");
                 } else {
                     if (!this.previousVelocity && player.getLocationData().isPreviousOnGround() && this.clientVelocity.getY() > 0) {
                         this.calculatedYVelocity = jumpVelocity;

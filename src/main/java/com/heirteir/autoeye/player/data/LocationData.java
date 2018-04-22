@@ -69,12 +69,16 @@ import org.bukkit.util.NumberConversions;
             this.axisAlignedBB = new WrappedAxisAlignedBB(autoeye, player.getPlayer().getWorld(), this.location.getX(), this.location.getY(), this.location.getZ(), player.getWrappedEntity().getWidth(), player.getWrappedEntity().getLength());
             WrappedAxisAlignedBB offset = this.axisAlignedBB.offset(0, -0.08F, 0, 0, 0, 0);
             this.solidBlocks = new BlockSet(offset.getSolidBlocks());
-            this.onStairs = this.solidBlocks.containsString("STEP", "STAIR");
             this.serverOnGround = this.solidBlocks.getBlocks().size() > 0;
             if (this.solidBlocks.getBlocks().size() != 0) {
                 this.groundBlocks = this.solidBlocks;
                 this.onSlime = this.groundBlocks.containsString("SLIME");
                 this.onIce = this.groundBlocks.containsString("ICE");
+            }
+            if (this.onStairs = this.solidBlocks.containsString("STEP", "STAIR")) {
+                player.getTimeData().getLastOnStairs().update();
+            } else {
+                this.onStairs = player.getTimeData().getLastOnStairs().getDifference() < 150;
             }
             if (this.inWeb = offset.containsMaterial("WEB")) {
                 player.getTimeData().getLastInWeb().update();

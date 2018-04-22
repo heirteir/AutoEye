@@ -24,6 +24,7 @@ import lombok.Getter;
     private final TimeStore lastInKeepAlive = new TimeStore();
     private final TimeStore lastOutKeepAlive = new TimeStore();
     private final TimeStore lastVelocity = new TimeStore();
+    private final TimeStore lastOnStairs = new TimeStore();
 
     public long getDifference(long a, long b) {
         return b - a;
