@@ -16,6 +16,7 @@ import com.heirteir.autoeye.util.reflections.types.WrappedClass;
 import com.heirteir.autoeye.util.reflections.types.WrappedConstructor;
 import com.heirteir.autoeye.util.reflections.types.WrappedField;
 import com.heirteir.autoeye.util.reflections.types.WrappedMethod;
+import com.heirteir.autoeye.util.server.Version;
 import com.heirteir.autoeye.util.vector.Vector3D;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -29,13 +30,13 @@ import java.util.Set;
 @RequiredArgsConstructor public class WrappedAxisAlignedBB {
     private static final WrappedClass materialClass = Reflections.getNMSClass("Material");
     private static final WrappedMethod getHandleMethod = Reflections.getCBClass("CraftWorld").getMethod("getHandle");
-    private static final WrappedMethod getCubesMethod = Reflections.getNMSClass("World").getMethod("getCubes", Reflections.getNMSClass("Entity").getParent(), Reflections.getNMSClass("AxisAlignedBB").getParent());
     private static final WrappedMethod getMaterialsMethod = Reflections.getNMSClass("World").getMethod("a", Reflections.getNMSClass("AxisAlignedBB").getParent(), materialClass.getParent());
     private static final WrappedMethod containsLiquidMethod = Reflections.getNMSClass("World").getMethod("containsLiquid", Reflections.getNMSClass("AxisAlignedBB").getParent());
     private static final WrappedConstructor axisAlignedBBConstructor = Reflections.getNMSClass("AxisAlignedBB").getConstructor(double.class, double.class, double.class, double.class, double.class, double.class);
     private static final WrappedField minXField = Reflections.getNMSClass("AxisAlignedBB").getFieldByName("a");
     private static final WrappedField minYField = Reflections.getNMSClass("AxisAlignedBB").getFieldByName("b");
     private static final WrappedField minZField = Reflections.getNMSClass("AxisAlignedBB").getFieldByName("c");
+    private static final WrappedMethod getCubesMethod;
     private final Autoeye autoeye;
     private final World bukkitWorld;
     private final Object world;
@@ -43,6 +44,11 @@ import java.util.Set;
     @Getter private final Vector3D min, max;
 
     static {
+        if (Autoeye.getVersion().equals(Version.ELEVEN) || Autoeye.getVersion().equals(Version.TWELVE)) {
+            getCubesMethod = Reflections.getNMSClass("World").getMethod("getCubes", Reflections.getNMSClass("Entity").getParent(), Reflections.getNMSClass("AxisAlignedBB").getParent());
+        } else {
+            getCubesMethod = Reflections.getNMSClass("World").getMethod("a", Reflections.getNMSClass("AxisAlignedBB").getParent());
+        }
     }
 
     private List<Object> boundingBoxes = null;
@@ -65,7 +71,7 @@ import java.util.Set;
     }
 
     private List<Object> getBoundingBoxes() {
-        return this.boundingBoxes == null ? this.boundingBoxes = Lists.newArrayList(((Collection<?>) getCubesMethod.invoke(this.world, null, this.axisAlignedBB))) : this.boundingBoxes;
+        return this.boundingBoxes == null ? this.boundingBoxes = getCubesMethod.getParameters().size() == 1 ? Lists.newArrayList(((Collection<?>) getCubesMethod.invoke(this.world, this.axisAlignedBB))) : Lists.newArrayList(((Collection<?>) getCubesMethod.invoke(this.world, null, this.axisAlignedBB))) : this.boundingBoxes;
     }
 
     public Set<Block> getSolidBlocks() {
