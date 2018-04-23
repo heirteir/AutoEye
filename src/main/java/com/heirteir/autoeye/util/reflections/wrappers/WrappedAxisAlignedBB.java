@@ -29,7 +29,7 @@ import java.util.Set;
 @RequiredArgsConstructor public class WrappedAxisAlignedBB {
     private static final WrappedClass materialClass = Reflections.getNMSClass("Material");
     private static final WrappedMethod getHandleMethod = Reflections.getCBClass("CraftWorld").getMethod("getHandle");
-    private static final WrappedMethod getCubesMethod = Reflections.getNMSClass("World").getMethod("a", Reflections.getNMSClass("AxisAlignedBB").getParent());
+    private static final WrappedMethod getCubesMethod = Reflections.getNMSClass("World").getMethod("getCubes", Reflections.getNMSClass("Entity").getParent(), Reflections.getNMSClass("AxisAlignedBB").getParent());
     private static final WrappedMethod getMaterialsMethod = Reflections.getNMSClass("World").getMethod("a", Reflections.getNMSClass("AxisAlignedBB").getParent(), materialClass.getParent());
     private static final WrappedMethod containsLiquidMethod = Reflections.getNMSClass("World").getMethod("containsLiquid", Reflections.getNMSClass("AxisAlignedBB").getParent());
     private static final WrappedConstructor axisAlignedBBConstructor = Reflections.getNMSClass("AxisAlignedBB").getConstructor(double.class, double.class, double.class, double.class, double.class, double.class);
@@ -65,7 +65,7 @@ import java.util.Set;
     }
 
     private List<Object> getBoundingBoxes() {
-        return this.boundingBoxes == null ? this.boundingBoxes = Lists.newArrayList(((Collection<?>) getCubesMethod.invoke(this.world, this.axisAlignedBB))) : this.boundingBoxes;
+        return this.boundingBoxes == null ? this.boundingBoxes = Lists.newArrayList(((Collection<?>) getCubesMethod.invoke(this.world, null, this.axisAlignedBB))) : this.boundingBoxes;
     }
 
     public Set<Block> getSolidBlocks() {

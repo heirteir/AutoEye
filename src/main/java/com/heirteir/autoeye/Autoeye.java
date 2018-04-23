@@ -13,7 +13,6 @@ import com.heirteir.autoeye.event.packets.ChannelInjector;
 import com.heirteir.autoeye.permissions.PermissionsManager;
 import com.heirteir.autoeye.player.AutoEyePlayerList;
 import com.heirteir.autoeye.util.MathUtil;
-import com.heirteir.autoeye.util.TPS;
 import com.heirteir.autoeye.util.logger.Logger;
 import com.heirteir.autoeye.util.server.Version;
 import lombok.Getter;
@@ -28,7 +27,6 @@ import org.bukkit.plugin.java.JavaPlugin;
     private final AutoEyePlayerList autoEyePlayerList;
     private final MathUtil mathUtil;
     private final PermissionsManager permissionsManager;
-    private final TPS tps;
     private boolean running = false;
 
     public Autoeye() {
@@ -40,14 +38,12 @@ import org.bukkit.plugin.java.JavaPlugin;
             this.channelInjector = new ChannelInjector();
             this.mathUtil = new MathUtil();
             this.permissionsManager = new PermissionsManager();
-            this.tps = new TPS(this);
         } else {
             this.channelInjector = null;
             this.eventHandler = null;
             this.autoEyePlayerList = null;
             this.mathUtil = null;
             this.permissionsManager = null;
-            this.tps = null;
         }
     }
 
@@ -58,7 +54,6 @@ import org.bukkit.plugin.java.JavaPlugin;
             return;
         }
         this.running = true;
-        this.tps.runTaskTimerAsynchronously(this, 100L, 1L);
         this.channelInjector.inject(this);
         this.autoEyePlayerList.createListener();
         this.eventHandler.createCheckEventExecutors(this);
