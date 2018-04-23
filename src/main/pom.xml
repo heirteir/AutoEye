@@ -15,7 +15,7 @@
 
     <groupId>com.heirteir</groupId>
     <artifactId>autoeye</artifactId>
-    <version>0.66B</version>
+    <version>0.66C</version>
     <packaging>jar</packaging>
 
     <name>AutoEye</name>
