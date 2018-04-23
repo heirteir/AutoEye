@@ -51,6 +51,7 @@ public class EventHandler {
         this.register(new Timer(autoeye));
         this.register(new NoSlowDown(autoeye));
         this.register(new InvalidPitch(autoeye));
+        this.register(new InventoryWalk(autoeye));
         //updater
         this.register(new DataUpdater(autoeye));
         //verifier
