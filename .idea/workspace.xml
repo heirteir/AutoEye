@@ -7,75 +7,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c5d9ea3b-dcde-488a-8c32-f40ea05eb9d0" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Justin.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/Justin.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/Autoeye.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/Autoeye.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/combat/KillAuraRotation.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/combat/KillAuraRotation.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/combat/Reach.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/combat/Reach.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/events/BlockPlaceEvent.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/events/Event.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/events/InventoryClickEvent.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/events/PacketPlayInAbilitiesEvent.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/events/PacketPlayInUseEntityEvent.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/events/PlayerMoveEvent.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/events/PlayerTeleportEvent.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/events/PlayerVelocityEvent.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/ChannelInjector.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/packets/ChannelInjector.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/PacketType.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/packets/PacketType.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/channelhandler/ChannelHandler1_7.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/packets/channelhandler/ChannelHandler1_7.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/channelhandler/ChannelHandler1_8.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/packets/channelhandler/ChannelHandler1_8.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/channelhandler/ChannelHandlerAbstract.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/packets/channelhandler/ChannelHandlerAbstract.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/wrappers/PacketAbstract.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/packets/wrappers/PacketAbstract.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/wrappers/PacketPlayInAbilities.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/packets/wrappers/PacketPlayInAbilities.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/wrappers/PacketPlayInBlockPlace.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/packets/wrappers/PacketPlayInBlockPlace.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/wrappers/PacketPlayInFlying.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/packets/wrappers/PacketPlayInFlying.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/wrappers/PacketPlayInUseEntity.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/packets/wrappers/PacketPlayInUseEntity.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/wrappers/PacketPlayOutEntityVelocity.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/packets/wrappers/PacketPlayOutEntityVelocity.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InvalidMotion.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InvalidMotion.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InventoryWalk.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InventoryWalk.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/SpoofedOnGroundPacket.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/SpoofedOnGroundPacket.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/packets/channelhandler/ChannelHandlerAbstract.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/packets/channelhandler/ChannelHandlerAbstract.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/permissions/PermissionsManager.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/permissions/PermissionsManager.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/AutoEyePlayer.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/AutoEyePlayer.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/data/AttackData.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/data/AttackData.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/data/AttackData.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/data/InteractData.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/data/LocationData.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/data/LocationData.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/Autoeye.class" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/Autoeye.class" />
-      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/check/Check.class" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/check/Check.class" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/data/Physics.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/data/Physics.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/reflections/Reflections.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/reflections/Reflections.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/reflections/types/WrappedClass.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/reflections/types/WrappedClass.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/reflections/wrappers/WrappedAxisAlignedBB.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/reflections/wrappers/WrappedAxisAlignedBB.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/reflections/wrappers/WrappedEntity.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/reflections/wrappers/WrappedEntity.java" />
       <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/check/checks/combat/KillAuraRotation.class" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/check/checks/combat/KillAuraRotation.class" />
       <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/check/checks/combat/Reach.class" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/check/checks/combat/Reach.class" />
-      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/check/checks/movement/FastLadder.class" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/check/checks/movement/FastLadder.class" />
       <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/check/checks/movement/InvalidMotion.class" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/check/checks/movement/InvalidMotion.class" />
-      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/check/checks/movement/NoWeb.class" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/check/checks/movement/NoWeb.class" />
-      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/check/checks/movement/SlimeJump.class" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/check/checks/movement/SlimeJump.class" />
-      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/check/checks/movement/Speed.class" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/check/checks/movement/Speed.class" />
       <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/check/checks/movement/SpoofedOnGroundPacket.class" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/check/checks/movement/SpoofedOnGroundPacket.class" />
-      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/check/checks/movement/Step.class" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/check/checks/movement/Step.class" />
-      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/check/checks/movement/Timer.class" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/check/checks/movement/Timer.class" />
-      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/event/events/EventExecutor$Priority.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/event/events/EventExecutor.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/event/events/Listener.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/event/events/MethodListenerPair.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/event/events/event/BlockPlaceEvent.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/event/events/event/Event.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/event/events/event/PacketPlayInAbilitiesEvent.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/event/events/event/PacketPlayInUseEntityEvent.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/event/events/event/PlayerMoveEvent.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/event/events/event/PlayerTeleportEvent.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/event/events/event/PlayerVelocityEvent.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/event/packets/ChannelInjector.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/event/packets/PacketType.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/event/packets/channelhandler/ChannelHandler1_7$ChannelHandler.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/event/packets/channelhandler/ChannelHandler1_7.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/event/packets/channelhandler/ChannelHandler1_8$ChannelHandler.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/event/packets/channelhandler/ChannelHandler1_8.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/event/packets/channelhandler/ChannelHandlerAbstract$1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/event/packets/channelhandler/ChannelHandlerAbstract.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/event/packets/wrappers/PacketAbstract.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/event/packets/wrappers/PacketPlayInAbilities.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/event/packets/wrappers/PacketPlayInBlockPlace.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/event/packets/wrappers/PacketPlayInFlying.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/event/packets/wrappers/PacketPlayInUseEntity$ActionType.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/event/packets/wrappers/PacketPlayInUseEntity.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/event/packets/wrappers/PacketPlayOutEntityVelocity.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/permissions/PermissionsManager.class" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/permissions/PermissionsManager.class" />
       <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/player/AutoEyePlayer.class" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/player/AutoEyePlayer.class" />
+      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/player/AutoEyePlayerList.class" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/player/AutoEyePlayerList.class" />
+      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/player/data/AttackData.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/player/data/LocationData.class" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/player/data/LocationData.class" />
       <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/player/data/Physics.class" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/player/data/Physics.class" />
-      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/player/data/TimeData$TimeStore.class" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/player/data/TimeData$TimeStore.class" />
-      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/player/data/TimeData.class" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/player/data/TimeData.class" />
-      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/player/updaters/DataUpdater.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/util/reflections/Reflections.class" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/util/reflections/Reflections.class" />
+      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/util/reflections/types/WrappedClass.class" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/util/reflections/types/WrappedClass.class" />
+      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/util/reflections/wrappers/WrappedAxisAlignedBB.class" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/util/reflections/wrappers/WrappedAxisAlignedBB.class" />
+      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/util/reflections/wrappers/WrappedEntity.class" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/util/reflections/wrappers/WrappedEntity.class" />
     </list>
     <ignored path="$PROJECT_DIR$/src/main/target/" />
     <ignored path=".idea/" />
@@ -88,92 +50,345 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Timer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/Timer.java">
+      <file leaf-file-name="SpoofedOnGroundPacket.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/SpoofedOnGroundPacket.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+              <folding>
+                <element signature="e#608#609#0" expanded="true" />
+                <element signature="e#883#884#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InventoryWalk.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InventoryWalk.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="15" column="59" lean-forward="false" selection-start-line="15" selection-start-column="59" selection-end-line="15" selection-end-column="59" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WrappedMethod.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/reflections/types/WrappedMethod.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="17" column="21" lean-forward="false" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WrappedClass.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/reflections/types/WrappedClass.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1122">
+              <caret line="82" column="19" lean-forward="false" selection-start-line="82" selection-start-column="19" selection-end-line="82" selection-end-column="19" />
+              <folding>
+                <element signature="e#541#542#0" expanded="true" />
+                <element signature="e#577#578#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Block.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/Desktop/Server/spigot-1.8.8.jar!/net/minecraft/server/v1_8_R3/Block.class">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
-              <caret line="19" column="14" lean-forward="false" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
-              <folding />
+              <caret line="23" column="29" lean-forward="false" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+              <folding>
+                <marker date="1520273817954" expanded="false" signature="0:104" ph="/.../" />
+                <marker date="1520273817954" expanded="false" signature="152:870" ph="..." />
+                <marker date="1520273817954" expanded="true" signature="2399:4004" ph="{...}" />
+                <marker date="1520273817954" expanded="true" signature="2850:3051" ph="{...}" />
+                <marker date="1520273817954" expanded="false" signature="2893:2912" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="2931:2945" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="2988:3007" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="3027:3041" ph=" }" />
+                <marker date="1520273817954" expanded="true" signature="3267:3371" ph="{...}" />
+                <marker date="1520273817954" expanded="false" signature="3310:3329" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="3347:3361" ph=" }" />
+                <marker date="1520273817954" expanded="true" signature="3426:3634" ph="{...}" />
+                <marker date="1520273817954" expanded="false" signature="3469:3488" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="3507:3521" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="3564:3583" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="3610:3624" ph=" }" />
+                <marker date="1520273817954" expanded="true" signature="3689:3997" ph="{...}" />
+                <marker date="1520273817954" expanded="false" signature="3732:3751" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="3774:3788" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="3831:3850" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="3873:3887" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="3929:3948" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="3973:3987" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="4046:4057" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="4082:4088" ph=" }" />
+                <marker date="1520273817954" expanded="true" signature="4149:4271" ph="{...}" />
+                <marker date="1520273817954" expanded="false" signature="4311:4322" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="4350:4356" ph=" }" />
+                <marker date="1520273817954" expanded="true" signature="4410:4518" ph="{...}" />
+                <marker date="1520273817954" expanded="false" signature="4562:4573" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="4637:4643" ph=" }" />
+                <marker date="1520273817954" expanded="true" signature="4689:5049" ph="{...}" />
+                <marker date="1520273817954" expanded="false" signature="5073:5084" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="5098:5104" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="5124:5135" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="5149:5155" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="5175:5186" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="5200:5206" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="5230:5241" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="5255:5261" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="5296:5307" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="5328:5334" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="5388:5399" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="5413:5419" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="5464:5475" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="5502:5508" ph=" }" />
+                <marker date="1520273817954" expanded="true" signature="5561:5794" ph="{...}" />
+                <marker date="1520273817954" expanded="false" signature="5908:5919" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="5937:5943" ph=" }" />
+                <marker date="1520273817954" expanded="true" signature="6016:6463" ph="{...}" />
+                <marker date="1520273817954" expanded="false" signature="6503:6514" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="6543:6549" ph=" }" />
+                <marker date="1520273817954" expanded="true" signature="6606:6676" ph="{...}" />
+                <marker date="1520273817954" expanded="true" signature="6707:6755" ph="{...}" />
+                <marker date="1520273817954" expanded="true" signature="6788:6851" ph="{...}" />
+                <marker date="1520273817954" expanded="true" signature="6884:6948" ph="{...}" />
+                <marker date="1520273817954" expanded="false" signature="6972:6983" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="7026:7032" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="7066:7077" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="7139:7145" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="7169:7180" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="7223:7229" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="7253:7264" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="7276:7282" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="7360:7371" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="7403:7409" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="7429:7440" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="7449:7455" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="7519:7530" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="7543:7549" ph=" }" />
+                <marker date="1520273817954" expanded="true" signature="7582:7730" ph="{...}" />
+                <marker date="1520273817954" expanded="true" signature="7756:7807" ph="{...}" />
+                <marker date="1520273817954" expanded="false" signature="7869:7880" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="7901:7907" ph=" }" />
+                <marker date="1520273817954" expanded="true" signature="7945:7996" ph="{...}" />
+                <marker date="1520273817954" expanded="false" signature="8028:8039" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="8053:8059" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="8094:8105" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="8130:8136" ph=" }" />
+                <marker date="1520273817954" expanded="true" signature="8224:8422" ph="{...}" />
+                <marker date="1520273817954" expanded="false" signature="8529:8540" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="8622:8628" ph=" }" />
+                <marker date="1520273817954" expanded="true" signature="8783:8993" ph="{...}" />
+                <marker date="1520273817954" expanded="false" signature="9086:9097" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="9374:9380" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="9404:9415" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="9427:9433" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="9492:9503" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="9519:9525" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="9549:9560" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="9572:9578" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="9677:9688" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="9737:9743" ph=" }" />
+                <marker date="1520273817954" expanded="true" signature="9843:9850" ph="{}" />
+                <marker date="1520273817954" expanded="true" signature="9943:9950" ph="{}" />
+                <marker date="1520273817954" expanded="true" signature="10056:10063" ph="{}" />
+                <marker date="1520273817954" expanded="false" signature="10094:10105" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="10115:10121" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="10211:10222" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="10260:10266" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="10355:10366" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="10403:10409" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="10442:10453" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="10462:10468" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="10542:10553" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="10581:10587" ph=" }" />
+                <marker date="1520273817954" expanded="true" signature="10683:10864" ph="{...}" />
+                <marker date="1520273817954" expanded="false" signature="10961:10972" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="11034:11040" ph=" }" />
+                <marker date="1520273817954" expanded="true" signature="11153:11632" ph="{...}" />
+                <marker date="1520273817954" expanded="true" signature="11722:12373" ph="{...}" />
+                <marker date="1520273817954" expanded="true" signature="12458:12815" ph="{...}" />
+                <marker date="1520273817954" expanded="false" signature="12866:12877" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="12886:12892" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="12927:12938" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="12968:12974" ph=" }" />
+                <marker date="1520273817954" expanded="true" signature="13079:15992" ph="{...}" />
+                <marker date="1520273817954" expanded="false" signature="16028:16039" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="16163:16169" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="16205:16216" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="16340:16346" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="16382:16393" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="16517:16523" ph=" }" />
+                <marker date="1520273817954" expanded="true" signature="16616:16623" ph="{}" />
+                <marker date="1520273817954" expanded="false" signature="16744:16755" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="16813:16819" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="16919:16930" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="16973:16979" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="17050:17061" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="17133:17139" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="17316:17327" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="17340:17346" ph=" }" />
+                <marker date="1520273817954" expanded="true" signature="17423:17430" ph="{}" />
+                <marker date="1520273817954" expanded="false" signature="17602:17613" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="17643:17649" ph=" }" />
+                <marker date="1520273817954" expanded="true" signature="17741:17748" ph="{}" />
+                <marker date="1520273817954" expanded="false" signature="17838:17849" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="17862:17868" ph=" }" />
+                <marker date="1520273817954" expanded="true" signature="17954:17961" ph="{}" />
+                <marker date="1520273817954" expanded="false" signature="17990:18001" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="18018:18024" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="18053:18064" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="18081:18087" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="18116:18127" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="18144:18150" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="18179:18190" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="18207:18213" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="18242:18253" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="18270:18276" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="18305:18316" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="18333:18339" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="18465:18476" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="18485:18491" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="18527:18538" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="18551:18557" ph=" }" />
+                <marker date="1520273817954" expanded="true" signature="18657:18664" ph="{}" />
+                <marker date="1520273817954" expanded="false" signature="18790:18801" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="18810:18816" ph=" }" />
+                <marker date="1520273817954" expanded="true" signature="18838:18845" ph="{}" />
+                <marker date="1520273817954" expanded="true" signature="18978:19510" ph="{...}" />
+                <marker date="1520273817954" expanded="false" signature="19537:19548" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="19586:19592" ph=" }" />
+                <marker date="1520273817954" expanded="true" signature="19643:19851" ph="{...}" />
+                <marker date="1520273817954" expanded="false" signature="19902:19913" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="19935:19941" ph=" }" />
+                <marker date="1520273817954" expanded="true" signature="20082:20089" ph="{}" />
+                <marker date="1520273817954" expanded="false" signature="20113:20124" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="20189:20195" ph=" }" />
+                <marker date="1520273817954" expanded="true" signature="20226:20277" ph="{...}" />
+                <marker date="1520273817954" expanded="false" signature="20306:20317" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="20359:20365" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="20388:20399" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="20426:20432" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="20533:20544" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="20557:20563" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="20587:20598" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="20612:20618" ph=" }" />
+                <marker date="1520273817954" expanded="true" signature="20644:20696" ph="{...}" />
+                <marker date="1520273817954" expanded="false" signature="20716:20727" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="20766:20772" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="20862:20873" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="20891:20897" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="20944:20955" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="20974:20980" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="21050:21061" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="21115:21121" ph=" }" />
+                <marker date="1520273817954" expanded="true" signature="21175:21247" ph="{...}" />
+                <marker date="1520273817954" expanded="true" signature="21357:21364" ph="{}" />
+                <marker date="1520273817954" expanded="true" signature="21426:21433" ph="{}" />
+                <marker date="1520273817954" expanded="false" signature="21457:21468" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="21480:21486" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="21529:21540" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="21552:21558" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="21593:21604" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="21625:21631" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="21687:21698" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="21790:21796" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="21836:21847" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="21860:21866" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="21926:21937" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="21946:21952" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="21997:22008" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="22060:22066" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="22097:22108" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="22135:22141" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="22192:22203" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="22231:22237" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="22281:22292" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="22314:22320" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="22350:22361" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="22402:22408" ph=" }" />
+                <marker date="1520273817954" expanded="true" signature="22437:44651" ph="{...}" />
+                <marker date="1520273817954" expanded="false" signature="44725:44736" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="44771:44777" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="44834:44845" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="44878:44884" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="44963:44974" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="44983:44989" ph=" }" />
+                <marker date="1520273817954" expanded="true" signature="45056:45187" ph="{...}" />
+                <marker date="1520273817954" expanded="true" signature="45223:45875" ph="{...}" />
+                <marker date="1520273817954" expanded="true" signature="45371:45455" ph="{...}" />
+                <marker date="1520273817954" expanded="false" signature="45490:45505" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="45519:45529" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="45564:45579" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="45593:45603" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="45642:45657" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="45680:45690" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="45728:45743" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="45767:45777" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="45816:45831" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="45859:45869" ph=" }" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ChannelHandlerAbstract.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="RegistryBlocks.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/Desktop/Server/spigot-1.8.8.jar!/net/minecraft/server/v1_8_R3/RegistryBlocks.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+              <folding>
+                <marker date="1520273817954" expanded="false" signature="0:104" ph="/.../" />
+                <marker date="1520273817954" expanded="false" signature="330:341" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="355:361" ph=" }" />
+                <marker date="1520273817954" expanded="true" signature="407:522" ph="{...}" />
+                <marker date="1520273817954" expanded="false" signature="543:554" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="579:585" ph=" }" />
+                <marker date="1520273817954" expanded="true" signature="612:703" ph="{...}" />
+                <marker date="1520273817954" expanded="true" signature="730:819" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MinecraftKey.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/Desktop/Server/spigot-1.8.8.jar!/net/minecraft/server/v1_8_R3/MinecraftKey.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+              <folding>
+                <marker date="1520273817954" expanded="false" signature="0:104" ph="/.../" />
+                <marker date="1520273817954" expanded="false" signature="152:231" ph="..." />
+                <marker date="1520273817954" expanded="true" signature="375:527" ph="{...}" />
+                <marker date="1520273817954" expanded="false" signature="565:576" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="593:599" ph=" }" />
+                <marker date="1520273817954" expanded="true" signature="646:953" ph="{...}" />
+                <marker date="1520273817954" expanded="false" signature="976:987" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="1001:1007" ph=" }" />
+                <marker date="1520273817954" expanded="false" signature="1037:1048" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="1077:1083" ph=" }" />
+                <marker date="1520273817954" expanded="true" signature="1124:1410" ph="{...}" />
+                <marker date="1520273817954" expanded="false" signature="1437:1448" ph=" { " />
+                <marker date="1520273817954" expanded="false" signature="1498:1504" ph=" }" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ChannelHandlerAbstract.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/packets/channelhandler/ChannelHandlerAbstract.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="72" column="61" lean-forward="false" selection-start-line="72" selection-start-column="61" selection-end-line="72" selection-end-column="61" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="KillAuraRotation.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/combat/KillAuraRotation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="31" column="9" lean-forward="false" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Reach.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/combat/Reach.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="24" column="286" lean-forward="false" selection-start-line="24" selection-start-column="286" selection-end-line="24" selection-end-column="286" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Autoeye.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/Autoeye.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="372">
-              <caret line="38" column="41" lean-forward="false" selection-start-line="38" selection-start-column="41" selection-end-line="38" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InvalidLocation.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InvalidLocation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AutoEyePlayer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/AutoEyePlayer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="49" column="54" lean-forward="false" selection-start-line="49" selection-start-column="54" selection-end-line="49" selection-end-column="54" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PacketType.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/packets/PacketType.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="28" column="21" lean-forward="false" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Check.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/Check.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="27" column="56" lean-forward="false" selection-start-line="27" selection-start-column="56" selection-end-line="27" selection-end-column="56" />
-              <folding />
+            <state relative-caret-position="1360">
+              <caret line="132" column="97" lean-forward="false" selection-start-line="132" selection-start-column="97" selection-end-line="132" selection-end-column="97" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -191,19 +406,28 @@
     <findStrings>
       <find>Bukkit.getOnlinePla</find>
       <find>);</find>
-      <find>a</find>
       <find>hey</find>
       <find>=</find>
       <find>0.5F</find>
       <find>onStairs</find>
       <find>System.out.prin</find>
-      <find>AxisAlignedBB</find>
       <find>List&lt;AxisAlignedBB&gt;</find>
       <find>getCubesMethod</find>
       <find>packet.</find>
       <find>event.getPlayer()</find>
       <find>attacker.</find>
       <find>event.getPacket().getEntity()</find>
+      <find>EntityPlayer</find>
+      <find>getFlag</find>
+      <find>a</find>
+      <find>AxisAlignedBB</find>
+      <find>Axi</find>
+      <find>IBlockAccess</find>
+      <find>b(I</find>
+      <find>b(</find>
+      <find>AxisAlignedBB b</find>
+      <find>getBlockData</find>
+      <find>banned,</find>
     </findStrings>
     <replaceStrings>
       <replace>;</replace>
@@ -215,6 +439,7 @@
       <replace>player</replace>
       <replace>player.</replace>
       <replace>player.getAttackData().getLastEntity()</replace>
+      <replace>autoeye,banned,</replace>
     </replaceStrings>
     <dirStrings>
       <dir>C:\Users\Justin\Google Drive\Coding\workspace\AutoEyeGit2\src\main</dir>
@@ -232,13 +457,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/TPS.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/MathUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/events/EventExecutor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/updaters/DataVerifier.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/combat/KillAura2.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/api/ChannelRecreateEvent.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/AutoEyePlayerList.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/events/EventHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/api/AutoEyeInfractionEvent.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/wrappers/PacketPlayInBlockPlace.java" />
@@ -248,39 +466,48 @@
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/channelhandler/ChannelHandler1_8.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/channelhandler/ChannelHandler1_7.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/ChannelInjector.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/reflections/wrappers/WrappedEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/vector/Vector3D.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/reflections/Reflections.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/wrappers/PacketPlayInFlying.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/Derp.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/server/Version.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/reflections/wrappers/WrappedAxisAlignedBB.java" />
         <option value="$PROJECT_DIR$/src/main/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/data/LocationData.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/PacketType.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/events/event/InventoryClickEvent.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/data/TimeData.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/data/Physics.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/CheckHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/Check.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/FastLadder.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InvalidMotion.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InvalidPitch.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InventoryWalk.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/NoSlowDown.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/NoWeb.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/SlimeJump.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/Speed.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/SpoofedOnGroundPacket.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/Step.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/Timer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/AutoEyePlayer.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/updaters/DataUpdater.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InvalidLocation.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/combat/KillAuraRotation.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/combat/Reach.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/channelhandler/ChannelHandlerAbstract.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/Autoeye.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/reflections/Reflections.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/permissions/PermissionsManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/MathUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/data/Physics.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InvalidMotion.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InventoryWalk.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/data/LocationData.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/reflections/wrappers/WrappedEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/reflections/wrappers/WrappedAxisAlignedBB.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/interaction/block/LineBlock.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/AutoEyePlayer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/data/InteractData.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/interaction/block/BlockPathFinder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/interaction/BlockInteraction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/reflections/types/WrappedClass.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/reflections/wrappers/WrappedBlock.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/SpoofedOnGroundPacket.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/packets/channelhandler/ChannelHandlerAbstract.java" />
       </list>
     </option>
   </component>
@@ -312,8 +539,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -337,6 +563,13 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="autoeye" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AutoEyeGit2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="autoeye" type="462c0819:PsiDirectoryNode" />
               <item name="check" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -352,18 +585,30 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="autoeye" type="462c0819:PsiDirectoryNode" />
-              <item name="check" type="462c0819:PsiDirectoryNode" />
-              <item name="checks" type="462c0819:PsiDirectoryNode" />
-              <item name="combat" type="462c0819:PsiDirectoryNode" />
+              <item name="packets" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AutoEyeGit2" type="b2602c69:ProjectViewProjectNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="autoeye" type="462c0819:PsiDirectoryNode" />
-              <item name="check" type="462c0819:PsiDirectoryNode" />
-              <item name="checks" type="462c0819:PsiDirectoryNode" />
-              <item name="movement" type="462c0819:PsiDirectoryNode" />
+              <item name="packets" type="462c0819:PsiDirectoryNode" />
+              <item name="channelhandler" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AutoEyeGit2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="autoeye" type="462c0819:PsiDirectoryNode" />
+              <item name="packets" type="462c0819:PsiDirectoryNode" />
+              <item name="wrappers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AutoEyeGit2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="autoeye" type="462c0819:PsiDirectoryNode" />
+              <item name="permissions" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AutoEyeGit2" type="b2602c69:ProjectViewProjectNode" />
@@ -371,6 +616,14 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="autoeye" type="462c0819:PsiDirectoryNode" />
               <item name="player" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AutoEyeGit2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="autoeye" type="462c0819:PsiDirectoryNode" />
+              <item name="player" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AutoEyeGit2" type="b2602c69:ProjectViewProjectNode" />
@@ -433,8 +686,9 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -443,8 +697,12 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Server/spigot-1.12.2.jar!/" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/Justin/Google Drive/Coding/workspace/AutoEyeGit2/src/main/java/com/heirteir/autoeye/util/MathUtil.java" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Justin\Google Drive\Coding\workspace\AutoEyeGit2\src\main\java\com\heirteir\autoeye\check\checks\interaction" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Justin\Google Drive\Coding\workspace\AutoEyeGit2\src\main\java\resources" />
     </key>
@@ -645,7 +903,14 @@
       <option name="project" value="LOCAL" />
       <updated>1524539232579</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Removed some more residue files left over from deleting the event system.">
+      <created>1524539572412</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1524539572412</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -654,19 +919,19 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32150537" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3204301" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32580644" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32580644" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.09139785" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32580644" sideWeight="0.4978678" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="IntelliGuard" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3311828" sideWeight="0.4978678" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20682302" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -729,7 +994,8 @@
     <MESSAGE value="0.66B Update." />
     <MESSAGE value="0.66C Update." />
     <MESSAGE value="Removed Event System to increase runtime performance." />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed Event System to increase runtime performance." />
+    <MESSAGE value="Removed some more residue files left over from deleting the event system." />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed some more residue files left over from deleting the event system." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -741,299 +1007,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/events/PlayerTeleportEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/api/AutoEyeInfractionEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="24" column="38" lean-forward="false" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/reflections/types/WrappedClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="20" column="21" lean-forward="false" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/reflections/types/WrappedConstructor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="16" column="46" lean-forward="false" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/packets/wrappers/PacketPlayInAbilities.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="18" column="33" lean-forward="false" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/packets/wrappers/PacketPlayInBlockPlace.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/packets/wrappers/PacketPlayInUseEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="28" column="33" lean-forward="false" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/packets/wrappers/PacketPlayOutEntityVelocity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="21" column="12" lean-forward="false" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/packets/channelhandler/ChannelHandler1_8.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="59" column="9" lean-forward="false" selection-start-line="59" selection-start-column="9" selection-end-line="59" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/packets/channelhandler/ChannelHandler1_7.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="40" column="248" lean-forward="false" selection-start-line="40" selection-start-column="248" selection-end-line="40" selection-end-column="248" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/packets/ChannelInjector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#767#768#0" expanded="false" />
-            <element signature="e#915#916#0" expanded="false" />
-            <element signature="e#960#961#0" expanded="false" />
-            <element signature="e#1007#1008#0" expanded="false" />
-            <element signature="e#1055#1056#0" expanded="false" />
-            <element signature="e#1105#1106#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/packets/wrappers/PacketPlayInFlying.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="37" column="33" lean-forward="false" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/events/EventExecutor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="22" column="39" lean-forward="true" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/MathUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="14" column="38" lean-forward="false" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/BlockSet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="16" column="46" lean-forward="false" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/vector/Vector3D.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="21" column="25" lean-forward="false" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
-          <folding>
-            <element signature="e#577#578#0" expanded="false" />
-            <element signature="e#718#719#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/vector/Vector2D.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="13" column="46" lean-forward="false" selection-start-line="13" selection-start-column="46" selection-end-line="13" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/reflections/Reflections.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="19" column="21" lean-forward="false" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
-          <folding>
-            <element signature="e#1051#1052#0" expanded="false" />
-            <element signature="e#1108#1109#0" expanded="false" />
-            <element signature="e#1534#1535#0" expanded="false" />
-            <element signature="e#1580#1581#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/reflections/wrappers/WrappedEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/reflections/types/WrappedMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="17" column="21" lean-forward="false" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/reflections/types/WrappedField.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="15" column="21" lean-forward="false" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Desktop/Server/spigot-1.12.2.jar!/net/minecraft/server/v1_12_R1/World.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18054">
-          <caret line="1191" column="95" lean-forward="false" selection-start-line="1191" selection-start-column="95" selection-end-line="1191" selection-end-column="95" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/server/Version.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="10" column="21" lean-forward="false" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/reflections/wrappers/WrappedAxisAlignedBB.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="69" column="21" lean-forward="false" selection-start-line="69" selection-start-column="21" selection-end-line="69" selection-end-column="21" />
-          <folding>
-            <element signature="e#3932#3933#0" expanded="false" />
-            <element signature="e#4262#4263#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="34" column="31" lean-forward="false" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/data/LocationData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1224">
-          <caret line="93" column="19" lean-forward="false" selection-start-line="93" selection-start-column="19" selection-end-line="93" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/data/TimeData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="27" column="54" lean-forward="false" selection-start-line="27" selection-start-column="54" selection-end-line="27" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/data/Physics.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="715">
-          <caret line="89" column="56" lean-forward="false" selection-start-line="89" selection-start-column="56" selection-end-line="89" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/events/EventHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="43" column="31" lean-forward="false" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/CheckHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/FastLadder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="19" column="14" lean-forward="true" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InvalidMotion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="19" column="14" lean-forward="false" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InvalidPitch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="12" column="14" lean-forward="false" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#400#401#0" expanded="false" />
-            <element signature="e#528#529#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InventoryWalk.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="11" column="14" lean-forward="false" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-          <folding>
-            <element signature="e#375#376#0" expanded="false" />
-            <element signature="e#403#404#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/NoSlowDown.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -1066,14 +1039,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/SpoofedOnGroundPacket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="19" column="14" lean-forward="false" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/Step.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -1098,14 +1063,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/updaters/DataUpdater.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/updaters/DataUpdater.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/packets/PacketType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -1138,35 +1096,561 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/events/InventoryClickEvent.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/Autoeye.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="40" column="43" lean-forward="true" selection-start-line="40" selection-start-column="43" selection-end-line="40" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/vector/Vector3D.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="21" column="25" lean-forward="false" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/reflections/Reflections.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="21" column="48" lean-forward="false" selection-start-line="21" selection-start-column="48" selection-end-line="21" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/permissions/PermissionsManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="29" column="4" lean-forward="false" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/api/AutoEyeInfractionEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/BlockSet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="16" column="46" lean-forward="false" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/MathUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="14" column="38" lean-forward="false" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Desktop/Server/spigot-1.8.8.jar!/org/bukkit/craftbukkit/v1_8_R3/entity/CraftEntity.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="532" column="19" lean-forward="false" selection-start-line="532" selection-start-column="19" selection-end-line="532" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Desktop/Server/spigot-1.8.8.jar!/net/minecraft/server/v1_8_R3/EntityPlayer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="123" column="48" lean-forward="false" selection-start-line="123" selection-start-column="48" selection-end-line="123" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Desktop/Server/spigot-1.12.2.jar!/net/minecraft/server/v1_12_R1/Entity.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="1836" column="5" lean-forward="true" selection-start-line="1836" selection-start-column="5" selection-end-line="1836" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InvalidMotion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="24" column="46" lean-forward="false" selection-start-line="24" selection-start-column="46" selection-end-line="24" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/data/Physics.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="746">
+          <caret line="79" column="21" lean-forward="false" selection-start-line="79" selection-start-column="21" selection-end-line="79" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Desktop/Server/spigot-1.12.2.jar!/net/minecraft/server/v1_12_R1/IBlockState.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Desktop/Server/spigot-1.8.8.jar!/net/minecraft/server/v1_8_R3/IBlockData.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="21" column="7" lean-forward="false" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Desktop/Server/spigot-1.12.2.jar!/net/minecraft/server/v1_12_R1/RegistryBlocks.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Desktop/Server/spigot-1.12.2.jar!/net/minecraft/server/v1_12_R1/IBlockAccess.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Desktop/Server/spigot-1.12.2.jar!/net/minecraft/server/v1_12_R1/IBlockProperties.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Desktop/Server/spigot-1.12.2.jar!/net/minecraft/server/v1_12_R1/IBlockData.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="10" column="56" lean-forward="false" selection-start-line="10" selection-start-column="56" selection-end-line="10" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Desktop/Server/spigot-1.12.2.jar!/net/minecraft/server/v1_12_R1/BlockStateList.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="41" column="46" lean-forward="false" selection-start-line="41" selection-start-column="46" selection-end-line="41" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Desktop/Server/spigot-1.12.2.jar!/net/minecraft/server/v1_12_R1/BlockPosition.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Desktop/Server/spigot-1.12.2.jar!/net/minecraft/server/v1_12_R1/Block.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8228">
+          <caret line="659" column="74" lean-forward="false" selection-start-line="659" selection-start-column="74" selection-end-line="659" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/reflections/wrappers/WrappedAxisAlignedBB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/reflections/wrappers/WrappedEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="35" column="54" lean-forward="false" selection-start-line="35" selection-start-column="54" selection-end-line="35" selection-end-column="54" />
+          <folding>
+            <element signature="e#1773#1774#0" expanded="true" />
+            <element signature="e#1844#1845#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/interaction/block/LineBlock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/AutoEyePlayer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="49" column="54" lean-forward="false" selection-start-line="49" selection-start-column="54" selection-end-line="49" selection-end-column="54" />
+        <state relative-caret-position="238">
+          <caret line="34" column="33" lean-forward="false" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/data/LocationData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="871">
+          <caret line="96" column="17" lean-forward="false" selection-start-line="96" selection-start-column="17" selection-end-line="96" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/data/InteractData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="17" column="19" lean-forward="false" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/interaction/block/BlockPathFinder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1428">
+          <caret line="92" column="8" lean-forward="false" selection-start-line="92" selection-start-column="8" selection-end-line="92" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/interaction/BlockInteraction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="16" column="9" lean-forward="false" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Desktop/Server/spigot-1.8.8.jar!/net/minecraft/server/v1_8_R3/MinecraftKey.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding>
+            <marker date="1520273817954" expanded="false" signature="0:104" ph="/.../" />
+            <marker date="1520273817954" expanded="false" signature="152:231" ph="..." />
+            <marker date="1520273817954" expanded="true" signature="375:527" ph="{...}" />
+            <marker date="1520273817954" expanded="false" signature="565:576" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="593:599" ph=" }" />
+            <marker date="1520273817954" expanded="true" signature="646:953" ph="{...}" />
+            <marker date="1520273817954" expanded="false" signature="976:987" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="1001:1007" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="1037:1048" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="1077:1083" ph=" }" />
+            <marker date="1520273817954" expanded="true" signature="1124:1410" ph="{...}" />
+            <marker date="1520273817954" expanded="false" signature="1437:1448" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="1498:1504" ph=" }" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Desktop/Server/spigot-1.8.8.jar!/net/minecraft/server/v1_8_R3/Block.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="23" column="29" lean-forward="false" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+          <folding>
+            <marker date="1520273817954" expanded="false" signature="0:104" ph="/.../" />
+            <marker date="1520273817954" expanded="false" signature="152:870" ph="..." />
+            <marker date="1520273817954" expanded="true" signature="2399:4004" ph="{...}" />
+            <marker date="1520273817954" expanded="true" signature="2850:3051" ph="{...}" />
+            <marker date="1520273817954" expanded="false" signature="2893:2912" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="2931:2945" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="2988:3007" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="3027:3041" ph=" }" />
+            <marker date="1520273817954" expanded="true" signature="3267:3371" ph="{...}" />
+            <marker date="1520273817954" expanded="false" signature="3310:3329" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="3347:3361" ph=" }" />
+            <marker date="1520273817954" expanded="true" signature="3426:3634" ph="{...}" />
+            <marker date="1520273817954" expanded="false" signature="3469:3488" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="3507:3521" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="3564:3583" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="3610:3624" ph=" }" />
+            <marker date="1520273817954" expanded="true" signature="3689:3997" ph="{...}" />
+            <marker date="1520273817954" expanded="false" signature="3732:3751" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="3774:3788" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="3831:3850" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="3873:3887" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="3929:3948" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="3973:3987" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="4046:4057" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="4082:4088" ph=" }" />
+            <marker date="1520273817954" expanded="true" signature="4149:4271" ph="{...}" />
+            <marker date="1520273817954" expanded="false" signature="4311:4322" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="4350:4356" ph=" }" />
+            <marker date="1520273817954" expanded="true" signature="4410:4518" ph="{...}" />
+            <marker date="1520273817954" expanded="false" signature="4562:4573" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="4637:4643" ph=" }" />
+            <marker date="1520273817954" expanded="true" signature="4689:5049" ph="{...}" />
+            <marker date="1520273817954" expanded="false" signature="5073:5084" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="5098:5104" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="5124:5135" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="5149:5155" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="5175:5186" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="5200:5206" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="5230:5241" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="5255:5261" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="5296:5307" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="5328:5334" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="5388:5399" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="5413:5419" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="5464:5475" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="5502:5508" ph=" }" />
+            <marker date="1520273817954" expanded="true" signature="5561:5794" ph="{...}" />
+            <marker date="1520273817954" expanded="false" signature="5908:5919" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="5937:5943" ph=" }" />
+            <marker date="1520273817954" expanded="true" signature="6016:6463" ph="{...}" />
+            <marker date="1520273817954" expanded="false" signature="6503:6514" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="6543:6549" ph=" }" />
+            <marker date="1520273817954" expanded="true" signature="6606:6676" ph="{...}" />
+            <marker date="1520273817954" expanded="true" signature="6707:6755" ph="{...}" />
+            <marker date="1520273817954" expanded="true" signature="6788:6851" ph="{...}" />
+            <marker date="1520273817954" expanded="true" signature="6884:6948" ph="{...}" />
+            <marker date="1520273817954" expanded="false" signature="6972:6983" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="7026:7032" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="7066:7077" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="7139:7145" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="7169:7180" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="7223:7229" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="7253:7264" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="7276:7282" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="7360:7371" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="7403:7409" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="7429:7440" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="7449:7455" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="7519:7530" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="7543:7549" ph=" }" />
+            <marker date="1520273817954" expanded="true" signature="7582:7730" ph="{...}" />
+            <marker date="1520273817954" expanded="true" signature="7756:7807" ph="{...}" />
+            <marker date="1520273817954" expanded="false" signature="7869:7880" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="7901:7907" ph=" }" />
+            <marker date="1520273817954" expanded="true" signature="7945:7996" ph="{...}" />
+            <marker date="1520273817954" expanded="false" signature="8028:8039" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="8053:8059" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="8094:8105" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="8130:8136" ph=" }" />
+            <marker date="1520273817954" expanded="true" signature="8224:8422" ph="{...}" />
+            <marker date="1520273817954" expanded="false" signature="8529:8540" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="8622:8628" ph=" }" />
+            <marker date="1520273817954" expanded="true" signature="8783:8993" ph="{...}" />
+            <marker date="1520273817954" expanded="false" signature="9086:9097" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="9374:9380" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="9404:9415" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="9427:9433" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="9492:9503" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="9519:9525" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="9549:9560" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="9572:9578" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="9677:9688" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="9737:9743" ph=" }" />
+            <marker date="1520273817954" expanded="true" signature="9843:9850" ph="{}" />
+            <marker date="1520273817954" expanded="true" signature="9943:9950" ph="{}" />
+            <marker date="1520273817954" expanded="true" signature="10056:10063" ph="{}" />
+            <marker date="1520273817954" expanded="false" signature="10094:10105" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="10115:10121" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="10211:10222" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="10260:10266" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="10355:10366" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="10403:10409" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="10442:10453" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="10462:10468" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="10542:10553" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="10581:10587" ph=" }" />
+            <marker date="1520273817954" expanded="true" signature="10683:10864" ph="{...}" />
+            <marker date="1520273817954" expanded="false" signature="10961:10972" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="11034:11040" ph=" }" />
+            <marker date="1520273817954" expanded="true" signature="11153:11632" ph="{...}" />
+            <marker date="1520273817954" expanded="true" signature="11722:12373" ph="{...}" />
+            <marker date="1520273817954" expanded="true" signature="12458:12815" ph="{...}" />
+            <marker date="1520273817954" expanded="false" signature="12866:12877" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="12886:12892" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="12927:12938" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="12968:12974" ph=" }" />
+            <marker date="1520273817954" expanded="true" signature="13079:15992" ph="{...}" />
+            <marker date="1520273817954" expanded="false" signature="16028:16039" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="16163:16169" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="16205:16216" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="16340:16346" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="16382:16393" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="16517:16523" ph=" }" />
+            <marker date="1520273817954" expanded="true" signature="16616:16623" ph="{}" />
+            <marker date="1520273817954" expanded="false" signature="16744:16755" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="16813:16819" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="16919:16930" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="16973:16979" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="17050:17061" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="17133:17139" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="17316:17327" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="17340:17346" ph=" }" />
+            <marker date="1520273817954" expanded="true" signature="17423:17430" ph="{}" />
+            <marker date="1520273817954" expanded="false" signature="17602:17613" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="17643:17649" ph=" }" />
+            <marker date="1520273817954" expanded="true" signature="17741:17748" ph="{}" />
+            <marker date="1520273817954" expanded="false" signature="17838:17849" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="17862:17868" ph=" }" />
+            <marker date="1520273817954" expanded="true" signature="17954:17961" ph="{}" />
+            <marker date="1520273817954" expanded="false" signature="17990:18001" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="18018:18024" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="18053:18064" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="18081:18087" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="18116:18127" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="18144:18150" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="18179:18190" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="18207:18213" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="18242:18253" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="18270:18276" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="18305:18316" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="18333:18339" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="18465:18476" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="18485:18491" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="18527:18538" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="18551:18557" ph=" }" />
+            <marker date="1520273817954" expanded="true" signature="18657:18664" ph="{}" />
+            <marker date="1520273817954" expanded="false" signature="18790:18801" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="18810:18816" ph=" }" />
+            <marker date="1520273817954" expanded="true" signature="18838:18845" ph="{}" />
+            <marker date="1520273817954" expanded="true" signature="18978:19510" ph="{...}" />
+            <marker date="1520273817954" expanded="false" signature="19537:19548" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="19586:19592" ph=" }" />
+            <marker date="1520273817954" expanded="true" signature="19643:19851" ph="{...}" />
+            <marker date="1520273817954" expanded="false" signature="19902:19913" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="19935:19941" ph=" }" />
+            <marker date="1520273817954" expanded="true" signature="20082:20089" ph="{}" />
+            <marker date="1520273817954" expanded="false" signature="20113:20124" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="20189:20195" ph=" }" />
+            <marker date="1520273817954" expanded="true" signature="20226:20277" ph="{...}" />
+            <marker date="1520273817954" expanded="false" signature="20306:20317" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="20359:20365" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="20388:20399" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="20426:20432" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="20533:20544" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="20557:20563" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="20587:20598" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="20612:20618" ph=" }" />
+            <marker date="1520273817954" expanded="true" signature="20644:20696" ph="{...}" />
+            <marker date="1520273817954" expanded="false" signature="20716:20727" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="20766:20772" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="20862:20873" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="20891:20897" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="20944:20955" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="20974:20980" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="21050:21061" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="21115:21121" ph=" }" />
+            <marker date="1520273817954" expanded="true" signature="21175:21247" ph="{...}" />
+            <marker date="1520273817954" expanded="true" signature="21357:21364" ph="{}" />
+            <marker date="1520273817954" expanded="true" signature="21426:21433" ph="{}" />
+            <marker date="1520273817954" expanded="false" signature="21457:21468" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="21480:21486" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="21529:21540" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="21552:21558" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="21593:21604" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="21625:21631" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="21687:21698" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="21790:21796" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="21836:21847" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="21860:21866" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="21926:21937" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="21946:21952" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="21997:22008" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="22060:22066" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="22097:22108" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="22135:22141" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="22192:22203" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="22231:22237" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="22281:22292" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="22314:22320" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="22350:22361" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="22402:22408" ph=" }" />
+            <marker date="1520273817954" expanded="true" signature="22437:44651" ph="{...}" />
+            <marker date="1520273817954" expanded="false" signature="44725:44736" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="44771:44777" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="44834:44845" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="44878:44884" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="44963:44974" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="44983:44989" ph=" }" />
+            <marker date="1520273817954" expanded="true" signature="45056:45187" ph="{...}" />
+            <marker date="1520273817954" expanded="true" signature="45223:45875" ph="{...}" />
+            <marker date="1520273817954" expanded="true" signature="45371:45455" ph="{...}" />
+            <marker date="1520273817954" expanded="false" signature="45490:45505" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="45519:45529" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="45564:45579" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="45593:45603" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="45642:45657" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="45680:45690" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="45728:45743" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="45767:45777" ph=" }" />
+            <marker date="1520273817954" expanded="false" signature="45816:45831" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="45859:45869" ph=" }" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Desktop/Server/spigot-1.8.8.jar!/net/minecraft/server/v1_8_R3/RegistryBlocks.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <marker date="1520273817954" expanded="false" signature="0:104" ph="/.../" />
+            <marker date="1520273817954" expanded="false" signature="330:341" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="355:361" ph=" }" />
+            <marker date="1520273817954" expanded="true" signature="407:522" ph="{...}" />
+            <marker date="1520273817954" expanded="false" signature="543:554" ph=" { " />
+            <marker date="1520273817954" expanded="false" signature="579:585" ph=" }" />
+            <marker date="1520273817954" expanded="true" signature="612:703" ph="{...}" />
+            <marker date="1520273817954" expanded="true" signature="730:819" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/reflections/types/WrappedMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="17" column="21" lean-forward="false" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/reflections/types/WrappedClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1122">
+          <caret line="82" column="19" lean-forward="false" selection-start-line="82" selection-start-column="19" selection-end-line="82" selection-end-column="19" />
+          <folding>
+            <element signature="e#541#542#0" expanded="true" />
+            <element signature="e#577#578#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/reflections/wrappers/WrappedBlock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="46" lean-forward="false" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/SpoofedOnGroundPacket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding>
+            <element signature="e#608#609#0" expanded="true" />
+            <element signature="e#883#884#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InventoryWalk.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="15" column="59" lean-forward="false" selection-start-line="15" selection-start-column="59" selection-end-line="15" selection-end-column="59" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/packets/channelhandler/ChannelHandlerAbstract.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="72" column="61" lean-forward="false" selection-start-line="72" selection-start-column="61" selection-end-line="72" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/events/InventoryClickEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="48" lean-forward="false" selection-start-line="4" selection-start-column="48" selection-end-line="4" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/Autoeye.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="38" column="41" lean-forward="false" selection-start-line="38" selection-start-column="41" selection-end-line="38" selection-end-column="41" />
-          <folding />
+        <state relative-caret-position="1360">
+          <caret line="132" column="97" lean-forward="false" selection-start-line="132" selection-start-column="97" selection-end-line="132" selection-end-column="97" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

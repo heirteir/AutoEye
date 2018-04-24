@@ -29,13 +29,16 @@ import java.util.Set;
 
 @RequiredArgsConstructor public class WrappedAxisAlignedBB {
     private static final WrappedClass materialClass = Reflections.getNMSClass("Material");
-    private static final WrappedMethod getHandleMethod = Reflections.getCBClass("CraftWorld").getMethod("getHandle");
+    static final WrappedMethod getHandleMethod = Reflections.getCBClass("CraftWorld").getMethod("getHandle");
     private static final WrappedMethod getMaterialsMethod = Reflections.getNMSClass("World").getMethod("a", Reflections.getNMSClass("AxisAlignedBB").getParent(), materialClass.getParent());
     private static final WrappedMethod containsLiquidMethod = Reflections.getNMSClass("World").getMethod("containsLiquid", Reflections.getNMSClass("AxisAlignedBB").getParent());
     private static final WrappedConstructor axisAlignedBBConstructor = Reflections.getNMSClass("AxisAlignedBB").getConstructor(double.class, double.class, double.class, double.class, double.class, double.class);
     private static final WrappedField minXField = Reflections.getNMSClass("AxisAlignedBB").getFieldByName("a");
     private static final WrappedField minYField = Reflections.getNMSClass("AxisAlignedBB").getFieldByName("b");
     private static final WrappedField minZField = Reflections.getNMSClass("AxisAlignedBB").getFieldByName("c");
+    private static final WrappedField maxXField = Reflections.getNMSClass("AxisAlignedBB").getFieldByName("d");
+    private static final WrappedField maxYField = Reflections.getNMSClass("AxisAlignedBB").getFieldByName("e");
+    private static final WrappedField maxZField = Reflections.getNMSClass("AxisAlignedBB").getFieldByName("f");
     private static final WrappedMethod getCubesMethod;
     private final Autoeye autoeye;
     private final World bukkitWorld;
@@ -52,6 +55,15 @@ import java.util.Set;
     }
 
     private List<Object> boundingBoxes = null;
+
+    WrappedAxisAlignedBB(Autoeye autoeye, World world, Object axisAlignedBB) {
+        this.autoeye = autoeye;
+        this.bukkitWorld = world;
+        this.world = getHandleMethod.invoke(world);
+        this.min = new Vector3D(((Double) minXField.get(axisAlignedBB)).floatValue(), ((Double) minYField.get(axisAlignedBB)).floatValue(), ((Double) minZField.get(axisAlignedBB)).floatValue());
+        this.max = new Vector3D(((Double) maxXField.get(axisAlignedBB)).floatValue(), ((Double) maxYField.get(axisAlignedBB)).floatValue(), ((Double) maxZField.get(axisAlignedBB)).floatValue());
+        this.axisAlignedBB = axisAlignedBBConstructor.newInstance(this.min.getX(), this.min.getY(), this.min.getZ(), this.max.getX(), this.max.getY(), this.max.getZ());
+    }
 
     private WrappedAxisAlignedBB(Autoeye autoeye, World world, Vector3D min, Vector3D max) {
         this.autoeye = autoeye;

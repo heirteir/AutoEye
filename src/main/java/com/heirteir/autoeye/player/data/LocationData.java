@@ -106,7 +106,7 @@ import org.bukkit.util.NumberConversions;
             } else {
                 this.inWater = player.getTimeData().getLastInWater().getDifference() < 150;
             }
-            this.teleported = player.getTimeData().getLastTeleport().getDifference() < 250;
+            this.teleported = player.getTimeData().getLastTeleport().getDifference() < 100;
             if (player.getTimeData().getSecondTick().getDifference() >= 950 && player.getTimeData().getLastTeleport().getDifference() >= 950 && this.axisAlignedBB.getSolidBlocks().size() == 0) {
                 teleportLocation = new Vector3D(this.location.getX(), this.location.getY(), this.getLocation().getZ());
             }

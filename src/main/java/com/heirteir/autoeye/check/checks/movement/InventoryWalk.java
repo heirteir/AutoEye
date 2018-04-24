@@ -10,14 +10,11 @@ public class InventoryWalk extends Check {
     }
 
     @Override public boolean check(AutoEyePlayer player) {
-        return false;
+        return player.getLocationData().isChangedPos() && !player.getPhysics().isFlying() && player.getPhysics().isMoving() && player.getPhysics().getServerVelocity().getX() == 0 && player.getPhysics().getServerVelocity().getZ() == 0 && player.getTimeData().getLastMove().getDifference() < 60L;
     }
-    //    public boolean check(PlayerMoveEvent event) {
-    //        return event.getPacket().isHasPos() && player.getPhysics().isMoving() && player.getPlayer().getVelocity().getX() == 0 && player.getPlayer().getVelocity().getZ() == 0 && player.getPlayer().getVelocity().getY() > -0.1F && !player.getPlayer().getOpenInventory().getType().equals(InventoryType.CRAFTING) && this.checkThreshold(player, 4, 100L);
-    //    }
 
     @Override public boolean revert(AutoEyePlayer player) {
-        player.teleport(player.getLocationData().getTeleportLocation());
+        player.getPlayer().closeInventory();
         return false;
     }
 }

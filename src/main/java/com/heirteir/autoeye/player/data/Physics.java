@@ -47,7 +47,7 @@ import lombok.Setter;
 
     public void update(AutoEyePlayer player) {
         if (player.getLocationData().isChangedPos()) {
-            if (this.flying) {
+            if (this.flying || player.getWrappedEntity().isGliding()) {
                 player.getTimeData().getLastFlying().update();
             } else {
                 this.flying = player.getTimeData().getLastFlying().getDifference() < 1000;

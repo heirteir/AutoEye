@@ -18,7 +18,7 @@ public class SpoofedOnGroundPacket extends Check {
     }
 
     @Override public boolean check(AutoEyePlayer player) {
-        return (player.isConnected() && player.getTimeData().getLastVelocity().getDifference() > 500 && player.getLocationData().isChangedPos() && !player.getPhysics().isFlying() && !player.getLocationData().isTeleported() && player.getLocationData().isOnGround() != player.getLocationData().isServerOnGround()) ? this.checkThreshold(player, 5) : this.resetThreshold(player);
+        return (player.isConnected() && !player.getPhysics().isFlying() && !player.getLocationData().isTeleported() && player.getLocationData().isOnGround() != player.getLocationData().isServerOnGround()) ? this.checkThreshold(player, 5) : this.resetThreshold(player);
     }
 
     @Override public boolean revert(AutoEyePlayer player) {

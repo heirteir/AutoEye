@@ -16,10 +16,7 @@ import com.heirteir.autoeye.check.checks.combat.KillAuraRotation;
 import com.heirteir.autoeye.check.checks.combat.Reach;
 import com.heirteir.autoeye.check.checks.movement.*;
 import com.heirteir.autoeye.packets.PacketType;
-import com.heirteir.autoeye.packets.wrappers.PacketPlayInAbilities;
-import com.heirteir.autoeye.packets.wrappers.PacketPlayInFlying;
-import com.heirteir.autoeye.packets.wrappers.PacketPlayInUseEntity;
-import com.heirteir.autoeye.packets.wrappers.PacketPlayOutEntityVelocity;
+import com.heirteir.autoeye.packets.wrappers.*;
 import com.heirteir.autoeye.player.AutoEyePlayer;
 import com.heirteir.autoeye.util.reflections.Reflections;
 import com.heirteir.autoeye.util.reflections.types.WrappedField;
@@ -33,19 +30,15 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
 public abstract class ChannelHandlerAbstract {
-    protected static final WrappedField networkManagerField = Reflections.getNMSClass("PlayerConnection").getFieldByName("networkManager");
-    protected static final WrappedField playerConnectionField = Reflections.getNMSClass("EntityPlayer").getFieldByName("playerConnection");
     protected final Autoeye autoeye;
+    static final WrappedField networkManagerField = Reflections.getNMSClass("PlayerConnection").getFieldByName("networkManager");
+    static final WrappedField playerConnectionField = Reflections.getNMSClass("EntityPlayer").getFieldByName("playerConnection");
     final Executor addChannelHandlerExecutor;
     final Executor removeChannelHandlerExecutor;
     final String handlerKey;
     final String playerKey;
-    //combat
-    private final KillAuraRotation killAuraRotation;
-    private final Reach reach;
-    //movement
+    private final Set<Check> combatChecks = Sets.newHashSet();
     private final Set<Check> movementChecks = Sets.newHashSet();
-    //inventory
     private final InventoryWalk inventoryWalk;
 
     ChannelHandlerAbstract(Autoeye autoeye) {
@@ -55,8 +48,8 @@ public abstract class ChannelHandlerAbstract {
         this.handlerKey = "packet_handler";
         this.playerKey = "autoeye_player_handler";
         //combat
-        this.killAuraRotation = new KillAuraRotation(this.autoeye);
-        this.reach = new Reach(this.autoeye);
+        this.combatChecks.add(new KillAuraRotation(this.autoeye));
+        this.combatChecks.add(new Reach(this.autoeye));
         //movement
         this.movementChecks.add(new FastLadder(this.autoeye));
         this.movementChecks.add(new InvalidLocation(this.autoeye));
@@ -84,25 +77,16 @@ public abstract class ChannelHandlerAbstract {
         }
         if (this.autoeye.isEnabled() && packet != null && player != null && player.getPlayer() != null && player.getPlayer().isOnline()) {
             switch (PacketType.fromString(packet.getClass().getSimpleName())) {
-                case NULL:
-                    System.out.println(packet.getClass().getSimpleName());
-                    break;
                 case PacketPlayInWindowClick:
-                    this.inventoryWalk.check(player);
+                    if (this.inventoryWalk.check(player)) {
+                        return this.caught(player, this.inventoryWalk);
+                    }
                     break;
                 case PacketPlayInFlying:
                     player.update(this.autoeye, new PacketPlayInFlying(packet));
                     for (Check check : this.movementChecks) {
                         if (check.check(player)) {
-                            AutoEyeInfractionEvent e = new AutoEyeInfractionEvent(player.getPlayer(), player.getInfractionData().getInfraction(check));
-                            Bukkit.getPluginManager().callEvent(e);
-                            if (!e.isCancelled()) {
-                                player.getInfractionData().addVL(player, check);
-                                for (AutoEyePlayer p : this.autoeye.getAutoEyePlayerList().getPlayers().values()) {
-                                    p.sendMessage(this.autoeye, this.autoeye.getPluginLogger().translateColorCodes(e.getMessage()));
-                                }
-                                return check.revert(player);
-                            }
+                            return this.caught(player, check);
                         }
                     }
                     break;
@@ -111,11 +95,14 @@ public abstract class ChannelHandlerAbstract {
                     break;
                 case PacketPlayInUseEntity:
                     PacketPlayInUseEntity packetPlayInUseEntity = new PacketPlayInUseEntity(player.getPlayer().getWorld(), packet);
-                    player.getAttackData().setLastEntity(packetPlayInUseEntity.getEntity());
-                    player.getAttackData().setLastActionType(packetPlayInUseEntity.getActionType());
+                    player.getInteractData().setLastEntity(packetPlayInUseEntity.getEntity());
+                    player.getInteractData().setLastActionType(packetPlayInUseEntity.getActionType());
                     player.getTimeData().getLastUseEntity().update();
-                    this.killAuraRotation.check(player);
-                    this.reach.check(player);
+                    for (Check check : this.combatChecks) {
+                        if (check.check(player)) {
+                            return this.caught(player, check);
+                        }
+                    }
                     break;
                 case PacketPlayInKeepAlive:
                     player.getTimeData().getLastInKeepAlive().update();
@@ -140,7 +127,25 @@ public abstract class ChannelHandlerAbstract {
                         }
                     }
                     break;
+                case PacketPlayInBlockPlace:
+                    PacketPlayInBlockPlace packetPlayInBlockPlace = new PacketPlayInBlockPlace(player.getPlayer().getWorld(), packet);
+                    if (packetPlayInBlockPlace.getBlock() != null) {
+                        player.getInteractData().setLastBlock(packetPlayInBlockPlace.getBlock());
+                    }
             }
+        }
+        return true;
+    }
+
+    private boolean caught(AutoEyePlayer player, Check check) {
+        AutoEyeInfractionEvent e = new AutoEyeInfractionEvent(player.getPlayer(), player.getInfractionData().getInfraction(check));
+        Bukkit.getPluginManager().callEvent(e);
+        if (!e.isCancelled()) {
+            player.getInfractionData().addVL(player, check);
+            for (AutoEyePlayer p : this.autoeye.getAutoEyePlayerList().getPlayers().values()) {
+                p.sendMessage(this.autoeye, this.autoeye.getPluginLogger().translateColorCodes(e.getMessage()));
+            }
+            return check.revert(player);
         }
         return true;
     }

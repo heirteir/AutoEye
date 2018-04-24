@@ -27,7 +27,7 @@ import org.bukkit.permissions.PermissionDefault;
         return this.createPermission(name, PermissionDefault.FALSE);
     }
 
-    public Permission createPermission(String name, PermissionDefault permissionDefault) {
+    private Permission createPermission(String name, PermissionDefault permissionDefault) {
         Permission permission;
         if ((permission = Bukkit.getPluginManager().getPermission(name)) == null) {
             permission = new Permission(name, permissionDefault);

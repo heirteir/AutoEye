@@ -12,13 +12,15 @@ import com.heirteir.autoeye.Autoeye;
 import com.heirteir.autoeye.util.reflections.Reflections;
 import com.heirteir.autoeye.util.reflections.types.WrappedField;
 import com.heirteir.autoeye.util.reflections.types.WrappedMethod;
-import com.heirteir.autoeye.util.vector.Vector3D;
+import com.heirteir.autoeye.util.server.Version;
 import lombok.Getter;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
 
 @Getter public class WrappedEntity {
+    private static final boolean elytra = !Autoeye.getVersion().equals(Version.SEVEN) && !Autoeye.getVersion().equals(Version.EIGHT);
     private static final WrappedMethod getHandleMethod = Reflections.getCBClass("entity.CraftEntity").getMethod("getHandle");
+    private static final WrappedMethod getFlag = Reflections.getCBClass("entity.CraftEntity").getMethod("getFlag", int.class);
     private static final WrappedField widthField = Reflections.getNMSClass("Entity").getFieldByName("width");
     private static final WrappedField lengthField = Reflections.getNMSClass("Entity").getFieldByName("length");
     private final Autoeye autoeye;
@@ -34,7 +36,7 @@ import org.bukkit.entity.LivingEntity;
         this.length = lengthField.get(this.rawEntity);
     }
 
-    public Vector3D getLocation() {
-        return new Vector3D((float) this.bukkitEntity.getLocation().getX(), (float) this.bukkitEntity.getLocation().getY(), (float) this.bukkitEntity.getLocation().getZ());
+    public boolean isGliding() {
+        return elytra && (boolean) getFlag.invoke(rawEntity, 7);
     }
 }

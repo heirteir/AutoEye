@@ -11,9 +11,11 @@ package com.heirteir.autoeye.player.data;
 import com.heirteir.autoeye.packets.wrappers.PacketPlayInUseEntity;
 import lombok.Getter;
 import lombok.Setter;
+import org.bukkit.block.Block;
 import org.bukkit.entity.Entity;
 
-@Getter @Setter public class AttackData {
+@Getter @Setter public class InteractData {
+    private Block lastBlock;
     private Entity lastEntity;
     private PacketPlayInUseEntity.ActionType lastActionType;
 }

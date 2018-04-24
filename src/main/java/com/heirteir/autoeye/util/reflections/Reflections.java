@@ -39,7 +39,7 @@ import org.bukkit.Bukkit;
         return getClass(netMinecraftServerString + name);
     }
 
-    public static WrappedClass getClass(String name) {
+    private static WrappedClass getClass(String name) {
         try {
             return new WrappedClass(Class.forName(name));
         } catch (ClassNotFoundException e) {

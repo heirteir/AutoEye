@@ -30,7 +30,7 @@ import java.util.Map;
     private final LocationData locationData;
     private final InfractionData infractionData;
     private final TimeData timeData;
-    private final AttackData attackData;
+    private final InteractData interactData;
     private boolean connected;
     @Setter public long ping = 0;
 
@@ -41,7 +41,7 @@ import java.util.Map;
         this.locationData = new LocationData(autoeye, this);
         this.infractionData = new InfractionData();
         this.timeData = new TimeData();
-        this.attackData = new AttackData();
+        this.interactData = new InteractData();
         this.timeData.getConnected().update();
         this.connected = false;
     }
