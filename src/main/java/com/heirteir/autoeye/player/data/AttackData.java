@@ -8,7 +8,7 @@
  */
 package com.heirteir.autoeye.player.data;
 
-import com.heirteir.autoeye.event.packets.wrappers.PacketPlayInUseEntity;
+import com.heirteir.autoeye.packets.wrappers.PacketPlayInUseEntity;
 import lombok.Getter;
 import lombok.Setter;
 import org.bukkit.entity.Entity;

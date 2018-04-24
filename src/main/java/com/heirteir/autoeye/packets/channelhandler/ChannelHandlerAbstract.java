@@ -6,7 +6,7 @@
  *
  * last modified: 4/19/18 7:22 PM
  */
-package com.heirteir.autoeye.event.packets.channelhandler;
+package com.heirteir.autoeye.packets.channelhandler;
 
 import com.google.common.collect.Sets;
 import com.heirteir.autoeye.Autoeye;
@@ -15,11 +15,11 @@ import com.heirteir.autoeye.check.Check;
 import com.heirteir.autoeye.check.checks.combat.KillAuraRotation;
 import com.heirteir.autoeye.check.checks.combat.Reach;
 import com.heirteir.autoeye.check.checks.movement.*;
-import com.heirteir.autoeye.event.packets.PacketType;
-import com.heirteir.autoeye.event.packets.wrappers.PacketPlayInAbilities;
-import com.heirteir.autoeye.event.packets.wrappers.PacketPlayInFlying;
-import com.heirteir.autoeye.event.packets.wrappers.PacketPlayInUseEntity;
-import com.heirteir.autoeye.event.packets.wrappers.PacketPlayOutEntityVelocity;
+import com.heirteir.autoeye.packets.PacketType;
+import com.heirteir.autoeye.packets.wrappers.PacketPlayInAbilities;
+import com.heirteir.autoeye.packets.wrappers.PacketPlayInFlying;
+import com.heirteir.autoeye.packets.wrappers.PacketPlayInUseEntity;
+import com.heirteir.autoeye.packets.wrappers.PacketPlayOutEntityVelocity;
 import com.heirteir.autoeye.player.AutoEyePlayer;
 import com.heirteir.autoeye.util.reflections.Reflections;
 import com.heirteir.autoeye.util.reflections.types.WrappedField;

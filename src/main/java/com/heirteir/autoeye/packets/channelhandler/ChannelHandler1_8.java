@@ -6,7 +6,7 @@
  *
  * last modified: 4/19/18 7:22 PM
  */
-package com.heirteir.autoeye.event.packets.channelhandler;
+package com.heirteir.autoeye.packets.channelhandler;
 
 import com.heirteir.autoeye.Autoeye;
 import com.heirteir.autoeye.player.AutoEyePlayer;
@@ -14,22 +14,25 @@ import com.heirteir.autoeye.util.reflections.Reflections;
 import com.heirteir.autoeye.util.reflections.wrappers.WrappedEntity;
 import org.bukkit.entity.Player;
 
-public class ChannelHandler1_7 extends ChannelHandlerAbstract {
-    public ChannelHandler1_7(Autoeye autoeye) {
+public class ChannelHandler1_8 extends ChannelHandlerAbstract {
+    public ChannelHandler1_8(Autoeye autoeye) {
         super(autoeye);
     }
 
     @Override public void addChannel(Player player) {
-        net.minecraft.util.io.netty.channel.Channel channel = getChannel(player);
+        io.netty.channel.Channel channel = getChannel(player);
         this.addChannelHandlerExecutor.execute(() -> {
-            if (channel != null && channel.pipeline().get(this.playerKey) == null) {
+            if (channel != null) {
+                if (channel.pipeline().get(this.playerKey) != null) {
+                    channel.pipeline().remove(this.playerKey);
+                }
                 channel.pipeline().addBefore(this.handlerKey, this.playerKey, new ChannelHandler(autoeye, player, this));
             }
         });
     }
 
     @Override public void removeChannel(Player player) {
-        net.minecraft.util.io.netty.channel.Channel channel = getChannel(player);
+        io.netty.channel.Channel channel = getChannel(player);
         this.removeChannelHandlerExecutor.execute(() -> {
             if (channel != null && channel.pipeline().get(this.playerKey) != null) {
                 channel.pipeline().remove(this.playerKey);
@@ -37,11 +40,11 @@ public class ChannelHandler1_7 extends ChannelHandlerAbstract {
         });
     }
 
-    private net.minecraft.util.io.netty.channel.Channel getChannel(Player player) {
-        return (net.minecraft.util.io.netty.channel.Channel) Reflections.getNMSClass("NetworkManager").getFirstFieldByType(net.minecraft.util.io.netty.channel.Channel.class).get(ChannelHandlerAbstract.networkManagerField.get(ChannelHandlerAbstract.playerConnectionField.get(new WrappedEntity(autoeye, player).getRawEntity())));
+    private io.netty.channel.Channel getChannel(Player player) {
+        return (io.netty.channel.Channel) Reflections.getNMSClass("NetworkManager").getFirstFieldByType(io.netty.channel.Channel.class).get(networkManagerField.get(playerConnectionField.get(new WrappedEntity(autoeye, player).getRawEntity())));
     }
 
-    private static class ChannelHandler extends net.minecraft.util.io.netty.channel.ChannelDuplexHandler {
+    private static class ChannelHandler extends io.netty.channel.ChannelDuplexHandler {
         private final AutoEyePlayer player;
         private final ChannelHandlerAbstract channelHandlerAbstract;
 
@@ -50,13 +53,13 @@ public class ChannelHandler1_7 extends ChannelHandlerAbstract {
             this.channelHandlerAbstract = channelHandlerAbstract;
         }
 
-        @Override public void write(net.minecraft.util.io.netty.channel.ChannelHandlerContext ctx, Object msg, net.minecraft.util.io.netty.channel.ChannelPromise promise) throws Exception {
+        @Override public void write(io.netty.channel.ChannelHandlerContext ctx, Object msg, io.netty.channel.ChannelPromise promise) throws Exception {
             if (channelHandlerAbstract.run(this.player, msg)) {
                 super.write(ctx, msg, promise);
             }
         }
 
-        @Override public void channelRead(net.minecraft.util.io.netty.channel.ChannelHandlerContext ctx, Object msg) throws Exception {
+        @Override public void channelRead(io.netty.channel.ChannelHandlerContext ctx, Object msg) throws Exception {
             if (channelHandlerAbstract.run(this.player, msg)) {
                 super.channelRead(ctx, msg);
             }

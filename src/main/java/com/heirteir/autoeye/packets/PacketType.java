@@ -6,7 +6,7 @@
  *
  * last modified: 4/19/18 7:22 PM
  */
-package com.heirteir.autoeye.event.packets;
+package com.heirteir.autoeye.packets;
 
 import lombok.Getter;
 

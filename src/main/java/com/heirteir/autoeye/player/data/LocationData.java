@@ -9,7 +9,7 @@
 package com.heirteir.autoeye.player.data;
 
 import com.heirteir.autoeye.Autoeye;
-import com.heirteir.autoeye.event.packets.wrappers.PacketPlayInFlying;
+import com.heirteir.autoeye.packets.wrappers.PacketPlayInFlying;
 import com.heirteir.autoeye.player.AutoEyePlayer;
 import com.heirteir.autoeye.util.BlockSet;
 import com.heirteir.autoeye.util.reflections.wrappers.WrappedAxisAlignedBB;

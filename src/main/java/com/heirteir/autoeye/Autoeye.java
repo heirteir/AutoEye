@@ -8,7 +8,7 @@
  */
 package com.heirteir.autoeye;
 
-import com.heirteir.autoeye.event.packets.ChannelInjector;
+import com.heirteir.autoeye.packets.ChannelInjector;
 import com.heirteir.autoeye.permissions.PermissionsManager;
 import com.heirteir.autoeye.player.AutoEyePlayerList;
 import com.heirteir.autoeye.util.MathUtil;

@@ -6,12 +6,12 @@
  *
  * last modified: 4/19/18 7:22 PM
  */
-package com.heirteir.autoeye.event.packets;
+package com.heirteir.autoeye.packets;
 
 import com.heirteir.autoeye.Autoeye;
-import com.heirteir.autoeye.event.packets.channelhandler.ChannelHandler1_7;
-import com.heirteir.autoeye.event.packets.channelhandler.ChannelHandler1_8;
-import com.heirteir.autoeye.event.packets.channelhandler.ChannelHandlerAbstract;
+import com.heirteir.autoeye.packets.channelhandler.ChannelHandler1_7;
+import com.heirteir.autoeye.packets.channelhandler.ChannelHandler1_8;
+import com.heirteir.autoeye.packets.channelhandler.ChannelHandlerAbstract;
 import com.heirteir.autoeye.util.reflections.Reflections;
 import lombok.Getter;
 import org.bukkit.entity.Player;

@@ -10,7 +10,7 @@ package com.heirteir.autoeye.check.checks.combat;
 
 import com.heirteir.autoeye.Autoeye;
 import com.heirteir.autoeye.check.Check;
-import com.heirteir.autoeye.event.packets.wrappers.PacketPlayInUseEntity;
+import com.heirteir.autoeye.packets.wrappers.PacketPlayInUseEntity;
 import com.heirteir.autoeye.player.AutoEyePlayer;
 import org.bukkit.entity.Player;
 

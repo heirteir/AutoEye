@@ -6,7 +6,7 @@
  *
  * last modified: 4/19/18 7:22 PM
  */
-package com.heirteir.autoeye.event.packets.wrappers;
+package com.heirteir.autoeye.packets.wrappers;
 
 import com.heirteir.autoeye.player.AutoEyePlayer;
 import com.heirteir.autoeye.util.reflections.Reflections;
