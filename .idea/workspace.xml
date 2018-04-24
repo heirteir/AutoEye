@@ -7,10 +7,46 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c5d9ea3b-dcde-488a-8c32-f40ea05eb9d0" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/events/InventoryClickEvent.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/Autoeye.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/Autoeye.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/Check.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/Check.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/combat/KillAuraRotation.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/combat/KillAuraRotation.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/combat/Reach.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/combat/Reach.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/FastLadder.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/FastLadder.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InvalidLocation.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InvalidLocation.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InvalidMotion.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InvalidMotion.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InvalidPitch.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InvalidPitch.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/pom.xml" afterPath="$PROJECT_DIR$/src/main/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/Autoeye.class" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/Autoeye.class" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InventoryWalk.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InventoryWalk.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/NoSlowDown.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/NoSlowDown.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/NoWeb.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/NoWeb.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/SlimeJump.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/SlimeJump.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/Speed.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/Speed.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/SpoofedOnGroundPacket.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/SpoofedOnGroundPacket.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/Step.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/Step.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/Timer.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/Timer.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/events/EventExecutor.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/events/EventHandler.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/events/Listener.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/events/MethodListenerPair.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/events/event/BlockPlaceEvent.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/events/BlockPlaceEvent.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/events/event/Event.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/events/Event.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/events/event/PacketPlayInAbilitiesEvent.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/events/PacketPlayInAbilitiesEvent.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/events/event/PacketPlayInUseEntityEvent.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/events/PacketPlayInUseEntityEvent.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/events/event/PlayerMoveEvent.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/events/PlayerMoveEvent.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/events/event/PlayerTeleportEvent.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/events/PlayerTeleportEvent.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/events/event/PlayerVelocityEvent.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/events/PlayerVelocityEvent.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/PacketType.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/PacketType.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/channelhandler/ChannelHandlerAbstract.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/channelhandler/ChannelHandlerAbstract.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/AutoEyePlayer.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/AutoEyePlayer.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/data/LocationData.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/data/LocationData.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/data/Physics.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/data/Physics.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/data/TimeData.java" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/data/TimeData.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/updaters/DataUpdater.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/event/events/EventHandler.class" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/event/events/EventHandler.class" />
+      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/event/packets/channelhandler/ChannelHandlerAbstract.class" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/event/packets/channelhandler/ChannelHandlerAbstract.class" />
+      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/player/data/LocationData.class" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/player/data/LocationData.class" />
+      <change beforePath="$PROJECT_DIR$/src/main/target/classes/plugin.yml" afterPath="$PROJECT_DIR$/src/main/target/classes/plugin.yml" />
     </list>
     <ignored path="$PROJECT_DIR$/src/main/target/" />
     <ignored path=".idea/" />
@@ -27,443 +63,67 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/Step.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
-              <caret line="22" column="425" lean-forward="false" selection-start-line="22" selection-start-column="425" selection-end-line="22" selection-end-column="425" />
-              <folding>
-                <element signature="e#691#692#0" expanded="true" />
-                <element signature="e#1406#1407#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EventHandler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/events/EventHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="43" column="31" lean-forward="false" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
+              <caret line="19" column="14" lean-forward="false" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NoSlowDown.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/NoSlowDown.java">
+      <file leaf-file-name="Timer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/Timer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="18" column="370" lean-forward="false" selection-start-line="18" selection-start-column="370" selection-end-line="18" selection-end-column="370" />
+            <state relative-caret-position="136">
+              <caret line="19" column="14" lean-forward="false" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InvalidPitch.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InvalidPitch.java">
+      <file leaf-file-name="ChannelHandlerAbstract.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/channelhandler/ChannelHandlerAbstract.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="629">
+              <caret line="72" column="61" lean-forward="false" selection-start-line="72" selection-start-column="61" selection-end-line="72" selection-end-column="61" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="KillAuraRotation.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/combat/KillAuraRotation.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="306">
-              <caret line="20" column="28" lean-forward="false" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="World.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/Desktop/Server/spigot-1.12.2.jar!/net/minecraft/server/v1_12_R1/World.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18054">
-              <caret line="1191" column="95" lean-forward="false" selection-start-line="1191" selection-start-column="95" selection-end-line="1191" selection-end-column="95" />
-              <folding>
-                <marker date="1520337128714" expanded="false" signature="0:104" ph="/.../" />
-                <marker date="1520337128714" expanded="false" signature="153:2088" ph="..." />
-                <marker date="1520337128714" expanded="true" signature="2260:2671" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="2302:2387" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="2429:2502" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="2533:2665" ph="{...}" />
-                <marker date="1520337128714" expanded="false" signature="4594:4675" ph="add(blockState) → {" />
-                <marker date="1520337128714" expanded="false" signature="5061:5072" ph="}" />
-                <marker date="1520337128714" expanded="false" signature="5708:5719" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="5737:5743" ph=" }" />
-                <marker date="1520337128714" expanded="false" signature="5779:5790" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="5829:5835" ph=" }" />
-                <marker date="1520337128714" expanded="false" signature="5884:5895" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="5967:5973" ph=" }" />
-                <marker date="1520337128714" expanded="true" signature="6154:8761" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="7114:8490" ph="{...}" />
-                <marker date="1520337128714" expanded="false" signature="7177:7196" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="7333:7347" ph=" }" />
-                <marker date="1520337128714" expanded="false" signature="7429:7448" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="7586:7600" ph=" }" />
-                <marker date="1520337128714" expanded="false" signature="7674:7693" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="7832:7846" ph=" }" />
-                <marker date="1520337128714" expanded="false" signature="7905:7924" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="8069:8083" ph=" }" />
-                <marker date="1520337128714" expanded="false" signature="8142:8161" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="8308:8322" ph=" }" />
-                <marker date="1520337128714" expanded="true" signature="8386:8401" ph="{}" />
-                <marker date="1520337128714" expanded="true" signature="8465:8480" ph="{}" />
-                <marker date="1520337128714" expanded="false" signature="8783:8794" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="8806:8812" ph=" }" />
-                <marker date="1520337128714" expanded="true" signature="8879:9886" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="9406:9702" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="9463:9560" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="9620:9684" ph="{...}" />
-                <marker date="1520337128714" expanded="false" signature="9939:9950" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="9980:9986" ph=" }" />
-                <marker date="1520337128714" expanded="false" signature="10078:10089" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="10112:10118" ph=" }" />
-                <marker date="1520337128714" expanded="false" signature="10181:10192" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="10204:10210" ph=" }" />
-                <marker date="1520337128714" expanded="true" signature="10265:10568" ph="{...}" />
-                <marker date="1520337128714" expanded="false" signature="10634:10645" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="10819:10825" ph=" }" />
-                <marker date="1520337128714" expanded="false" signature="10877:10888" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="10951:10957" ph=" }" />
-                <marker date="1520337128714" expanded="false" signature="11014:11025" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="11090:11096" ph=" }" />
-                <marker date="1520337128714" expanded="false" signature="11154:11165" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="11200:11206" ph=" }" />
-                <marker date="1520337128714" expanded="false" signature="11271:11282" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="11368:11374" ph=" }" />
-                <marker date="1520337128714" expanded="false" signature="11446:11457" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="11509:11515" ph=" }" />
-                <marker date="1520337128714" expanded="false" signature="11601:11612" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="11799:11805" ph=" }" />
-                <marker date="1520337128714" expanded="false" signature="11907:11918" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="11990:11996" ph=" }" />
-                <marker date="1520337128714" expanded="false" signature="12112:12123" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="12289:12295" ph=" }" />
-                <marker date="1520337128714" expanded="false" signature="12360:12371" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="12413:12419" ph=" }" />
-                <marker date="1520337128714" expanded="false" signature="12498:12509" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="12684:12690" ph=" }" />
-                <marker date="1520337128714" expanded="true" signature="12783:13237" ph="{...}" />
-                <marker date="1520337128714" expanded="false" signature="13387:13398" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="13475:13481" ph=" }" />
-                <marker date="1520337128714" expanded="false" signature="13524:13535" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="13578:13584" ph=" }" />
-                <marker date="1520337128714" expanded="false" signature="13620:13631" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="13706:13712" ph=" }" />
-                <marker date="1520337128714" expanded="true" signature="13807:16194" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="16326:16885" ph="{...}" />
-                <marker date="1520337128714" expanded="false" signature="16941:16952" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="17024:17030" ph=" }" />
-                <marker date="1520337128714" expanded="true" signature="17101:17594" ph="{...}" />
-                <marker date="1520337128714" expanded="false" signature="17680:17691" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="17748:17754" ph=" }" />
-                <marker date="1520337128714" expanded="true" signature="17862:18023" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="18104:18331" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="18379:18702" ph="{...}" />
-                <marker date="1520337128714" expanded="false" signature="18780:18791" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="18933:18939" ph=" }" />
-                <marker date="1520337128714" expanded="true" signature="19003:19139" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="19201:19568" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="19655:20095" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="20186:20949" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="21047:23003" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="22283:22815" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="22340:22673" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="22733:22797" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="23101:24539" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="23749:24325" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="23810:24167" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="24231:24303" ph="{...}" />
-                <marker date="1520337128714" expanded="false" signature="24603:24614" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="24627:24633" ph=" }" />
-                <marker date="1520337128714" expanded="false" signature="24684:24695" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="24761:24767" ph=" }" />
-                <marker date="1520337128714" expanded="true" signature="24819:25603" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="25651:25991" ph="{...}" />
-                <marker date="1520337128714" expanded="false" signature="26050:26061" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="26096:26102" ph=" }" />
-                <marker date="1520337128714" expanded="true" signature="26164:27484" ph="{...}" />
-                <marker date="1520337128714" expanded="false" signature="27558:27569" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="27690:27696" ph=" }" />
-                <marker date="1520337128714" expanded="true" signature="27729:28106" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="28112:28130" ph="/**...*/" />
-                <marker date="1520337128714" expanded="true" signature="28178:28554" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="28641:29132" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="29215:29473" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="29522:29649" ph="{...}" />
-                <marker date="1520337128714" expanded="false" signature="29698:29709" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="29774:29780" ph=" }" />
-                <marker date="1520337128714" expanded="true" signature="29841:30589" ph="{...}" />
-                <marker date="1520337128714" expanded="false" signature="30613:30624" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="30642:30648" ph=" }" />
-                <marker date="1520337128714" expanded="false" signature="30731:30742" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="30799:30805" ph=" }" />
-                <marker date="1520337128714" expanded="false" signature="30902:30913" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="30969:30975" ph=" }" />
-                <marker date="1520337128714" expanded="true" signature="31103:36671" ph="{...}" />
-                <marker date="1520337128714" expanded="false" signature="36827:36838" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="37004:37010" ph=" }" />
-                <marker date="1520337128714" expanded="true" signature="37171:37343" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="37483:37490" ph="{}" />
-                <marker date="1520337128714" expanded="true" signature="37574:37714" ph="{...}" />
-                <marker date="1520337128714" expanded="false" signature="37849:37860" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="37933:37939" ph=" }" />
-                <marker date="1520337128714" expanded="true" signature="38045:38203" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="38324:38475" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="38527:38583" ph="{...}" />
-                <marker date="1520337128714" expanded="false" signature="38628:38639" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="38690:38696" ph=" }" />
-                <marker date="1520337128714" expanded="true" signature="38767:42147" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="42185:42334" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="42372:42522" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="42560:43647" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="43693:44448" ph="{...}" />
-                <marker date="1520337128714" expanded="false" signature="44508:44519" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="44544:44550" ph=" }" />
-                <marker date="1520337128714" expanded="true" signature="44678:47467" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="47563:48446" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="48484:48911" ph="{...}" />
-                <marker date="1520337128714" expanded="false" signature="48962:48973" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="49044:49050" ph=" }" />
-                <marker date="1520337128714" expanded="true" signature="49078:49475" ph="{...}" />
-                <marker date="1520337128714" expanded="false" signature="49504:49515" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="49575:49581" ph=" }" />
-                <marker date="1520337128714" expanded="false" signature="49603:49614" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="49688:49694" ph=" }" />
-                <marker date="1520337128714" expanded="true" signature="49724:49793" ph="{...}" />
-                <marker date="1520337128714" expanded="false" signature="49850:49861" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="49927:49933" ph=" }" />
-                <marker date="1520337128714" expanded="true" signature="49991:50593" ph="{...}" />
-                <marker date="1520337128714" expanded="false" signature="50657:50668" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="50680:50686" ph=" }" />
-                <marker date="1520337128714" expanded="true" signature="50755:50762" ph="{}" />
-                <marker date="1520337128714" expanded="true" signature="50838:50845" ph="{}" />
-                <marker date="1520337128714" expanded="true" signature="50921:50928" ph="{}" />
-                <marker date="1520337128714" expanded="true" signature="50961:58935" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="56478:56601" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="58960:58967" ph="{}" />
-                <marker date="1520337128714" expanded="true" signature="59013:59464" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="59519:59830" ph="{...}" />
-                <marker date="1520337128714" expanded="false" signature="59864:59875" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="59912:59918" ph=" }" />
-                <marker date="1520337128714" expanded="true" signature="59983:62829" ph="{...}" />
-                <marker date="1520337128714" expanded="false" signature="62880:62891" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="62949:62955" ph=" }" />
-                <marker date="1520337128714" expanded="true" signature="63032:63388" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="63440:64376" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="64441:65372" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="65424:66632" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="66718:68505" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="68576:69452" ph="{...}" />
-                <marker date="1520337128714" expanded="false" signature="69563:69574" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="69638:69644" ph=" }" />
-                <marker date="1520337128714" expanded="true" signature="69779:69949" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="70012:71370" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="71494:71805" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="71886:72578" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="72648:72933" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="73027:74061" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="74110:74607" ph="{...}" />
-                <marker date="1520337128714" expanded="false" signature="74649:74660" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="74702:74708" ph=" }" />
-                <marker date="1520337128714" expanded="true" signature="74760:74927" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="74993:75464" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="75486:75585" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="75646:75723" ph="{...}" />
-                <marker date="1520337128714" expanded="false" signature="75749:75760" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="75769:75775" ph=" }" />
-                <marker date="1520337128714" expanded="true" signature="75800:75980" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="76005:78677" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="78702:78709" ph="{}" />
-                <marker date="1520337128714" expanded="true" signature="78796:78924" ph="{...}" />
-                <marker date="1520337128714" expanded="false" signature="78975:78986" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="79022:79028" ph=" }" />
-                <marker date="1520337128714" expanded="false" signature="79079:79090" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="79125:79131" ph=" }" />
-                <marker date="1520337128714" expanded="true" signature="79197:80188" ph="{...}" />
-                <marker date="1520337128714" expanded="false" signature="80240:80251" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="80318:80324" ph=" }" />
-                <marker date="1520337128714" expanded="true" signature="80390:81048" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="81100:81327" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="81403:83048" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="83127:88874" ph="{...}" />
-                <marker date="1520337128714" expanded="false" signature="88910:88921" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="88934:88940" ph=" }" />
-                <marker date="1520337128714" expanded="false" signature="89019:89030" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="89042:89048" ph=" }" />
-                <marker date="1520337128714" expanded="false" signature="89157:89168" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="89180:89186" ph=" }" />
-                <marker date="1520337128714" expanded="false" signature="89277:89288" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="89354:89360" ph=" }" />
-                <marker date="1520337128714" expanded="true" signature="89499:90134" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="90235:90619" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="90720:91101" ph="{...}" />
-                <marker date="1520337128714" expanded="false" signature="91198:91209" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="91265:91271" ph=" }" />
-                <marker date="1520337128714" expanded="true" signature="91411:92036" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="92148:92656" ph="{...}" />
-                <marker date="1520337128714" expanded="false" signature="92706:92717" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="92757:92763" ph=" }" />
-                <marker date="1520337128714" expanded="true" signature="92835:92964" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="93000:93710" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="93761:94095" ph="{...}" />
-                <marker date="1520337128714" expanded="false" signature="94145:94156" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="94182:94188" ph=" }" />
-                <marker date="1520337128714" expanded="true" signature="94321:95082" ph="{...}" />
-                <marker date="1520337128714" expanded="false" signature="95112:95123" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="95137:95143" ph=" }" />
-                <marker date="1520337128714" expanded="false" signature="95169:95180" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="95191:95197" ph=" }" />
-                <marker date="1520337128714" expanded="false" signature="95285:95296" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="95369:95375" ph=" }" />
-                <marker date="1520337128714" expanded="false" signature="95401:95412" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="95444:95450" ph=" }" />
-                <marker date="1520337128714" expanded="true" signature="95510:96697" ph="{...}" />
-                <marker date="1520337128714" expanded="false" signature="96794:96805" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="96869:96875" ph=" }" />
-                <marker date="1520337128714" expanded="true" signature="96968:97154" ph="{...}" />
-                <marker date="1520337128714" expanded="false" signature="97228:97239" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="97713:97719" ph=" }" />
-                <marker date="1520337128714" expanded="true" signature="97767:98251" ph="{...}" />
-                <marker date="1520337128714" expanded="false" signature="98332:98343" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="98407:98413" ph=" }" />
-                <marker date="1520337128714" expanded="false" signature="98479:98490" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="98553:98559" ph=" }" />
-                <marker date="1520337128714" expanded="true" signature="98658:98791" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="98905:99486" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="99566:99958" ph="{...}" />
-                <marker date="1520337128714" expanded="false" signature="100035:100046" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="100140:100146" ph=" }" />
-                <marker date="1520337128714" expanded="false" signature="100237:100248" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="100441:100447" ph=" }" />
-                <marker date="1520337128714" expanded="true" signature="100637:101940" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="101991:102258" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="102310:102584" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="102647:102695" ph="{...}" />
-                <marker date="1520337128714" expanded="false" signature="102722:102733" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="102765:102771" ph=" }" />
-                <marker date="1520337128714" expanded="false" signature="102798:102809" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="102841:102847" ph=" }" />
-                <marker date="1520337128714" expanded="false" signature="102877:102888" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="102923:102929" ph=" }" />
-                <marker date="1520337128714" expanded="false" signature="102965:102976" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="103005:103011" ph=" }" />
-                <marker date="1520337128714" expanded="true" signature="103049:103419" ph="{...}" />
-                <marker date="1520337128714" expanded="false" signature="103467:103478" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="103517:103523" ph=" }" />
-                <marker date="1520337128714" expanded="false" signature="103599:103610" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="103622:103628" ph=" }" />
-                <marker date="1520337128714" expanded="true" signature="103692:103699" ph="{}" />
-                <marker date="1520337128714" expanded="false" signature="103745:103756" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="103782:103788" ph=" }" />
-                <marker date="1520337128714" expanded="false" signature="103877:103888" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="103945:103951" ph=" }" />
-                <marker date="1520337128714" expanded="false" signature="103993:104004" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="104028:104034" ph=" }" />
-                <marker date="1520337128714" expanded="false" signature="104071:104082" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="104104:104110" ph=" }" />
-                <marker date="1520337128714" expanded="false" signature="104147:104158" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="104184:104190" ph=" }" />
-                <marker date="1520337128714" expanded="true" signature="104227:104234" ph="{}" />
-                <marker date="1520337128714" expanded="true" signature="104271:104360" ph="{...}" />
-                <marker date="1520337128714" expanded="false" signature="104389:104400" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="104452:104458" ph=" }" />
-                <marker date="1520337128714" expanded="false" signature="104487:104498" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="104536:104542" ph=" }" />
-                <marker date="1520337128714" expanded="false" signature="104566:104577" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="104612:104618" ph=" }" />
-                <marker date="1520337128714" expanded="false" signature="104650:104661" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="104696:104702" ph=" }" />
-                <marker date="1520337128714" expanded="true" signature="104764:105191" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="105243:105340" ph="{...}" />
-                <marker date="1520337128714" expanded="false" signature="105391:105402" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="105424:105430" ph=" }" />
-                <marker date="1520337128714" expanded="false" signature="105490:105501" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="105537:105543" ph=" }" />
-                <marker date="1520337128714" expanded="false" signature="105636:105647" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="105684:105690" ph=" }" />
-                <marker date="1520337128714" expanded="false" signature="105718:105729" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="105756:105762" ph=" }" />
-                <marker date="1520337128714" expanded="true" signature="105825:105958" ph="{...}" />
-                <marker date="1520337128714" expanded="false" signature="106032:106043" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="106090:106096" ph=" }" />
-                <marker date="1520337128714" expanded="true" signature="106194:106941" ph="{...}" />
-                <marker date="1520337128714" expanded="false" signature="106969:106980" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="106991:106997" ph=" }" />
-                <marker date="1520337128714" expanded="false" signature="107018:107029" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="107071:107077" ph=" }" />
-                <marker date="1520337128714" expanded="true" signature="107120:107297" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="107362:108421" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="107646:107887" ph="{...}" />
-                <marker date="1520337128714" expanded="false" signature="107677:107696" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="107763:107777" ph=" }" />
-                <marker date="1520337128714" expanded="true" signature="107829:107877" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="107966:108182" ph="{...}" />
-                <marker date="1520337128714" expanded="false" signature="107997:108016" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="108058:108072" ph=" }" />
-                <marker date="1520337128714" expanded="true" signature="108124:108172" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="108484:108669" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="108696:108838" ph="{...}" />
-                <marker date="1520337128714" expanded="false" signature="108877:108888" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="108911:108917" ph=" }" />
-                <marker date="1520337128714" expanded="true" signature="109003:109946" ph="{...}" />
-                <marker date="1520337128714" expanded="true" signature="110013:110299" ph="{...}" />
-                <marker date="1520337128714" expanded="false" signature="110342:110353" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="110396:110402" ph=" }" />
-                <marker date="1520337128714" expanded="false" signature="110423:110434" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="110448:110454" ph=" }" />
-                <marker date="1520337128714" expanded="false" signature="110480:110491" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="110502:110508" ph=" }" />
-                <marker date="1520337128714" expanded="false" signature="110534:110545" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="110556:110562" ph=" }" />
-                <marker date="1520337128714" expanded="false" signature="110597:110608" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="110629:110635" ph=" }" />
-                <marker date="1520337128714" expanded="false" signature="110676:110687" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="110701:110707" ph=" }" />
-                <marker date="1520337128714" expanded="true" signature="110744:110997" ph="{...}" />
-                <marker date="1520337128714" expanded="false" signature="111034:111045" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="111146:111152" ph=" }" />
-                <marker date="1520337128714" expanded="false" signature="111205:111216" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="111230:111236" ph=" }" />
-                <marker date="1520337128714" expanded="false" signature="111331:111342" ph=" { " />
-                <marker date="1520337128714" expanded="false" signature="111354:111360" ph=" }" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WrappedAxisAlignedBB.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/reflections/wrappers/WrappedAxisAlignedBB.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="69" column="21" lean-forward="false" selection-start-line="69" selection-start-column="21" selection-end-line="69" selection-end-column="21" />
-              <folding>
-                <element signature="e#3932#3933#0" expanded="true" />
-                <element signature="e#4262#4263#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Version.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/server/Version.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="10" column="21" lean-forward="false" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+              <caret line="31" column="9" lean-forward="false" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Autoeye.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Reach.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/combat/Reach.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="24" column="286" lean-forward="false" selection-start-line="24" selection-start-column="286" selection-end-line="24" selection-end-column="286" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Autoeye.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/Autoeye.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="731">
-              <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+            <state relative-caret-position="629">
+              <caret line="52" column="48" lean-forward="false" selection-start-line="52" selection-start-column="48" selection-end-line="52" selection-end-column="48" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/pom.xml">
+      <file leaf-file-name="InvalidLocation.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InvalidLocation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="17" column="18" lean-forward="false" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+            <state relative-caret-position="51">
+              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -472,13 +132,29 @@
       <file leaf-file-name="AutoEyePlayer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/AutoEyePlayer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="25" column="21" lean-forward="false" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2951#2952#0" expanded="true" />
-                <element signature="e#3161#3162#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="442">
+              <caret line="49" column="54" lean-forward="false" selection-start-line="49" selection-start-column="54" selection-end-line="49" selection-end-column="54" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PacketType.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/PacketType.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="28" column="21" lean-forward="true" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Check.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/Check.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="27" column="56" lean-forward="false" selection-start-line="27" selection-start-column="56" selection-end-line="27" selection-end-column="56" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -505,12 +181,21 @@
       <find>AxisAlignedBB</find>
       <find>List&lt;AxisAlignedBB&gt;</find>
       <find>getCubesMethod</find>
+      <find>packet.</find>
+      <find>event.getPlayer()</find>
+      <find>attacker.</find>
+      <find>event.getPacket().getEntity()</find>
     </findStrings>
     <replaceStrings>
       <replace>;</replace>
       <replace>output</replace>
       <replace>Field =</replace>
       <replace>0.5625F</replace>
+      <replace>packetPlayOutEntityVelocity</replace>
+      <replace>packetPlayOutEntityVelocity.</replace>
+      <replace>player</replace>
+      <replace>player.</replace>
+      <replace>player.getAttackData().getLastEntity()</replace>
     </replaceStrings>
     <dirStrings>
       <dir>C:\Users\Justin\Google Drive\Coding\workspace\AutoEyeGit2\src\main</dir>
@@ -532,46 +217,51 @@
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/MathUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/events/EventExecutor.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/updaters/DataVerifier.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/Check.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/FastLadder.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/SlimeJump.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/Speed.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/SpoofedOnGroundPacket.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/combat/Reach.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/combat/KillAura2.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/api/ChannelRecreateEvent.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/AutoEyePlayerList.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/events/EventHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InvalidLocation.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/api/AutoEyeInfractionEvent.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/wrappers/PacketPlayInBlockPlace.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/wrappers/PacketPlayInAbilities.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/wrappers/PacketPlayInUseEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/wrappers/PacketPlayOutEntityVelocity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/channelhandler/ChannelHandlerAbstract.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/channelhandler/ChannelHandler1_8.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/channelhandler/ChannelHandler1_7.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/ChannelInjector.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/NoWeb.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/reflections/wrappers/WrappedEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/data/TimeData.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/data/LocationData.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/vector/Vector3D.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/combat/KillAuraRotation.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/reflections/Reflections.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/wrappers/PacketPlayInFlying.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InvalidMotion.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/Timer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/data/Physics.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/Step.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/AutoEyePlayer.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/Derp.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/NoSlowDown.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/server/Version.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/Autoeye.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/reflections/wrappers/WrappedAxisAlignedBB.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InvalidPitch.java" />
         <option value="$PROJECT_DIR$/src/main/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/data/LocationData.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/PacketType.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/events/event/InventoryClickEvent.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/data/TimeData.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/data/Physics.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/CheckHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/Check.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/FastLadder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InvalidMotion.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InvalidPitch.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InventoryWalk.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/NoSlowDown.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/NoWeb.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/SlimeJump.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/Speed.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/SpoofedOnGroundPacket.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/Step.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/Timer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/AutoEyePlayer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/updaters/DataUpdater.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InvalidLocation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/combat/KillAuraRotation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/combat/Reach.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/channelhandler/ChannelHandlerAbstract.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/Autoeye.java" />
       </list>
     </option>
   </component>
@@ -603,10 +293,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="Scratches" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -671,14 +359,6 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="autoeye" type="462c0819:PsiDirectoryNode" />
               <item name="event" type="462c0819:PsiDirectoryNode" />
-              <item name="events" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AutoEyeGit2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="autoeye" type="462c0819:PsiDirectoryNode" />
-              <item name="event" type="462c0819:PsiDirectoryNode" />
               <item name="packets" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -711,16 +391,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="autoeye" type="462c0819:PsiDirectoryNode" />
-              <item name="player" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AutoEyeGit2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="autoeye" type="462c0819:PsiDirectoryNode" />
-              <item name="player" type="462c0819:PsiDirectoryNode" />
-              <item name="updaters" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AutoEyeGit2" type="b2602c69:ProjectViewProjectNode" />
@@ -728,6 +399,7 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="autoeye" type="462c0819:PsiDirectoryNode" />
               <item name="util" type="462c0819:PsiDirectoryNode" />
+              <item name="logger" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AutoEyeGit2" type="b2602c69:ProjectViewProjectNode" />
@@ -775,6 +447,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -971,15 +645,23 @@
       <option name="project" value="LOCAL" />
       <updated>1524462873152</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="0.66C Update.">
+      <created>1524466173904</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1524466173904</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32247558" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32150537" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -991,7 +673,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3311828" sideWeight="0.4978678" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26012793" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20682302" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1052,7 +734,8 @@
     <MESSAGE value="Fixed several false positives from the issues section." />
     <MESSAGE value="Fixed Step bypass, fixed error on 1.12 servers, and renamed derp to Invalid Pitch." />
     <MESSAGE value="0.66B Update." />
-    <option name="LAST_COMMIT_MESSAGE" value="0.66B Update." />
+    <MESSAGE value="0.66C Update." />
+    <option name="LAST_COMMIT_MESSAGE" value="0.66C Update." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1064,42 +747,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/updaters/DataVerifier.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/SlimeJump.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="30" column="64" lean-forward="false" selection-start-line="30" selection-start-column="64" selection-end-line="30" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/Speed.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="766">
-          <caret line="92" column="21" lean-forward="false" selection-start-line="92" selection-start-column="21" selection-end-line="92" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/SpoofedOnGroundPacket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="27" column="21" lean-forward="false" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/combat/KillAura2.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/api/ChannelRecreateEvent.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/AutoEyePlayerList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="58" column="5" lean-forward="false" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
-          <folding>
-            <element signature="e#1123#1124#0" expanded="false" />
-            <element signature="e#1170#1171#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/events/event/PlayerTeleportEvent.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/events/PlayerTeleportEvent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
@@ -1110,36 +758,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="24" column="38" lean-forward="false" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/FastLadder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="29" column="14" lean-forward="false" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/updaters/DataUpdater.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="33" column="107" lean-forward="false" selection-start-line="33" selection-start-column="106" selection-end-line="33" selection-end-column="107" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/Check.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="29" column="45" lean-forward="false" selection-start-line="29" selection-start-column="45" selection-end-line="29" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InvalidLocation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="26" column="18" lean-forward="false" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -1191,13 +809,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/channelhandler/ChannelHandlerAbstract.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="26" column="13" lean-forward="false" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/channelhandler/ChannelHandler1_8.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="748">
@@ -1209,28 +820,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="40" column="248" lean-forward="false" selection-start-line="40" selection-start-column="248" selection-end-line="40" selection-end-column="248" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/NoWeb.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="29" column="5" lean-forward="false" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/data/TimeData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="26" column="59" lean-forward="false" selection-start-line="26" selection-start-column="59" selection-end-line="26" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/combat/KillAuraRotation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="28" column="82" lean-forward="false" selection-start-line="28" selection-start-column="82" selection-end-line="28" selection-end-column="82" />
         </state>
       </provider>
     </entry>
@@ -1258,25 +847,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InvalidMotion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="37" column="85" lean-forward="false" selection-start-line="37" selection-start-column="85" selection-end-line="37" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/events/EventExecutor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="22" column="39" lean-forward="true" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/Timer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="21" column="62" lean-forward="true" selection-start-line="21" selection-start-column="62" selection-end-line="21" selection-end-column="62" />
         </state>
       </provider>
     </entry>
@@ -1352,421 +926,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/combat/Reach.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/data/Physics.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="67" column="47" lean-forward="false" selection-start-line="67" selection-start-column="47" selection-end-line="67" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/data/LocationData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1003">
-          <caret line="80" column="86" lean-forward="false" selection-start-line="80" selection-start-column="86" selection-end-line="80" selection-end-column="86" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/Step.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="22" column="425" lean-forward="false" selection-start-line="22" selection-start-column="425" selection-end-line="22" selection-end-column="425" />
-          <folding>
-            <element signature="e#691#692#0" expanded="true" />
-            <element signature="e#1406#1407#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/events/EventHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="43" column="31" lean-forward="false" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/AutoEyePlayer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="25" column="21" lean-forward="false" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2951#2952#0" expanded="true" />
-            <element signature="e#3161#3162#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/NoSlowDown.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="18" column="370" lean-forward="false" selection-start-line="18" selection-start-column="370" selection-end-line="18" selection-end-column="370" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/Desktop/Server/spigot-1.12.2.jar!/net/minecraft/server/v1_12_R1/World.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18054">
           <caret line="1191" column="95" lean-forward="false" selection-start-line="1191" selection-start-column="95" selection-end-line="1191" selection-end-column="95" />
-          <folding>
-            <marker date="1520337128714" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1520337128714" expanded="false" signature="153:2088" ph="..." />
-            <marker date="1520337128714" expanded="true" signature="2260:2671" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="2302:2387" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="2429:2502" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="2533:2665" ph="{...}" />
-            <marker date="1520337128714" expanded="false" signature="4594:4675" ph="add(blockState) → {" />
-            <marker date="1520337128714" expanded="false" signature="5061:5072" ph="}" />
-            <marker date="1520337128714" expanded="false" signature="5708:5719" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="5737:5743" ph=" }" />
-            <marker date="1520337128714" expanded="false" signature="5779:5790" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="5829:5835" ph=" }" />
-            <marker date="1520337128714" expanded="false" signature="5884:5895" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="5967:5973" ph=" }" />
-            <marker date="1520337128714" expanded="true" signature="6154:8761" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="7114:8490" ph="{...}" />
-            <marker date="1520337128714" expanded="false" signature="7177:7196" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="7333:7347" ph=" }" />
-            <marker date="1520337128714" expanded="false" signature="7429:7448" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="7586:7600" ph=" }" />
-            <marker date="1520337128714" expanded="false" signature="7674:7693" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="7832:7846" ph=" }" />
-            <marker date="1520337128714" expanded="false" signature="7905:7924" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="8069:8083" ph=" }" />
-            <marker date="1520337128714" expanded="false" signature="8142:8161" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="8308:8322" ph=" }" />
-            <marker date="1520337128714" expanded="true" signature="8386:8401" ph="{}" />
-            <marker date="1520337128714" expanded="true" signature="8465:8480" ph="{}" />
-            <marker date="1520337128714" expanded="false" signature="8783:8794" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="8806:8812" ph=" }" />
-            <marker date="1520337128714" expanded="true" signature="8879:9886" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="9406:9702" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="9463:9560" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="9620:9684" ph="{...}" />
-            <marker date="1520337128714" expanded="false" signature="9939:9950" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="9980:9986" ph=" }" />
-            <marker date="1520337128714" expanded="false" signature="10078:10089" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="10112:10118" ph=" }" />
-            <marker date="1520337128714" expanded="false" signature="10181:10192" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="10204:10210" ph=" }" />
-            <marker date="1520337128714" expanded="true" signature="10265:10568" ph="{...}" />
-            <marker date="1520337128714" expanded="false" signature="10634:10645" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="10819:10825" ph=" }" />
-            <marker date="1520337128714" expanded="false" signature="10877:10888" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="10951:10957" ph=" }" />
-            <marker date="1520337128714" expanded="false" signature="11014:11025" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="11090:11096" ph=" }" />
-            <marker date="1520337128714" expanded="false" signature="11154:11165" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="11200:11206" ph=" }" />
-            <marker date="1520337128714" expanded="false" signature="11271:11282" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="11368:11374" ph=" }" />
-            <marker date="1520337128714" expanded="false" signature="11446:11457" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="11509:11515" ph=" }" />
-            <marker date="1520337128714" expanded="false" signature="11601:11612" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="11799:11805" ph=" }" />
-            <marker date="1520337128714" expanded="false" signature="11907:11918" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="11990:11996" ph=" }" />
-            <marker date="1520337128714" expanded="false" signature="12112:12123" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="12289:12295" ph=" }" />
-            <marker date="1520337128714" expanded="false" signature="12360:12371" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="12413:12419" ph=" }" />
-            <marker date="1520337128714" expanded="false" signature="12498:12509" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="12684:12690" ph=" }" />
-            <marker date="1520337128714" expanded="true" signature="12783:13237" ph="{...}" />
-            <marker date="1520337128714" expanded="false" signature="13387:13398" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="13475:13481" ph=" }" />
-            <marker date="1520337128714" expanded="false" signature="13524:13535" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="13578:13584" ph=" }" />
-            <marker date="1520337128714" expanded="false" signature="13620:13631" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="13706:13712" ph=" }" />
-            <marker date="1520337128714" expanded="true" signature="13807:16194" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="16326:16885" ph="{...}" />
-            <marker date="1520337128714" expanded="false" signature="16941:16952" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="17024:17030" ph=" }" />
-            <marker date="1520337128714" expanded="true" signature="17101:17594" ph="{...}" />
-            <marker date="1520337128714" expanded="false" signature="17680:17691" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="17748:17754" ph=" }" />
-            <marker date="1520337128714" expanded="true" signature="17862:18023" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="18104:18331" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="18379:18702" ph="{...}" />
-            <marker date="1520337128714" expanded="false" signature="18780:18791" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="18933:18939" ph=" }" />
-            <marker date="1520337128714" expanded="true" signature="19003:19139" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="19201:19568" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="19655:20095" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="20186:20949" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="21047:23003" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="22283:22815" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="22340:22673" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="22733:22797" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="23101:24539" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="23749:24325" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="23810:24167" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="24231:24303" ph="{...}" />
-            <marker date="1520337128714" expanded="false" signature="24603:24614" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="24627:24633" ph=" }" />
-            <marker date="1520337128714" expanded="false" signature="24684:24695" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="24761:24767" ph=" }" />
-            <marker date="1520337128714" expanded="true" signature="24819:25603" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="25651:25991" ph="{...}" />
-            <marker date="1520337128714" expanded="false" signature="26050:26061" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="26096:26102" ph=" }" />
-            <marker date="1520337128714" expanded="true" signature="26164:27484" ph="{...}" />
-            <marker date="1520337128714" expanded="false" signature="27558:27569" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="27690:27696" ph=" }" />
-            <marker date="1520337128714" expanded="true" signature="27729:28106" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="28112:28130" ph="/**...*/" />
-            <marker date="1520337128714" expanded="true" signature="28178:28554" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="28641:29132" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="29215:29473" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="29522:29649" ph="{...}" />
-            <marker date="1520337128714" expanded="false" signature="29698:29709" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="29774:29780" ph=" }" />
-            <marker date="1520337128714" expanded="true" signature="29841:30589" ph="{...}" />
-            <marker date="1520337128714" expanded="false" signature="30613:30624" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="30642:30648" ph=" }" />
-            <marker date="1520337128714" expanded="false" signature="30731:30742" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="30799:30805" ph=" }" />
-            <marker date="1520337128714" expanded="false" signature="30902:30913" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="30969:30975" ph=" }" />
-            <marker date="1520337128714" expanded="true" signature="31103:36671" ph="{...}" />
-            <marker date="1520337128714" expanded="false" signature="36827:36838" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="37004:37010" ph=" }" />
-            <marker date="1520337128714" expanded="true" signature="37171:37343" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="37483:37490" ph="{}" />
-            <marker date="1520337128714" expanded="true" signature="37574:37714" ph="{...}" />
-            <marker date="1520337128714" expanded="false" signature="37849:37860" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="37933:37939" ph=" }" />
-            <marker date="1520337128714" expanded="true" signature="38045:38203" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="38324:38475" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="38527:38583" ph="{...}" />
-            <marker date="1520337128714" expanded="false" signature="38628:38639" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="38690:38696" ph=" }" />
-            <marker date="1520337128714" expanded="true" signature="38767:42147" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="42185:42334" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="42372:42522" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="42560:43647" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="43693:44448" ph="{...}" />
-            <marker date="1520337128714" expanded="false" signature="44508:44519" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="44544:44550" ph=" }" />
-            <marker date="1520337128714" expanded="true" signature="44678:47467" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="47563:48446" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="48484:48911" ph="{...}" />
-            <marker date="1520337128714" expanded="false" signature="48962:48973" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="49044:49050" ph=" }" />
-            <marker date="1520337128714" expanded="true" signature="49078:49475" ph="{...}" />
-            <marker date="1520337128714" expanded="false" signature="49504:49515" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="49575:49581" ph=" }" />
-            <marker date="1520337128714" expanded="false" signature="49603:49614" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="49688:49694" ph=" }" />
-            <marker date="1520337128714" expanded="true" signature="49724:49793" ph="{...}" />
-            <marker date="1520337128714" expanded="false" signature="49850:49861" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="49927:49933" ph=" }" />
-            <marker date="1520337128714" expanded="true" signature="49991:50593" ph="{...}" />
-            <marker date="1520337128714" expanded="false" signature="50657:50668" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="50680:50686" ph=" }" />
-            <marker date="1520337128714" expanded="true" signature="50755:50762" ph="{}" />
-            <marker date="1520337128714" expanded="true" signature="50838:50845" ph="{}" />
-            <marker date="1520337128714" expanded="true" signature="50921:50928" ph="{}" />
-            <marker date="1520337128714" expanded="true" signature="50961:58935" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="56478:56601" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="58960:58967" ph="{}" />
-            <marker date="1520337128714" expanded="true" signature="59013:59464" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="59519:59830" ph="{...}" />
-            <marker date="1520337128714" expanded="false" signature="59864:59875" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="59912:59918" ph=" }" />
-            <marker date="1520337128714" expanded="true" signature="59983:62829" ph="{...}" />
-            <marker date="1520337128714" expanded="false" signature="62880:62891" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="62949:62955" ph=" }" />
-            <marker date="1520337128714" expanded="true" signature="63032:63388" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="63440:64376" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="64441:65372" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="65424:66632" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="66718:68505" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="68576:69452" ph="{...}" />
-            <marker date="1520337128714" expanded="false" signature="69563:69574" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="69638:69644" ph=" }" />
-            <marker date="1520337128714" expanded="true" signature="69779:69949" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="70012:71370" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="71494:71805" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="71886:72578" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="72648:72933" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="73027:74061" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="74110:74607" ph="{...}" />
-            <marker date="1520337128714" expanded="false" signature="74649:74660" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="74702:74708" ph=" }" />
-            <marker date="1520337128714" expanded="true" signature="74760:74927" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="74993:75464" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="75486:75585" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="75646:75723" ph="{...}" />
-            <marker date="1520337128714" expanded="false" signature="75749:75760" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="75769:75775" ph=" }" />
-            <marker date="1520337128714" expanded="true" signature="75800:75980" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="76005:78677" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="78702:78709" ph="{}" />
-            <marker date="1520337128714" expanded="true" signature="78796:78924" ph="{...}" />
-            <marker date="1520337128714" expanded="false" signature="78975:78986" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="79022:79028" ph=" }" />
-            <marker date="1520337128714" expanded="false" signature="79079:79090" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="79125:79131" ph=" }" />
-            <marker date="1520337128714" expanded="true" signature="79197:80188" ph="{...}" />
-            <marker date="1520337128714" expanded="false" signature="80240:80251" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="80318:80324" ph=" }" />
-            <marker date="1520337128714" expanded="true" signature="80390:81048" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="81100:81327" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="81403:83048" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="83127:88874" ph="{...}" />
-            <marker date="1520337128714" expanded="false" signature="88910:88921" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="88934:88940" ph=" }" />
-            <marker date="1520337128714" expanded="false" signature="89019:89030" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="89042:89048" ph=" }" />
-            <marker date="1520337128714" expanded="false" signature="89157:89168" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="89180:89186" ph=" }" />
-            <marker date="1520337128714" expanded="false" signature="89277:89288" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="89354:89360" ph=" }" />
-            <marker date="1520337128714" expanded="true" signature="89499:90134" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="90235:90619" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="90720:91101" ph="{...}" />
-            <marker date="1520337128714" expanded="false" signature="91198:91209" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="91265:91271" ph=" }" />
-            <marker date="1520337128714" expanded="true" signature="91411:92036" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="92148:92656" ph="{...}" />
-            <marker date="1520337128714" expanded="false" signature="92706:92717" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="92757:92763" ph=" }" />
-            <marker date="1520337128714" expanded="true" signature="92835:92964" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="93000:93710" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="93761:94095" ph="{...}" />
-            <marker date="1520337128714" expanded="false" signature="94145:94156" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="94182:94188" ph=" }" />
-            <marker date="1520337128714" expanded="true" signature="94321:95082" ph="{...}" />
-            <marker date="1520337128714" expanded="false" signature="95112:95123" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="95137:95143" ph=" }" />
-            <marker date="1520337128714" expanded="false" signature="95169:95180" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="95191:95197" ph=" }" />
-            <marker date="1520337128714" expanded="false" signature="95285:95296" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="95369:95375" ph=" }" />
-            <marker date="1520337128714" expanded="false" signature="95401:95412" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="95444:95450" ph=" }" />
-            <marker date="1520337128714" expanded="true" signature="95510:96697" ph="{...}" />
-            <marker date="1520337128714" expanded="false" signature="96794:96805" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="96869:96875" ph=" }" />
-            <marker date="1520337128714" expanded="true" signature="96968:97154" ph="{...}" />
-            <marker date="1520337128714" expanded="false" signature="97228:97239" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="97713:97719" ph=" }" />
-            <marker date="1520337128714" expanded="true" signature="97767:98251" ph="{...}" />
-            <marker date="1520337128714" expanded="false" signature="98332:98343" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="98407:98413" ph=" }" />
-            <marker date="1520337128714" expanded="false" signature="98479:98490" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="98553:98559" ph=" }" />
-            <marker date="1520337128714" expanded="true" signature="98658:98791" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="98905:99486" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="99566:99958" ph="{...}" />
-            <marker date="1520337128714" expanded="false" signature="100035:100046" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="100140:100146" ph=" }" />
-            <marker date="1520337128714" expanded="false" signature="100237:100248" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="100441:100447" ph=" }" />
-            <marker date="1520337128714" expanded="true" signature="100637:101940" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="101991:102258" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="102310:102584" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="102647:102695" ph="{...}" />
-            <marker date="1520337128714" expanded="false" signature="102722:102733" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="102765:102771" ph=" }" />
-            <marker date="1520337128714" expanded="false" signature="102798:102809" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="102841:102847" ph=" }" />
-            <marker date="1520337128714" expanded="false" signature="102877:102888" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="102923:102929" ph=" }" />
-            <marker date="1520337128714" expanded="false" signature="102965:102976" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="103005:103011" ph=" }" />
-            <marker date="1520337128714" expanded="true" signature="103049:103419" ph="{...}" />
-            <marker date="1520337128714" expanded="false" signature="103467:103478" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="103517:103523" ph=" }" />
-            <marker date="1520337128714" expanded="false" signature="103599:103610" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="103622:103628" ph=" }" />
-            <marker date="1520337128714" expanded="true" signature="103692:103699" ph="{}" />
-            <marker date="1520337128714" expanded="false" signature="103745:103756" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="103782:103788" ph=" }" />
-            <marker date="1520337128714" expanded="false" signature="103877:103888" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="103945:103951" ph=" }" />
-            <marker date="1520337128714" expanded="false" signature="103993:104004" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="104028:104034" ph=" }" />
-            <marker date="1520337128714" expanded="false" signature="104071:104082" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="104104:104110" ph=" }" />
-            <marker date="1520337128714" expanded="false" signature="104147:104158" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="104184:104190" ph=" }" />
-            <marker date="1520337128714" expanded="true" signature="104227:104234" ph="{}" />
-            <marker date="1520337128714" expanded="true" signature="104271:104360" ph="{...}" />
-            <marker date="1520337128714" expanded="false" signature="104389:104400" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="104452:104458" ph=" }" />
-            <marker date="1520337128714" expanded="false" signature="104487:104498" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="104536:104542" ph=" }" />
-            <marker date="1520337128714" expanded="false" signature="104566:104577" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="104612:104618" ph=" }" />
-            <marker date="1520337128714" expanded="false" signature="104650:104661" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="104696:104702" ph=" }" />
-            <marker date="1520337128714" expanded="true" signature="104764:105191" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="105243:105340" ph="{...}" />
-            <marker date="1520337128714" expanded="false" signature="105391:105402" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="105424:105430" ph=" }" />
-            <marker date="1520337128714" expanded="false" signature="105490:105501" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="105537:105543" ph=" }" />
-            <marker date="1520337128714" expanded="false" signature="105636:105647" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="105684:105690" ph=" }" />
-            <marker date="1520337128714" expanded="false" signature="105718:105729" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="105756:105762" ph=" }" />
-            <marker date="1520337128714" expanded="true" signature="105825:105958" ph="{...}" />
-            <marker date="1520337128714" expanded="false" signature="106032:106043" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="106090:106096" ph=" }" />
-            <marker date="1520337128714" expanded="true" signature="106194:106941" ph="{...}" />
-            <marker date="1520337128714" expanded="false" signature="106969:106980" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="106991:106997" ph=" }" />
-            <marker date="1520337128714" expanded="false" signature="107018:107029" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="107071:107077" ph=" }" />
-            <marker date="1520337128714" expanded="true" signature="107120:107297" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="107362:108421" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="107646:107887" ph="{...}" />
-            <marker date="1520337128714" expanded="false" signature="107677:107696" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="107763:107777" ph=" }" />
-            <marker date="1520337128714" expanded="true" signature="107829:107877" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="107966:108182" ph="{...}" />
-            <marker date="1520337128714" expanded="false" signature="107997:108016" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="108058:108072" ph=" }" />
-            <marker date="1520337128714" expanded="true" signature="108124:108172" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="108484:108669" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="108696:108838" ph="{...}" />
-            <marker date="1520337128714" expanded="false" signature="108877:108888" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="108911:108917" ph=" }" />
-            <marker date="1520337128714" expanded="true" signature="109003:109946" ph="{...}" />
-            <marker date="1520337128714" expanded="true" signature="110013:110299" ph="{...}" />
-            <marker date="1520337128714" expanded="false" signature="110342:110353" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="110396:110402" ph=" }" />
-            <marker date="1520337128714" expanded="false" signature="110423:110434" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="110448:110454" ph=" }" />
-            <marker date="1520337128714" expanded="false" signature="110480:110491" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="110502:110508" ph=" }" />
-            <marker date="1520337128714" expanded="false" signature="110534:110545" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="110556:110562" ph=" }" />
-            <marker date="1520337128714" expanded="false" signature="110597:110608" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="110629:110635" ph=" }" />
-            <marker date="1520337128714" expanded="false" signature="110676:110687" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="110701:110707" ph=" }" />
-            <marker date="1520337128714" expanded="true" signature="110744:110997" ph="{...}" />
-            <marker date="1520337128714" expanded="false" signature="111034:111045" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="111146:111152" ph=" }" />
-            <marker date="1520337128714" expanded="false" signature="111205:111216" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="111230:111236" ph=" }" />
-            <marker date="1520337128714" expanded="false" signature="111331:111342" ph=" { " />
-            <marker date="1520337128714" expanded="false" signature="111354:111360" ph=" }" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1778,39 +942,239 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/Autoeye.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/reflections/wrappers/WrappedAxisAlignedBB.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
+        <state relative-caret-position="714">
           <caret line="69" column="21" lean-forward="false" selection-start-line="69" selection-start-column="21" selection-end-line="69" selection-end-column="21" />
           <folding>
-            <element signature="e#3932#3933#0" expanded="true" />
-            <element signature="e#4262#4263#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InvalidPitch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="20" column="28" lean-forward="false" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#3932#3933#0" expanded="false" />
+            <element signature="e#4262#4263#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="17" column="18" lean-forward="false" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+        <state relative-caret-position="578">
+          <caret line="34" column="31" lean-forward="false" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/data/LocationData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1224">
+          <caret line="93" column="19" lean-forward="false" selection-start-line="93" selection-start-column="19" selection-end-line="93" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/data/TimeData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="27" column="54" lean-forward="false" selection-start-line="27" selection-start-column="54" selection-end-line="27" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/data/Physics.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="715">
+          <caret line="89" column="56" lean-forward="false" selection-start-line="89" selection-start-column="56" selection-end-line="89" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/events/InventoryClickEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="48" lean-forward="false" selection-start-line="4" selection-start-column="48" selection-end-line="4" selection-end-column="48" />
+          <folding>
+            <element signature="e#197#198#0" expanded="true" />
+            <element signature="e#226#227#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/events/EventHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="43" column="31" lean-forward="false" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/CheckHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/FastLadder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="19" column="14" lean-forward="true" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InvalidMotion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="19" column="14" lean-forward="false" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InvalidPitch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="12" column="14" lean-forward="false" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#400#401#0" expanded="true" />
+            <element signature="e#528#529#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InventoryWalk.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="11" column="14" lean-forward="false" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+          <folding>
+            <element signature="e#375#376#0" expanded="true" />
+            <element signature="e#403#404#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/NoSlowDown.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="11" column="14" lean-forward="false" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/NoWeb.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="19" column="14" lean-forward="false" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/SlimeJump.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="19" column="14" lean-forward="false" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/Speed.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="19" column="14" lean-forward="false" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/SpoofedOnGroundPacket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="19" column="14" lean-forward="false" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/Step.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="19" column="14" lean-forward="false" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/Timer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="19" column="14" lean-forward="false" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/Check.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="27" column="56" lean-forward="false" selection-start-line="27" selection-start-column="56" selection-end-line="27" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/updaters/DataUpdater.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/PacketType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="28" column="21" lean-forward="true" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InvalidLocation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/combat/KillAuraRotation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="31" column="9" lean-forward="false" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/combat/Reach.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="24" column="286" lean-forward="false" selection-start-line="24" selection-start-column="286" selection-end-line="24" selection-end-column="286" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/AutoEyePlayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="49" column="54" lean-forward="false" selection-start-line="49" selection-start-column="54" selection-end-line="49" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/event/packets/channelhandler/ChannelHandlerAbstract.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="72" column="61" lean-forward="false" selection-start-line="72" selection-start-column="61" selection-end-line="72" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/Autoeye.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="52" column="48" lean-forward="false" selection-start-line="52" selection-start-column="48" selection-end-line="52" selection-end-column="48" />
           <folding />
         </state>
       </provider>

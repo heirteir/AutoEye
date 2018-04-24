@@ -9,7 +9,7 @@
 package com.heirteir.autoeye.player;
 
 import com.heirteir.autoeye.Autoeye;
-import com.heirteir.autoeye.event.events.event.PlayerMoveEvent;
+import com.heirteir.autoeye.event.packets.wrappers.PacketPlayInFlying;
 import com.heirteir.autoeye.player.data.*;
 import com.heirteir.autoeye.util.reflections.wrappers.WrappedEntity;
 import com.heirteir.autoeye.util.vector.Vector3D;
@@ -46,8 +46,8 @@ import java.util.Map;
         this.connected = false;
     }
 
-    public void update(Autoeye autoeye, PlayerMoveEvent event) {
-        this.locationData.update(autoeye, this, event.getPacket());
+    public void update(Autoeye autoeye, PacketPlayInFlying packet) {
+        this.locationData.update(autoeye, this, packet);
         this.physics.update(this);
         this.connected = this.connected || this.timeData.getConnected().getDifference() > 2000;
     }

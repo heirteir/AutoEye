@@ -10,30 +10,28 @@ package com.heirteir.autoeye.check.checks.movement;
 
 import com.heirteir.autoeye.Autoeye;
 import com.heirteir.autoeye.check.Check;
-import com.heirteir.autoeye.event.events.EventExecutor;
-import com.heirteir.autoeye.event.events.event.Event;
-import com.heirteir.autoeye.event.events.event.PlayerMoveEvent;
+import com.heirteir.autoeye.player.AutoEyePlayer;
 
 public class FastLadder extends Check {
     public FastLadder(Autoeye autoeye) {
         super(autoeye, "Fast Ladder");
     }
 
-    @EventExecutor public boolean check(PlayerMoveEvent event) {
-        if (event.getPlayer().isConnected() && event.getPlayer().getTimeData().getLastVelocity().getDifference() > 500 && event.getPlayer().getLocationData().isChangedPos() && !event.getPlayer().getPhysics().isFlying() && !event.getPlayer().getLocationData().isTeleported() && event.getPlayer().getLocationData().isOnLadder()) {
-            if (event.getPacket().isOnGround() || event.getPlayer().getPhysics().getOffGroundTicks() <= 4) {
-                return event.getPlayer().getPhysics().getClientVelocity().getY() > event.getPlayer().getPhysics().getJumpVelocity() && (!(!event.getPlayer().getPhysics().isHasVelocity() && event.getPlayer().getPlayer().getVelocity().getY() <= event.getPlayer().getPhysics().getClientVelocity().getY()) || this.checkThreshold(event.getPlayer(), 3, 100L));
+    @Override public boolean check(AutoEyePlayer player) {
+        if (player.isConnected() && player.getTimeData().getLastVelocity().getDifference() > 500 && player.getLocationData().isChangedPos() && !player.getPhysics().isFlying() && !player.getLocationData().isTeleported() && player.getLocationData().isOnLadder()) {
+            if (player.getLocationData().isOnGround() || player.getPhysics().getOffGroundTicks() <= 4) {
+                return player.getPhysics().getClientVelocity().getY() > player.getPhysics().getJumpVelocity() && (!(!player.getPhysics().isHasVelocity() && player.getPlayer().getVelocity().getY() <= player.getPhysics().getClientVelocity().getY()) || this.checkThreshold(player, 3, 100L));
             } else {
-                float absVelocity = Math.abs(event.getPlayer().getPhysics().getClientVelocity().getY());
-                return absVelocity > 0.16F && (this.checkThreshold(event.getPlayer(), (int) Math.ceil(event.getPlayer().getPhysics().getJumpVelocity() / 0.16F), 100L));
+                float absVelocity = Math.abs(player.getPhysics().getClientVelocity().getY());
+                return absVelocity > 0.16F && (this.checkThreshold(player, (int) Math.ceil(player.getPhysics().getJumpVelocity() / 0.16F), 100L));
             }
         } else {
             return false;
         }
     }
 
-    @Override public <T extends Event> boolean revert(T event) {
-        event.getPlayer().teleport(event.getPlayer().getLocationData().getTeleportLocation());
+    @Override public boolean revert(AutoEyePlayer player) {
+        player.teleport(player.getLocationData().getTeleportLocation());
         return false;
     }
 }

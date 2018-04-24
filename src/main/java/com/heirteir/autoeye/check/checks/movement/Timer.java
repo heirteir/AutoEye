@@ -10,21 +10,19 @@ package com.heirteir.autoeye.check.checks.movement;
 
 import com.heirteir.autoeye.Autoeye;
 import com.heirteir.autoeye.check.Check;
-import com.heirteir.autoeye.event.events.EventExecutor;
-import com.heirteir.autoeye.event.events.event.Event;
-import com.heirteir.autoeye.event.events.event.PlayerMoveEvent;
+import com.heirteir.autoeye.player.AutoEyePlayer;
 
 public class Timer extends Check {
     public Timer(Autoeye autoeye) {
         super(autoeye, "Timer");
     }
 
-    @EventExecutor public boolean check(PlayerMoveEvent event) {
-        return event.getPlayer().isConnected() && event.getPlayer().getTimeData().getLastVelocity().getDifference() > 500 && event.getPlayer().getLocationData().isChangedPos() && !event.getPlayer().getPhysics().isFlying() && !event.getPlayer().getLocationData().isTeleported() && event.getPlayer().getPhysics().getMovesPerSecond() > 23F;
+    @Override public boolean check(AutoEyePlayer player) {
+        return player.isConnected() && player.getTimeData().getLastVelocity().getDifference() > 500 && player.getLocationData().isChangedPos() && !player.getPhysics().isFlying() && !player.getLocationData().isTeleported() && player.getPhysics().getMovesPerSecond() > 23F;
     }
 
-    @Override public <T extends Event> boolean revert(T event) {
-        event.getPlayer().teleport(event.getPlayer().getLocationData().getTeleportLocation());
+    @Override public boolean revert(AutoEyePlayer player) {
+        player.teleport(player.getLocationData().getTeleportLocation());
         return true;
     }
 }

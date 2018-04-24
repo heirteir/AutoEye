@@ -10,86 +10,84 @@ package com.heirteir.autoeye.check.checks.movement;
 
 import com.heirteir.autoeye.Autoeye;
 import com.heirteir.autoeye.check.Check;
-import com.heirteir.autoeye.event.events.EventExecutor;
-import com.heirteir.autoeye.event.events.event.Event;
-import com.heirteir.autoeye.event.events.event.PlayerMoveEvent;
+import com.heirteir.autoeye.player.AutoEyePlayer;
 
 public class Speed extends Check {
     public Speed(Autoeye autoeye) {
         super(autoeye, "Speed");
     }
 
-    @EventExecutor public boolean check(PlayerMoveEvent event) {
-        if (event.getPlayer().isConnected() && event.getPlayer().getTimeData().getLastVelocity().getDifference() > 500 && event.getPlayer().getTimeData().getLastVelocity().getDifference() > 500 && event.getPlayer().getLocationData().isChangedPos() && !event.getPlayer().getPhysics().isFlying() && !event.getPlayer().getLocationData().isTeleported()) {
-            float speed = (float) Math.sqrt(Math.pow(event.getPlayer().getPhysics().getClientVelocity().getX() - event.getPlayer().getPlayer().getVelocity().getX(), 2) + Math.pow(event.getPlayer().getPhysics().getClientVelocity().getZ() - event.getPlayer().getPlayer().getVelocity().getZ(), 2));
-            float serverVelocity = (float) Math.sqrt(Math.pow(event.getPlayer().getPlayer().getVelocity().getX(), 2) + Math.pow(event.getPlayer().getPlayer().getVelocity().getZ(), 2));
+    @Override public boolean check(AutoEyePlayer player) {
+        if (player.isConnected() && player.getTimeData().getLastVelocity().getDifference() > 500 && player.getTimeData().getLastVelocity().getDifference() > 500 && player.getLocationData().isChangedPos() && !player.getPhysics().isFlying() && !player.getLocationData().isTeleported()) {
+            float speed = (float) Math.sqrt(Math.pow(player.getPhysics().getClientVelocity().getX() - player.getPlayer().getVelocity().getX(), 2) + Math.pow(player.getPhysics().getClientVelocity().getZ() - player.getPlayer().getVelocity().getZ(), 2));
+            float serverVelocity = (float) Math.sqrt(Math.pow(player.getPlayer().getVelocity().getX(), 2) + Math.pow(player.getPlayer().getVelocity().getZ(), 2));
             float walkSpeed;
-            float angleDifference = this.autoeye.getMathUtil().angleDistance((float) (Math.atan2(event.getPlayer().getPhysics().getClientVelocity().getX(), event.getPlayer().getPhysics().getClientVelocity().getZ()) * (180F / Math.PI)), (float) (Math.atan2(event.getPlayer().getPlayer().getEyeLocation().getDirection().getX(), event.getPlayer().getPlayer().getEyeLocation().getDirection().getZ()) * (180F / Math.PI)));
+            float angleDifference = this.autoeye.getMathUtil().angleDistance((float) (Math.atan2(player.getPhysics().getClientVelocity().getX(), player.getPhysics().getClientVelocity().getZ()) * (180F / Math.PI)), (float) (Math.atan2(player.getPlayer().getEyeLocation().getDirection().getX(), player.getPlayer().getEyeLocation().getDirection().getZ()) * (180F / Math.PI)));
             float safeAngleDifference = (angleDifference > 0 && angleDifference < 46) || angleDifference > 90 && angleDifference < 170 ? angleDifference > 46 ? angleDifference / (angleDifference / 45F) : angleDifference : 0;
-            if (!event.getPlayer().getLocationData().isOnGround() && event.getPlayer().getLocationData().isInWater()) {
-                walkSpeed = event.getPlayer().getPlayer().getWalkSpeed() * 0.8F;
-                walkSpeed += (0.1 * event.getPlayer().getEnchantmentEffectAmplifier("DEPTH_STRIDER"));
-            } else if (event.getPlayer().getLocationData().isInWeb()) {
-                walkSpeed = event.getPlayer().getPlayer().getWalkSpeed() * 0.5F;
+            if (!player.getLocationData().isOnGround() && player.getLocationData().isInWater()) {
+                walkSpeed = player.getPlayer().getWalkSpeed() * 0.8F;
+                walkSpeed += (0.1 * player.getEnchantmentEffectAmplifier("DEPTH_STRIDER"));
+            } else if (player.getLocationData().isInWeb()) {
+                walkSpeed = player.getPlayer().getWalkSpeed() * 0.5F;
             } else {
-                walkSpeed = event.getPlayer().getPlayer().getWalkSpeed();
+                walkSpeed = player.getPlayer().getWalkSpeed();
             }
-            float speedAmplifier = (0.1F * event.getPlayer().getPotionEffectAmplifier("SPEED"));
+            float speedAmplifier = (0.1F * player.getPotionEffectAmplifier("SPEED"));
             walkSpeed += speedAmplifier;
-            float normalWalkSpeed = event.getPlayer().getPlayer().getWalkSpeed() + speedAmplifier;
-            if (!event.getPlayer().getLocationData().isHasSolidAbove() && !event.getPlayer().getLocationData().isInWater() && serverVelocity < walkSpeed * 2 && speed > walkSpeed * 3) {
+            float normalWalkSpeed = player.getPlayer().getWalkSpeed() + speedAmplifier;
+            if (!player.getLocationData().isHasSolidAbove() && !player.getLocationData().isInWater() && serverVelocity < walkSpeed * 2 && speed > walkSpeed * 3) {
                 return true;
-            } else if (angleDifference > 80 && event.getPlayer().getPlayer().isSprinting() && speed > .27 && !event.getPlayer().getPhysics().isHasVelocity()) {
-                return this.checkThreshold(event.getPlayer(), 3, 100L);
-            } else if (!event.getPlayer().getLocationData().isHasSolidAbove() && serverVelocity > walkSpeed * 0.58 && serverVelocity < walkSpeed && !event.getPlayer().getLocationData().isOnGround() && !event.getPlayer().getLocationData().isInWater()) {
-                if (event.getPlayer().getLocationData().isOnIce()) {
+            } else if (angleDifference > 80 && player.getPlayer().isSprinting() && speed > .27 && !player.getPhysics().isHasVelocity()) {
+                return this.checkThreshold(player, 3, 100L);
+            } else if (!player.getLocationData().isHasSolidAbove() && serverVelocity > walkSpeed * 0.58 && serverVelocity < walkSpeed && !player.getLocationData().isOnGround() && !player.getLocationData().isInWater()) {
+                if (player.getLocationData().isOnIce()) {
                     if (speed > walkSpeed * 2.2) {
-                        return this.checkThreshold(event.getPlayer(), 3, 500L);
+                        return this.checkThreshold(player, 3, 500L);
                     }
-                } else if (event.getPlayer().getLocationData().isOnStairs()) {
+                } else if (player.getLocationData().isOnStairs()) {
                     if (speed > walkSpeed * 2.9) {
-                        return this.checkThreshold(event.getPlayer(), 3, 500L);
+                        return this.checkThreshold(player, 3, 500L);
                     }
-                } else if (event.getPlayer().getLocationData().isOnSlime()) {
+                } else if (player.getLocationData().isOnSlime()) {
                     if (speed > walkSpeed * 2.1) {
-                        return this.checkThreshold(event.getPlayer(), 3, 500L);
+                        return this.checkThreshold(player, 3, 500L);
                     }
                 } else if (speed > walkSpeed + (safeAngleDifference * 0.01F)) {
-                    return this.checkThreshold(event.getPlayer(), 4, 250L);
+                    return this.checkThreshold(player, 4, 250L);
                 }
-            } else if (event.getPlayer().getLocationData().isInWater() || (event.getPlayer().getLocationData().isOnGround() && event.getPlayer().getPhysics().getCalculatedYAcceleration() <= 0 && serverVelocity == 0)) {
-                if (event.getPlayer().getLocationData().isInWater()) {
+            } else if (player.getLocationData().isInWater() || (player.getLocationData().isOnGround() && player.getPhysics().getCalculatedYAcceleration() <= 0 && serverVelocity == 0)) {
+                if (player.getLocationData().isInWater()) {
                     if (speed > walkSpeed * 3) {
                         return true;
                     } else if (speed > walkSpeed) {
-                        return this.checkThreshold(event.getPlayer(), 10, 500L);
+                        return this.checkThreshold(player, 10, 500L);
                     }
-                } else if (((walkSpeed == normalWalkSpeed && speed > walkSpeed * 1.46) || (walkSpeed != normalWalkSpeed && speed > walkSpeed) || (event.getPlayer().getLocationData().isOnStairs() || event.getPlayer().getLocationData().isOnStairs()))) {
-                    if (event.getPlayer().getLocationData().isOnIce()) {
+                } else if (((walkSpeed == normalWalkSpeed && speed > walkSpeed * 1.46) || (walkSpeed != normalWalkSpeed && speed > walkSpeed) || (player.getLocationData().isOnStairs() || player.getLocationData().isOnStairs()))) {
+                    if (player.getLocationData().isOnIce()) {
                         if (speed > walkSpeed * 2.2) {
-                            return this.checkThreshold(event.getPlayer(), 3, 500L);
+                            return this.checkThreshold(player, 3, 500L);
                         }
-                    } else if (event.getPlayer().getLocationData().isOnStairs()) {
+                    } else if (player.getLocationData().isOnStairs()) {
                         if (speed > walkSpeed * 2.9) {
-                            return this.checkThreshold(event.getPlayer(), 3, 500L);
+                            return this.checkThreshold(player, 3, 500L);
                         }
-                    } else if (event.getPlayer().getLocationData().isOnSlime()) {
+                    } else if (player.getLocationData().isOnSlime()) {
                         if (speed > walkSpeed * 3) {
-                            return this.checkThreshold(event.getPlayer(), 3, 500L);
+                            return this.checkThreshold(player, 3, 500L);
                         }
                     } else {
-                        return speed > walkSpeed * 3 || this.checkThreshold(event.getPlayer(), 6, 200L);
+                        return speed > walkSpeed * 3 || this.checkThreshold(player, 6, 200L);
                     }
                 }
             }
-            return this.resetThreshold(event.getPlayer());
+            return this.resetThreshold(player);
         } else {
             return false;
         }
     }
 
-    @Override public <T extends Event> boolean revert(T event) {
-        event.getPlayer().teleport(event.getPlayer().getLocationData().getTeleportLocation());
+    @Override public boolean revert(AutoEyePlayer player) {
+        player.teleport(player.getLocationData().getTeleportLocation());
         return false;
     }
 }

@@ -8,12 +8,10 @@
  */
 package com.heirteir.autoeye.event.events;
 
+import com.heirteir.autoeye.player.AutoEyePlayer;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
-import java.lang.reflect.Method;
-
-@RequiredArgsConstructor @Getter class MethodListenerPair {
-    private final Method method;
-    private final Listener listener;
+@RequiredArgsConstructor @Getter public abstract class Event {
+    private final AutoEyePlayer player;
 }

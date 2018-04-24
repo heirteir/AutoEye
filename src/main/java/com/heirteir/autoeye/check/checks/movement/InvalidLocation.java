@@ -2,9 +2,7 @@ package com.heirteir.autoeye.check.checks.movement;
 
 import com.heirteir.autoeye.Autoeye;
 import com.heirteir.autoeye.check.Check;
-import com.heirteir.autoeye.event.events.EventExecutor;
-import com.heirteir.autoeye.event.events.event.Event;
-import com.heirteir.autoeye.event.events.event.PlayerMoveEvent;
+import com.heirteir.autoeye.player.AutoEyePlayer;
 import org.bukkit.util.NumberConversions;
 
 public class InvalidLocation extends Check {
@@ -12,19 +10,19 @@ public class InvalidLocation extends Check {
         super(autoeye, "Invalid Location");
     }
 
-    @EventExecutor(priority = EventExecutor.Priority.HIGHEST) public boolean check(PlayerMoveEvent event) {
-        try {
-            if (event.getPlayer().isConnected() && event.getPacket().isHasPos()) {
-                event.getPlayer().getPlayer().getWorld().getBlockAt(NumberConversions.floor(event.getPacket().getX()), NumberConversions.floor(event.getPacket().getY()), NumberConversions.floor(event.getPacket().getZ()));
+    @Override public boolean check(AutoEyePlayer player) {
+        if (player.isConnected() && player.getLocationData().isChangedPos()) {
+            try {
+                player.getPlayer().getWorld().getBlockAt(NumberConversions.floor(player.getLocationData().getLocation().getX()), NumberConversions.floor(player.getLocationData().getLocation().getY()), NumberConversions.floor(player.getLocationData().getLocation().getZ()));
+            } catch (IllegalStateException e) {
+                return true;
             }
-            return false;
-        } catch (IllegalStateException e) {
-            return true;
         }
+        return false;
     }
 
-    @Override public <T extends Event> boolean revert(T event) {
-        event.getPlayer().teleport(event.getPlayer().getLocationData().getTeleportLocation());
+    @Override public boolean revert(AutoEyePlayer player) {
+        player.teleport(player.getLocationData().getTeleportLocation());
         return false;
     }
 }

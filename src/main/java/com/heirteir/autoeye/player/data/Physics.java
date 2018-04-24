@@ -87,6 +87,7 @@ import lombok.Setter;
             }
             this.movesPerSecond++;
             this.previousVelocity = this.hasVelocity;
+            player.getTimeData().getLastMove().update();
         }
     }
 }

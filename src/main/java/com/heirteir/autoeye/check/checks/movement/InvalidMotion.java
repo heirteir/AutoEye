@@ -10,32 +10,30 @@ package com.heirteir.autoeye.check.checks.movement;
 
 import com.heirteir.autoeye.Autoeye;
 import com.heirteir.autoeye.check.Check;
-import com.heirteir.autoeye.event.events.EventExecutor;
-import com.heirteir.autoeye.event.events.event.Event;
-import com.heirteir.autoeye.event.events.event.PlayerMoveEvent;
+import com.heirteir.autoeye.player.AutoEyePlayer;
 
 public class InvalidMotion extends Check {
     public InvalidMotion(Autoeye autoeye) {
         super(autoeye, "Invalid Motion");
     }
 
-    @EventExecutor public boolean check(PlayerMoveEvent event) {
-        if (event.getPlayer().isConnected() && event.getPlayer().getTimeData().getLastVelocity().getDifference() > 500) {
-            if (Math.abs(event.getPlayer().getPhysics().getClientVelocity().getY()) > 3.92) {
+    @Override public boolean check(AutoEyePlayer player) {
+        if (player.isConnected() && player.getTimeData().getLastVelocity().getDifference() > 500) {
+            if (Math.abs(player.getPhysics().getClientVelocity().getY()) > 3.92) {
                 return true;
-            } else if (event.getPlayer().getLocationData().isChangedPos() && !event.getPlayer().getPhysics().isFlying() && !event.getPlayer().getLocationData().isTeleported() && !event.getPlayer().getLocationData().isOnPiston() && !event.getPlayer().getLocationData().isOnSlime() && !event.getPlayer().getLocationData().isInWater() && !event.getPlayer().getLocationData().isOnGround() && !event.getPlayer().getLocationData().isOnStairs() && !event.getPlayer().getLocationData().isOnLadder() && !event.getPlayer().getLocationData().isHasSolidAbove() && event.getPlayer().getTimeData().getLastInWeb().getDifference() > 150L) {
-                if (event.getPlayer().getPhysics().getClientVelocity().getY() > event.getPlayer().getPhysics().getCalculatedYVelocity() + 0.001F && Math.abs(event.getPlayer().getPhysics().getClientAcceleration().getY() - event.getPlayer().getPhysics().getCalculatedYAcceleration()) > 0.002) {
-                    return (event.getPlayer().getPhysics().getClientVelocity().getY() == 0 && event.getPlayer().getTimeData().getLastTeleport().getDifference() < 1000 && this.checkThreshold(event.getPlayer(), 5, 500L)) || !((event.getPlayer().getPhysics().getClientVelocity().getY() == 0) || (event.getPlayer().getPhysics().getCalculatedYVelocity() > 0 && event.getPlayer().getPhysics().getCalculatedYVelocity() < 0.04)) || this.checkThreshold(event.getPlayer(), 2, 100L);
+            } else if (player.getLocationData().isChangedPos() && !player.getPhysics().isFlying() && !player.getLocationData().isTeleported() && !player.getLocationData().isOnPiston() && !player.getLocationData().isOnSlime() && !player.getLocationData().isInWater() && !player.getLocationData().isOnGround() && !player.getLocationData().isOnStairs() && !player.getLocationData().isOnLadder() && !player.getLocationData().isHasSolidAbove() && player.getTimeData().getLastInWeb().getDifference() > 150L) {
+                if (player.getPhysics().getClientVelocity().getY() > player.getPhysics().getCalculatedYVelocity() + 0.001F && Math.abs(player.getPhysics().getClientAcceleration().getY() - player.getPhysics().getCalculatedYAcceleration()) > 0.002) {
+                    return (player.getPhysics().getClientVelocity().getY() == 0 && player.getTimeData().getLastTeleport().getDifference() < 1000 && this.checkThreshold(player, 5, 500L)) || !((player.getPhysics().getClientVelocity().getY() == 0) || (player.getPhysics().getCalculatedYVelocity() > 0 && player.getPhysics().getCalculatedYVelocity() < 0.04)) || this.checkThreshold(player, 2, 100L);
                 } else {
-                    return Math.abs(event.getPlayer().getPhysics().getClientVelocity().getY() - event.getPlayer().getPhysics().getCalculatedYVelocity()) > 0.003 && Math.abs(event.getPlayer().getPhysics().getClientAcceleration().getY() - event.getPlayer().getPhysics().getCalculatedYAcceleration()) > 0.003 && ((event.getPlayer().getPhysics().getClientVelocity().getY() != -0.07839966F) || this.checkThreshold(event.getPlayer(), 2, 100L));
+                    return Math.abs(player.getPhysics().getClientVelocity().getY() - player.getPhysics().getCalculatedYVelocity()) > 0.003 && Math.abs(player.getPhysics().getClientAcceleration().getY() - player.getPhysics().getCalculatedYAcceleration()) > 0.003 && ((player.getPhysics().getClientVelocity().getY() != -0.07839966F) || this.checkThreshold(player, 2, 100L));
                 }
             }
         }
         return false;
     }
 
-    @Override public <T extends Event> boolean revert(T event) {
-        event.getPlayer().teleport(event.getPlayer().getLocationData().getTeleportLocation());
+    @Override public boolean revert(AutoEyePlayer player) {
+        player.teleport(player.getLocationData().getTeleportLocation());
         return false;
     }
 }

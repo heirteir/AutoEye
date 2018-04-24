@@ -10,27 +10,25 @@ package com.heirteir.autoeye.check.checks.movement;
 
 import com.heirteir.autoeye.Autoeye;
 import com.heirteir.autoeye.check.Check;
-import com.heirteir.autoeye.event.events.EventExecutor;
-import com.heirteir.autoeye.event.events.event.Event;
-import com.heirteir.autoeye.event.events.event.PlayerMoveEvent;
+import com.heirteir.autoeye.player.AutoEyePlayer;
 
 public class NoWeb extends Check {
     public NoWeb(Autoeye autoeye) {
         super(autoeye, "No Web (Y)");
     }
 
-    @EventExecutor public boolean check(PlayerMoveEvent event) {
-        if (event.getPlayer().isConnected() && event.getPlayer().getTimeData().getLastVelocity().getDifference() > 500 && event.getPlayer().getLocationData().isChangedPos() && !event.getPlayer().getPhysics().isFlying() && !event.getPlayer().getLocationData().isOnGround() && !event.getPlayer().getLocationData().isTeleported() && event.getPlayer().getLocationData().isInWeb()) {
-            float absClientVelocity = Math.abs(event.getPlayer().getPhysics().getClientVelocity().getY());
-            float absServerVelocity = (float) Math.abs(event.getPlayer().getPlayer().getVelocity().getY());
-            return (absClientVelocity > 0.1 || absClientVelocity == 0) && ((absServerVelocity > 0.1 && absClientVelocity > absServerVelocity * 2) || this.checkThreshold(event.getPlayer(), 3, 100L));
+    @Override public boolean check(AutoEyePlayer player) {
+        if (player.isConnected() && player.getTimeData().getLastVelocity().getDifference() > 500 && player.getLocationData().isChangedPos() && !player.getPhysics().isFlying() && !player.getLocationData().isOnGround() && !player.getLocationData().isTeleported() && player.getLocationData().isInWeb()) {
+            float absClientVelocity = Math.abs(player.getPhysics().getClientVelocity().getY());
+            float absServerVelocity = (float) Math.abs(player.getPlayer().getVelocity().getY());
+            return (absClientVelocity > 0.1 || absClientVelocity == 0) && ((absServerVelocity > 0.1 && absClientVelocity > absServerVelocity * 2) || this.checkThreshold(player, 3, 100L));
         } else {
             return false;
         }
     }
 
-    @Override public <T extends Event> boolean revert(T event) {
-        event.getPlayer().teleport(event.getPlayer().getLocationData().getTeleportLocation());
+    @Override public boolean revert(AutoEyePlayer player) {
+        player.teleport(player.getLocationData().getTeleportLocation());
         return false;
     }
 }

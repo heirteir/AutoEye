@@ -6,16 +6,16 @@
  *
  * last modified: 4/19/18 7:22 PM
  */
-package com.heirteir.autoeye.event.events.event;
+package com.heirteir.autoeye.event.events;
 
-import com.heirteir.autoeye.event.packets.wrappers.PacketPlayOutEntityVelocity;
+import com.heirteir.autoeye.event.packets.wrappers.PacketPlayInAbilities;
 import com.heirteir.autoeye.player.AutoEyePlayer;
 import lombok.Getter;
 
-@Getter public class PlayerVelocityEvent extends Event {
-    private final PacketPlayOutEntityVelocity packet;
+@Getter public class PacketPlayInAbilitiesEvent extends Event {
+    private final PacketPlayInAbilities packet;
 
-    public PlayerVelocityEvent(AutoEyePlayer player, PacketPlayOutEntityVelocity packet) {
+    public PacketPlayInAbilitiesEvent(AutoEyePlayer player, PacketPlayInAbilities packet) {
         super(player);
         this.packet = packet;
     }

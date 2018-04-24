@@ -10,26 +10,24 @@ package com.heirteir.autoeye.check.checks.movement;
 
 import com.heirteir.autoeye.Autoeye;
 import com.heirteir.autoeye.check.Check;
-import com.heirteir.autoeye.event.events.EventExecutor;
-import com.heirteir.autoeye.event.events.event.Event;
-import com.heirteir.autoeye.event.events.event.PlayerMoveEvent;
+import com.heirteir.autoeye.player.AutoEyePlayer;
 
 public class SlimeJump extends Check {
     public SlimeJump(Autoeye autoeye) {
         super(autoeye, "Slime Jump");
     }
 
-    @EventExecutor public boolean check(PlayerMoveEvent event) {
-        if (event.getPlayer().isConnected() && event.getPlayer().getTimeData().getLastVelocity().getDifference() > 500 && event.getPlayer().getLocationData().isChangedPos() && !event.getPlayer().getPhysics().isFlying() && !event.getPlayer().getLocationData().isTeleported() && event.getPlayer().getLocationData().isOnSlime() && event.getPlayer().getPlayer().getVelocity().getY() > 0) {
-            float difference = (float) Math.abs(event.getPlayer().getPhysics().getClientVelocity().getY() - event.getPlayer().getPlayer().getVelocity().getY());
-            return (event.getPlayer().getPhysics().getOffGroundTicks() > 12 || event.getPlayer().getPhysics().getClientVelocity().getY() > event.getPlayer().getPhysics().getJumpVelocity()) && difference > 0.08F && (difference > 0.16F || this.checkThreshold(event.getPlayer(), 2, 100L));
+    @Override public boolean check(AutoEyePlayer player) {
+        if (player.isConnected() && player.getTimeData().getLastVelocity().getDifference() > 500 && player.getLocationData().isChangedPos() && !player.getPhysics().isFlying() && !player.getLocationData().isTeleported() && player.getLocationData().isOnSlime() && player.getPlayer().getVelocity().getY() > 0) {
+            float difference = (float) Math.abs(player.getPhysics().getClientVelocity().getY() - player.getPlayer().getVelocity().getY());
+            return (player.getPhysics().getOffGroundTicks() > 12 || player.getPhysics().getClientVelocity().getY() > player.getPhysics().getJumpVelocity()) && difference > 0.08F && (difference > 0.16F || this.checkThreshold(player, 2, 100L));
         } else {
             return false;
         }
     }
 
-    @Override public <T extends Event> boolean revert(T event) {
-        event.getPlayer().teleport(event.getPlayer().getLocationData().getTeleportLocation());
+    @Override public boolean revert(AutoEyePlayer player) {
+        player.teleport(player.getLocationData().getTeleportLocation());
         return false;
     }
 }

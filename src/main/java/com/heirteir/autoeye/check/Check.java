@@ -9,14 +9,12 @@
 package com.heirteir.autoeye.check;
 
 import com.heirteir.autoeye.Autoeye;
-import com.heirteir.autoeye.event.events.Listener;
-import com.heirteir.autoeye.event.events.event.Event;
 import com.heirteir.autoeye.player.AutoEyePlayer;
 import lombok.Getter;
 import org.apache.commons.lang.StringUtils;
 import org.bukkit.permissions.Permission;
 
-public abstract class Check extends Listener {
+public abstract class Check {
     protected final Autoeye autoeye;
     @Getter private final Permission permission;
     @Getter private final String name;
@@ -27,7 +25,9 @@ public abstract class Check extends Listener {
         this.permission = this.autoeye.getPermissionsManager().addParent(this.autoeye.getPermissionsManager().getBypass(), this.autoeye.getPermissionsManager().createPermission("autoeye.bypass." + StringUtils.replace(StringUtils.replace(StringUtils.replace(this.name, " ", "_"), "(", ""), ")", "").toLowerCase()));
     }
 
-    public abstract <T extends Event> boolean revert(T event);
+    public abstract boolean check(AutoEyePlayer player);
+
+    public abstract boolean revert(AutoEyePlayer player);
 
     protected boolean checkThreshold(AutoEyePlayer player, int amount) {
         return player.getInfractionData().getInfraction(this).addThreshold() >= amount;

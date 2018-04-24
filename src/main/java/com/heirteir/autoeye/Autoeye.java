@@ -8,7 +8,6 @@
  */
 package com.heirteir.autoeye;
 
-import com.heirteir.autoeye.event.events.EventHandler;
 import com.heirteir.autoeye.event.packets.ChannelInjector;
 import com.heirteir.autoeye.permissions.PermissionsManager;
 import com.heirteir.autoeye.player.AutoEyePlayerList;
@@ -23,7 +22,6 @@ import org.bukkit.plugin.java.JavaPlugin;
     @Getter private static final Version version = Version.getVersion(Bukkit.getBukkitVersion());
     private final Logger pluginLogger;
     private final ChannelInjector channelInjector;
-    private final EventHandler eventHandler;
     private final AutoEyePlayerList autoEyePlayerList;
     private final MathUtil mathUtil;
     private final PermissionsManager permissionsManager;
@@ -32,14 +30,12 @@ import org.bukkit.plugin.java.JavaPlugin;
     public Autoeye() {
         this.pluginLogger = new Logger(this);
         if (!version.equals(Version.NONE)) {
-            this.eventHandler = new EventHandler(this);
             this.autoEyePlayerList = new AutoEyePlayerList(this);
             this.channelInjector = new ChannelInjector();
             this.mathUtil = new MathUtil();
             this.permissionsManager = new PermissionsManager();
         } else {
             this.channelInjector = null;
-            this.eventHandler = null;
             this.autoEyePlayerList = null;
             this.mathUtil = null;
             this.permissionsManager = null;
@@ -55,7 +51,6 @@ import org.bukkit.plugin.java.JavaPlugin;
         this.running = true;
         this.channelInjector.inject(this);
         this.autoEyePlayerList.createListener();
-        this.eventHandler.createCheckEventExecutors(this);
     }
 
     @Override public void onDisable() {
