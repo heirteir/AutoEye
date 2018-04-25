@@ -16,6 +16,7 @@ import org.bukkit.ChatColor;
 @Getter public class Logger {
     private final Autoeye autoeye;
     private final String pluginName = "&eAutoEye";
+    public boolean debug = false; //TODO: Add a command to enable / disable the debug mode.
 
     public Logger(Autoeye autoeye) {
         this.autoeye = autoeye;
@@ -28,6 +29,13 @@ import org.bukkit.ChatColor;
     public void sendConsoleMessage(Object message) {
         Bukkit.getConsoleSender().sendMessage(this.translateColorCodes(message + ""));
     }
+
+    public void sendDebugConsoleMessage(Object message) {
+        if (debug) {
+            Bukkit.getConsoleSender().sendMessage("[" + pluginName + " Debug] " + this.translateColorCodes(message + ""));
+        }
+    }
+
 
     public String translateColorCodes(String message) {
         return ChatColor.translateAlternateColorCodes('&', message);

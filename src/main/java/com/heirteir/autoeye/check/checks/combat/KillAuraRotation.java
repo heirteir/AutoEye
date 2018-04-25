@@ -19,6 +19,7 @@ public class KillAuraRotation extends Check {
         super(autoeye, "Kill Aura (Rotation)");
     }
 
+    @Override
     public boolean check(AutoEyePlayer player) {
         if (player.getInteractData().getLastActionType().equals(PacketPlayInUseEntity.ActionType.ATTACK) && player.getInteractData().getLastActionType() != null && player.getLocationData().getLocation().distance(new Vector3D((float) player.getInteractData().getLastEntity().getLocation().getX(), (float) player.getInteractData().getLastEntity().getLocation().getY(), (float) player.getInteractData().getLastEntity().getLocation().getZ())) > 1.25) {
             float previousYaw = autoeye.getMathUtil().angleTo180(player.getLocationData().getPreviousDirection().getX() + 90F);

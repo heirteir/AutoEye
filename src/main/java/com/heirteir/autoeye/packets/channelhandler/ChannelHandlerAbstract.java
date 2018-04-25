@@ -18,6 +18,7 @@ import com.heirteir.autoeye.check.checks.movement.*;
 import com.heirteir.autoeye.packets.PacketType;
 import com.heirteir.autoeye.packets.wrappers.*;
 import com.heirteir.autoeye.player.AutoEyePlayer;
+import com.heirteir.autoeye.util.logger.Logger;
 import com.heirteir.autoeye.util.reflections.Reflections;
 import com.heirteir.autoeye.util.reflections.types.WrappedField;
 import com.heirteir.autoeye.util.vector.Vector3D;
@@ -30,13 +31,14 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
 public abstract class ChannelHandlerAbstract {
-    protected final Autoeye autoeye;
     static final WrappedField networkManagerField = Reflections.getNMSClass("PlayerConnection").getFieldByName("networkManager");
     static final WrappedField playerConnectionField = Reflections.getNMSClass("EntityPlayer").getFieldByName("playerConnection");
+    protected final Autoeye autoeye;
     final Executor addChannelHandlerExecutor;
     final Executor removeChannelHandlerExecutor;
     final String handlerKey;
     final String playerKey;
+    final Logger logger;
     private final Set<Check> combatChecks = Sets.newHashSet();
     private final Set<Check> movementChecks = Sets.newHashSet();
     private final InventoryWalk inventoryWalk;
@@ -47,6 +49,7 @@ public abstract class ChannelHandlerAbstract {
         this.removeChannelHandlerExecutor = Executors.newSingleThreadExecutor();
         this.handlerKey = "packet_handler";
         this.playerKey = "autoeye_player_handler";
+        this.logger = new Logger(autoeye);
         //combat
         this.combatChecks.add(new KillAuraRotation(this.autoeye));
         this.combatChecks.add(new Reach(this.autoeye));
@@ -77,6 +80,9 @@ public abstract class ChannelHandlerAbstract {
         }
         if (this.autoeye.isEnabled() && packet != null && player != null && player.getPlayer() != null && player.getPlayer().isOnline()) {
             switch (PacketType.fromString(packet.getClass().getSimpleName())) {
+                case NULL:
+                    logger.sendDebugConsoleMessage(packet.getClass().getSimpleName());
+                    break;
                 case PacketPlayInWindowClick:
                     if (this.inventoryWalk.check(player)) {
                         return this.caught(player, this.inventoryWalk);
