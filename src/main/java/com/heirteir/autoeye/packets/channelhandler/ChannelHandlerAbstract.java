@@ -42,6 +42,7 @@ public abstract class ChannelHandlerAbstract {
     private final Set<Check> combatChecks = Sets.newHashSet();
     private final Set<Check> movementChecks = Sets.newHashSet();
     private final InventoryWalk inventoryWalk;
+    private final NoKnockback noKnockback;
 
     ChannelHandlerAbstract(Autoeye autoeye) {
         this.autoeye = autoeye;
@@ -67,6 +68,8 @@ public abstract class ChannelHandlerAbstract {
         this.movementChecks.add(new InvalidPitch(this.autoeye));
         //inventory
         this.inventoryWalk = new InventoryWalk(this.autoeye);
+        //other
+        this.noKnockback = new NoKnockback(this.autoeye);
     }
 
     public boolean run(AutoEyePlayer player, Object packet) {
@@ -108,6 +111,9 @@ public abstract class ChannelHandlerAbstract {
                         if (check.check(player)) {
                             return this.caught(player, check);
                         }
+                    }
+                    if (player.getInteractData().getLastEntity() instanceof Player && player.getInteractData().getLastEntity() != null && this.noKnockback.check(autoeye.getAutoEyePlayerList().getPlayer((Player) player.getInteractData().getLastEntity()))) {
+                        return this.caught(autoeye.getAutoEyePlayerList().getPlayer((Player) player.getInteractData().getLastEntity()), this.noKnockback);
                     }
                     break;
                 case PacketPlayInKeepAlive:
