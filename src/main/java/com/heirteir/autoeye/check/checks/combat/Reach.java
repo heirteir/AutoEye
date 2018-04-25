@@ -19,8 +19,7 @@ public class Reach extends Check {
         super(autoeye, "Reach");
     }
 
-    @Override
-    public boolean check(AutoEyePlayer player) {
+    @Override public boolean check(AutoEyePlayer player) {
         if (player.getInteractData().getLastEntity() != null && player.getInteractData().getLastActionType().equals(PacketPlayInUseEntity.ActionType.ATTACK) && (player.getInteractData().getLastEntity() instanceof Player)) {
             AutoEyePlayer attacked = autoeye.getAutoEyePlayerList().getPlayer((Player) player.getInteractData().getLastEntity());
             return Math.sqrt(Math.pow(attacked.getLocationData().getLocation().getX() - player.getLocationData().getLocation().getX(), 2) + Math.pow(attacked.getLocationData().getLocation().getZ() - player.getLocationData().getLocation().getZ(), 2)) > 5.5F && this.checkThreshold(player, 2, 500L);

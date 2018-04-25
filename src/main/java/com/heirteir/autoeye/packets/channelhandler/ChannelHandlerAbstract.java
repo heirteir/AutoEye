@@ -34,11 +34,11 @@ public abstract class ChannelHandlerAbstract {
     static final WrappedField networkManagerField = Reflections.getNMSClass("PlayerConnection").getFieldByName("networkManager");
     static final WrappedField playerConnectionField = Reflections.getNMSClass("EntityPlayer").getFieldByName("playerConnection");
     protected final Autoeye autoeye;
+    final Logger logger;
     final Executor addChannelHandlerExecutor;
     final Executor removeChannelHandlerExecutor;
     final String handlerKey;
     final String playerKey;
-    final Logger logger;
     private final Set<Check> combatChecks = Sets.newHashSet();
     private final Set<Check> movementChecks = Sets.newHashSet();
     private final InventoryWalk inventoryWalk;
