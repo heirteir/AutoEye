@@ -30,9 +30,9 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
 public abstract class ChannelHandlerAbstract {
-    protected final Autoeye autoeye;
     static final WrappedField networkManagerField = Reflections.getNMSClass("PlayerConnection").getFieldByName("networkManager");
     static final WrappedField playerConnectionField = Reflections.getNMSClass("EntityPlayer").getFieldByName("playerConnection");
+    protected final Autoeye autoeye;
     final Executor addChannelHandlerExecutor;
     final Executor removeChannelHandlerExecutor;
     final String handlerKey;
