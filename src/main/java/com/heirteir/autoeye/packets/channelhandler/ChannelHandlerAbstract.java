@@ -80,9 +80,6 @@ public abstract class ChannelHandlerAbstract {
         }
         if (this.autoeye.isEnabled() && packet != null && player != null && player.getPlayer() != null && player.getPlayer().isOnline()) {
             switch (PacketType.fromString(packet.getClass().getSimpleName())) {
-                case NULL:
-                    logger.sendDebugConsoleMessage(packet.getClass().getSimpleName());
-                    break;
                 case PacketPlayInWindowClick:
                     if (this.inventoryWalk.check(player)) {
                         return this.caught(player, this.inventoryWalk);
