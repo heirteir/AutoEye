@@ -38,7 +38,6 @@ public abstract class ChannelHandlerAbstract {
     final Executor removeChannelHandlerExecutor;
     final String handlerKey;
     final String playerKey;
-    final Logger logger;
     private final Set<Check> combatChecks = Sets.newHashSet();
     private final Set<Check> movementChecks = Sets.newHashSet();
     private final InventoryWalk inventoryWalk;
