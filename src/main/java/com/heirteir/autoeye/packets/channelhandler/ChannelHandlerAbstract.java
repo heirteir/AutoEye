@@ -18,7 +18,6 @@ import com.heirteir.autoeye.check.checks.movement.*;
 import com.heirteir.autoeye.packets.PacketType;
 import com.heirteir.autoeye.packets.wrappers.*;
 import com.heirteir.autoeye.player.AutoEyePlayer;
-import com.heirteir.autoeye.util.logger.Logger;
 import com.heirteir.autoeye.util.reflections.Reflections;
 import com.heirteir.autoeye.util.reflections.types.WrappedField;
 import com.heirteir.autoeye.util.vector.Vector3D;
@@ -48,7 +47,6 @@ public abstract class ChannelHandlerAbstract {
         this.removeChannelHandlerExecutor = Executors.newSingleThreadExecutor();
         this.handlerKey = "packet_handler";
         this.playerKey = "autoeye_player_handler";
-        this.logger = new Logger(autoeye);
         //combat
         this.combatChecks.add(new KillAuraRotation(this.autoeye));
         this.combatChecks.add(new Reach(this.autoeye));
