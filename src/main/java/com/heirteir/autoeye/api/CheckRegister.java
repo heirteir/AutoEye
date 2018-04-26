@@ -7,6 +7,7 @@ import com.heirteir.autoeye.check.Check;
 import com.heirteir.autoeye.check.CheckType;
 import com.heirteir.autoeye.check.checks.combat.KillAuraRotation;
 import com.heirteir.autoeye.check.checks.combat.Reach;
+import com.heirteir.autoeye.check.checks.combat.SelfHit;
 import com.heirteir.autoeye.check.checks.movement.*;
 import lombok.RequiredArgsConstructor;
 
@@ -41,6 +42,7 @@ import java.util.Map;
     public void registerDefaultChecks() {
         this.addCheck(new KillAuraRotation(this.autoeye));
         this.addCheck(new Reach(this.autoeye));
+        this.addCheck(new SelfHit(this.autoeye));
         this.addCheck(new InvalidLocation(this.autoeye));
         this.addCheck(new FastLadder(this.autoeye));
         this.addCheck(new InvalidMotion(this.autoeye));
