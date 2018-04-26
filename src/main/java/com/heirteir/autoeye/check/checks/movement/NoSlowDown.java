@@ -10,7 +10,7 @@ public class NoSlowDown extends Check {
     }
 
     @Override public boolean check(AutoEyePlayer player) {
-        if (player.isConnected() && player.getTimeData().getLastVelocity().getDifference() > 500 && player.getLocationData().isChangedPos() && !player.getPhysics().isFlying() && !player.getLocationData().isTeleported()) {
+        if (player.isConnected() && player.getTimeData().getLastVelocity().getDifference() > 500 && player.getLocationData().isChangedPos() && !player.getPhysics().isFlying()) {
             float speed = (float) Math.sqrt(Math.pow(player.getPhysics().getClientVelocity().getX() - player.getPlayer().getVelocity().getX(), 2) + Math.pow(player.getPhysics().getClientVelocity().getZ() - player.getPlayer().getVelocity().getZ(), 2));
             float speedAmplifier = (0.1F * player.getPotionEffectAmplifier("SPEED"));
             float walkSpeed = player.getPlayer().getWalkSpeed() + speedAmplifier;

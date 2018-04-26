@@ -44,6 +44,7 @@ import org.bukkit.util.NumberConversions;
     private boolean previousServerOnGround;
     private boolean hasSolidAbove;
     private boolean onIce;
+    private int teleportTicks;
 
     public LocationData(Autoeye autoeye, AutoEyePlayer player) {
         this.reset(autoeye, player);
@@ -51,6 +52,7 @@ import org.bukkit.util.NumberConversions;
 
     public void setTeleported(boolean teleported) {
         this.teleported = teleported;
+        this.teleportTicks = 3;
     }
 
     public void reset(Autoeye autoeye, AutoEyePlayer player) {
@@ -61,12 +63,15 @@ import org.bukkit.util.NumberConversions;
         this.solidBlocks = new BlockSet(this.axisAlignedBB.offset(0, -0.08F, 0, 0, 0, 0).getSolidBlocks());
     }
 
+    public void setLocation(Vector3D location) {
+        this.previousLocation = this.location;
+        this.location = location;
+    }
+
     public void update(Autoeye autoeye, AutoEyePlayer player, PacketPlayInFlying flying) {
         this.previousClientOnGround = this.clientOnGround;
         this.clientOnGround = flying.isOnGround();
         if (this.changedPos = flying.isHasPos()) {
-            this.previousLocation = this.location;
-            this.location = new Vector3D(flying.getX(), flying.getY(), flying.getZ());
             this.axisAlignedBB = new WrappedAxisAlignedBB(autoeye, player.getPlayer().getWorld(), this.location.getX(), this.location.getY(), this.location.getZ(), player.getWrappedEntity().getWidth(), player.getWrappedEntity().getLength());
             WrappedAxisAlignedBB offset = this.axisAlignedBB.offset(0, -0.001F, 0, 0, 0, 0);
             this.solidBlocks = new BlockSet(offset.getSolidBlocks());
@@ -108,8 +113,8 @@ import org.bukkit.util.NumberConversions;
             } else {
                 this.inWater = player.getTimeData().getLastInWater().getDifference() < 150;
             }
-            this.teleported = player.getTimeData().getLastTeleport().getDifference() < 100;
-            if (player.getTimeData().getSecondTick().getDifference() >= 950 && player.getTimeData().getLastTeleport().getDifference() >= 950 && this.axisAlignedBB.getSolidBlocks().size() == 0) {
+            this.teleported = --teleportTicks > 0;
+            if (player.getTimeData().getSecondTick().getDifference() >= 950 && !this.teleported && this.axisAlignedBB.getSolidBlocks().size() == 0) {
                 teleportLocation = new Vector3D(this.location.getX(), this.location.getY(), this.getLocation().getZ());
             }
         }

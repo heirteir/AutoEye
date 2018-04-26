@@ -41,8 +41,9 @@ public abstract class ChannelHandlerAbstract {
     final String handlerKey;
     final String playerKey;
     private final Set<Check> combatChecks = Sets.newHashSet();
+    private final Set<Check> preMovementChecks = Sets.newHashSet();
     private final Set<Check> movementChecks = Sets.newHashSet();
-    private final InventoryWalk inventoryWalk;
+    private final Set<Check> inventoryChecks = Sets.newHashSet();
 
     ChannelHandlerAbstract(Autoeye autoeye) {
         this.autoeye = autoeye;
@@ -55,7 +56,7 @@ public abstract class ChannelHandlerAbstract {
         this.combatChecks.add(new Reach(this.autoeye));
         //movement
         this.movementChecks.add(new FastLadder(this.autoeye));
-        this.movementChecks.add(new InvalidLocation(this.autoeye));
+        this.preMovementChecks.add(new InvalidLocation(this.autoeye));
         this.movementChecks.add(new InvalidMotion(this.autoeye));
         this.movementChecks.add(new NoWeb(this.autoeye));
         this.movementChecks.add(new SlimeJump(this.autoeye));
@@ -66,7 +67,7 @@ public abstract class ChannelHandlerAbstract {
         this.movementChecks.add(new NoSlowDown(this.autoeye));
         this.movementChecks.add(new InvalidPitch(this.autoeye));
         //inventory
-        this.inventoryWalk = new InventoryWalk(this.autoeye);
+        this.inventoryChecks.add(new InventoryWalk(this.autoeye));
     }
 
     public boolean run(AutoEyePlayer player, Object packet) {
@@ -81,12 +82,23 @@ public abstract class ChannelHandlerAbstract {
         if (this.autoeye.isEnabled() && packet != null && player != null && player.getPlayer() != null && player.getPlayer().isOnline()) {
             switch (PacketType.fromString(packet.getClass().getSimpleName())) {
                 case PacketPlayInWindowClick:
-                    if (this.inventoryWalk.check(player)) {
-                        return this.caught(player, this.inventoryWalk);
+                    for (Check check : this.inventoryChecks) {
+                        if (check.check(player)) {
+                            return this.caught(player, check);
+                        }
                     }
                     break;
                 case PacketPlayInFlying:
-                    player.update(this.autoeye, new PacketPlayInFlying(packet));
+                    PacketPlayInFlying packetPlayInFlying = new PacketPlayInFlying(packet);
+                    if (packetPlayInFlying.isHasPos()) {
+                        player.getLocationData().setLocation(new Vector3D(packetPlayInFlying.getX(), packetPlayInFlying.getY(), packetPlayInFlying.getZ()));
+                    }
+                    for (Check check : this.preMovementChecks) {
+                        if (check.check(player)) {
+                            return this.caught(player, check);
+                        }
+                    }
+                    player.update(this.autoeye, packetPlayInFlying);
                     for (Check check : this.movementChecks) {
                         if (check.check(player)) {
                             return this.caught(player, check);
@@ -115,7 +127,6 @@ public abstract class ChannelHandlerAbstract {
                     player.getTimeData().getLastOutKeepAlive().update();
                     break;
                 case PacketPlayOutPosition:
-                    player.getTimeData().getLastTeleport().update();
                     player.getLocationData().setTeleported(true);
                     player.getLocationData().reset(this.autoeye, player);
                     player.getPhysics().reset(player);

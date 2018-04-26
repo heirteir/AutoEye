@@ -29,7 +29,7 @@ import java.util.Set;
 
 @RequiredArgsConstructor public class WrappedAxisAlignedBB {
     private static final WrappedClass materialClass = Reflections.getNMSClass("Material");
-    static final WrappedMethod getHandleMethod = Reflections.getCBClass("CraftWorld").getMethod("getHandle");
+    private static final WrappedMethod getHandleMethod = Reflections.getCBClass("CraftWorld").getMethod("getHandle");
     private static final WrappedMethod getMaterialsMethod = Reflections.getNMSClass("World").getMethod("a", Reflections.getNMSClass("AxisAlignedBB").getParent(), materialClass.getParent());
     private static final WrappedMethod containsLiquidMethod = Reflections.getNMSClass("World").getMethod("containsLiquid", Reflections.getNMSClass("AxisAlignedBB").getParent());
     private static final WrappedConstructor axisAlignedBBConstructor = Reflections.getNMSClass("AxisAlignedBB").getConstructor(double.class, double.class, double.class, double.class, double.class, double.class);

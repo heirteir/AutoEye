@@ -70,17 +70,17 @@ import lombok.Setter;
             this.clientAcceleration = new Vector3D(this.clientVelocity.getX() - this.clientAcceleration.getX(), this.clientVelocity.getY() - this.clientAcceleration.getY(), this.clientVelocity.getZ() - this.clientAcceleration.getZ());
             this.calculatedYAcceleration = this.calculatedYVelocity;
             this.startVelocity = this.hasVelocity;
-            if (this.hasVelocity) {
+            if (this.hasVelocity && this.serverVelocity.getY() > this.jumpVelocity) {
                 this.calculatedYVelocity = this.serverVelocity.getY();
             } else {
                 this.offGroundTicks++;
-                if (this.flying || player.getLocationData().isTeleported() || player.getLocationData().isInWater() || player.getLocationData().isOnLadder() || player.getLocationData().isInWeb() || player.getTimeData().getLastFlying().getDifference() < 1000) {
+                if (this.flying || player.getLocationData().isTeleported() || (this.hasVelocity && player.getPhysics().getClientVelocity().getY() < this.jumpVelocity) || player.getLocationData().isTeleported() || player.getLocationData().isInWater() || player.getLocationData().isOnLadder() || player.getLocationData().isInWeb() || player.getTimeData().getLastFlying().getDifference() < 1000) {
                     this.calculatedYVelocity = this.clientVelocity.getY();
-                } else if (player.getLocationData().isServerOnGround()) {
+                } else if (player.getLocationData().isClientOnGround() || player.getLocationData().isServerOnGround()) {
                     this.calculatedYVelocity = 0;
                     this.offGroundTicks = 0;
                 } else {
-                    if (!this.previousVelocity && player.getLocationData().isPreviousServerOnGround() && this.clientVelocity.getY() > 0) {
+                    if ((player.getLocationData().isPreviousClientOnGround() || player.getLocationData().isPreviousServerOnGround()) && this.clientVelocity.getY() > 0) {
                         this.calculatedYVelocity = jumpVelocity;
                     } else {
                         this.calculatedYVelocity -= 0.08F;
@@ -92,7 +92,7 @@ import lombok.Setter;
                 }
             }
             this.calculatedYAcceleration = this.calculatedYVelocity - this.calculatedYAcceleration;
-            if (player.getTimeData().getLastTeleport().getDifference() < 800 || player.getTimeData().getSecondTick().getDifference() >= 1000L) {
+            if (player.getLocationData().isTeleported() || player.getTimeData().getSecondTick().getDifference() >= 1000L) {
                 player.getTimeData().getSecondTick().update();
                 this.movesPerSecond = 0;
             }
