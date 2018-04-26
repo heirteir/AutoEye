@@ -10,11 +10,12 @@ package com.heirteir.autoeye.check.checks.movement;
 
 import com.heirteir.autoeye.Autoeye;
 import com.heirteir.autoeye.check.Check;
+import com.heirteir.autoeye.check.CheckType;
 import com.heirteir.autoeye.player.AutoEyePlayer;
 
 public class NoWeb extends Check {
     public NoWeb(Autoeye autoeye) {
-        super(autoeye, "No Web (Y)");
+        super(autoeye, CheckType.MOVE_EVENT, "No Web (Y)");
     }
 
     @Override public boolean check(AutoEyePlayer player) {

@@ -10,11 +10,12 @@ package com.heirteir.autoeye.check.checks.movement;
 
 import com.heirteir.autoeye.Autoeye;
 import com.heirteir.autoeye.check.Check;
+import com.heirteir.autoeye.check.CheckType;
 import com.heirteir.autoeye.player.AutoEyePlayer;
 
 public class Speed extends Check {
     public Speed(Autoeye autoeye) {
-        super(autoeye, "Speed");
+        super(autoeye, CheckType.MOVE_EVENT, "Speed");
     }
 
     @Override public boolean check(AutoEyePlayer player) {

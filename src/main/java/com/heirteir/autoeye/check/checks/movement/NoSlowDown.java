@@ -2,11 +2,12 @@ package com.heirteir.autoeye.check.checks.movement;
 
 import com.heirteir.autoeye.Autoeye;
 import com.heirteir.autoeye.check.Check;
+import com.heirteir.autoeye.check.CheckType;
 import com.heirteir.autoeye.player.AutoEyePlayer;
 
 public class NoSlowDown extends Check {
     public NoSlowDown(Autoeye autoeye) {
-        super(autoeye, "NoSlowDown");
+        super(autoeye, CheckType.MOVE_EVENT, "NoSlowDown");
     }
 
     @Override public boolean check(AutoEyePlayer player) {

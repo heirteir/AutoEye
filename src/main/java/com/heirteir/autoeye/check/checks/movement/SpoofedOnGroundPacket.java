@@ -10,11 +10,12 @@ package com.heirteir.autoeye.check.checks.movement;
 
 import com.heirteir.autoeye.Autoeye;
 import com.heirteir.autoeye.check.Check;
+import com.heirteir.autoeye.check.CheckType;
 import com.heirteir.autoeye.player.AutoEyePlayer;
 
 public class SpoofedOnGroundPacket extends Check {
     public SpoofedOnGroundPacket(Autoeye autoeye) {
-        super(autoeye, "Spoofed on Ground");
+        super(autoeye, CheckType.MOVE_EVENT, "Spoofed on Ground");
     }
 
     @Override public boolean check(AutoEyePlayer player) {

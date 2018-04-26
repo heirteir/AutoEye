@@ -10,13 +10,14 @@ package com.heirteir.autoeye.check.checks.combat;
 
 import com.heirteir.autoeye.Autoeye;
 import com.heirteir.autoeye.check.Check;
+import com.heirteir.autoeye.check.CheckType;
 import com.heirteir.autoeye.packets.wrappers.PacketPlayInUseEntity;
 import com.heirteir.autoeye.player.AutoEyePlayer;
 import org.bukkit.entity.Player;
 
 public class Reach extends Check {
     public Reach(Autoeye autoeye) {
-        super(autoeye, "Reach");
+        super(autoeye, CheckType.ENTITY_USE_EVENT, "Reach");
     }
 
     @Override public boolean check(AutoEyePlayer player) {

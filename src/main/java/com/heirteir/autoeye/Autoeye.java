@@ -8,6 +8,7 @@
  */
 package com.heirteir.autoeye;
 
+import com.heirteir.autoeye.api.CheckRegister;
 import com.heirteir.autoeye.packets.ChannelInjector;
 import com.heirteir.autoeye.permissions.PermissionsManager;
 import com.heirteir.autoeye.player.AutoEyePlayerList;
@@ -25,6 +26,7 @@ import org.bukkit.plugin.java.JavaPlugin;
     private final AutoEyePlayerList autoEyePlayerList;
     private final MathUtil mathUtil;
     private final PermissionsManager permissionsManager;
+    private final CheckRegister checkRegister;
     private boolean running = false;
 
     public Autoeye() {
@@ -34,11 +36,13 @@ import org.bukkit.plugin.java.JavaPlugin;
             this.channelInjector = new ChannelInjector();
             this.mathUtil = new MathUtil();
             this.permissionsManager = new PermissionsManager();
+            this.checkRegister = new CheckRegister(this);
         } else {
             this.channelInjector = null;
             this.autoEyePlayerList = null;
             this.mathUtil = null;
             this.permissionsManager = null;
+            this.checkRegister = null;
         }
     }
 
@@ -51,11 +55,13 @@ import org.bukkit.plugin.java.JavaPlugin;
         this.running = true;
         this.channelInjector.inject(this);
         this.autoEyePlayerList.createListener();
+        this.checkRegister.registerDefaultChecks();
     }
 
     @Override public void onDisable() {
         if (this.autoEyePlayerList != null) {
             this.autoEyePlayerList.unregister();
+            this.checkRegister.unregisterChecks();
         }
         this.running = false;
     }

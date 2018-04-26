@@ -55,5 +55,6 @@
       </library>
     </orderEntry>
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.projectlombok:lombok:1.16.16" level="project" />
+    <orderEntry type="library" name="Maven: org.jetbrains:annotations:16.0.1" level="project" />
   </component>
 </module>

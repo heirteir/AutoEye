@@ -10,13 +10,14 @@ package com.heirteir.autoeye.check.checks.combat;
 
 import com.heirteir.autoeye.Autoeye;
 import com.heirteir.autoeye.check.Check;
+import com.heirteir.autoeye.check.CheckType;
 import com.heirteir.autoeye.packets.wrappers.PacketPlayInUseEntity;
 import com.heirteir.autoeye.player.AutoEyePlayer;
 import com.heirteir.autoeye.util.vector.Vector3D;
 
 public class KillAuraRotation extends Check {
     public KillAuraRotation(Autoeye autoeye) {
-        super(autoeye, "Kill Aura (Rotation)");
+        super(autoeye, CheckType.ENTITY_USE_EVENT, "Kill Aura (Rotation)");
     }
 
     @Override public boolean check(AutoEyePlayer player) {

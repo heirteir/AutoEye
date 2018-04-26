@@ -2,6 +2,7 @@ package com.heirteir.autoeye.check.checks.movement;
 
 import com.heirteir.autoeye.Autoeye;
 import com.heirteir.autoeye.check.Check;
+import com.heirteir.autoeye.check.CheckType;
 import com.heirteir.autoeye.player.AutoEyePlayer;
 import com.heirteir.autoeye.util.reflections.Reflections;
 import com.heirteir.autoeye.util.reflections.types.WrappedConstructor;
@@ -14,7 +15,7 @@ public class InvalidLocation extends Check {
     private final WrappedConstructor blockPosition = Reflections.getNMSClass("BlockPosition").getConstructor(int.class, int.class, int.class);
 
     public InvalidLocation(Autoeye autoeye) {
-        super(autoeye, "Invalid Location");
+        super(autoeye, CheckType.PRE_MOVE_EVENT, "Invalid Location");
     }
 
     @Override public boolean check(AutoEyePlayer player) {

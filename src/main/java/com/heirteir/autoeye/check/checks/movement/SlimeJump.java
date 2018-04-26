@@ -10,11 +10,12 @@ package com.heirteir.autoeye.check.checks.movement;
 
 import com.heirteir.autoeye.Autoeye;
 import com.heirteir.autoeye.check.Check;
+import com.heirteir.autoeye.check.CheckType;
 import com.heirteir.autoeye.player.AutoEyePlayer;
 
 public class SlimeJump extends Check {
     public SlimeJump(Autoeye autoeye) {
-        super(autoeye, "Slime Jump");
+        super(autoeye, CheckType.MOVE_EVENT, "Slime Jump");
     }
 
     @Override public boolean check(AutoEyePlayer player) {

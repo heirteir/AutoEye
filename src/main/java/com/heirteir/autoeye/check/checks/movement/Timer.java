@@ -10,11 +10,12 @@ package com.heirteir.autoeye.check.checks.movement;
 
 import com.heirteir.autoeye.Autoeye;
 import com.heirteir.autoeye.check.Check;
+import com.heirteir.autoeye.check.CheckType;
 import com.heirteir.autoeye.player.AutoEyePlayer;
 
 public class Timer extends Check {
     public Timer(Autoeye autoeye) {
-        super(autoeye, "Timer");
+        super(autoeye, CheckType.MOVE_EVENT, "Timer");
     }
 
     @Override public boolean check(AutoEyePlayer player) {

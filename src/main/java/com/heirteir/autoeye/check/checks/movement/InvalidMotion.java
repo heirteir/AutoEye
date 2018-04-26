@@ -10,11 +10,12 @@ package com.heirteir.autoeye.check.checks.movement;
 
 import com.heirteir.autoeye.Autoeye;
 import com.heirteir.autoeye.check.Check;
+import com.heirteir.autoeye.check.CheckType;
 import com.heirteir.autoeye.player.AutoEyePlayer;
 
 public class InvalidMotion extends Check {
     public InvalidMotion(Autoeye autoeye) {
-        super(autoeye, "Invalid Motion");
+        super(autoeye, CheckType.MOVE_EVENT, "Invalid Motion");
     }
 
     @Override public boolean check(AutoEyePlayer player) {
