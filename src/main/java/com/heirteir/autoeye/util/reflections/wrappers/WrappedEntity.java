@@ -18,9 +18,9 @@ import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
 
 @Getter public class WrappedEntity {
-    private static final boolean elytra = !Autoeye.getVersion().equals(Version.SEVEN) && !Autoeye.getVersion().equals(Version.EIGHT);
+    private static final boolean elytraEnabled = !Autoeye.getVersion().equals(Version.SEVEN) && !Autoeye.getVersion().equals(Version.EIGHT);
     private static final WrappedMethod getHandleMethod = Reflections.getCBClass("entity.CraftEntity").getMethod("getHandle");
-    private static final WrappedMethod getFlag = Reflections.getCBClass("entity.CraftEntity").getMethod("getFlag", int.class);
+    private static final WrappedMethod getFlag = Reflections.getNMSClass("Entity").getMethod("getFlag", int.class);
     private static final WrappedField widthField = Reflections.getNMSClass("Entity").getFieldByName("width");
     private static final WrappedField lengthField = Reflections.getNMSClass("Entity").getFieldByName("length");
     private final Autoeye autoeye;
@@ -37,6 +37,6 @@ import org.bukkit.entity.LivingEntity;
     }
 
     public boolean isGliding() {
-        return elytra && (boolean) getFlag.invoke(rawEntity, 7);
+        return elytraEnabled && (boolean) getFlag.invoke(rawEntity, 7);
     }
 }

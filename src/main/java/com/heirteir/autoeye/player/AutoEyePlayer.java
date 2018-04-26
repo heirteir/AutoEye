@@ -48,7 +48,7 @@ import java.util.Map;
 
     public void update(Autoeye autoeye, PacketPlayInFlying packet) {
         this.locationData.update(autoeye, this, packet);
-        this.physics.update(this);
+        this.physics.update(autoeye, this);
         this.connected = this.connected || this.timeData.getConnected().getDifference() > 2000;
     }
 

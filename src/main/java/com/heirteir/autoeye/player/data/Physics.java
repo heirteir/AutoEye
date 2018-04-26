@@ -8,12 +8,16 @@
  */
 package com.heirteir.autoeye.player.data;
 
+import com.heirteir.autoeye.Autoeye;
 import com.heirteir.autoeye.player.AutoEyePlayer;
+import com.heirteir.autoeye.util.vector.Vector2D;
 import com.heirteir.autoeye.util.vector.Vector3D;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter public class Physics {
+    private Vector2D angleVelocity;
+    private Vector2D angleAcceleration;
     @Setter private Vector3D serverVelocity;
     private Vector3D clientVelocity;
     private Vector3D clientAcceleration;
@@ -33,6 +37,8 @@ import lombok.Setter;
     }
 
     public void reset(AutoEyePlayer player) {
+        this.angleVelocity = new Vector2D(0, 0);
+        this.angleAcceleration = new Vector2D(0, 0);
         this.serverVelocity = new Vector3D(0, 0, 0);
         this.clientVelocity = new Vector3D(0, 0, 0);
         this.clientAcceleration = new Vector3D(0, 0, 0);
@@ -45,7 +51,12 @@ import lombok.Setter;
         this.movesPerSecond = 0;
     }
 
-    public void update(AutoEyePlayer player) {
+    public void update(Autoeye autoeye, AutoEyePlayer player) {
+        if (player.getLocationData().isChangedLook()) {
+            this.angleAcceleration = this.angleVelocity;
+            this.angleVelocity = new Vector2D(autoeye.getMathUtil().angleDistance(player.getLocationData().getDirection().getX(), player.getLocationData().getPreviousDirection().getX()), autoeye.getMathUtil().angleDistance(player.getLocationData().getDirection().getY(), player.getLocationData().getPreviousDirection().getY()));
+            this.angleAcceleration = this.angleVelocity.subtract(this.angleAcceleration);
+        }
         if (player.getLocationData().isChangedPos()) {
             if (this.flying || player.getWrappedEntity().isGliding()) {
                 player.getTimeData().getLastFlying().update();
@@ -65,11 +76,11 @@ import lombok.Setter;
                 this.offGroundTicks++;
                 if (this.flying || player.getLocationData().isTeleported() || player.getLocationData().isInWater() || player.getLocationData().isOnLadder() || player.getLocationData().isInWeb() || player.getTimeData().getLastFlying().getDifference() < 1000) {
                     this.calculatedYVelocity = this.clientVelocity.getY();
-                } else if (player.getLocationData().isOnGround()) {
+                } else if (player.getLocationData().isServerOnGround()) {
                     this.calculatedYVelocity = 0;
                     this.offGroundTicks = 0;
                 } else {
-                    if (!this.previousVelocity && player.getLocationData().isPreviousOnGround() && this.clientVelocity.getY() > 0) {
+                    if (!this.previousVelocity && player.getLocationData().isPreviousServerOnGround() && this.clientVelocity.getY() > 0) {
                         this.calculatedYVelocity = jumpVelocity;
                     } else {
                         this.calculatedYVelocity -= 0.08F;

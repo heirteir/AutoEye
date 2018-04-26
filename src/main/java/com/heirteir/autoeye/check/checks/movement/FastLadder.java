@@ -19,7 +19,7 @@ public class FastLadder extends Check {
 
     @Override public boolean check(AutoEyePlayer player) {
         if (player.isConnected() && player.getTimeData().getLastVelocity().getDifference() > 500 && player.getLocationData().isChangedPos() && !player.getPhysics().isFlying() && !player.getLocationData().isTeleported() && player.getLocationData().isOnLadder()) {
-            if (player.getLocationData().isOnGround() || player.getPhysics().getOffGroundTicks() <= 4) {
+            if (player.getLocationData().isClientOnGround() || player.getPhysics().getOffGroundTicks() <= 4) {
                 return player.getPhysics().getClientVelocity().getY() > player.getPhysics().getJumpVelocity() && (!(!player.getPhysics().isHasVelocity() && player.getPlayer().getVelocity().getY() <= player.getPhysics().getClientVelocity().getY()) || this.checkThreshold(player, 3, 100L));
             } else {
                 float absVelocity = Math.abs(player.getPhysics().getClientVelocity().getY());

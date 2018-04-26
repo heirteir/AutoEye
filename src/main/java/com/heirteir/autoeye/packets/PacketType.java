@@ -11,7 +11,7 @@ package com.heirteir.autoeye.packets;
 import lombok.Getter;
 
 @Getter public enum PacketType {
-    NULL(), PacketPlayInFlying("PacketPlayInPositionLook", "PacketPlayInPosition", "PacketPlayInLook"), PacketPlayInWindowClick, PacketPlayOutPosition, PacketPlayInKeepAlive, PacketPlayOutKeepAlive, PacketPlayInAbilities, PacketPlayInUseEntity, PacketPlayOutEntityVelocity, PacketPlayInBlockPlace;
+    NULL(), PacketPlayInFlying("PacketPlayInPositionLook", "PacketPlayInPosition", "PacketPlayInLook"), PacketPlayInWindowClick, PacketPlayOutPosition, PacketPlayInKeepAlive, PacketPlayOutKeepAlive, PacketPlayInAbilities, PacketPlayInUseEntity, PacketPlayOutEntityVelocity;
     private final String[] children;
 
     PacketType(String... types) {

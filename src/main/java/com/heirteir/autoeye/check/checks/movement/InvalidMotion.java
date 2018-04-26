@@ -21,10 +21,12 @@ public class InvalidMotion extends Check {
         if (player.isConnected() && player.getTimeData().getLastVelocity().getDifference() > 500) {
             if (Math.abs(player.getPhysics().getClientVelocity().getY()) > 3.92) {
                 return true;
-            } else if (player.getLocationData().isChangedPos() && !player.getPhysics().isFlying() && !player.getLocationData().isTeleported() && !player.getLocationData().isOnPiston() && !player.getLocationData().isOnSlime() && !player.getLocationData().isInWater() && !player.getLocationData().isOnGround() && !player.getLocationData().isOnStairs() && !player.getLocationData().isOnLadder() && !player.getLocationData().isHasSolidAbove() && player.getTimeData().getLastInWeb().getDifference() > 150L) {
+            } else if (player.getLocationData().isChangedPos() && !player.getPhysics().isFlying() && !player.getLocationData().isTeleported() && !player.getLocationData().isOnPiston() && !player.getLocationData().isOnSlime() && !player.getLocationData().isInWater() && !player.getLocationData().isClientOnGround() && !player.getLocationData().isOnStairs() && !player.getLocationData().isOnLadder() && !player.getLocationData().isHasSolidAbove() && player.getTimeData().getLastInWeb().getDifference() > 150L) {
                 if (player.getPhysics().getClientVelocity().getY() > player.getPhysics().getCalculatedYVelocity() + 0.001F && Math.abs(player.getPhysics().getClientAcceleration().getY() - player.getPhysics().getCalculatedYAcceleration()) > 0.002) {
+                    System.out.println("1: " + player.getPhysics().getClientVelocity().getY() + " " + player.getPhysics().getCalculatedYVelocity());
                     return (player.getPhysics().getClientVelocity().getY() == 0 && player.getTimeData().getLastTeleport().getDifference() < 1000 && this.checkThreshold(player, 5, 500L)) || !((player.getPhysics().getClientVelocity().getY() == 0) || (player.getPhysics().getCalculatedYVelocity() > 0 && player.getPhysics().getCalculatedYVelocity() < 0.04)) || this.checkThreshold(player, 2, 100L);
                 } else {
+                    System.out.println(player.getPhysics().getClientVelocity().getY() + " " + player.getPhysics().getCalculatedYVelocity());
                     return Math.abs(player.getPhysics().getClientVelocity().getY() - player.getPhysics().getCalculatedYVelocity()) > 0.02 && Math.abs(player.getPhysics().getClientAcceleration().getY() - player.getPhysics().getCalculatedYAcceleration()) > 0.003 && ((player.getPhysics().getClientVelocity().getY() != -0.07839966F) || this.checkThreshold(player, 2, 100L));
                 }
             }

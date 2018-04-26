@@ -13,4 +13,16 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor @Getter public class Vector2D {
     private final float x, y;
+
+    public Vector2D subtract(Vector2D from) {
+        return new Vector2D(this.x - from.getX(), this.y - from.getY());
+    }
+
+    public float length() {
+        return (float) Math.sqrt(this.x * this.x + this.y * this.y);
+    }
+
+    @Override public String toString() {
+        return "x: " + x + ", y: " + y;
+    }
 }

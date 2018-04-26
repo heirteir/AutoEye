@@ -31,7 +31,6 @@ import org.bukkit.util.NumberConversions;
     private boolean onSlime;
     private boolean inWeb;
     private boolean onLadder;
-    private boolean serverOnGround;
     private boolean onPiston;
     private Vector3D location;
     private Vector3D previousLocation;
@@ -39,8 +38,10 @@ import org.bukkit.util.NumberConversions;
     private Vector2D previousDirection;
     private boolean changedPos;
     private boolean changedLook;
-    private boolean onGround;
-    private boolean previousOnGround;
+    private boolean clientOnGround;
+    private boolean previousClientOnGround;
+    private boolean serverOnGround;
+    private boolean previousServerOnGround;
     private boolean hasSolidAbove;
     private boolean onIce;
 
@@ -56,19 +57,20 @@ import org.bukkit.util.NumberConversions;
         this.location = this.previousLocation = new Vector3D((float) player.getPlayer().getLocation().getX(), (float) player.getPlayer().getLocation().getY(), (float) player.getPlayer().getLocation().getZ());
         this.direction = this.previousDirection = new Vector2D(player.getPlayer().getLocation().getYaw(), player.getPlayer().getLocation().getPitch());
         this.axisAlignedBB = new WrappedAxisAlignedBB(autoeye, player.getPlayer().getWorld(), this.location.getX(), this.location.getY(), this.location.getZ(), player.getWrappedEntity().getWidth(), player.getWrappedEntity().getLength());
-        teleportLocation = new Vector3D(this.location.getX(), this.location.getY(), this.getLocation().getZ());
+        teleportLocation = new Vector3D(this.location.getX(), (float) (this.location.getY() % 1 >= .5 ? Math.ceil(this.location.getY()) : Math.floor(this.location.getY())), this.getLocation().getZ());
         this.solidBlocks = new BlockSet(this.axisAlignedBB.offset(0, -0.08F, 0, 0, 0, 0).getSolidBlocks());
     }
 
     public void update(Autoeye autoeye, AutoEyePlayer player, PacketPlayInFlying flying) {
-        this.previousOnGround = this.onGround;
-        this.onGround = flying.isOnGround();
+        this.previousClientOnGround = this.clientOnGround;
+        this.clientOnGround = flying.isOnGround();
         if (this.changedPos = flying.isHasPos()) {
             this.previousLocation = this.location;
             this.location = new Vector3D(flying.getX(), flying.getY(), flying.getZ());
             this.axisAlignedBB = new WrappedAxisAlignedBB(autoeye, player.getPlayer().getWorld(), this.location.getX(), this.location.getY(), this.location.getZ(), player.getWrappedEntity().getWidth(), player.getWrappedEntity().getLength());
-            WrappedAxisAlignedBB offset = this.axisAlignedBB.offset(0, -0.08F, 0, 0, 0, 0);
+            WrappedAxisAlignedBB offset = this.axisAlignedBB.offset(0, -0.001F, 0, 0, 0, 0);
             this.solidBlocks = new BlockSet(offset.getSolidBlocks());
+            this.previousServerOnGround = this.serverOnGround;
             this.serverOnGround = this.solidBlocks.getBlocks().size() > 0;
             if (this.solidBlocks.getBlocks().size() != 0) {
                 this.groundBlocks = this.solidBlocks;

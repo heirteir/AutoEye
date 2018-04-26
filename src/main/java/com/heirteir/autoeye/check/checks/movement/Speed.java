@@ -24,7 +24,7 @@ public class Speed extends Check {
             float walkSpeed;
             float angleDifference = this.autoeye.getMathUtil().angleDistance((float) (Math.atan2(player.getPhysics().getClientVelocity().getX(), player.getPhysics().getClientVelocity().getZ()) * (180F / Math.PI)), (float) (Math.atan2(player.getPlayer().getEyeLocation().getDirection().getX(), player.getPlayer().getEyeLocation().getDirection().getZ()) * (180F / Math.PI)));
             float safeAngleDifference = (angleDifference > 0 && angleDifference < 46) || angleDifference > 90 && angleDifference < 170 ? angleDifference > 46 ? angleDifference / (angleDifference / 45F) : angleDifference : 0;
-            if (!player.getLocationData().isOnGround() && player.getLocationData().isInWater()) {
+            if (!player.getLocationData().isClientOnGround() && player.getLocationData().isInWater()) {
                 walkSpeed = player.getPlayer().getWalkSpeed() * 0.8F;
                 walkSpeed += (0.1 * player.getEnchantmentEffectAmplifier("DEPTH_STRIDER"));
             } else if (player.getLocationData().isInWeb()) {
@@ -39,7 +39,7 @@ public class Speed extends Check {
                 return true;
             } else if (angleDifference > 80 && player.getPlayer().isSprinting() && speed > .27 && !player.getPhysics().isHasVelocity()) {
                 return this.checkThreshold(player, 3, 100L);
-            } else if (!player.getLocationData().isHasSolidAbove() && serverVelocity > walkSpeed * 0.58 && serverVelocity < walkSpeed && !player.getLocationData().isOnGround() && !player.getLocationData().isInWater()) {
+            } else if (!player.getLocationData().isHasSolidAbove() && serverVelocity > walkSpeed * 0.58 && serverVelocity < walkSpeed && !player.getLocationData().isClientOnGround() && !player.getLocationData().isInWater()) {
                 if (player.getLocationData().isOnIce()) {
                     if (speed > walkSpeed * 2.2) {
                         return this.checkThreshold(player, 3, 500L);
@@ -55,7 +55,7 @@ public class Speed extends Check {
                 } else if (speed > walkSpeed + (safeAngleDifference * 0.01F)) {
                     return this.checkThreshold(player, 4, 250L);
                 }
-            } else if (player.getLocationData().isInWater() || (player.getLocationData().isOnGround() && player.getPhysics().getCalculatedYAcceleration() <= 0 && serverVelocity == 0)) {
+            } else if (player.getLocationData().isInWater() || (player.getLocationData().isClientOnGround() && player.getPhysics().getCalculatedYAcceleration() <= 0 && serverVelocity == 0)) {
                 if (player.getLocationData().isInWater()) {
                     if (speed > walkSpeed * 3) {
                         return true;
