@@ -19,7 +19,7 @@ public class NoWeb extends Check {
     }
 
     @Override public boolean check(AutoEyePlayer player) {
-        if (player.isConnected() && player.getTimeData().getLastVelocity().getDifference() > 500 && player.getLocationData().isChangedPos() && !player.getPhysics().isFlying() && !player.getLocationData().isClientOnGround() && player.getLocationData().isInWeb()) {
+        if (player.isConnected() && player.getTimeData().getLastVelocity().getAmount() == 0 && player.getLocationData().isChangedPos() && player.getTimeData().getLastFlying().getAmount() == 0 && !player.getLocationData().isClientOnGround() && player.getLocationData().isInWeb()) {
             float absClientVelocity = Math.abs(player.getPhysics().getClientVelocity().getY());
             float absServerVelocity = (float) Math.abs(player.getPlayer().getVelocity().getY());
             return (absClientVelocity > 0.1 || absClientVelocity == 0) && ((absServerVelocity > 0.1 && absClientVelocity > absServerVelocity * 2) || this.checkThreshold(player, 3, 100L));

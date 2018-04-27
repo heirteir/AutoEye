@@ -29,6 +29,7 @@ public abstract class Check {
         this.name = name;
         this.permission = this.autoeye.getPermissionsManager().addParent(this.autoeye.getPermissionsManager().getBypass(), this.autoeye.getPermissionsManager().createPermission("autoeye.bypass." + StringUtils.replace(StringUtils.replace(StringUtils.replace(this.name, " ", "_"), "(", ""), ")", "").toLowerCase()));
         this.enabled = true;
+        this.revert = true;
     }
 
     public abstract boolean check(AutoEyePlayer player);

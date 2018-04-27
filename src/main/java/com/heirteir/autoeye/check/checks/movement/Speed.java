@@ -19,7 +19,7 @@ public class Speed extends Check {
     }
 
     @Override public boolean check(AutoEyePlayer player) {
-        if (player.isConnected() && player.getTimeData().getLastVelocity().getDifference() > 500 && player.getTimeData().getLastVelocity().getDifference() > 500 && player.getLocationData().isChangedPos() && !player.getPhysics().isFlying()) {
+        if (player.isConnected() && player.getTimeData().getLastVelocity().getAmount() == 0 && player.getLocationData().isChangedPos() && player.getTimeData().getLastFlying().getAmount() == 0) {
             float speed = (float) Math.sqrt(Math.pow(player.getPhysics().getClientVelocity().getX() - player.getPlayer().getVelocity().getX(), 2) + Math.pow(player.getPhysics().getClientVelocity().getZ() - player.getPlayer().getVelocity().getZ(), 2));
             float serverVelocity = (float) Math.sqrt(Math.pow(player.getPlayer().getVelocity().getX(), 2) + Math.pow(player.getPlayer().getVelocity().getZ(), 2));
             float walkSpeed;

@@ -63,8 +63,8 @@ public abstract class ChannelHandlerAbstract {
                     if (packetPlayInFlying.isHasPos()) {
                         player.getLocationData().setLocation(new Vector3D(packetPlayInFlying.getX(), packetPlayInFlying.getY(), packetPlayInFlying.getZ()));
                     }
-                    if (this.runChecks(player, CheckType.PRE_MOVE_EVENT)) {
-                        return true;
+                    if (!this.runChecks(player, CheckType.PRE_MOVE_EVENT)) {
+                        return false;
                     }
                     player.update(this.autoeye, packetPlayInFlying);
                     return this.runChecks(player, CheckType.MOVE_EVENT);
@@ -85,7 +85,7 @@ public abstract class ChannelHandlerAbstract {
                     player.getTimeData().getLastOutKeepAlive().update();
                     break;
                 case PacketPlayOutPosition:
-                    player.getLocationData().setTeleported(true);
+                    player.getLocationData().setTeleported(player, true);
                     player.getLocationData().reset(this.autoeye, player);
                     player.getPhysics().reset(player);
                     break;
@@ -103,7 +103,7 @@ public abstract class ChannelHandlerAbstract {
         }
         return true;
     }
-    
+
     private boolean runChecks(AutoEyePlayer player, CheckType type) {
         for (Check check : this.autoeye.getCheckRegister().getCheckList(type)) {
             if (check.isEnabled() && !player.getPlayer().hasPermission(check.getPermission()) && check.check(player)) {

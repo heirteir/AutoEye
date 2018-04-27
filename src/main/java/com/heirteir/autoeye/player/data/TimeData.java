@@ -8,26 +8,44 @@
  */
 package com.heirteir.autoeye.player.data;
 
+import com.heirteir.autoeye.player.AutoEyePlayer;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
 @Getter public class TimeData {
-    private final TimeStore lastInWater = new TimeStore();
-    private final TimeStore lastFlying = new TimeStore();
-    private final TimeStore lastInWeb = new TimeStore();
-    private final TimeStore lastOnLadder = new TimeStore();
-    private final TimeStore lastOnPiston = new TimeStore();
-    private final TimeStore lastUseEntity = new TimeStore();
-    private final TimeStore lastSolidAbove = new TimeStore();
-    private final TimeStore secondTick = new TimeStore();
+    private final TimeTick lastInWater = new TimeTick(3);
+    private final TimeTick lastFlying = new TimeTick(20);
+    private final TimeTick lastInWeb = new TimeTick(3);
+    private final TimeTick lastOnLadder = new TimeTick(3);
+    private final TimeTick lastOnPiston = new TimeTick(3);
+    private final TimeTick lastSolidAbove = new TimeTick(5);
+    private final TimeTick lastVelocity = new TimeTick(2);
+    private final TimeTick lastOnStairs = new TimeTick(4);
+    private final TimeTick lastTeleport = new TimeTick(4);
     private final TimeStore connected = new TimeStore();
+    private final TimeStore lastMove = new TimeStore();
+    private final TimeStore lastUseEntity = new TimeStore();
+    private final TimeStore secondTick = new TimeStore();
     private final TimeStore lastInKeepAlive = new TimeStore();
     private final TimeStore lastOutKeepAlive = new TimeStore();
-    private final TimeStore lastVelocity = new TimeStore();
-    private final TimeStore lastOnStairs = new TimeStore();
-    private final TimeStore lastMove = new TimeStore();
 
     public long getDifference(long a, long b) {
         return b - a;
+    }
+
+    public void update(AutoEyePlayer player) {
+        if (player.getLocationData().isChangedPos()) {
+            this.lastInWater.decrement();
+            this.lastFlying.decrement();
+            this.lastInWeb.decrement();
+            this.lastOnLadder.decrement();
+            this.lastOnPiston.decrement();
+            this.lastSolidAbove.decrement();
+            this.lastVelocity.decrement();
+            this.lastOnStairs.decrement();
+            this.lastTeleport.decrement();
+        }
     }
 
     public static class TimeStore {
@@ -39,6 +57,20 @@ import lombok.Getter;
 
         public long getDifference() {
             return System.currentTimeMillis() - this.time;
+        }
+    }
+
+    @RequiredArgsConstructor public static class TimeTick {
+        private final int resetAmount;
+        @Setter @Getter int amount;
+
+        public void decrement() {
+            this.amount--;
+            this.amount = this.amount < 0 ? 0 : this.amount;
+        }
+
+        public void update() {
+            this.amount = resetAmount;
         }
     }
 }

@@ -44,15 +44,14 @@ import org.bukkit.util.NumberConversions;
     private boolean previousServerOnGround;
     private boolean hasSolidAbove;
     private boolean onIce;
-    private int teleportTicks;
 
     public LocationData(Autoeye autoeye, AutoEyePlayer player) {
         this.reset(autoeye, player);
     }
 
-    public void setTeleported(boolean teleported) {
+    public void setTeleported(AutoEyePlayer player, boolean teleported) {
         this.teleported = teleported;
-        this.teleportTicks = 3;
+        player.getTimeData().getLastTeleport().update();
     }
 
     public void reset(Autoeye autoeye, AutoEyePlayer player) {
@@ -73,7 +72,7 @@ import org.bukkit.util.NumberConversions;
         this.clientOnGround = flying.isOnGround();
         if (this.changedPos = flying.isHasPos()) {
             this.axisAlignedBB = new WrappedAxisAlignedBB(autoeye, player.getPlayer().getWorld(), this.location.getX(), this.location.getY(), this.location.getZ(), player.getWrappedEntity().getWidth(), player.getWrappedEntity().getLength());
-            WrappedAxisAlignedBB offset = this.axisAlignedBB.offset(0, -0.001F, 0, 0, 0, 0);
+            WrappedAxisAlignedBB offset = this.axisAlignedBB.offset(0F, -0.00001F, 0F, 0F, 0, 0F);
             this.solidBlocks = new BlockSet(offset.getSolidBlocks());
             this.previousServerOnGround = this.serverOnGround;
             this.serverOnGround = this.solidBlocks.getBlocks().size() > 0;
@@ -85,35 +84,37 @@ import org.bukkit.util.NumberConversions;
             if (this.onStairs = this.solidBlocks.containsString("STEP", "STAIR")) {
                 player.getTimeData().getLastOnStairs().update();
             } else {
-                this.onStairs = player.getTimeData().getLastOnStairs().getDifference() < 150;
+                this.onStairs = player.getTimeData().getLastOnStairs().getAmount() > 0;
             }
             if (this.inWeb = offset.containsMaterial("WEB")) {
                 player.getTimeData().getLastInWeb().update();
+            } else {
+                this.inWeb = player.getTimeData().getLastOnPiston().getAmount() > 0;
             }
             if (this.onPiston = offset.containsMaterial("PISTON")) {
                 player.getTimeData().getLastOnPiston().update();
             } else {
-                this.onPiston = player.getTimeData().getLastOnPiston().getDifference() < 150L;
+                this.onPiston = player.getTimeData().getLastOnPiston().getAmount() > 0;
             }
             if (flying.getX() != 0 && flying.getZ() != 0) {
                 Block block = player.getPlayer().getWorld().getBlockAt(NumberConversions.floor(flying.getX()), NumberConversions.floor(this.axisAlignedBB.getMin().getY()), NumberConversions.floor(flying.getZ()));
                 if (this.onLadder = (block.getType().equals(Material.LADDER) || block.getType().equals(Material.VINE)) && !player.getPlayer().getGameMode().name().equals("SPECTATOR")) {
                     player.getTimeData().getLastOnLadder().update();
                 } else {
-                    this.onLadder = player.getTimeData().getLastOnLadder().getDifference() < 150;
+                    this.onLadder = player.getTimeData().getLastOnLadder().getAmount() > 0;
                 }
             }
             if (this.hasSolidAbove = this.axisAlignedBB.offset(0, player.getWrappedEntity().getLength(), 0, 0, 0.2F, 0).getSolidBlocks().size() > 0) {
                 player.getTimeData().getLastSolidAbove().update();
             } else {
-                this.hasSolidAbove = player.getTimeData().getLastSolidAbove().getDifference() < 250;
+                this.hasSolidAbove = player.getTimeData().getLastSolidAbove().getAmount() > 0;
             }
             if (this.inWater = this.axisAlignedBB.containsLiquid()) {
                 player.getTimeData().getLastInWater().update();
             } else {
-                this.inWater = player.getTimeData().getLastInWater().getDifference() < 150;
+                this.inWater = player.getTimeData().getLastInWater().getAmount() > 0;
             }
-            this.teleported = --teleportTicks > 0;
+            this.teleported = player.getTimeData().getLastTeleport().getAmount() > 0;
             if (player.getTimeData().getSecondTick().getDifference() >= 950 && !this.teleported && this.axisAlignedBB.getSolidBlocks().size() == 0) {
                 teleportLocation = new Vector3D(this.location.getX(), this.location.getY(), this.getLocation().getZ());
             }
