@@ -19,7 +19,7 @@ public class Timer extends Check {
     }
 
     @Override public boolean check(AutoEyePlayer player) {
-        return player.isConnected() && player.getTimeData().getLastVelocity().getDifference() > 500 && player.getLocationData().isChangedPos() && !player.getPhysics().isFlying() && player.getPhysics().getMovesPerSecond() > 23F;
+        return player.isConnected() && player.getLocationData().isChangedPos() && player.getTimeData().getLastFlying().getAmount() == 0 && player.getPhysics().getMovesPerSecond() > 23F;
     }
 
     @Override public boolean revert(AutoEyePlayer player) {

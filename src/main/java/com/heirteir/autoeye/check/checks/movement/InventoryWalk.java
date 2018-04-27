@@ -11,7 +11,7 @@ public class InventoryWalk extends Check {
     }
 
     @Override public boolean check(AutoEyePlayer player) {
-        return player.getLocationData().isChangedPos() && !player.getPhysics().isFlying() && player.getPhysics().isMoving() && player.getPhysics().getServerVelocity().getX() == 0 && player.getPhysics().getServerVelocity().getZ() == 0 && player.getTimeData().getLastMove().getDifference() < 60L;
+        return player.getLocationData().isChangedPos() && player.getTimeData().getLastFlying().getAmount() == 0 && player.getPhysics().isMoving() && player.getPhysics().getServerVelocity().getX() == 0 && player.getPhysics().getServerVelocity().getZ() == 0 && player.getTimeData().getLastMove().getDifference() < 60L;
     }
 
     @Override public boolean revert(AutoEyePlayer player) {

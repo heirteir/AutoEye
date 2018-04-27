@@ -60,8 +60,9 @@ import lombok.Setter;
         if (player.getLocationData().isChangedPos()) {
             if (this.flying || player.getWrappedEntity().isGliding()) {
                 player.getTimeData().getLastFlying().update();
-            } else {
-                this.flying = player.getTimeData().getLastFlying().getDifference() < 1000;
+            }
+            if (!this.flying && player.getLocationData().isServerOnGround() && player.getTimeData().getLastFlying().getAmount() != 0) {
+                player.getTimeData().getLastFlying().setAmount(0);
             }
             this.jumpVelocity = 0.42F + (player.getPotionEffectAmplifier("SPEED") * 0.1F);
             this.moving = this.clientVelocity.getX() != 0 || this.clientVelocity.getY() != 0 || this.clientVelocity.getZ() != 0;
@@ -74,7 +75,7 @@ import lombok.Setter;
                 this.calculatedYVelocity = this.serverVelocity.getY();
             } else {
                 this.offGroundTicks++;
-                if (this.flying || player.getLocationData().isTeleported() || (this.hasVelocity && player.getPhysics().getClientVelocity().getY() < this.jumpVelocity) || player.getLocationData().isTeleported() || player.getLocationData().isInWater() || player.getLocationData().isOnLadder() || player.getLocationData().isInWeb() || player.getTimeData().getLastFlying().getDifference() < 1000) {
+                if (this.flying || player.getTimeData().getLastFlying().getAmount() != 0 || player.getLocationData().isTeleported() || (this.hasVelocity && player.getPhysics().getClientVelocity().getY() < this.jumpVelocity) || player.getLocationData().isTeleported() || player.getLocationData().isInWater() || player.getLocationData().isOnLadder() || player.getLocationData().isInWeb()) {
                     this.calculatedYVelocity = this.clientVelocity.getY();
                 } else if (player.getLocationData().isClientOnGround() || player.getLocationData().isServerOnGround()) {
                     this.calculatedYVelocity = 0;

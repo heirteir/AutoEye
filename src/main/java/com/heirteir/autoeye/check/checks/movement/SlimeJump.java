@@ -19,7 +19,7 @@ public class SlimeJump extends Check {
     }
 
     @Override public boolean check(AutoEyePlayer player) {
-        if (player.isConnected() && player.getTimeData().getLastVelocity().getDifference() > 500 && player.getLocationData().isChangedPos() && !player.getPhysics().isFlying() && player.getLocationData().isOnSlime() && player.getPlayer().getVelocity().getY() > 0) {
+        if (player.isConnected() && player.getTimeData().getLastVelocity().getAmount() == 0 && player.getLocationData().isChangedPos() && player.getTimeData().getLastFlying().getAmount() == 0 && player.getLocationData().isOnSlime() && player.getPlayer().getVelocity().getY() > 0) {
             float difference = (float) Math.abs(player.getPhysics().getClientVelocity().getY() - player.getPlayer().getVelocity().getY());
             return (player.getPhysics().getOffGroundTicks() > 12 || player.getPhysics().getClientVelocity().getY() > player.getPhysics().getJumpVelocity()) && difference > 0.08F && (difference > 0.16F || this.checkThreshold(player, 2, 100L));
         } else {
