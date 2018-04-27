@@ -80,6 +80,7 @@ public abstract class ChannelHandlerAbstract {
                 case PacketPlayInKeepAlive:
                     player.getTimeData().getLastInKeepAlive().update();
                     player.setPing(player.getTimeData().getDifference(player.getTimeData().getLastOutKeepAlive().getTime(), player.getTimeData().getLastInKeepAlive().getTime()));
+                    player.getInteractData().setHitsSinceLastAlivePacket(0);
                     break;
                 case PacketPlayOutKeepAlive:
                     player.getTimeData().getLastOutKeepAlive().update();

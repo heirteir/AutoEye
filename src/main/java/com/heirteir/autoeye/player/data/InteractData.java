@@ -18,4 +18,5 @@ import org.bukkit.entity.Entity;
     private Block lastBlock;
     private Entity lastEntity;
     private PacketPlayInUseEntity.ActionType lastActionType;
+    private int hitsSinceLastAlivePacket;
 }
