@@ -13,6 +13,7 @@ import com.heirteir.autoeye.check.Check;
 import com.heirteir.autoeye.check.CheckType;
 import com.heirteir.autoeye.packets.wrappers.PacketPlayInUseEntity;
 import com.heirteir.autoeye.player.AutoEyePlayer;
+import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
 
 public class Reach extends Check {
@@ -23,7 +24,7 @@ public class Reach extends Check {
     @Override public boolean check(AutoEyePlayer player) {
         if (player.getInteractData().getLastEntity() != null && player.getInteractData().getLastActionType().equals(PacketPlayInUseEntity.ActionType.ATTACK) && (player.getInteractData().getLastEntity() instanceof Player)) {
             AutoEyePlayer attacked = autoeye.getAutoEyePlayerList().getPlayer((Player) player.getInteractData().getLastEntity());
-            return Math.sqrt(Math.pow(attacked.getLocationData().getLocation().getX() - player.getLocationData().getLocation().getX(), 2) + Math.pow(attacked.getLocationData().getLocation().getZ() - player.getLocationData().getLocation().getZ(), 2)) > 5.5F && this.checkThreshold(player, 2, 500L);
+            return Math.sqrt(Math.pow(attacked.getLocationData().getLocation().getX() - player.getLocationData().getLocation().getX(), 2) + Math.pow(attacked.getLocationData().getLocation().getZ() - player.getLocationData().getLocation().getZ(), 2)) > (player.getPlayer().getGameMode() == GameMode.CREATIVE ? 4.5F : 4.0F) && this.checkThreshold(player, 2, 500L);
         }
         return false;
     }
