@@ -20,7 +20,7 @@ import lombok.Setter;
     private final TimeTick lastOnLadder = new TimeTick(3);
     private final TimeTick lastOnPiston = new TimeTick(3);
     private final TimeTick lastSolidAbove = new TimeTick(5);
-    private final TimeTick lastVelocity = new TimeTick(2);
+    private final TimeTick lastVelocity = new TimeTick(4);
     private final TimeTick lastOnStairs = new TimeTick(4);
     private final TimeTick lastTeleport = new TimeTick(4);
     private final TimeStore connected = new TimeStore();

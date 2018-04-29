@@ -95,7 +95,6 @@ public abstract class ChannelHandlerAbstract {
                     if (packetPlayOutEntityVelocity.isPlayer()) {
                         player.getPhysics().setServerVelocity(new Vector3D(packetPlayOutEntityVelocity.getX(), packetPlayOutEntityVelocity.getY(), packetPlayOutEntityVelocity.getZ()));
                         if (packetPlayOutEntityVelocity.getY() < -0.0784F || packetPlayOutEntityVelocity.getY() > 0) {
-                            player.getPhysics().setHasVelocity(true);
                             player.getTimeData().getLastVelocity().update();
                         }
                     }

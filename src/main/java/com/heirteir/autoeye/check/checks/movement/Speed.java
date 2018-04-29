@@ -38,7 +38,7 @@ public class Speed extends Check {
             float normalWalkSpeed = player.getPlayer().getWalkSpeed() + speedAmplifier;
             if (!player.getLocationData().isHasSolidAbove() && !player.getLocationData().isInWater() && serverVelocity < walkSpeed * 2 && speed > walkSpeed * 3) {
                 return true;
-            } else if (angleDifference > 80 && player.getPlayer().isSprinting() && speed > .27 && !player.getPhysics().isHasVelocity()) {
+            } else if (angleDifference > 80 && player.getPlayer().isSprinting() && speed > .27 && player.getTimeData().getLastVelocity().getAmount() == 0) {
                 return this.checkThreshold(player, 3, 100L);
             } else if (!player.getLocationData().isHasSolidAbove() && serverVelocity > walkSpeed * 0.58 && serverVelocity < walkSpeed && !player.getLocationData().isClientOnGround() && !player.getLocationData().isInWater()) {
                 if (player.getLocationData().isOnIce()) {

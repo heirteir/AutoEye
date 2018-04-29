@@ -50,7 +50,7 @@ import java.util.Map;
         this.locationData.update(autoeye, this, packet);
         this.physics.update(autoeye, this);
         this.timeData.update(this);
-        this.connected = this.connected || this.timeData.getConnected().getDifference() > 2000;
+        this.connected = this.connected || this.timeData.getConnected().getDifference() > 3000;
     }
 
     public int getPotionEffectAmplifier(String name) {
