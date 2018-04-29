@@ -8,10 +8,8 @@
  */
 package com.heirteir.autoeye.util.reflections.types;
 
-import com.google.common.collect.Sets;
 import lombok.Getter;
 
-import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
@@ -38,12 +36,16 @@ import java.lang.reflect.Method;
     }
 
     public WrappedConstructor getConstructor(Class... types) {
-        for (Constructor constructor : this.parent.getConstructors()) {
-            if (Sets.newHashSet(constructor.getParameterTypes()).containsAll(Sets.newHashSet(types))) {
-                return new WrappedConstructor(this, constructor);
-            }
+        try {
+            return new WrappedConstructor(this, this.parent.getDeclaredConstructor(types));
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+            return null;
         }
-        return null;
+    }
+
+    public WrappedConstructor getConstructorAtIndex(int index) {
+        return new WrappedConstructor(this, this.parent.getConstructors()[index]);
     }
 
     private WrappedField getFieldByType(Class<?> type) {
@@ -77,12 +79,8 @@ import java.lang.reflect.Method;
                 return new WrappedMethod(this, method);
             }
         }
-        return null;
-    }
-
-    public WrappedMethod getMethodByTypes(Class... parameters) {
-        for (Method method : this.parent.getDeclaredMethods()) {
-            if (parameters.length != method.getParameterTypes().length) {
+        for (Method method : this.parent.getMethods()) {
+            if (!method.getName().equals(name) || parameters.length != method.getParameterTypes().length) {
                 continue;
             }
             boolean same = true;
@@ -97,5 +95,9 @@ import java.lang.reflect.Method;
             }
         }
         return null;
+    }
+
+    public Enum getEnum(String name) {
+        return Enum.valueOf(this.parent, name);
     }
 }

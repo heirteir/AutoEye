@@ -101,4 +101,16 @@ import java.util.Set;
     public boolean containsLiquid() {
         return containsLiquidMethod.invoke(this.world, this.axisAlignedBB);
     }
+    //    public boolean intersectsRay(Ray3D ray) {
+    //        ray = ray.normalize();
+    //        float t1 = (this.min.getX() - ray.getX()) * ray.getDirection().getX();
+    //        float t2 = (this.max.getX() - ray.getX()) * ray.getDirection().getX();
+    //        float t3 = (this.min.getY() - ray.getY()) * ray.getDirection().getY();
+    //        float t4 = (this.max.getY() - ray.getY()) * ray.getDirection().getY();
+    //        float t5 = (this.min.getZ() - ray.getZ()) * ray.getDirection().getZ();
+    //        float t6 = (this.max.getZ() - ray.getZ()) * ray.getDirection().getZ();
+    //        float tmin = Math.max(Math.max(Math.min(t1, t2), Math.min(t3, t4)), Math.min(t5, t6));
+    //        float tmax = Math.min(Math.min(Math.max(t1, t2), Math.max(t3, t4)), Math.max(t5, t6));
+    //        return !(tmax < 0) && !(tmin > tmax);
+    //    }
 }

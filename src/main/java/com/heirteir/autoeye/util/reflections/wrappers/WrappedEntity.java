@@ -23,6 +23,8 @@ import org.bukkit.entity.LivingEntity;
     private static final WrappedMethod getFlag = Reflections.getNMSClass("Entity").getMethod("getFlag", int.class);
     private static final WrappedField widthField = Reflections.getNMSClass("Entity").getFieldByName("width");
     private static final WrappedField lengthField = Reflections.getNMSClass("Entity").getFieldByName("length");
+    private static final WrappedField playerConnectionField = Reflections.getNMSClass("EntityPlayer").getFieldByName("playerConnection");
+    private static final WrappedMethod sendPacketMethod = Reflections.getNMSClass("PlayerConnection").getMethod("sendPacket", Reflections.getNMSClass("Packet").getParent());
     private final Autoeye autoeye;
     private final float width, length;
     private final Object rawEntity;
@@ -34,6 +36,10 @@ import org.bukkit.entity.LivingEntity;
         this.rawEntity = getHandleMethod.invoke(entity);
         this.width = widthField.get(this.rawEntity);
         this.length = lengthField.get(this.rawEntity);
+    }
+
+    public void sendPacket(Object packet) {
+        sendPacketMethod.invoke(playerConnectionField.get(this.rawEntity), packet);
     }
 
     public boolean isGliding() {

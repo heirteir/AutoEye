@@ -18,6 +18,7 @@ import com.heirteir.autoeye.packets.wrappers.PacketPlayInFlying;
 import com.heirteir.autoeye.packets.wrappers.PacketPlayInUseEntity;
 import com.heirteir.autoeye.packets.wrappers.PacketPlayOutEntityVelocity;
 import com.heirteir.autoeye.player.AutoEyePlayer;
+import com.heirteir.autoeye.util.NPC;
 import com.heirteir.autoeye.util.reflections.Reflections;
 import com.heirteir.autoeye.util.reflections.types.WrappedField;
 import com.heirteir.autoeye.util.vector.Vector3D;
@@ -65,6 +66,9 @@ public abstract class ChannelHandlerAbstract {
                     }
                     if (!this.runChecks(player, CheckType.PRE_MOVE_EVENT)) {
                         return false;
+                    }
+                    if (player.isConnected()) {
+                        new NPC(player);
                     }
                     player.update(this.autoeye, packetPlayInFlying);
                     return this.runChecks(player, CheckType.MOVE_EVENT);
