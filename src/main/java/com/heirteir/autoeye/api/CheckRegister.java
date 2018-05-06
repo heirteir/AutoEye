@@ -5,6 +5,7 @@ import com.google.common.collect.Maps;
 import com.heirteir.autoeye.Autoeye;
 import com.heirteir.autoeye.check.Check;
 import com.heirteir.autoeye.check.CheckType;
+import com.heirteir.autoeye.check.checks.combat.AutoClicker;
 import com.heirteir.autoeye.check.checks.combat.KillAuraRotation;
 import com.heirteir.autoeye.check.checks.combat.Reach;
 import com.heirteir.autoeye.check.checks.movement.*;
@@ -53,6 +54,7 @@ import java.util.Map;
         this.addCheck(new NoSlowDown(this.autoeye));
         this.addCheck(new InvalidPitch(this.autoeye));
         this.addCheck(new InventoryWalk(this.autoeye));
+        this.addCheck(new AutoClicker(this.autoeye));
     }
 
     public void unregisterChecks() {

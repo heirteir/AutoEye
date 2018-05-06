@@ -14,9 +14,13 @@ import lombok.Setter;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Entity;
 
+import java.util.ArrayList;
+
 @Getter @Setter public class InteractData {
     private Block lastBlock;
     private Entity lastEntity;
     private PacketPlayInUseEntity.ActionType lastActionType;
-    private int hitsSinceLastAlivePacket;
+    private int hitsInLastSecond;
+    private long hitTimer;
+    private ArrayList<Integer> lastHits = new ArrayList<>();
 }
