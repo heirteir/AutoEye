@@ -14,12 +14,21 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor @Getter public class Vector2D {
     private final float x, y;
 
+    public Vector2D offset(float x, float y) {
+        return new Vector2D(this.x + x, this.y + y);
+    }
+
     public Vector2D subtract(Vector2D from) {
         return new Vector2D(this.x - from.getX(), this.y - from.getY());
     }
 
     public float length() {
         return (float) Math.sqrt(this.x * this.x + this.y * this.y);
+    }
+
+    public Vector3D toVector3D() {
+        double xz = Math.cos(Math.toRadians(this.y));
+        return new Vector3D((float) (-xz * Math.sin(Math.toRadians(this.x))), (float) -Math.sin(Math.toRadians(this.y)), (float) (xz * Math.cos(Math.toRadians(this.x))));
     }
 
     @Override public String toString() {

@@ -24,7 +24,7 @@ public class FastLadder extends Check {
                 return player.getPhysics().getClientVelocity().getY() > player.getPhysics().getJumpVelocity() && (!(player.getTimeData().getLastVelocity().getAmount() == 0 && player.getPlayer().getVelocity().getY() <= player.getPhysics().getClientVelocity().getY()) || this.checkThreshold(player, 3, 100L));
             } else {
                 float absVelocity = Math.abs(player.getPhysics().getClientVelocity().getY());
-                return absVelocity > 0.16F && (this.checkThreshold(player, (int) Math.ceil(player.getPhysics().getJumpVelocity() / 0.16F), 100L));
+                return absVelocity > 0.42F && (this.checkThreshold(player, (int) Math.ceil(player.getPhysics().getJumpVelocity() / 0.16F), 100L));
             }
         } else {
             return false;

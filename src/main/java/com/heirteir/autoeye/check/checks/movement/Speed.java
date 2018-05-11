@@ -23,7 +23,7 @@ public class Speed extends Check {
             float speed = (float) Math.sqrt(Math.pow(player.getPhysics().getClientVelocity().getX() - player.getPlayer().getVelocity().getX(), 2) + Math.pow(player.getPhysics().getClientVelocity().getZ() - player.getPlayer().getVelocity().getZ(), 2));
             float serverVelocity = (float) Math.sqrt(Math.pow(player.getPlayer().getVelocity().getX(), 2) + Math.pow(player.getPlayer().getVelocity().getZ(), 2));
             float walkSpeed;
-            float angleDifference = this.autoeye.getMathUtil().angleDistance((float) (Math.atan2(player.getPhysics().getClientVelocity().getX(), player.getPhysics().getClientVelocity().getZ()) * (180F / Math.PI)), (float) (Math.atan2(player.getPlayer().getEyeLocation().getDirection().getX(), player.getPlayer().getEyeLocation().getDirection().getZ()) * (180F / Math.PI)));
+            float angleDifference = this.autoeye.getMathUtil().getAngleDistance((float) (Math.atan2(player.getPhysics().getClientVelocity().getX(), player.getPhysics().getClientVelocity().getZ()) * (180F / Math.PI)), (float) (Math.atan2(player.getPlayer().getEyeLocation().getDirection().getX(), player.getPlayer().getEyeLocation().getDirection().getZ()) * (180F / Math.PI)));
             float safeAngleDifference = (angleDifference > 0 && angleDifference < 46) || angleDifference > 90 && angleDifference < 170 ? angleDifference > 46 ? angleDifference / (angleDifference / 45F) : angleDifference : 0;
             if (!player.getLocationData().isClientOnGround() && player.getLocationData().isInWater()) {
                 walkSpeed = player.getPlayer().getWalkSpeed() * 0.8F;

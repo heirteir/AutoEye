@@ -59,7 +59,7 @@ import org.bukkit.util.NumberConversions;
         this.direction = this.previousDirection = new Vector2D(player.getPlayer().getLocation().getYaw(), player.getPlayer().getLocation().getPitch());
         this.axisAlignedBB = new WrappedAxisAlignedBB(autoeye, player.getPlayer().getWorld(), this.location.getX(), this.location.getY(), this.location.getZ(), player.getWrappedEntity().getWidth(), player.getWrappedEntity().getLength());
         teleportLocation = new Vector3D(this.location.getX(), (float) (this.location.getY() % 1 >= .5 ? Math.ceil(this.location.getY()) : Math.floor(this.location.getY())), this.getLocation().getZ());
-        this.solidBlocks = new BlockSet(this.axisAlignedBB.offset(0, -0.08F, 0, 0, 0, 0).getSolidBlocks());
+        this.solidBlocks = new BlockSet(this.axisAlignedBB.offset(0, -0.0001F, 0, 0, 0, 0).getSolidBlocks());
     }
 
     public void setLocation(Vector3D location) {
@@ -72,7 +72,7 @@ import org.bukkit.util.NumberConversions;
         this.clientOnGround = flying.isOnGround();
         if (this.changedPos = flying.isHasPos()) {
             this.axisAlignedBB = new WrappedAxisAlignedBB(autoeye, player.getPlayer().getWorld(), this.location.getX(), this.location.getY(), this.location.getZ(), player.getWrappedEntity().getWidth(), player.getWrappedEntity().getLength());
-            WrappedAxisAlignedBB offset = this.axisAlignedBB.offset(0F, -0.00001F, 0F, 0F, 0, 0F);
+            WrappedAxisAlignedBB offset = this.axisAlignedBB.offset(0F, -0.001F, 0F, 0F, 0, 0F);
             this.solidBlocks = new BlockSet(offset.getSolidBlocks());
             this.previousServerOnGround = this.serverOnGround;
             this.serverOnGround = this.solidBlocks.getBlocks().size() > 0;

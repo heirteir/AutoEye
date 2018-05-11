@@ -19,7 +19,7 @@ public class InvalidLocation extends Check {
     }
 
     @Override public boolean check(AutoEyePlayer player) {
-        return player.getLocationData().isChangedPos() && !(boolean) isLoaded.invoke(getHandleMethod.invoke(player.getPlayer().getWorld()), (Object) blockPosition.newInstance(NumberConversions.floor(player.getLocationData().getLocation().getX()), NumberConversions.floor(player.getLocationData().getLocation().getY()), NumberConversions.floor(player.getLocationData().getLocation().getZ())));
+        return player.getLocationData().getLocation().getY() > 0 && player.getLocationData().isChangedPos() && !(boolean) isLoaded.invoke(getHandleMethod.invoke(player.getPlayer().getWorld()), (Object) blockPosition.newInstance(NumberConversions.floor(player.getLocationData().getLocation().getX()), NumberConversions.floor(player.getLocationData().getLocation().getY()), NumberConversions.floor(player.getLocationData().getLocation().getZ())));
     }
 
     @Override public boolean revert(AutoEyePlayer player) {

@@ -50,7 +50,7 @@ import java.util.Map;
         this.locationData.update(autoeye, this, packet);
         this.physics.update(autoeye, this);
         this.timeData.update(this);
-        this.connected = this.connected || this.timeData.getConnected().getDifference() > 1000;
+        this.connected = this.connected || this.timeData.getConnected().getDifference() > 4000;
     }
 
     public int getPotionEffectAmplifier(String name) {
@@ -83,5 +83,6 @@ import java.util.Map;
 
     public synchronized void teleport(Vector3D location) {
         this.getPlayer().teleport(new Location(this.player.getWorld(), location.getX(), location.getY(), location.getZ(), this.player.getEyeLocation().getYaw(), this.player.getEyeLocation().getPitch()));
+        this.timeData.getLastTeleport().setAmount(2);
     }
 }

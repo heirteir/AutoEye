@@ -17,6 +17,7 @@ import com.heirteir.autoeye.util.reflections.types.WrappedConstructor;
 import com.heirteir.autoeye.util.reflections.types.WrappedField;
 import com.heirteir.autoeye.util.reflections.types.WrappedMethod;
 import com.heirteir.autoeye.util.server.Version;
+import com.heirteir.autoeye.util.vector.Ray3D;
 import com.heirteir.autoeye.util.vector.Vector3D;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -101,16 +102,17 @@ import java.util.Set;
     public boolean containsLiquid() {
         return containsLiquidMethod.invoke(this.world, this.axisAlignedBB);
     }
-    //    public boolean intersectsRay(Ray3D ray) {
-    //        ray = ray.normalize();
-    //        float t1 = (this.min.getX() - ray.getX()) * ray.getDirection().getX();
-    //        float t2 = (this.max.getX() - ray.getX()) * ray.getDirection().getX();
-    //        float t3 = (this.min.getY() - ray.getY()) * ray.getDirection().getY();
-    //        float t4 = (this.max.getY() - ray.getY()) * ray.getDirection().getY();
-    //        float t5 = (this.min.getZ() - ray.getZ()) * ray.getDirection().getZ();
-    //        float t6 = (this.max.getZ() - ray.getZ()) * ray.getDirection().getZ();
-    //        float tmin = Math.max(Math.max(Math.min(t1, t2), Math.min(t3, t4)), Math.min(t5, t6));
-    //        float tmax = Math.min(Math.min(Math.max(t1, t2), Math.max(t3, t4)), Math.max(t5, t6));
-    //        return !(tmax < 0) && !(tmin > tmax);
-    //    }
+
+    public Vector3D intersectsRay(Ray3D ray) {
+        Ray3D normalized = ray.normalize();
+        float t1 = (this.min.getX() - normalized.getX()) * normalized.getDirection().getX();
+        float t2 = (this.max.getX() - normalized.getX()) * normalized.getDirection().getX();
+        float t3 = (this.min.getY() - normalized.getY()) * normalized.getDirection().getY();
+        float t4 = (this.max.getY() - normalized.getY()) * normalized.getDirection().getY();
+        float t5 = (this.min.getZ() - normalized.getZ()) * normalized.getDirection().getZ();
+        float t6 = (this.max.getZ() - normalized.getZ()) * normalized.getDirection().getZ();
+        float tmin = Math.max(Math.max(Math.min(t1, t2), Math.min(t3, t4)), Math.min(t5, t6));
+        float tmax = Math.min(Math.min(Math.max(t1, t2), Math.max(t3, t4)), Math.max(t5, t6));
+        return !(tmax < 0) && !(tmin > tmax) ? ray.getPointAtDistance(tmin) : null;
+    }
 }

@@ -19,14 +19,20 @@ public class InvalidMotion extends Check {
     }
 
     @Override public boolean check(AutoEyePlayer player) {
-        if (player.isConnected() && player.getTimeData().getLastVelocity().getAmount() == 0) {
+        if (player.isConnected() && !player.getLocationData().isServerOnGround() && player.getTimeData().getLastVelocity().getAmount() == 0) {
             if (Math.abs(player.getPhysics().getClientVelocity().getY()) > 3.92) {
                 return true;
             } else if (player.getLocationData().isChangedPos() && player.getTimeData().getLastFlying().getAmount() == 0 && !player.getLocationData().isOnPiston() && !player.getLocationData().isOnSlime() && !player.getLocationData().isInWater() && player.getPhysics().getCalculatedYVelocity() != 0 && !player.getLocationData().isOnStairs() && !player.getLocationData().isOnLadder() && !player.getLocationData().isHasSolidAbove() && !player.getLocationData().isInWeb()) {
                 if (player.getPhysics().getClientVelocity().getY() > player.getPhysics().getCalculatedYVelocity() + 0.001F && Math.abs(player.getPhysics().getClientAcceleration().getY() - player.getPhysics().getCalculatedYAcceleration()) > 0.002) {
+                    this.autoeye.getPluginLogger().broadcastSyncMessage("1: " + player.getPhysics().getClientVelocity().getY() + " " + player.getPhysics().getCalculatedYVelocity());
                     return (player.getPhysics().getClientVelocity().getY() == 0 && this.checkThreshold(player, 5, 500L)) || !((player.getPhysics().getClientVelocity().getY() == 0) || (player.getPhysics().getCalculatedYVelocity() > 0 && player.getPhysics().getCalculatedYVelocity() < 0.04)) || this.checkThreshold(player, 2, 100L);
                 } else {
-                    return Math.abs(player.getPhysics().getClientVelocity().getY() - player.getPhysics().getCalculatedYVelocity()) > 0.02 && Math.abs(player.getPhysics().getClientAcceleration().getY() - player.getPhysics().getCalculatedYAcceleration()) > 0.003 && ((player.getPhysics().getClientVelocity().getY() != -0.07839966F) || this.checkThreshold(player, 2, 100L));
+                    if (Math.abs(player.getPhysics().getClientVelocity().getY() - player.getPhysics().getCalculatedYVelocity()) > 0.02 && Math.abs(player.getPhysics().getClientAcceleration().getY() - player.getPhysics().getCalculatedYAcceleration()) > 0.003 && ((player.getPhysics().getClientVelocity().getY() != -0.07839966F) || this.checkThreshold(player, 2, 100L))) {
+                        this.autoeye.getPluginLogger().broadcastSyncMessage("2: " + player.getPhysics().getClientVelocity().getY() + " " + player.getPhysics().getCalculatedYVelocity());
+                        return true;
+                    } else {
+                        return false;
+                    }
                 }
             }
         }

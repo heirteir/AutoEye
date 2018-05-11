@@ -10,14 +10,11 @@ package com.heirteir.autoeye.player.data;
 
 import com.heirteir.autoeye.Autoeye;
 import com.heirteir.autoeye.player.AutoEyePlayer;
-import com.heirteir.autoeye.util.vector.Vector2D;
 import com.heirteir.autoeye.util.vector.Vector3D;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter public class Physics {
-    private Vector2D angleVelocity;
-    private Vector2D angleAcceleration;
     @Setter private Vector3D serverVelocity;
     private Vector3D clientVelocity;
     private Vector3D clientAcceleration;
@@ -34,8 +31,6 @@ import lombok.Setter;
     }
 
     public void reset(AutoEyePlayer player) {
-        this.angleVelocity = new Vector2D(0, 0);
-        this.angleAcceleration = new Vector2D(0, 0);
         this.serverVelocity = new Vector3D(0, 0, 0);
         this.clientVelocity = new Vector3D(0, 0, 0);
         this.clientAcceleration = new Vector3D(0, 0, 0);
@@ -50,9 +45,7 @@ import lombok.Setter;
 
     public void update(Autoeye autoeye, AutoEyePlayer player) {
         if (player.getLocationData().isChangedLook()) {
-            this.angleAcceleration = this.angleVelocity;
-            this.angleVelocity = new Vector2D(autoeye.getMathUtil().angleDistance(player.getLocationData().getDirection().getX(), player.getLocationData().getPreviousDirection().getX()), autoeye.getMathUtil().angleDistance(player.getLocationData().getDirection().getY(), player.getLocationData().getPreviousDirection().getY()));
-            this.angleAcceleration = this.angleVelocity.subtract(this.angleAcceleration);
+            this.moving = false;
         }
         if (player.getLocationData().isChangedPos()) {
             if (this.flying || player.getWrappedEntity().isGliding()) {
@@ -61,23 +54,24 @@ import lombok.Setter;
             if (!this.flying && player.getLocationData().isServerOnGround() && player.getTimeData().getLastFlying().getAmount() != 0) {
                 player.getTimeData().getLastFlying().setAmount(0);
             }
-            this.jumpVelocity = 0.42F + (player.getPotionEffectAmplifier("SPEED") * 0.1F);
+            this.jumpVelocity = 0.42F + (player.getPotionEffectAmplifier("JUMP") * 0.1F);
             this.moving = this.clientVelocity.getX() != 0 || this.clientVelocity.getY() != 0 || this.clientVelocity.getZ() != 0;
             this.clientAcceleration = this.clientVelocity;
             this.clientVelocity = new Vector3D(player.getLocationData().getLocation().getX() - player.getLocationData().getPreviousLocation().getX(), player.getLocationData().getLocation().getY() - player.getLocationData().getPreviousLocation().getY(), player.getLocationData().getLocation().getZ() - player.getLocationData().getPreviousLocation().getZ());
             this.clientAcceleration = new Vector3D(this.clientVelocity.getX() - this.clientAcceleration.getX(), this.clientVelocity.getY() - this.clientAcceleration.getY(), this.clientVelocity.getZ() - this.clientAcceleration.getZ());
             this.calculatedYAcceleration = this.calculatedYVelocity;
-            if (player.getTimeData().getLastVelocity().getAmount() > 0 && this.serverVelocity.getY() > this.jumpVelocity) {
+            if (this.serverVelocity.getY() != 0) {
                 this.calculatedYVelocity = this.serverVelocity.getY();
+                this.serverVelocity = new Vector3D(0, 0, 0);
             } else {
                 this.offGroundTicks++;
                 if (this.flying || player.getTimeData().getLastFlying().getAmount() != 0 || player.getLocationData().isTeleported() || (player.getTimeData().getLastVelocity().getAmount() > 0 && player.getPhysics().getClientVelocity().getY() < this.jumpVelocity) || player.getLocationData().isTeleported() || player.getLocationData().isInWater() || player.getLocationData().isOnLadder() || player.getLocationData().isInWeb()) {
                     this.calculatedYVelocity = this.clientVelocity.getY();
-                } else if (player.getLocationData().isClientOnGround() || player.getLocationData().isServerOnGround()) {
+                } else if (player.getLocationData().isClientOnGround()) {
                     this.calculatedYVelocity = 0;
                     this.offGroundTicks = 0;
                 } else {
-                    if ((player.getLocationData().isPreviousClientOnGround() || player.getLocationData().isPreviousServerOnGround()) && this.clientVelocity.getY() > 0) {
+                    if (player.getLocationData().isPreviousClientOnGround() && this.clientVelocity.getY() > 0) {
                         this.calculatedYVelocity = jumpVelocity;
                     } else {
                         this.calculatedYVelocity -= 0.08F;
@@ -89,12 +83,12 @@ import lombok.Setter;
                 }
             }
             this.calculatedYAcceleration = this.calculatedYVelocity - this.calculatedYAcceleration;
-            if (player.getLocationData().isTeleported() || player.getTimeData().getSecondTick().getDifference() >= 1000L) {
-                player.getTimeData().getSecondTick().update();
-                this.movesPerSecond = 0;
-            }
             this.movesPerSecond++;
             player.getTimeData().getLastMove().update();
+        }
+        if (player.getLocationData().isTeleported() || player.getTimeData().getSecondTick().getDifference() >= 1000L) {
+            player.getTimeData().getSecondTick().update();
+            this.movesPerSecond = 0;
         }
     }
 }

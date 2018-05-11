@@ -18,11 +18,12 @@ import com.heirteir.autoeye.packets.wrappers.PacketPlayInFlying;
 import com.heirteir.autoeye.packets.wrappers.PacketPlayInUseEntity;
 import com.heirteir.autoeye.packets.wrappers.PacketPlayOutEntityVelocity;
 import com.heirteir.autoeye.player.AutoEyePlayer;
-import com.heirteir.autoeye.util.NPC;
 import com.heirteir.autoeye.util.reflections.Reflections;
 import com.heirteir.autoeye.util.reflections.types.WrappedField;
+import com.heirteir.autoeye.util.reflections.wrappers.WrappedEntity;
 import com.heirteir.autoeye.util.vector.Vector3D;
 import org.bukkit.Bukkit;
+import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 
@@ -67,9 +68,7 @@ public abstract class ChannelHandlerAbstract {
                     if (!this.runChecks(player, CheckType.PRE_MOVE_EVENT)) {
                         return false;
                     }
-                    if (player.isConnected()) {
-                        new NPC(player);
-                    }
+                    player.getInteractData().update(this.autoeye, player);
                     player.update(this.autoeye, packetPlayInFlying);
                     return this.runChecks(player, CheckType.MOVE_EVENT);
                 case PacketPlayInAbilities:
@@ -77,14 +76,18 @@ public abstract class ChannelHandlerAbstract {
                     break;
                 case PacketPlayInUseEntity:
                     PacketPlayInUseEntity packetPlayInUseEntity = new PacketPlayInUseEntity(player.getPlayer().getWorld(), packet);
-                    player.getInteractData().setLastEntity(packetPlayInUseEntity.getEntity());
-                    player.getInteractData().setLastActionType(packetPlayInUseEntity.getActionType());
-                    player.getTimeData().getLastUseEntity().update();
-                    return this.runChecks(player, CheckType.ENTITY_USE_EVENT);
+                    if (packetPlayInUseEntity.getEntity() instanceof LivingEntity) {
+                        if (player.getInteractData().getLastEntity() == null || player.getInteractData().getLastEntity().getBukkitEntity().getEntityId() != packetPlayInUseEntity.getId()) {
+                            player.getInteractData().setLastEntity(new WrappedEntity(autoeye, (LivingEntity) packetPlayInUseEntity.getEntity()));
+                        }
+                        player.getInteractData().setLastActionType(packetPlayInUseEntity.getActionType());
+                        player.getTimeData().getLastUseEntity().update();
+                        player.getInteractData().update(this.autoeye, player);
+                    }
+                    return packetPlayInUseEntity.getEntity() == null ? this.runChecks(player, CheckType.NPC_EVENT) : this.runChecks(player, CheckType.ENTITY_USE_EVENT);
                 case PacketPlayInKeepAlive:
                     player.getTimeData().getLastInKeepAlive().update();
                     player.setPing(player.getTimeData().getDifference(player.getTimeData().getLastOutKeepAlive().getTime(), player.getTimeData().getLastInKeepAlive().getTime()));
-                    player.getInteractData().setHitsSinceLastAlivePacket(0);
                     break;
                 case PacketPlayOutKeepAlive:
                     player.getTimeData().getLastOutKeepAlive().update();
@@ -97,10 +100,8 @@ public abstract class ChannelHandlerAbstract {
                 case PacketPlayOutEntityVelocity:
                     PacketPlayOutEntityVelocity packetPlayOutEntityVelocity = new PacketPlayOutEntityVelocity(player, packet);
                     if (packetPlayOutEntityVelocity.isPlayer()) {
-                        player.getPhysics().setServerVelocity(new Vector3D(packetPlayOutEntityVelocity.getX(), packetPlayOutEntityVelocity.getY(), packetPlayOutEntityVelocity.getZ()));
-                        if (packetPlayOutEntityVelocity.getY() < -0.0784F || packetPlayOutEntityVelocity.getY() > 0) {
-                            player.getTimeData().getLastVelocity().update();
-                        }
+                        player.getPhysics().setServerVelocity(new Vector3D(packetPlayOutEntityVelocity.getX(), packetPlayOutEntityVelocity.getY() + player.getPhysics().getClientVelocity().getY(), packetPlayOutEntityVelocity.getZ()));
+                        player.getTimeData().getLastVelocity().update();
                     }
                     break;
             }

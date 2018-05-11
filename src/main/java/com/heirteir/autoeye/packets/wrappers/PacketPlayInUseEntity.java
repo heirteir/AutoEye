@@ -19,6 +19,7 @@ import org.bukkit.entity.Entity;
     private static final WrappedField actionTypeField, idField;
     private final ActionType actionType;
     private final Entity entity;
+    private final int id;
 
     static {
         WrappedClass packetPlayInUseEntity = Reflections.getNMSClass("PacketPlayInUseEntity");
@@ -29,7 +30,7 @@ import org.bukkit.entity.Entity;
     public PacketPlayInUseEntity(World world, Object packet) {
         super(packet);
         this.actionType = ActionType.fromString(((Enum) actionTypeField.get(packet)).name());
-        int id = idField.get(packet);
+        this.id = idField.get(packet);
         Entity tempEntity = null;
         for (Entity entity : world.getEntities()) {
             if (entity.getEntityId() == id) {

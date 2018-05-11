@@ -60,6 +60,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
     @Override public void onDisable() {
         if (this.autoEyePlayerList != null) {
+            this.autoEyePlayerList.getPlayers().clear();
             this.autoEyePlayerList.unregister();
             this.checkRegister.unregisterChecks();
         }

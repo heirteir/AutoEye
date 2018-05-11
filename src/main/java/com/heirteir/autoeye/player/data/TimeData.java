@@ -14,15 +14,15 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 @Getter public class TimeData {
-    private final TimeTick lastInWater = new TimeTick(3);
+    private final TimeTick lastInWater = new TimeTick(5);
     private final TimeTick lastFlying = new TimeTick(20);
-    private final TimeTick lastInWeb = new TimeTick(3);
+    private final TimeTick lastInWeb = new TimeTick(5);
     private final TimeTick lastOnLadder = new TimeTick(3);
     private final TimeTick lastOnPiston = new TimeTick(3);
-    private final TimeTick lastSolidAbove = new TimeTick(5);
-    private final TimeTick lastVelocity = new TimeTick(4);
-    private final TimeTick lastOnStairs = new TimeTick(4);
-    private final TimeTick lastTeleport = new TimeTick(4);
+    private final TimeTick lastSolidAbove = new TimeTick(8);
+    private final TimeTick lastVelocity = new TimeTick(8);
+    private final TimeTick lastOnStairs = new TimeTick(10);
+    private final TimeTick lastTeleport = new TimeTick(8);
     private final TimeStore connected = new TimeStore();
     private final TimeStore lastMove = new TimeStore();
     private final TimeStore lastUseEntity = new TimeStore();
@@ -70,7 +70,11 @@ import lombok.Setter;
         }
 
         public void update() {
-            this.amount = resetAmount;
+            this.update(this.resetAmount);
+        }
+
+        public void update(int amount) {
+            this.amount = amount;
         }
     }
 }

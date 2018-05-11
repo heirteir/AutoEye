@@ -8,15 +8,25 @@
  */
 package com.heirteir.autoeye.player.data;
 
+import com.heirteir.autoeye.Autoeye;
 import com.heirteir.autoeye.packets.wrappers.PacketPlayInUseEntity;
+import com.heirteir.autoeye.player.AutoEyePlayer;
+import com.heirteir.autoeye.util.reflections.wrappers.WrappedEntity;
 import lombok.Getter;
 import lombok.Setter;
-import org.bukkit.block.Block;
-import org.bukkit.entity.Entity;
+import org.bukkit.util.Vector;
 
 @Getter @Setter public class InteractData {
-    private Block lastBlock;
-    private Entity lastEntity;
+    private WrappedEntity lastEntity;
     private PacketPlayInUseEntity.ActionType lastActionType;
-    private int hitsSinceLastAlivePacket;
+    private Vector previousDirection;
+    private boolean inCombat;
+
+    public void update(Autoeye autoeye, AutoEyePlayer player) {
+        if (this.lastActionType != null && this.lastActionType.equals(PacketPlayInUseEntity.ActionType.ATTACK)) {
+            this.inCombat = player.getTimeData().getLastUseEntity().getDifference() < 300;
+        } else {
+            this.inCombat = false;
+        }
+    }
 }
