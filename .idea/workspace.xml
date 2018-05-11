@@ -6,55 +6,10 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c5d9ea3b-dcde-488a-8c32-f40ea05eb9d0" name="Default" comment="Added a NPC spawning util. Changed some backend code.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/combat/KillAuraHitBox.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/packets/wrappers/PacketPlayOutEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/vector/Ray3D.java" afterDir="false" />
+    <list default="true" id="c5d9ea3b-dcde-488a-8c32-f40ea05eb9d0" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/Autoeye.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/Autoeye.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/api/CheckRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/api/CheckRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/CheckType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/CheckType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/combat/KillAuraNPC.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/combat/KillAuraRotation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/FastLadder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/FastLadder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InvalidLocation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InvalidLocation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InvalidMotion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InvalidMotion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/NoWeb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/NoWeb.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/Speed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/Speed.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/SpoofedOnGroundPacket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/SpoofedOnGroundPacket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/packets/PacketType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/packets/PacketType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/packets/channelhandler/ChannelHandlerAbstract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/packets/channelhandler/ChannelHandlerAbstract.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/packets/wrappers/PacketPlayInUseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/packets/wrappers/PacketPlayInUseEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/AutoEyePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/AutoEyePlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/data/InteractData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/data/InteractData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/data/LocationData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/data/LocationData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/data/Physics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/data/Physics.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/data/TimeData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/data/TimeData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/MathUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/MathUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/NPC.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/reflections/wrappers/WrappedAxisAlignedBB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/reflections/wrappers/WrappedAxisAlignedBB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/reflections/wrappers/WrappedEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/reflections/wrappers/WrappedEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/vector/Vector2D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/vector/Vector2D.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/vector/Vector3D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/vector/Vector3D.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/Autoeye.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/Autoeye.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/check/checks/combat/KillAuraRotation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/check/checks/combat/Reach.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/check/checks/combat/Reach.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/check/checks/movement/FastLadder.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/check/checks/movement/FastLadder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/check/checks/movement/InvalidMotion.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/check/checks/movement/InvalidMotion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/check/checks/movement/NoWeb.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/check/checks/movement/NoWeb.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/check/checks/movement/Speed.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/check/checks/movement/Speed.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/check/checks/movement/SpoofedOnGroundPacket.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/check/checks/movement/SpoofedOnGroundPacket.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/player/AutoEyePlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/player/AutoEyePlayer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/player/data/LocationData.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/player/data/LocationData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/player/data/Physics.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/player/data/Physics.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/player/data/TimeData.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/player/data/TimeData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/util/MathUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/util/MathUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/util/reflections/wrappers/WrappedAxisAlignedBB.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/util/reflections/wrappers/WrappedAxisAlignedBB.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/util/reflections/wrappers/WrappedEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/util/reflections/wrappers/WrappedEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/util/vector/Vector2D.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/util/vector/Vector2D.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/util/vector/Vector3D.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/target/classes/com/heirteir/autoeye/util/vector/Vector3D.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/src/main/target/" />
     <ignored path=".idea/" />
@@ -98,7 +53,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/data/Physics.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="272">
-              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+              <caret line="27" selection-start-line="27" selection-end-line="27" />
             </state>
           </provider>
         </entry>
@@ -121,14 +76,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="KillAuraHitBox.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="KillAuraHitBox.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/combat/KillAuraHitBox.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="24" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="170">
+              <caret line="19" selection-start-line="19" selection-end-line="19" />
               <folding>
                 <element signature="e#676#677#0" expanded="true" />
                 <element signature="e#1216#1217#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InvalidLocation.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InvalidLocation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="21" column="113" selection-start-line="21" selection-start-column="113" selection-end-line="21" selection-end-column="113" />
+              <folding>
+                <element signature="e#1097#1098#0" expanded="true" />
+                <element signature="e#1582#1583#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -143,20 +111,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NoWeb.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/NoWeb.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="21" column="74" selection-start-line="21" selection-start-column="74" selection-end-line="21" selection-end-column="74" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InvalidMotion.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="InvalidMotion.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InvalidMotion.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="22" column="50" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
+            <state relative-caret-position="272">
+              <caret line="28" column="21" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -289,16 +248,16 @@
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/Step.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/combat/KillAuraHitBox.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/FastLadder.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InvalidLocation.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InventoryWalk.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/TPS.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/NoWeb.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InvalidMotion.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/data/TimeData.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/NoFall.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/data/Physics.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/api/CheckRegister.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/data/InteractData.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InvalidLocation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InvalidMotion.java" />
       </list>
     </option>
   </component>
@@ -647,7 +606,14 @@
       <option name="project" value="LOCAL" />
       <updated>1525046389726</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Fixed quite a few false positives. Massively improved velocity detection, and handling.">
+      <created>1526078640077</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1526078640077</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -739,7 +705,8 @@
     <MESSAGE value="Fixed permissions, and added a better API implementation." />
     <MESSAGE value="Removed some unused variables, improved velocity detection to reduce false positives. Improved tick based timing system." />
     <MESSAGE value="Added a NPC spawning util. Changed some backend code." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a NPC spawning util. Changed some backend code." />
+    <MESSAGE value="Fixed quite a few false positives. Massively improved velocity detection, and handling." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed quite a few false positives. Massively improved velocity detection, and handling." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -841,7 +808,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/MLP.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/neuralnetwork/Layer.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/neuralnetwork/Neuron.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/neuralnetwork/NeuralNetwork.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/neuralnetwork/Data.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/MathUtil.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -908,17 +874,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InvalidLocation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="21" column="68" selection-start-line="21" selection-start-column="68" selection-end-line="21" selection-end-column="68" />
-          <folding>
-            <element signature="e#1097#1098#0" expanded="true" />
-            <element signature="e#1549#1550#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/FastLadder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -964,13 +919,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InvalidMotion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="22" column="50" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/packets/PacketType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -1009,7 +957,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/player/data/Physics.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
         </state>
       </provider>
     </entry>
@@ -1034,14 +982,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/util/neuralnetwork/NeuralNetwork.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/combat/KillAuraHitBox.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        <state relative-caret-position="170">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
           <folding>
             <element signature="e#676#677#0" expanded="true" />
             <element signature="e#1216#1217#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InvalidLocation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="21" column="113" selection-start-line="21" selection-start-column="113" selection-end-line="21" selection-end-column="113" />
+          <folding>
+            <element signature="e#1097#1098#0" expanded="true" />
+            <element signature="e#1582#1583#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/heirteir/autoeye/check/checks/movement/InvalidMotion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="28" column="21" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
         </state>
       </provider>
     </entry>
