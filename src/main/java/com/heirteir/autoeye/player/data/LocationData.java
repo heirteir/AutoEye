@@ -89,7 +89,7 @@ import org.bukkit.util.NumberConversions;
             if (this.inWeb = offset.containsMaterial("WEB")) {
                 player.getTimeData().getLastInWeb().update();
             } else {
-                this.inWeb = player.getTimeData().getLastOnPiston().getAmount() > 0;
+                this.inWeb = player.getTimeData().getLastInWeb().getAmount() > 0;
             }
             if (this.onPiston = offset.containsMaterial("PISTON")) {
                 player.getTimeData().getLastOnPiston().update();

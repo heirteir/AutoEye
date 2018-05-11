@@ -83,6 +83,6 @@ import java.util.Map;
 
     public synchronized void teleport(Vector3D location) {
         this.getPlayer().teleport(new Location(this.player.getWorld(), location.getX(), location.getY(), location.getZ(), this.player.getEyeLocation().getYaw(), this.player.getEyeLocation().getPitch()));
-        this.timeData.getLastTeleport().setAmount(2);
+        this.timeData.getLastTeleport().setAmount(5);
     }
 }

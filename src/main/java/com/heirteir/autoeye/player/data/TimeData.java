@@ -16,10 +16,10 @@ import lombok.Setter;
 @Getter public class TimeData {
     private final TimeTick lastInWater = new TimeTick(5);
     private final TimeTick lastFlying = new TimeTick(20);
-    private final TimeTick lastInWeb = new TimeTick(5);
+    private final TimeTick lastInWeb = new TimeTick(4);
     private final TimeTick lastOnLadder = new TimeTick(3);
     private final TimeTick lastOnPiston = new TimeTick(3);
-    private final TimeTick lastSolidAbove = new TimeTick(8);
+    private final TimeTick lastSolidAbove = new TimeTick(12);
     private final TimeTick lastVelocity = new TimeTick(8);
     private final TimeTick lastOnStairs = new TimeTick(10);
     private final TimeTick lastTeleport = new TimeTick(8);
@@ -64,7 +64,7 @@ import lombok.Setter;
         private final int resetAmount;
         @Setter @Getter int amount;
 
-        public void decrement() {
+        void decrement() {
             this.amount--;
             this.amount = this.amount < 0 ? 0 : this.amount;
         }
@@ -73,7 +73,7 @@ import lombok.Setter;
             this.update(this.resetAmount);
         }
 
-        public void update(int amount) {
+        void update(int amount) {
             this.amount = amount;
         }
     }
