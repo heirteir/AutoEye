@@ -19,4 +19,4 @@
 
 **Does the Server use ViaVersion?:**
 
-**Console output** (_If the plugin throw an error in the console post the log here. Please use a [gist](https://gist.github.com/) or [pastebin](https://pastebin.com)_):
+**Console output** (_If the plugin throw an error in the console post the log here. Please use a [gist](https://gist.github.com/) or [hastebin](https://hastebin.com)_):
