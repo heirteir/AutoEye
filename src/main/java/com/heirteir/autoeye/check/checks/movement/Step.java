@@ -19,7 +19,7 @@ public class Step extends Check {
     }
 
     @Override public boolean check(AutoEyePlayer player) {
-        return player.isConnected() && player.getTimeData().getLastVelocity().getAmount() == 0 && player.getLocationData().isChangedPos() && player.getTimeData().getLastFlying().getAmount() == 0 && !player.getLocationData().isOnPiston() && Math.abs(player.getPhysics().getCalculatedYVelocity()) < (player.getPhysics().getJumpVelocity() < 0.5625F ? 0.5625F : player.getPhysics().getJumpVelocity()) && (player.getPhysics().getJumpVelocity() < 0.5625F ? 0.5625F : player.getPhysics().getJumpVelocity()) < player.getPhysics().getClientVelocity().getY();
+        return player.isConnected() && !player.getLocationData().isOnSlime() && player.getTimeData().getLastVelocity().getAmount() == 0 && player.getLocationData().isChangedPos() && player.getTimeData().getLastFlying().getAmount() == 0 && !player.getLocationData().isOnPiston() && Math.abs(player.getPhysics().getCalculatedYVelocity()) < (player.getPhysics().getJumpVelocity() < 0.8F ? 0.8F : player.getPhysics().getJumpVelocity()) && (player.getPhysics().getJumpVelocity() < 0.8F ? 0.8F : player.getPhysics().getJumpVelocity()) < player.getPhysics().getClientVelocity().getY();
     }
 
     @Override public boolean revert(AutoEyePlayer player) {

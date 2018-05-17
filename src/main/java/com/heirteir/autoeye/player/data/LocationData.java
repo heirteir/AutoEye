@@ -44,6 +44,8 @@ import org.bukkit.util.NumberConversions;
     private boolean previousServerOnGround;
     private boolean hasSolidAbove;
     private boolean onIce;
+    private boolean currentlyOnSlime;
+    private Vector3D groundLocation;
 
     public LocationData(Autoeye autoeye, AutoEyePlayer player) {
         this.reset(autoeye, player);
@@ -60,6 +62,7 @@ import org.bukkit.util.NumberConversions;
         this.axisAlignedBB = new WrappedAxisAlignedBB(autoeye, player.getPlayer().getWorld(), this.location.getX(), this.location.getY(), this.location.getZ(), player.getWrappedEntity().getWidth(), player.getWrappedEntity().getLength());
         teleportLocation = new Vector3D(this.location.getX(), (float) (this.location.getY() % 1 >= .5 ? Math.ceil(this.location.getY()) : Math.floor(this.location.getY())), this.getLocation().getZ());
         this.solidBlocks = new BlockSet(this.axisAlignedBB.offset(0, -0.0001F, 0, 0, 0, 0).getSolidBlocks());
+        this.groundLocation = this.location;
     }
 
     public void setLocation(Vector3D location) {
@@ -77,10 +80,12 @@ import org.bukkit.util.NumberConversions;
             this.previousServerOnGround = this.serverOnGround;
             this.serverOnGround = this.solidBlocks.getBlocks().size() > 0;
             if (this.solidBlocks.getBlocks().size() != 0) {
+                this.groundLocation = new Vector3D(flying.getX(), flying.getY(), flying.getZ());
                 this.groundBlocks = this.solidBlocks;
                 this.onSlime = this.groundBlocks.containsString("SLIME");
                 this.onIce = this.groundBlocks.containsString("ICE");
             }
+            this.currentlyOnSlime = this.onSlime && new BlockSet(this.axisAlignedBB.offset(0F, -1F, 0F, 0F, -player.getWrappedEntity().getLength(), 0F).getSolidBlocks()).containsString("SLIME");
             if (this.onStairs = this.solidBlocks.containsString("STEP", "STAIR")) {
                 player.getTimeData().getLastOnStairs().update();
             } else {
@@ -115,8 +120,8 @@ import org.bukkit.util.NumberConversions;
                 this.inWater = player.getTimeData().getLastInWater().getAmount() > 0;
             }
             this.teleported = player.getTimeData().getLastTeleport().getAmount() > 0;
-            if (player.getTimeData().getSecondTick().getDifference() >= 950 && !this.teleported && this.axisAlignedBB.getSolidBlocks().size() == 0) {
-                teleportLocation = new Vector3D(this.location.getX(), this.location.getY(), this.getLocation().getZ());
+            if (player.getTimeData().getSecondTick().getDifference() >= 950 && !this.teleported) {
+                this.teleportLocation = this.groundLocation;
             }
         }
         if (this.changedLook = flying.isHasLook()) {

@@ -84,7 +84,7 @@ public abstract class ChannelHandlerAbstract {
                         player.getTimeData().getLastUseEntity().update();
                         player.getInteractData().update(this.autoeye, player);
                     }
-                    return packetPlayInUseEntity.getEntity() == null ? this.runChecks(player, CheckType.NPC_EVENT) : this.runChecks(player, CheckType.ENTITY_USE_EVENT);
+                    return this.runChecks(player, CheckType.ENTITY_USE_EVENT);
                 case PacketPlayInKeepAlive:
                     player.getTimeData().getLastInKeepAlive().update();
                     player.setPing(player.getTimeData().getDifference(player.getTimeData().getLastOutKeepAlive().getTime(), player.getTimeData().getLastInKeepAlive().getTime()));
@@ -111,7 +111,7 @@ public abstract class ChannelHandlerAbstract {
 
     private boolean runChecks(AutoEyePlayer player, CheckType type) {
         for (Check check : this.autoeye.getCheckRegister().getCheckList(type)) {
-            if (check.isEnabled() && !player.getPlayer().hasPermission(check.getPermission()) && check.check(player)) {
+            if (check.isEnabled() && !player.getPlayer().hasPermission(check.getPermission()) && !player.getLocationData().isTeleported() && check.check(player)) {
                 AutoEyeInfractionEvent e = new AutoEyeInfractionEvent(player.getPlayer(), player.getInfractionData().getInfraction(check));
                 Bukkit.getPluginManager().callEvent(e);
                 if (!e.isCancelled()) {

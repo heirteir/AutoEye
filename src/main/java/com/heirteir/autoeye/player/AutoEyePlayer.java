@@ -48,7 +48,7 @@ import java.util.Map;
 
     public void update(Autoeye autoeye, PacketPlayInFlying packet) {
         this.locationData.update(autoeye, this, packet);
-        this.physics.update(autoeye, this);
+        this.physics.update(this);
         this.timeData.update(this);
         this.connected = this.connected || this.timeData.getConnected().getDifference() > 4000;
     }
@@ -83,6 +83,6 @@ import java.util.Map;
 
     public synchronized void teleport(Vector3D location) {
         this.getPlayer().teleport(new Location(this.player.getWorld(), location.getX(), location.getY(), location.getZ(), this.player.getEyeLocation().getYaw(), this.player.getEyeLocation().getPitch()));
-        this.timeData.getLastTeleport().setAmount(5);
+        this.timeData.getLastTeleport().setAmount(2);
     }
 }

@@ -20,6 +20,7 @@ import java.lang.reflect.InvocationTargetException;
 
     public <T> T newInstance(Object... args) {
         try {
+            constructor.setAccessible(true);
             return (T) constructor.newInstance(args);
         } catch (InstantiationException | IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();

@@ -15,7 +15,7 @@ public class KillAuraHitBox extends Check {
     }
 
     @Override public boolean check(AutoEyePlayer player) {
-        return (player.getInteractData().getLastEntity() != null && player.getInteractData().getLastActionType().equals(PacketPlayInUseEntity.ActionType.ATTACK) && new WrappedEntity(autoeye, (LivingEntity) player.getInteractData().getLastEntity().getBukkitEntity()).getAxisAlignedBB().intersectsRay(new Ray3D(player.getLocationData().getLocation().offset(0, (float) player.getPlayer().getEyeHeight(), 0), player.getLocationData().getDirection().toVector3D())) == null) ? this.checkThreshold(player, 10) : this.resetThreshold(player);
+        return (player.getInteractData().getLastEntity() != null && player.getInteractData().getLastActionType().equals(PacketPlayInUseEntity.ActionType.ATTACK) && new WrappedEntity(autoeye, (LivingEntity) player.getInteractData().getLastEntity().getBukkitEntity()).getAxisAlignedBB().intersectsRay(new Ray3D(player.getLocationData().getLocation().offset(0, (float) player.getPlayer().getEyeHeight(), 0), player.getLocationData().getDirection().toVector3D())) == null) && this.checkThreshold(player, 6, 500L);
     }
 
     @Override public boolean revert(AutoEyePlayer player) {
