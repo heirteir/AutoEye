@@ -5,7 +5,6 @@ import com.google.common.collect.Maps;
 import com.heirteir.autoeye.Autoeye;
 import com.heirteir.autoeye.check.Check;
 import com.heirteir.autoeye.check.CheckType;
-import com.heirteir.autoeye.check.checks.combat.KillAuraHitBox;
 import com.heirteir.autoeye.check.checks.combat.Reach;
 import com.heirteir.autoeye.check.checks.movement.*;
 import lombok.RequiredArgsConstructor;
@@ -39,7 +38,6 @@ import java.util.Map;
     }
 
     public void registerDefaultChecks() {
-        this.addCheck(new KillAuraHitBox(this.autoeye));
         this.addCheck(new Reach(this.autoeye));
         this.addCheck(new InvalidLocation(this.autoeye));
         this.addCheck(new FastLadder(this.autoeye));
@@ -51,7 +49,6 @@ import java.util.Map;
         this.addCheck(new Timer(this.autoeye));
         this.addCheck(new SlimeJump(this.autoeye));
         this.addCheck(new NoFall(this.autoeye));
-        //this.addCheck(new NoSlowDown(this.autoeye));
         this.addCheck(new InvalidPitch(this.autoeye));
         this.addCheck(new InventoryWalk(this.autoeye));
     }

@@ -11,7 +11,7 @@ public class NoFall extends Check {
     }
 
     @Override public boolean check(AutoEyePlayer player) {
-        return player.isConnected() && !player.getLocationData().isClientOnGround() && player.getPhysics().getClientVelocity().getY() < 0 && !player.getLocationData().isOnLadder() && !player.getLocationData().isInWeb() && !player.getLocationData().isOnPiston() && Math.abs(player.getPhysics().getPreviousClientFallDistance() - player.getPlayer().getFallDistance()) > 0.2 * player.getPhysics().getOffGroundTicks();
+        return player.isConnected() && !player.getLocationData().isClientOnGround() && player.getPhysics().getClientVelocity().getY() < 0 && !player.getLocationData().isOnLadder() && !player.getLocationData().isInWeb() && !player.getLocationData().isOnPiston() && Math.abs(player.getPhysics().getPreviousClientFallDistance() - player.getPlayer().getFallDistance()) > 0.2 * player.getPhysics().getOffGroundTicks() && this.checkThreshold(player, 3, 500L);
     }
 
     @Override public boolean revert(AutoEyePlayer player) {
