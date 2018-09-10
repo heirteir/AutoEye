@@ -6,7 +6,7 @@ import com.heirteir.autoeye.check.CheckType;
 import com.heirteir.autoeye.packets.wrappers.PacketPlayInUseEntity;
 import com.heirteir.autoeye.player.AutoEyePlayer;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class AutoClicker extends Check {
     public AutoClicker(Autoeye autoeye) {
@@ -21,7 +21,7 @@ public class AutoClicker extends Check {
                 int clicks = player.getInteractData().getHitsInLastSecond();
                 player.getInteractData().setHitTimer(System.currentTimeMillis());
                 player.getInteractData().setHitsInLastSecond(0);
-                ArrayList<Integer> temp = player.getInteractData().getLastHits();
+                List<Integer> temp = player.getInteractData().getLastHits();
                 if (temp.size() == 3) {
                     if (temp.get(0) == temp.get(1) && temp.get(1) == temp.get(2)) {
                         return true;
