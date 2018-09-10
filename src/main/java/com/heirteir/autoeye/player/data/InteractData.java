@@ -14,7 +14,7 @@ import lombok.Setter;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Entity;
 
-import java.util.ArrayList;
+import java.util.List;
 
 @Getter @Setter public class InteractData {
     private Block lastBlock;
