@@ -22,5 +22,5 @@ import java.util.ArrayList;
     private PacketPlayInUseEntity.ActionType lastActionType;
     private int hitsInLastSecond;
     private long hitTimer;
-    private ArrayList<Integer> lastHits = new ArrayList<>();
+    private List<Integer> lastHits = new ArrayList<>();
 }
